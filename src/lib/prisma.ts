@@ -1,9 +1,20 @@
 import { PrismaClient } from "@prisma/client";
+import { PrismaD1 } from "@prisma/adapter-d1";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
+
+type D1Binding = ConstructorParameters<typeof PrismaD1>[0];
 
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
 
 function createClient() {
+  let db: D1Binding | undefined;
+  try {
+    db = (getCloudflareContext().env as { DB?: D1Binding }).DB;
+  } catch {
+    // The standard Next.js build and local Node development run without Workers.
+  }
   return new PrismaClient({
+    ...(db ? { adapter: new PrismaD1(db) } : {}),
     log: process.env.NODE_ENV === "development" ? ["error", "warn"] : ["error"],
   });
 }

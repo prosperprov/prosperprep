@@ -16,6 +16,9 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const data = schema.parse(body);
+    if (process.env.NODE_ENV === "production" && data.role === "TEACHER") {
+      return NextResponse.json({ error: "Teacher accounts are created by School Ops." }, { status: 403 });
+    }
     const email = data.email.toLowerCase().trim();
     const existing = await prisma.user.findUnique({ where: { email } });
     if (existing) {

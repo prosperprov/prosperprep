@@ -11,6 +11,10 @@
 
 # next.js
 /.next/
+/.open-next/
+/cloudflare-env.d.ts
+/.wrangler/
+.dev.vars*
 /out/
 
 # production

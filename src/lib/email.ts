@@ -42,11 +42,18 @@ export async function sendEmail(payload: EmailPayload): Promise<{
     if (!res.ok) {
       const errText = await res.text().catch(() => "");
       console.error("[email] Resend failed", res.status, errText);
-      await writeOutbox(payload, from, `resend_error_${res.status}`);
+      if (process.env.NODE_ENV !== "production") {
+        await writeOutbox(payload, from, `resend_error_${res.status}`);
+      }
       return { ok: false, mode: "outbox" };
     }
     const data = (await res.json()) as { id?: string };
     return { ok: true, mode: "resend", id: data.id };
+  }
+
+  if (process.env.NODE_ENV === "production") {
+    console.error("[email] RESEND_API_KEY is required for production email delivery");
+    return { ok: false, mode: "outbox" };
   }
 
   const id = await writeOutbox(payload, from, "queued");

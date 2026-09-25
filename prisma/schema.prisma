@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
@@ -288,4 +289,3 @@ model Notification {
   meta      String   @default("{}")
   createdAt DateTime @default(now())
 }
-

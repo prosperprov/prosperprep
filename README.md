@@ -55,6 +55,8 @@ In local development, demo enrollment is available for testing. In production, p
 
 ## GitHub and Cloudflare launch
 
+See [Cloudflare deployment](docs/cloudflare-deployment.md) for the persistent D1 setup, catalog migration, first admin, build settings, and domain handoff.
+
 This repository contains the full development build, including the scripts that recreate test accounts and course data. It is not yet a running hosted test site. The app uses Next.js 14 and Prisma's native SQLite client. Cloudflare Workers cannot use the local `prisma/dev.db` file as its database. Migrate the persistence layer to Cloudflare D1 (or a hosted Postgres service), verify authentication and Stripe webhooks there, then deploy the app to a separate subdomain such as `school.prosperprep.org`.
 
 The Git repository excludes `.env`, `.data/`, all `*.db` files, and `demo-shots/`; these may contain account data, credentials, outgoing messages, or third-party reference video. The test seed recreates the sample records locally. GitHub can connect to Cloudflare Workers Builds for deployments on pushes after the database migration and framework compatibility work is complete.
