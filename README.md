@@ -1,6 +1,6 @@
 # Prosper Preparatory — Online School MVP
 
-Local full-stack MVP for **Prosper Preparatory** (`prosperprep.org`): K–12 online enrollment, monthly subscriptions, student/parent/teacher/admin dashboards, and live session scheduling.
+Full-stack development build for **Prosper Preparatory** (`prosperprep.org`): K–12 online enrollment, monthly subscriptions, student/parent/teacher/admin dashboards, and live session scheduling.
 
 Nonprofit · East Texas, USA · Online K–12
 
@@ -18,15 +18,17 @@ Brand strings live in one file: `src/config/brand.ts`.
 ## Quick start
 
 ```bash
-cd /workspace/online-school
+git clone https://github.com/prosperprov/prosperprep.git
+cd prosperprep
 cp .env.example .env
-npm install
-npx prisma db push
-npm run db:seed
+npm ci
+npm run db:setup
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+`db:setup` creates a fresh local SQLite database and fills it with the full sample course catalog, lessons, quizzes, live sessions, and the test accounts below. You do not need the old database file to test the application. **It deletes existing records in the configured database**, so use it only for a disposable local test database. Do not run it against any database with real student records.
 
 ### Build check
 
@@ -53,9 +55,9 @@ In local development, demo enrollment is available for testing. In production, p
 
 ## GitHub and Cloudflare launch
 
-This archive is a development build, not a ready production deployment. The app uses Next.js 14 and Prisma's native SQLite client. Cloudflare Workers cannot use the local `prisma/dev.db` file as its production database. Migrate the persistence layer to Cloudflare D1 (or a hosted Postgres service), verify authentication and Stripe webhooks there, then deploy the app to a separate subdomain such as `school.prosperprep.org`.
+This repository contains the full development build, including the scripts that recreate test accounts and course data. It is not yet a running hosted test site. The app uses Next.js 14 and Prisma's native SQLite client. Cloudflare Workers cannot use the local `prisma/dev.db` file as its database. Migrate the persistence layer to Cloudflare D1 (or a hosted Postgres service), verify authentication and Stripe webhooks there, then deploy the app to a separate subdomain such as `school.prosperprep.org`.
 
-The Git repository must exclude `.env`, `.data/`, all `*.db` files, and `demo-shots/`; these may contain student information, credentials, outgoing messages, or third-party reference video. The clean archive supplied separately excludes them. GitHub can then connect to Cloudflare Workers Builds for deployments on pushes after the database migration and framework compatibility work is complete.
+The Git repository excludes `.env`, `.data/`, all `*.db` files, and `demo-shots/`; these may contain account data, credentials, outgoing messages, or third-party reference video. The test seed recreates the sample records locally. GitHub can connect to Cloudflare Workers Builds for deployments on pushes after the database migration and framework compatibility work is complete.
 
 Do not import demo accounts or reuse `demo1234` in a public environment. Move any real records from the local database using an audited migration after deciding where production data will live.
 
