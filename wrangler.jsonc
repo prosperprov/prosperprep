@@ -1,11 +1,11 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "prosper-prep-school",
+  "name": "prosperprep",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-09-25",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
-  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "prosper-prep-school" }],
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "prosperprep" }],
   "d1_databases": [
     {
       "binding": "DB",
