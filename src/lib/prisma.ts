@@ -1,11 +1,14 @@
 import { PrismaClient } from "@prisma/client";
 import { PrismaD1 } from "@prisma/adapter-d1";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { cache } from "react";
 
 type D1Binding = ConstructorParameters<typeof PrismaD1>[0];
 
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
-const d1Clients = new WeakMap<object, PrismaClient>();
+const getD1Client = cache((db: D1Binding) =>
+  new PrismaClient({ adapter: new PrismaD1(db), log: ["error"] })
+);
 
 function isStale(client: PrismaClient) {
   // HMR may retain a client generated before a schema change.
@@ -21,12 +24,7 @@ function getClient(): PrismaClient {
   }
 
   if (db) {
-    let client = d1Clients.get(db);
-    if (!client) {
-      client = new PrismaClient({ adapter: new PrismaD1(db), log: ["error"] });
-      d1Clients.set(db, client);
-    }
-    return client;
+    return getD1Client(db);
   }
 
   if (process.env.NODE_ENV === "production" && !process.env.DATABASE_URL) {
