@@ -10,7 +10,7 @@
     {
       "binding": "DB",
       "database_name": "prosperprep-school",
-      "database_id": "REPLACE_WITH_CLOUDFLARE_D1_DATABASE_ID",
+      "database_id": "1851f5bd-d1a1-499f-995f-7428493f238f",
       "migrations_dir": "migrations"
     }
   ]
