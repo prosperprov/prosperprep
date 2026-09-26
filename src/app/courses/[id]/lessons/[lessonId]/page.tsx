@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
 import { gradeLabel } from "@/lib/grades";
@@ -34,6 +34,10 @@ export default async function LessonPage({
 }: {
   params: { id: string; lessonId: string };
 }) {
+  const session = await getSession();
+  if (!session?.user?.id) {
+    redirect(`/login?callbackUrl=/courses/${params.id}/lessons/${params.lessonId}`);
+  }
   const course = await prisma.course.findUnique({
     where: { id: params.id },
     include: {
@@ -42,22 +46,18 @@ export default async function LessonPage({
     },
   });
   if (!course) notFound();
+  const access = await canAccessCourseContent({
+    userId: session.user.id,
+    role: session.user.role,
+    courseGrade: course.grade,
+  });
+  if (!access.ok) notFound();
 
   const lesson = await prisma.lesson.findUnique({
     where: { id: params.lessonId },
     include: { questions: { orderBy: { order: "asc" } } },
   });
   if (!lesson || lesson.courseId !== course.id) notFound();
-
-  const session = await getSession();
-  if (session?.user?.id && (session.user.role === "STUDENT" || session.user.role === "TEACHER")) {
-    const access = await canAccessCourseContent({
-      userId: session.user.id,
-      role: session.user.role,
-      courseGrade: course.grade,
-    });
-    if (!access.ok) notFound();
-  }
 
   const idx = course.lessons.findIndex((l) => l.id === lesson.id);
   const prev = idx > 0 ? course.lessons[idx - 1] : null;

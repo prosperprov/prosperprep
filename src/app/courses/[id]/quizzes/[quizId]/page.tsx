@@ -25,14 +25,12 @@ export default async function SectionQuizPage({
   });
   if (!quiz || quiz.courseId !== params.id) notFound();
 
-  if (session.user.role === "STUDENT" || session.user.role === "TEACHER") {
-    const access = await canAccessCourseContent({
-      userId: session.user.id,
-      role: session.user.role,
-      courseGrade: quiz.course.grade,
-    });
-    if (!access.ok) notFound();
-  }
+  const access = await canAccessCourseContent({
+    userId: session.user.id,
+    role: session.user.role,
+    courseGrade: quiz.course.grade,
+  });
+  if (!access.ok) notFound();
 
   const sectionLessons = quiz.sectionKey
     ? quiz.course.lessons.filter((l) => l.sectionKey === quiz.sectionKey)
