@@ -1,0 +1,62 @@
+{
+  "courseId": "cmuh9bwwo041bedan1gymikl1",
+  "units": [
+    {
+      "n": 1,
+      "title": "Maps and Geographic Thinking",
+      "sectionKey": "unit-1",
+      "lessonCount": 9
+    },
+    {
+      "n": 2,
+      "title": "Early Humans and Farming",
+      "sectionKey": "unit-2",
+      "lessonCount": 8
+    },
+    {
+      "n": 3,
+      "title": "River Civilizations",
+      "sectionKey": "unit-3",
+      "lessonCount": 9
+    },
+    {
+      "n": 4,
+      "title": "Classical Empires and Belief Systems",
+      "sectionKey": "unit-4",
+      "lessonCount": 9
+    },
+    {
+      "n": 5,
+      "title": "Medieval Networks",
+      "sectionKey": "unit-5",
+      "lessonCount": 8
+    },
+    {
+      "n": 6,
+      "title": "Exploration and the First Global Age",
+      "sectionKey": "unit-6",
+      "lessonCount": 8
+    },
+    {
+      "n": 7,
+      "title": "Revolutions and Industry",
+      "sectionKey": "unit-7",
+      "lessonCount": 8
+    },
+    {
+      "n": 8,
+      "title": "Texas and American Turning Points",
+      "sectionKey": "unit-8",
+      "lessonCount": 8
+    },
+    {
+      "n": 9,
+      "title": "Global Connections Today",
+      "sectionKey": "unit-9",
+      "lessonCount": 8
+    }
+  ],
+  "lessonCount": 75,
+  "quizCount": 9,
+  "generatedAt": "2026-09-29"
+}
