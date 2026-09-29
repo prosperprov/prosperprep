@@ -16,6 +16,7 @@ import {
   g7ThemeObjectives,
   g7ThemeQuestions,
 } from "./g7-theme-lesson";
+import { grade6CoreLessons } from "./grade6-core";
 
 /**
  * Prosper Preparatory curriculum outlines + lesson body builders.
@@ -598,6 +599,12 @@ export function lessonsForCourse(subject: string, grade: number): LessonSeed[] {
   } else {
     topics = elaTopics(grade);
     subjectLabel = "Language Arts";
+  }
+
+  // Grade 6 core: substantial authored lessons (ELA, Math, Science, Social Studies / World History)
+  if (grade === 6) {
+    const g6 = grade6CoreLessons(subjectLabel);
+    if (g6) return g6;
   }
 
   // Grade 10 showcase: deeper Math / ELA modules
