@@ -8,6 +8,7 @@ import type { LessonSeed } from "./curriculum";
 import { questionsForTopic, sectionKeyForLessonOrder, type TopicLike } from "./assessments";
 import { resolveVideoUrl } from "./khan-videos";
 import { grade6MathYearLessons } from "./grade6-math/year";
+import { grade6ElaYearLessons } from "./grade6-ela/year";
 
 export type Grade6Authored = {
   title: string;
@@ -278,7 +279,7 @@ function toSeed(subject: string, rows: Grade6Authored[]): LessonSeed[] {
 export function grade6CoreLessons(subjectLabel: string): LessonSeed[] | null {
   const s = subjectLabel.toLowerCase();
   if (s.includes("language") || s.includes("english") || s.includes("reading")) {
-    return toSeed("Language Arts", ELA);
+    return grade6ElaYearLessons();
   }
   if (s.includes("math")) return grade6MathYearLessons();
   if (s.includes("science") || s.includes("life")) return toSeed("Science", SCIENCE);

@@ -123,7 +123,7 @@ export function grade6Encouragement(done: number, total: number): string {
   return "Almost there — finish the next lesson to stay ahead.";
 }
 
-/** Map sectionKey unit-N → display label for Grade 6 Math year path (and reusable). */
+/** Map sectionKey unit-N → display title (Math). */
 const G6_MATH_UNITS: Record<string, string> = {
   "unit-1": "Ratios",
   "unit-2": "Arithmetic with Rational Numbers",
@@ -138,16 +138,51 @@ const G6_MATH_UNITS: Record<string, string> = {
   "unit-11": "Data and Statistics",
 };
 
+/** Map sectionKey unit-N → display title (ELA). */
+const G6_ELA_UNITS: Record<string, string> = {
+  "unit-1": "Vocabulary Power",
+  "unit-2": "Reading: Key Ideas and Details",
+  "unit-3": "Reading: Key Ideas — Long Passages",
+  "unit-4": "Grammar: Nouns",
+  "unit-5": "Grammar: Pronouns",
+  "unit-6": "Grammar: Verbs",
+  "unit-7": "Reading: Craft and Structure",
+  "unit-8": "Reading: Craft — Long Passages",
+  "unit-9": "Grammar: Adjectives and Adverbs",
+  "unit-10": "Grammar: Prepositions and Interjections",
+  "unit-11": "Grammar: Sentences, Clauses, and Phrases",
+  "unit-12": "Reading: Integration of Knowledge and Ideas",
+  "unit-13": "Reading: Integration — Long Passages",
+  "unit-14": "Grammar: Punctuation and Capitalization",
+  "unit-15": "Grammar: Word Study",
+  "unit-16": "Grammar: Style and Tone",
+};
+
+function unitTitleMapForSubject(subject?: string | null): Record<string, string> {
+  if (!subject) return G6_MATH_UNITS;
+  const s = subject.toLowerCase();
+  if (s.includes("language") || s.includes("english") || s.includes("reading")) {
+    return G6_ELA_UNITS;
+  }
+  if (s.includes("math")) return G6_MATH_UNITS;
+  return G6_MATH_UNITS;
+}
+
 export function isRetiredSection(sectionKey: string | null | undefined): boolean {
   return !sectionKey || sectionKey === "retired" || sectionKey.startsWith("retired");
 }
 
-export function grade6UnitLabel(sectionKey: string, totalUnits = 11): string {
+export function grade6UnitLabel(
+  sectionKey: string,
+  totalUnits = 11,
+  subject?: string | null
+): string {
   if (isRetiredSection(sectionKey)) return "Archived";
   const m = /^unit-(\d+)$/.exec(sectionKey);
   if (m) {
     const n = Number(m[1]);
-    const title = G6_MATH_UNITS[sectionKey] || sectionKey.replace(/-/g, " ");
+    const map = unitTitleMapForSubject(subject);
+    const title = map[sectionKey] || sectionKey.replace(/-/g, " ");
     return `Unit ${n} of ${totalUnits} · ${title}`;
   }
   // legacy section-N

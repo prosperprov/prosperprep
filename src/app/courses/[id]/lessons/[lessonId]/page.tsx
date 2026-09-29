@@ -151,6 +151,15 @@ export default async function LessonPage({
   }));
 
   const g6 = isGrade6Classroom(course.grade);
+  const g6UnitKeys = Array.from(
+    new Set(
+      course.lessons
+        .map((l) => l.sectionKey)
+        .filter((k) => k && !isRetiredSection(k) && /^unit-\d+$/.test(k))
+    )
+  );
+  const g6UnitTotal = g6UnitKeys.length || 11;
+
 
   return (
     <div className={`mx-auto px-4 py-10 ${g6 ? "max-w-4xl" : "max-w-3xl"}`}>
@@ -184,7 +193,7 @@ export default async function LessonPage({
             sectionQuiz ? `/courses/${course.id}/quizzes/${sectionQuiz.id}` : null
           }
           sectionQuizUnlocked={sectionQuizUnlocked}
-          unitLabel={grade6UnitLabel(lesson.sectionKey)}
+          unitLabel={grade6UnitLabel(lesson.sectionKey, g6UnitTotal, course.subject)}
         />
       ) : (
         <>
@@ -202,7 +211,7 @@ export default async function LessonPage({
 
           <p className="mt-4 text-sm font-medium text-emerald-800">
             {course.subject} · {gradeLabel(course.grade)} · {lesson.durationMin} min ·{" "}
-            {grade6UnitLabel(lesson.sectionKey)}
+            {grade6UnitLabel(lesson.sectionKey, g6UnitTotal, course.subject)}
           </p>
           <h1 className="mt-1 text-3xl font-bold text-slate-900">{lesson.title}</h1>
           <p className="mt-2 text-slate-600">{lesson.description}</p>
@@ -220,7 +229,7 @@ export default async function LessonPage({
         <>
           <p className="text-base text-slate-700">{lesson.description}</p>
           <p className="mt-2 text-sm font-medium text-slate-500">
-            {lesson.durationMin} min · {grade6UnitLabel(lesson.sectionKey)}
+            {lesson.durationMin} min · {grade6UnitLabel(lesson.sectionKey, g6UnitTotal, course.subject)}
           </p>
         </>
       )}

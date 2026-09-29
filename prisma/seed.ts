@@ -9,6 +9,7 @@ import { actFormAQuizzes } from "./act-elite-g12";
 import { actEnglishModuleQuizzes } from "./act-elite-g12-module-e";
 import { grade7EnterpriseUnitOneQuiz } from "./grade7-enterprise";
 import { G6_MATH_UNIT_QUIZZES } from "./grade6-math/year";
+import { G6_ELA_UNIT_QUIZZES } from "./grade6-ela/year";
 
 const prisma = new PrismaClient();
 
@@ -278,6 +279,11 @@ async function main() {
           grade === 6 && subject === "Mathematics"
             ? G6_MATH_UNIT_QUIZZES.find((q) => q.sectionKey === sectionKey)
             : undefined;
+        const g6ElaUnit =
+          grade === 6 && subject === "English Language Arts"
+            ? G6_ELA_UNIT_QUIZZES.find((q) => q.sectionKey === sectionKey)
+            : undefined;
+        const g6YearUnit = g6MathUnit || g6ElaUnit;
         const sectionNum = sectionKey.replace(/^unit-/, "").replace(/^section-/, "");
         const sectionLabel = sectionKey.startsWith("unit-")
           ? `Unit ${sectionNum}`
@@ -293,8 +299,8 @@ async function main() {
             `Showcase course missing authored section quiz: ${subject} ${sectionKey}`
           );
         }
-        const quizQs = g6MathUnit
-          ? g6MathUnit.questions
+        const quizQs = g6YearUnit
+          ? g6YearUnit.questions
           : grade === 7 && subject === "Entrepreneurship & Financial Independence" && sectionKey === "section-1"
           ? grade7EnterpriseUnitOneQuiz()
           : isShowcaseAssessment
@@ -304,9 +310,9 @@ async function main() {
         const quiz = await prisma.quiz.create({
           data: {
             courseId: course.id,
-            title: g6MathUnit ? g6MathUnit.title : `${sectionLabel} Quiz`,
-            description: g6MathUnit
-              ? g6MathUnit.description
+            title: g6YearUnit ? g6YearUnit.title : `${sectionLabel} Quiz`,
+            description: g6YearUnit
+              ? g6YearUnit.description
               : `Covers lessons in ${sectionKey.replace("-", " ")}. Unlocks after all lessons in this section are complete. Section quizzes = 60% of the course grade (lesson checks = 40%).`,
             order: quizOrder++,
             sectionKey,
