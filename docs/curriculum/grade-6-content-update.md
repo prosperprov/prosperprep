@@ -43,3 +43,9 @@ WHERE id IN (
 ```
 
 Expect `n` well above the old ~1–2k starter stubs (typically several thousand characters of markdown).
+
+---
+
+## Superseded for Math (2026-09-29)
+
+Grade 6 **Mathematics** is now a full-year 11-unit path. See `grade-6-math-year.md` and migration `0005_grade6_math_year.sql`. Migration `0004` still applies to ELA / Science / World History lesson body upgrades; Math stubs are retired by `0005`.
