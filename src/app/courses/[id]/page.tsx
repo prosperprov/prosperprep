@@ -7,6 +7,8 @@ import { LESSON_WEIGHT, SECTION_WEIGHT, courseAverage, letterGrade } from "@/lib
 import { canAccessCourseContent } from "@/lib/curriculumAccess";
 import { isGrade6Classroom } from "@/lib/grade6Classroom";
 import { Grade6CourseHeader } from "@/components/grade6/Grade6CourseHeader";
+import { Grade6UnitAccordion } from "@/components/grade6/Grade6UnitAccordion";
+import { isRetiredSection } from "@/lib/grade6Classroom";
 
 export const dynamic = "force-dynamic";
 
@@ -80,9 +82,13 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
     }
   }
 
-  const sections = Array.from(new Set(course.lessons.map((l) => l.sectionKey)));
+  const activeLessons = course.lessons.filter((l) => !isRetiredSection(l.sectionKey));
+  const sections = Array.from(new Set(activeLessons.map((l) => l.sectionKey)));
   const g6 = isGrade6Classroom(course.grade);
-  const nextIncomplete = course.lessons.find((l) => !completedIds.has(l.id));
+  const nextIncomplete = activeLessons.find((l) => !completedIds.has(l.id));
+  const quizUnlockedRecord: Record<string, boolean> = Object.fromEntries(
+    Array.from(quizUnlocked.entries())
+  );
 
   return (
     <div className={`mx-auto px-4 py-12 ${g6 ? "max-w-4xl" : "max-w-3xl"}`}>
@@ -92,8 +98,8 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
           title={course.title}
           description={course.description}
           grade={course.grade}
-          done={completedIds.size}
-          total={course.lessons.length}
+          done={activeLessons.filter((l) => completedIds.has(l.id)).length}
+          total={activeLessons.length}
           coursePct={coursePct}
           courseLetter={courseLetter}
           askTeacherHref="/dashboard/student/messages"
@@ -113,7 +119,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
             <div className="rounded-xl border border-slate-200 bg-white p-4 text-sm">
               <p className="text-slate-500">Lessons</p>
               <p className="text-xl font-bold text-slate-900">
-                {completedIds.size}/{course.lessons.length}
+                {completedIds.size}/{activeLessons.length}
               </p>
             </div>
             <div className="rounded-xl border border-slate-200 bg-white p-4 text-sm">
@@ -153,8 +159,33 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
       )}
 
       <h2 className={`font-semibold text-slate-900 ${g6 ? "text-xl" : "text-lg"}`}>
-        Lesson plan
+        {g6 ? "Year path · Units" : "Lesson plan"}
       </h2>
+      {g6 ? (
+        <Grade6UnitAccordion
+          courseId={course.id}
+          lessons={activeLessons.map((l) => ({
+            id: l.id,
+            title: l.title,
+            description: l.description,
+            order: l.order,
+            durationMin: l.durationMin,
+            sectionKey: l.sectionKey,
+          }))}
+          quizzes={course.quizzes
+            .filter((q) => q.sectionKey && !isRetiredSection(q.sectionKey))
+            .map((q) => ({
+              id: q.id,
+              title: q.title,
+              sectionKey: q.sectionKey,
+              questionCount: q.questions.length,
+            }))}
+          completedIds={Array.from(completedIds)}
+          quizUnlocked={quizUnlockedRecord}
+          defaultOpenUnit={nextIncomplete?.sectionKey ?? sections[0] ?? null}
+        />
+      ) : (
+        <>
       {sections.map((sectionKey) => {
         const lessons = course.lessons.filter((l) => l.sectionKey === sectionKey);
         const sectionQuizzes = course.quizzes.filter((q) => q.sectionKey === sectionKey);
@@ -259,6 +290,9 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
           </div>
         );
       })}
+
+        </>
+      )}
 
       {(() => {
         const orphanQuizzes = course.quizzes.filter(

@@ -1,0 +1,74 @@
+{
+  "courseId": "cmuh9bwto03qledantwv3vsfd",
+  "units": [
+    {
+      "n": 1,
+      "title": "Ratios",
+      "sectionKey": "unit-1",
+      "lessonCount": 10
+    },
+    {
+      "n": 2,
+      "title": "Arithmetic with Rational Numbers",
+      "sectionKey": "unit-2",
+      "lessonCount": 10
+    },
+    {
+      "n": 3,
+      "title": "Rates and Percentages",
+      "sectionKey": "unit-3",
+      "lessonCount": 10
+    },
+    {
+      "n": 4,
+      "title": "Exponents and Order of Operations",
+      "sectionKey": "unit-4",
+      "lessonCount": 8
+    },
+    {
+      "n": 5,
+      "title": "Negative Numbers",
+      "sectionKey": "unit-5",
+      "lessonCount": 10
+    },
+    {
+      "n": 6,
+      "title": "Variables & Expressions",
+      "sectionKey": "unit-6",
+      "lessonCount": 10
+    },
+    {
+      "n": 7,
+      "title": "Equations & Inequalities",
+      "sectionKey": "unit-7",
+      "lessonCount": 10
+    },
+    {
+      "n": 8,
+      "title": "Plane Figures",
+      "sectionKey": "unit-8",
+      "lessonCount": 8
+    },
+    {
+      "n": 9,
+      "title": "Coordinate Plane",
+      "sectionKey": "unit-9",
+      "lessonCount": 8
+    },
+    {
+      "n": 10,
+      "title": "3D Figures",
+      "sectionKey": "unit-10",
+      "lessonCount": 8
+    },
+    {
+      "n": 11,
+      "title": "Data and Statistics",
+      "sectionKey": "unit-11",
+      "lessonCount": 10
+    }
+  ],
+  "lessonCount": 102,
+  "quizCount": 11,
+  "generatedAt": "2026-09-29"
+}

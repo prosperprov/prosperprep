@@ -16,6 +16,7 @@ import { GuidedPractice } from "@/components/GuidedPractice";
 import { guidedPracticeForLesson } from "@/lib/guidedPractice";
 import { isGrade6Classroom } from "@/lib/grade6Classroom";
 import { Grade6LessonChrome } from "@/components/grade6/Grade6LessonChrome";
+import { grade6UnitLabel, isRetiredSection } from "@/lib/grade6Classroom";
 
 export const dynamic = "force-dynamic";
 
@@ -61,9 +62,10 @@ export default async function LessonPage({
   });
   if (!lesson || lesson.courseId !== course.id) notFound();
 
-  const idx = course.lessons.findIndex((l) => l.id === lesson.id);
-  const prev = idx > 0 ? course.lessons[idx - 1] : null;
-  const next = idx < course.lessons.length - 1 ? course.lessons[idx + 1] : null;
+  const pathLessons = course.lessons.filter((l) => !isRetiredSection(l.sectionKey));
+  const idx = pathLessons.findIndex((l) => l.id === lesson.id);
+  const prev = idx > 0 ? pathLessons[idx - 1] : null;
+  const next = idx >= 0 && idx < pathLessons.length - 1 ? pathLessons[idx + 1] : null;
 
   const canGrade =
     session?.user &&
@@ -160,7 +162,7 @@ export default async function LessonPage({
           lessonTitle={lesson.title}
           lessonOrder={lesson.order}
           lessonIndex={idx}
-          lessonCount={course.lessons.length}
+          lessonCount={pathLessons.length}
           completed={completed}
           hasVideo={Boolean(lesson.videoUrl)}
           hasQuizQuestions={questions.length > 0}
@@ -182,6 +184,7 @@ export default async function LessonPage({
             sectionQuiz ? `/courses/${course.id}/quizzes/${sectionQuiz.id}` : null
           }
           sectionQuizUnlocked={sectionQuizUnlocked}
+          unitLabel={grade6UnitLabel(lesson.sectionKey)}
         />
       ) : (
         <>
@@ -199,7 +202,7 @@ export default async function LessonPage({
 
           <p className="mt-4 text-sm font-medium text-emerald-800">
             {course.subject} · {gradeLabel(course.grade)} · {lesson.durationMin} min ·{" "}
-            {lesson.sectionKey}
+            {grade6UnitLabel(lesson.sectionKey)}
           </p>
           <h1 className="mt-1 text-3xl font-bold text-slate-900">{lesson.title}</h1>
           <p className="mt-2 text-slate-600">{lesson.description}</p>
@@ -217,7 +220,7 @@ export default async function LessonPage({
         <>
           <p className="text-base text-slate-700">{lesson.description}</p>
           <p className="mt-2 text-sm font-medium text-slate-500">
-            {lesson.durationMin} min · {lesson.sectionKey.replace(/-/g, " ")}
+            {lesson.durationMin} min · {grade6UnitLabel(lesson.sectionKey)}
           </p>
         </>
       )}

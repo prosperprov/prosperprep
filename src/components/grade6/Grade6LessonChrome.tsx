@@ -19,6 +19,7 @@ export function Grade6LessonChrome({
   nextLabel,
   sectionQuizHref,
   sectionQuizUnlocked,
+  unitLabel,
 }: {
   courseId: string;
   courseTitle: string;
@@ -34,6 +35,7 @@ export function Grade6LessonChrome({
   nextLabel: string | null;
   sectionQuizHref: string | null;
   sectionQuizUnlocked: boolean;
+  unitLabel?: string | null;
 }) {
   const style = subjectIslandStyle(subject);
   const pct =
@@ -56,6 +58,11 @@ export function Grade6LessonChrome({
               </span>
               Lesson {lessonOrder}: {lessonTitle}
             </p>
+            {unitLabel && (
+              <p className="text-xs font-semibold uppercase tracking-wide text-sky-800">
+                {unitLabel}
+              </p>
+            )}
           </div>
           <div className="flex items-center gap-3">
             <span
@@ -110,7 +117,7 @@ export function Grade6LessonChrome({
             href={sectionQuizHref}
             className="inline-flex min-h-[48px] items-center rounded-2xl border-2 border-violet-300 bg-violet-50 px-4 py-2 text-base font-bold text-violet-950 hover:bg-violet-100"
           >
-            Section quiz
+            Unit check
           </Link>
         )}
         {nextHref && nextLabel && (

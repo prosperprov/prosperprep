@@ -8,6 +8,7 @@ import { getShowcaseSectionQuiz } from "./showcase-grade10-quizzes";
 import { actFormAQuizzes } from "./act-elite-g12";
 import { actEnglishModuleQuizzes } from "./act-elite-g12-module-e";
 import { grade7EnterpriseUnitOneQuiz } from "./grade7-enterprise";
+import { G6_MATH_UNIT_QUIZZES } from "./grade6-math/year";
 
 const prisma = new PrismaClient();
 
@@ -172,7 +173,10 @@ async function main() {
       const course = await prisma.course.create({
         data: {
           title: `${subject} · ${gradeName}`,
-          description: `Foundations/MVP graded ${subject} course for ${gradeName} at Prosper Preparatory${grade === 10 && (subject.includes("Algebra") || subject.includes("English") || subject.includes("Bible")) ? " (Grade 10 showcase — expanded modules)" : ""}. Lesson checks = 40% of the course grade; section quizzes (every 3 lessons) = 60%. Latest attempt counts. Not yet a full-year credit map.`,
+          description:
+            grade === 6 && subject === "Mathematics"
+              ? `Full-year Grade 6 Mathematics at Prosper Preparatory: 11 units (Ratios through Data and statistics), original Prosper Prep lessons with practice and unit checks. Lesson checks = 40%; unit checks = 60%. Latest attempt counts. Scope aligned with OUR/IM (CC BY).`
+              : `Foundations/MVP graded ${subject} course for ${gradeName} at Prosper Preparatory${grade === 10 && (subject.includes("Algebra") || subject.includes("English") || subject.includes("Bible")) ? " (Grade 10 showcase — expanded modules)" : ""}. Lesson checks = 40% of the course grade; section quizzes (every 3 lessons) = 60%. Latest attempt counts. Not yet a full-year credit map.`,
           subject,
           grade,
           gradeBand: band,
@@ -270,8 +274,14 @@ async function main() {
                 ],
               }));
 
-        const sectionNum = sectionKey.replace("section-", "");
-        const sectionLabel = `Section ${sectionNum}`;
+        const g6MathUnit =
+          grade === 6 && subject === "Mathematics"
+            ? G6_MATH_UNIT_QUIZZES.find((q) => q.sectionKey === sectionKey)
+            : undefined;
+        const sectionNum = sectionKey.replace(/^unit-/, "").replace(/^section-/, "");
+        const sectionLabel = sectionKey.startsWith("unit-")
+          ? `Unit ${sectionNum}`
+          : `Section ${sectionNum}`;
         const isShowcaseAssessment =
           grade === 10 &&
           (subject.includes("Algebra") ||
@@ -283,7 +293,9 @@ async function main() {
             `Showcase course missing authored section quiz: ${subject} ${sectionKey}`
           );
         }
-        const quizQs = grade === 7 && subject === "Entrepreneurship & Financial Independence" && sectionKey === "section-1"
+        const quizQs = g6MathUnit
+          ? g6MathUnit.questions
+          : grade === 7 && subject === "Entrepreneurship & Financial Independence" && sectionKey === "section-1"
           ? grade7EnterpriseUnitOneQuiz()
           : isShowcaseAssessment
             ? showcaseQs!
@@ -292,8 +304,10 @@ async function main() {
         const quiz = await prisma.quiz.create({
           data: {
             courseId: course.id,
-            title: `${sectionLabel} Quiz`,
-            description: `Covers lessons in ${sectionKey.replace("-", " ")}. Unlocks after all lessons in this section are complete. Section quizzes = 60% of the course grade (lesson checks = 40%).`,
+            title: g6MathUnit ? g6MathUnit.title : `${sectionLabel} Quiz`,
+            description: g6MathUnit
+              ? g6MathUnit.description
+              : `Covers lessons in ${sectionKey.replace("-", " ")}. Unlocks after all lessons in this section are complete. Section quizzes = 60% of the course grade (lesson checks = 40%).`,
             order: quizOrder++,
             sectionKey,
           },

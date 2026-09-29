@@ -122,3 +122,41 @@ export function grade6Encouragement(done: number, total: number): string {
   if (pct < 75) return "You're doing great — keep finishing lessons.";
   return "Almost there — finish the next lesson to stay ahead.";
 }
+
+/** Map sectionKey unit-N → display label for Grade 6 Math year path (and reusable). */
+const G6_MATH_UNITS: Record<string, string> = {
+  "unit-1": "Ratios",
+  "unit-2": "Arithmetic with Rational Numbers",
+  "unit-3": "Rates and Percentages",
+  "unit-4": "Exponents and Order of Operations",
+  "unit-5": "Negative Numbers",
+  "unit-6": "Variables & Expressions",
+  "unit-7": "Equations & Inequalities",
+  "unit-8": "Plane Figures",
+  "unit-9": "Coordinate Plane",
+  "unit-10": "3D Figures",
+  "unit-11": "Data and Statistics",
+};
+
+export function isRetiredSection(sectionKey: string | null | undefined): boolean {
+  return !sectionKey || sectionKey === "retired" || sectionKey.startsWith("retired");
+}
+
+export function grade6UnitLabel(sectionKey: string, totalUnits = 11): string {
+  if (isRetiredSection(sectionKey)) return "Archived";
+  const m = /^unit-(\d+)$/.exec(sectionKey);
+  if (m) {
+    const n = Number(m[1]);
+    const title = G6_MATH_UNITS[sectionKey] || sectionKey.replace(/-/g, " ");
+    return `Unit ${n} of ${totalUnits} · ${title}`;
+  }
+  // legacy section-N
+  const s = /^section-(\d+)$/.exec(sectionKey);
+  if (s) return `Section ${s[1]}`;
+  return sectionKey.replace(/-/g, " ");
+}
+
+export function grade6UnitNumber(sectionKey: string): number | null {
+  const m = /^unit-(\d+)$/.exec(sectionKey);
+  return m ? Number(m[1]) : null;
+}
