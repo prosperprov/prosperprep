@@ -45,7 +45,6 @@ export default async function LessonPage({
     where: { id: params.id },
     include: {
       lessons: {
-        where: { NOT: { sectionKey: { startsWith: "retired" } } },
         orderBy: { order: "asc" },
         select: {
           id: true,
@@ -55,12 +54,6 @@ export default async function LessonPage({
         },
       },
       quizzes: {
-        where: {
-          OR: [
-            { sectionKey: null },
-            { NOT: { sectionKey: { startsWith: "retired" } } },
-          ],
-        },
         orderBy: { order: "asc" },
         select: {
           id: true,
@@ -154,8 +147,11 @@ export default async function LessonPage({
     const sectionProgress = await prisma.progress.findMany({
       where: {
         userId: session.user.id,
-        lessonId: { in: sectionLessons.map((l) => l.id) },
         completed: true,
+        lesson: {
+          courseId: course.id,
+          sectionKey: lesson.sectionKey,
+        },
       },
       select: { lessonId: true },
     });

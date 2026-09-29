@@ -16,8 +16,8 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
   const course = await prisma.course.findUnique({
     where: { id: params.id },
     include: {
+      // No SQL retired filter — D1 startsWith/null quirks; filter with isRetiredSection in JS.
       lessons: {
-        where: { NOT: { sectionKey: { startsWith: "retired" } } },
         orderBy: { order: "asc" },
         select: {
           id: true,
@@ -29,12 +29,6 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
         },
       },
       quizzes: {
-        where: {
-          OR: [
-            { sectionKey: null },
-            { NOT: { sectionKey: { startsWith: "retired" } } },
-          ],
-        },
         orderBy: { order: "asc" },
         select: {
           id: true,
@@ -69,11 +63,12 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
   const quizUnlocked = new Map<string, boolean>();
 
   if (session?.user?.id) {
+    // Relation filter — Grade 6 Math alone has 100+ lessons; D1 caps bound params at 100.
     const progress = await prisma.progress.findMany({
       where: {
         userId: session.user.id,
-        lessonId: { in: course.lessons.map((l) => l.id) },
         completed: true,
+        lesson: { courseId: course.id },
       },
       select: { lessonId: true },
     });
@@ -93,6 +88,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
     courseLetter = coursePct != null ? letterGrade(coursePct) : null;
 
     for (const quiz of course.quizzes) {
+      if (isRetiredSection(quiz.sectionKey)) continue;
       if (!quiz.sectionKey) {
         quizUnlocked.set(quiz.id, true);
         continue;

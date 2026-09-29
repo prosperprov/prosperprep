@@ -7,21 +7,43 @@ import { gradeLabel } from "@/lib/grades";
 import { brand } from "@/config/brand";
 import { StudentNotifications } from "@/components/StudentNotifications";
 import { studentDashNav } from "@/lib/dashboardNav";
-import { isGrade6Classroom } from "@/lib/grade6Classroom";
+import { isGrade6Classroom, isRetiredSection } from "@/lib/grade6Classroom";
 import { Grade6ClassroomHub } from "@/components/grade6/Grade6ClassroomHub";
 import { loadInboxForUser } from "@/lib/messageInbox";
 
 export const dynamic = "force-dynamic";
 
-export default async function StudentDashboard() {
-  const session = await getSession();
-  if (!session?.user) redirect("/login?callbackUrl=/dashboard/student");
-  if (session.user.role !== "STUDENT" && session.user.role !== "ADMIN") {
-    redirect("/dashboard");
-  }
+type SessionUser = {
+  id: string;
+  name: string;
+  role: string;
+};
 
+type TodoItem =
+  | {
+      kind: "lesson";
+      href: string;
+      label: string;
+      meta: string;
+      order: number;
+      courseOrder: number;
+    }
+  | {
+      kind: "quiz";
+      href: string;
+      label: string;
+      meta: string;
+      order: number;
+      courseOrder: number;
+    };
+
+/**
+ * D1 allows max 100 bound parameters per query. Never use
+ * `lessonId: { in: hundredsOfIds }` — use relation filters instead.
+ */
+async function loadStudentDashboardData(user: SessionUser) {
   const enrollments = await prisma.enrollment.findMany({
-    where: { userId: session.user.id },
+    where: { userId: user.id },
     include: { plan: true },
     orderBy: { createdAt: "desc" },
   });
@@ -29,14 +51,19 @@ export default async function StudentDashboard() {
   // Curriculum lock: only ACTIVE enrollment grade counts (not register-time user.grade alone).
   const grade = active?.grade ?? null;
 
-  const courses =
+  // Metadata only — no Lesson.content. Do not filter retired in SQL
+  // (avoid startsWith/null quirks on D1); filter in JS with isRetiredSection.
+  const rawCourses =
     grade != null
       ? await prisma.course.findMany({
           where: { grade },
           orderBy: { order: "asc" },
-          include: {
+          select: {
+            id: true,
+            subject: true,
+            title: true,
+            order: true,
             lessons: {
-              where: { NOT: { sectionKey: { startsWith: "retired" } } },
               orderBy: { order: "asc" },
               select: {
                 id: true,
@@ -48,7 +75,6 @@ export default async function StudentDashboard() {
               },
             },
             quizzes: {
-              where: { NOT: { sectionKey: { startsWith: "retired" } } },
               orderBy: { order: "asc" },
               select: {
                 id: true,
@@ -61,56 +87,54 @@ export default async function StudentDashboard() {
         })
       : [];
 
-  const lessonIds = courses.flatMap((c) => c.lessons.map((l) => l.id));
-  const progress = lessonIds.length
-    ? await prisma.progress.findMany({
-        where: { userId: session.user.id, lessonId: { in: lessonIds } },
-      })
-    : [];
-  const completedSet = new Set(progress.filter((p) => p.completed).map((p) => p.lessonId));
+  const courses = rawCourses.map((c) => ({
+    ...c,
+    lessons: c.lessons.filter((l) => !isRetiredSection(l.sectionKey)),
+    quizzes: c.quizzes.filter((q) => !isRetiredSection(q.sectionKey)),
+  }));
 
-  const quizIds = courses.flatMap((c) => c.quizzes.map((q) => q.id));
-  const quizAttempts = quizIds.length
-    ? await prisma.attempt.findMany({
-        where: { userId: session.user.id, quizId: { in: quizIds } },
-        select: { quizId: true },
-      })
-    : [];
+  // Relation filter — avoids D1 100-bound-param limit on large `in:` lists.
+  const progress =
+    grade != null
+      ? await prisma.progress.findMany({
+          where: {
+            userId: user.id,
+            completed: true,
+            lesson: { course: { grade } },
+          },
+          select: { lessonId: true },
+        })
+      : [];
+  const completedSet = new Set(progress.map((p) => p.lessonId));
+
+  const quizAttempts =
+    grade != null
+      ? await prisma.attempt.findMany({
+          where: {
+            userId: user.id,
+            quiz: { course: { grade } },
+          },
+          select: { quizId: true },
+        })
+      : [];
   const attemptedQuizzes = new Set(
     quizAttempts.map((a) => a.quizId).filter(Boolean) as string[]
   );
 
-  type TodoItem =
-    | {
-        kind: "lesson";
-        href: string;
-        label: string;
-        meta: string;
-        order: number;
-        courseOrder: number;
-      }
-    | {
-        kind: "quiz";
-        href: string;
-        label: string;
-        meta: string;
-        order: number;
-        courseOrder: number;
-      };
-
+  // Cap todos: first incomplete lesson per course + unlocked section quizzes,
+  // then sort and take 12. Avoid building 200+ todo objects from every lesson.
   const todos: TodoItem[] = [];
   for (const course of courses) {
-    for (const lesson of course.lessons) {
-      if (!completedSet.has(lesson.id)) {
-        todos.push({
-          kind: "lesson",
-          href: `/courses/${course.id}/lessons/${lesson.id}`,
-          label: lesson.title,
-          meta: `${course.subject} · Lesson ${lesson.order}`,
-          order: lesson.order,
-          courseOrder: course.order,
-        });
-      }
+    const firstIncomplete = course.lessons.find((l) => !completedSet.has(l.id));
+    if (firstIncomplete) {
+      todos.push({
+        kind: "lesson",
+        href: `/courses/${course.id}/lessons/${firstIncomplete.id}`,
+        label: firstIncomplete.title,
+        meta: `${course.subject} · Lesson ${firstIncomplete.order}`,
+        order: firstIncomplete.order,
+        courseOrder: course.order,
+      });
     }
     for (const quiz of course.quizzes) {
       if (!quiz.sectionKey) continue;
@@ -148,7 +172,7 @@ export default async function StudentDashboard() {
 
   const notificationRows = await prisma.notification.findMany({
     where: {
-      userId: session.user.id,
+      userId: user.id,
       read: false,
       type: { in: ["live_session_created", "live_session_updated"] },
     },
@@ -181,17 +205,16 @@ export default async function StudentDashboard() {
     })
     .filter((notice) => grade != null && notice.targetGrade === grade);
 
+  const lessonIds = courses.flatMap((c) => c.lessons.map((l) => l.id));
   const totalLessons = lessonIds.length;
-  const done = completedSet.size;
-
-  const nav = studentDashNav(isGrade6Classroom(grade) ? "Classroom" : "Overview");
+  const done = lessonIds.filter((id) => completedSet.has(id)).length;
 
   const grade6 = isGrade6Classroom(grade);
 
   let unreadMessages = 0;
   if (grade6) {
     try {
-      const { inboxThreads } = await loadInboxForUser(session.user.id);
+      const { inboxThreads } = await loadInboxForUser(user.id);
       unreadMessages = inboxThreads.filter((t) => t.unread).length;
     } catch {
       unreadMessages = 0;
@@ -202,6 +225,77 @@ export default async function StudentDashboard() {
     .filter((n) => n.kind === "live_session_updated")
     .slice(0, 3)
     .map((n) => n.title || "Live class updated");
+
+  return {
+    active,
+    grade,
+    courses,
+    upNext,
+    todosCount: todos.length,
+    liveSessions,
+    notifications,
+    totalLessons,
+    done,
+    grade6,
+    unreadMessages,
+    todayNotes,
+    completedSet,
+  };
+}
+
+export default async function StudentDashboard() {
+  const session = await getSession();
+  if (!session?.user) redirect("/login?callbackUrl=/dashboard/student");
+  if (session.user.role !== "STUDENT" && session.user.role !== "ADMIN") {
+    redirect("/dashboard");
+  }
+
+  const navFallback = studentDashNav("Overview");
+
+  let data: Awaited<ReturnType<typeof loadStudentDashboardData>>;
+  try {
+    data = await loadStudentDashboardData({
+      id: session.user.id,
+      name: session.user.name,
+      role: session.user.role,
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    console.error("[student-dashboard]", message, err);
+    return (
+      <DashboardShell
+        title={`Welcome, ${session.user.name}`}
+        subtitle={`${brand.shortName} student dashboard`}
+        nav={navFallback}
+      >
+        <div className="rounded-xl border border-rose-200 bg-rose-50 p-5 text-sm text-rose-950">
+          <p className="font-semibold">We couldn&apos;t load your classroom just now.</p>
+          <p className="mt-2 text-rose-900">
+            Please refresh in a moment. If this keeps happening, tell a teacher or admin.
+          </p>
+          <p className="mt-3 font-mono text-xs text-rose-800/80">Detail: {message.slice(0, 240)}</p>
+        </div>
+      </DashboardShell>
+    );
+  }
+
+  const {
+    active,
+    grade,
+    courses,
+    upNext,
+    todosCount,
+    liveSessions,
+    notifications,
+    totalLessons,
+    done,
+    grade6,
+    unreadMessages,
+    todayNotes,
+    completedSet,
+  } = data;
+
+  const nav = studentDashNav(grade6 ? "Classroom" : "Overview");
 
   return (
     <DashboardShell
@@ -231,7 +325,6 @@ export default async function StudentDashboard() {
           {active.plan.name}.
         </div>
       )}
-
 
       {grade6 ? (
         <Grade6ClassroomHub
@@ -327,9 +420,9 @@ export default async function StudentDashboard() {
                 </p>
               )}
             </ul>
-            {todos.length > upNext.length && (
+            {todosCount > upNext.length && (
               <p className="mt-3 text-xs text-slate-500">
-                Showing {upNext.length} of {todos.length} open items.
+                Showing {upNext.length} of {todosCount} open items.
               </p>
             )}
           </section>
@@ -394,7 +487,6 @@ export default async function StudentDashboard() {
           </section>
         </>
       )}
-
     </DashboardShell>
   );
 }
