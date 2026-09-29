@@ -339,3 +339,19 @@ Please capture from the live Khan menus (screenshots or exported TOC) and diff a
 ---
 
 *End of study notes.*
+
+### ELA G6 — live unit spine (Prosper Prep combined year)
+
+**Courses studied:** Grade 6 Reading & Vocabulary + Grammar (live Khan menus; Prosper77 account study 2026-09-29).  
+**Prosper Prep ship:** ONE ELA year combining both into 16 units (see `grade-6-ela-year.md`). Do **not** paste Khan text.
+
+| # | Prosper Prep unit | Khan map family |
+|---|-------------------|-----------------|
+| 1 | Vocabulary Power | Vocabulary (roots, context clues) |
+| 2–3 | Key ideas (+ long passages) | Reading: Key ideas and details |
+| 4–6 | Nouns / Pronouns / Verbs | Grammar parts of speech |
+| 7–8 | Craft (+ long passages) | Reading: Craft and structure |
+| 9–11 | Modifiers / Prepositions / Sentences | Grammar modifiers → syntax |
+| 12–13 | Integration (+ long passages) | Reading: Integration of knowledge |
+| 14–16 | Punctuation / Word study / Style | Grammar conventions → usage |
+

@@ -1,0 +1,120 @@
+{
+  "courseId": "cmuh9bwsc03l8edangiqeczno",
+  "units": [
+    {
+      "n": 1,
+      "title": "Vocabulary Power",
+      "sectionKey": "unit-1",
+      "lessonCount": 7,
+      "kind": "vocab"
+    },
+    {
+      "n": 2,
+      "title": "Reading: Key Ideas and Details",
+      "sectionKey": "unit-2",
+      "lessonCount": 7,
+      "kind": "reading"
+    },
+    {
+      "n": 3,
+      "title": "Reading: Key Ideas — Long Passages",
+      "sectionKey": "unit-3",
+      "lessonCount": 6,
+      "kind": "reading-long"
+    },
+    {
+      "n": 4,
+      "title": "Grammar: Nouns",
+      "sectionKey": "unit-4",
+      "lessonCount": 6,
+      "kind": "grammar"
+    },
+    {
+      "n": 5,
+      "title": "Grammar: Pronouns",
+      "sectionKey": "unit-5",
+      "lessonCount": 6,
+      "kind": "grammar"
+    },
+    {
+      "n": 6,
+      "title": "Grammar: Verbs",
+      "sectionKey": "unit-6",
+      "lessonCount": 7,
+      "kind": "grammar"
+    },
+    {
+      "n": 7,
+      "title": "Reading: Craft and Structure",
+      "sectionKey": "unit-7",
+      "lessonCount": 7,
+      "kind": "reading"
+    },
+    {
+      "n": 8,
+      "title": "Reading: Craft — Long Passages",
+      "sectionKey": "unit-8",
+      "lessonCount": 6,
+      "kind": "reading-long"
+    },
+    {
+      "n": 9,
+      "title": "Grammar: Adjectives and Adverbs",
+      "sectionKey": "unit-9",
+      "lessonCount": 6,
+      "kind": "grammar"
+    },
+    {
+      "n": 10,
+      "title": "Grammar: Prepositions and Interjections",
+      "sectionKey": "unit-10",
+      "lessonCount": 5,
+      "kind": "grammar"
+    },
+    {
+      "n": 11,
+      "title": "Grammar: Sentences, Clauses, and Phrases",
+      "sectionKey": "unit-11",
+      "lessonCount": 7,
+      "kind": "grammar"
+    },
+    {
+      "n": 12,
+      "title": "Reading: Integration of Knowledge and Ideas",
+      "sectionKey": "unit-12",
+      "lessonCount": 7,
+      "kind": "reading"
+    },
+    {
+      "n": 13,
+      "title": "Reading: Integration — Long Passages",
+      "sectionKey": "unit-13",
+      "lessonCount": 6,
+      "kind": "reading-long"
+    },
+    {
+      "n": 14,
+      "title": "Grammar: Punctuation and Capitalization",
+      "sectionKey": "unit-14",
+      "lessonCount": 6,
+      "kind": "grammar"
+    },
+    {
+      "n": 15,
+      "title": "Grammar: Word Study",
+      "sectionKey": "unit-15",
+      "lessonCount": 6,
+      "kind": "grammar"
+    },
+    {
+      "n": 16,
+      "title": "Grammar: Style and Tone",
+      "sectionKey": "unit-16",
+      "lessonCount": 6,
+      "kind": "grammar"
+    }
+  ],
+  "lessonCount": 101,
+  "quizCount": 16,
+  "generatedAt": "2026-09-29"
+}

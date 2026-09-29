@@ -164,6 +164,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
       {g6 ? (
         <Grade6UnitAccordion
           courseId={course.id}
+          subject={course.subject}
           lessons={activeLessons.map((l) => ({
             id: l.id,
             title: l.title,

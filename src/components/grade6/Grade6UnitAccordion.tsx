@@ -28,6 +28,7 @@ export function Grade6UnitAccordion({
   completedIds,
   quizUnlocked,
   defaultOpenUnit,
+  subject,
 }: {
   courseId: string;
   lessons: LessonRow[];
@@ -35,6 +36,7 @@ export function Grade6UnitAccordion({
   completedIds: string[];
   quizUnlocked: Record<string, boolean>;
   defaultOpenUnit?: string | null;
+  subject?: string | null;
 }) {
   const done = useMemo(() => new Set(completedIds), [completedIds]);
 
@@ -70,7 +72,7 @@ export function Grade6UnitAccordion({
         const unitQuizzes = quizzes.filter((q) => q.sectionKey === sectionKey);
         const completedCount = unitLessons.filter((l) => done.has(l.id)).length;
         const isOpen = open[sectionKey] ?? false;
-        const label = grade6UnitLabel(sectionKey, units.length);
+        const label = grade6UnitLabel(sectionKey, units.length, subject);
         return (
           <div
             key={sectionKey}
