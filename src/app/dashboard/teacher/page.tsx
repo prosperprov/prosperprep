@@ -93,6 +93,7 @@ export default async function TeacherDashboard() {
       subtitle={`${brand.shortName} · ${gradeSummary}`}
       nav={[
         { href: "/dashboard/teacher", label: "Classroom" },
+        { href: "/dashboard/teacher/messages", label: "Messages" },
         { href: "/courses", label: "Catalog" },
         { href: "/dashboard/teacher#grades", label: "Grades" },
         { href: "/dashboard/teacher#account", label: "Account" },

@@ -161,6 +161,7 @@ export default async function StudentDashboard() {
       subtitle={`${brand.shortName} student dashboard`}
       nav={[
         { href: "/dashboard/student", label: "Overview" },
+        { href: "/dashboard/student/messages", label: "Messages" },
         { href: "/dashboard/student/grades", label: "Grades" },
         { href: "/dashboard/student/report-cards", label: "Report cards" },
         { href: "/courses", label: "Catalog" },

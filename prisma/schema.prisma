@@ -30,6 +30,9 @@ model User {
   teacherGrades TeacherGrade[]
   writtenSubmissions WrittenSubmission[] @relation("StudentSubmissions")
   gradedSubmissions  WrittenSubmission[] @relation("GradedByTeacher")
+  createdThreads     MessageThread[]     @relation("ThreadCreator")
+  threadMemberships  ThreadParticipant[]
+  messagesSent       Message[]
 }
 
 model ParentChild {
@@ -101,6 +104,7 @@ model Course {
   quizzes      Quiz[]
   gradeEntries GradeEntry[]
   writtenSubmissions WrittenSubmission[]
+  messageThreads     MessageThread[]
 }
 
 model Lesson {
@@ -288,4 +292,54 @@ model Notification {
   read      Boolean  @default(false)
   meta      String   @default("{}")
   createdAt DateTime @default(now())
+}
+
+/// In-app message thread: DM between two users, teacher BLAST, or classroom GROUP
+model MessageThread {
+  id          String   @id @default(cuid())
+  subject     String
+  /// DM | BLAST | GROUP
+  type        String
+  createdById String
+  courseId    String?
+  grade       Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  createdBy    User                @relation("ThreadCreator", fields: [createdById], references: [id], onDelete: Cascade)
+  course       Course?             @relation(fields: [courseId], references: [id], onDelete: SetNull)
+  participants ThreadParticipant[]
+  messages     Message[]
+
+  @@index([createdById])
+  @@index([type, grade])
+  @@index([courseId])
+}
+
+model ThreadParticipant {
+  id         String    @id @default(cuid())
+  threadId   String
+  userId     String
+  lastReadAt DateTime?
+  joinedAt   DateTime  @default(now())
+
+  thread MessageThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  user   User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([threadId, userId])
+  @@index([userId])
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  threadId  String
+  senderId  String
+  body      String
+  createdAt DateTime @default(now())
+
+  thread MessageThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  sender User          @relation(fields: [senderId], references: [id], onDelete: Cascade)
+
+  @@index([threadId, createdAt])
+  @@index([senderId])
 }
