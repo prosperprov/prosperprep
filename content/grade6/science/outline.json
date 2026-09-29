@@ -1,0 +1,68 @@
+{
+  "courseId": "cmuh9bwv803vyedanwfbbyd4j",
+  "units": [
+    {
+      "n": 1,
+      "title": "Properties of Matter",
+      "sectionKey": "unit-1",
+      "lessonCount": 9
+    },
+    {
+      "n": 2,
+      "title": "Elements and Chemical Changes",
+      "sectionKey": "unit-2",
+      "lessonCount": 8
+    },
+    {
+      "n": 3,
+      "title": "Forces",
+      "sectionKey": "unit-3",
+      "lessonCount": 9
+    },
+    {
+      "n": 4,
+      "title": "Energy",
+      "sectionKey": "unit-4",
+      "lessonCount": 8
+    },
+    {
+      "n": 5,
+      "title": "Earth-Sun-Moon System",
+      "sectionKey": "unit-5",
+      "lessonCount": 8
+    },
+    {
+      "n": 6,
+      "title": "Earth’s Systems and Structure",
+      "sectionKey": "unit-6",
+      "lessonCount": 8
+    },
+    {
+      "n": 7,
+      "title": "Managing and Protecting Natural Resources",
+      "sectionKey": "unit-7",
+      "lessonCount": 7
+    },
+    {
+      "n": 8,
+      "title": "Interactions in Ecosystems",
+      "sectionKey": "unit-8",
+      "lessonCount": 8
+    },
+    {
+      "n": 9,
+      "title": "Cells and Organisms",
+      "sectionKey": "unit-9",
+      "lessonCount": 8
+    },
+    {
+      "n": 10,
+      "title": "Traits and the Environment",
+      "sectionKey": "unit-10",
+      "lessonCount": 8
+    }
+  ],
+  "lessonCount": 81,
+  "quizCount": 10,
+  "generatedAt": "2026-09-29"
+}

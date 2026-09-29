@@ -158,6 +158,34 @@ const G6_ELA_UNITS: Record<string, string> = {
   "unit-16": "Grammar: Style and Tone",
 };
 
+
+/** Map sectionKey unit-N → display title (Science). */
+const G6_SCIENCE_UNITS: Record<string, string> = {
+  "unit-1": "Properties of Matter",
+  "unit-2": "Elements and Chemical Changes",
+  "unit-3": "Forces",
+  "unit-4": "Energy",
+  "unit-5": "Earth-Sun-Moon System",
+  "unit-6": "Earth's Systems and Structure",
+  "unit-7": "Managing and Protecting Natural Resources",
+  "unit-8": "Interactions in Ecosystems",
+  "unit-9": "Cells and Organisms",
+  "unit-10": "Traits and the Environment",
+};
+
+/** Map sectionKey unit-N → display title (World History). */
+const G6_HISTORY_UNITS: Record<string, string> = {
+  "unit-1": "Maps and Geographic Thinking",
+  "unit-2": "Early Humans and Farming",
+  "unit-3": "River Civilizations",
+  "unit-4": "Classical Empires and Belief Systems",
+  "unit-5": "Medieval Networks",
+  "unit-6": "Exploration and the First Global Age",
+  "unit-7": "Revolutions and Industry",
+  "unit-8": "Texas and American Turning Points",
+  "unit-9": "Global Connections Today",
+};
+
 function unitTitleMapForSubject(subject?: string | null): Record<string, string> {
   if (!subject) return G6_MATH_UNITS;
   const s = subject.toLowerCase();
@@ -165,6 +193,12 @@ function unitTitleMapForSubject(subject?: string | null): Record<string, string>
     return G6_ELA_UNITS;
   }
   if (s.includes("math")) return G6_MATH_UNITS;
+  if (s.includes("science") || s.includes("life") || s.includes("earth")) {
+    return G6_SCIENCE_UNITS;
+  }
+  if (s.includes("history") || s.includes("social") || s.includes("world")) {
+    return G6_HISTORY_UNITS;
+  }
   return G6_MATH_UNITS;
 }
 

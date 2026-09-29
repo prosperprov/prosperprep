@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { brand, brandAssets } from "@/config/brand";
 import { getSession } from "@/lib/auth";
+import { countUnreadForUser } from "@/lib/messageInbox";
 import { SignOutButton } from "./SignOutButton";
 import { MobileNav } from "./MobileNav";
+import { StudentMobileDock } from "./StudentMobileDock";
 
 export async function Nav() {
   const session = await getSession();
@@ -18,11 +20,31 @@ export async function Nav() {
             ? "/dashboard/student"
             : null;
 
+  const isStudent = role === "STUDENT";
+  let unreadMessages = 0;
+  if (isStudent && session?.user?.id) {
+    try {
+      unreadMessages = await countUnreadForUser(session.user.id);
+    } catch {
+      unreadMessages = 0;
+    }
+  }
+
   const links = [
     { href: "/courses", label: "Courses" },
     { href: "/pricing", label: "Pricing" },
     ...(dash ? [{ href: dash, label: "Dashboard" }] : []),
+    ...(isStudent
+      ? [{ href: "/dashboard/student/messages", label: "Messages" }]
+      : []),
   ];
+
+  const messagesBadge =
+    isStudent && unreadMessages > 0 ? (
+      <span className="ml-1 inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[10px] font-bold leading-none text-white">
+        {unreadMessages > 9 ? "9+" : unreadMessages}
+      </span>
+    ) : null;
 
   const authDesktop = session ? (
     <>
@@ -68,33 +90,55 @@ export async function Nav() {
     </div>
   );
 
+  const mobileLinks = links.map((l) =>
+    l.label === "Messages" && unreadMessages > 0
+      ? {
+          ...l,
+          label: `Messages (${unreadMessages > 9 ? "9+" : unreadMessages})`,
+        }
+      : l
+  );
+
   return (
-    <header className="relative sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="flex items-center gap-2 font-semibold text-slate-900">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={brandAssets.mark}
-            alt=""
-            className="h-9 w-9 rounded-full object-contain bg-black"
-          />
-          <span className="leading-tight">
-            {brand.shortName}
-            <span className="block text-[10px] font-normal uppercase tracking-wider text-emerald-800">
-              {brand.tagline}
+    <>
+      <header className="relative sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+          <Link href="/" className="flex items-center gap-2 font-semibold text-slate-900">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={brandAssets.mark}
+              alt=""
+              className="h-9 w-9 rounded-full object-contain bg-black"
+            />
+            <span className="leading-tight">
+              {brand.shortName}
+              <span className="block text-[10px] font-normal uppercase tracking-wider text-emerald-800">
+                {brand.tagline}
+              </span>
             </span>
-          </span>
-        </Link>
-        <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-          {links.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:text-emerald-800">
-              {l.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="hidden items-center gap-2 text-sm md:flex">{authDesktop}</div>
-        <MobileNav links={links} authSlot={authMobile} />
-      </div>
-    </header>
+          </Link>
+          <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="inline-flex items-center hover:text-emerald-800"
+              >
+                {l.label}
+                {l.label === "Messages" ? messagesBadge : null}
+              </Link>
+            ))}
+          </nav>
+          <div className="hidden items-center gap-2 text-sm md:flex">{authDesktop}</div>
+          <MobileNav links={mobileLinks} authSlot={authMobile} />
+        </div>
+      </header>
+      {isStudent && dash ? (
+        <>
+          <StudentMobileDock dashboardHref={dash} unreadCount={unreadMessages} />
+          <div className="h-16 md:hidden" aria-hidden />
+        </>
+      ) : null}
+    </>
   );
 }

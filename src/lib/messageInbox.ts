@@ -174,3 +174,39 @@ export async function loadDirectoryForUser(
 
   return { students: [], teachers: [], classmates: [] };
 }
+
+/** Lightweight unread thread count for nav badges (same rules as loadInboxForUser). */
+export async function countUnreadForUser(userId: string): Promise<number> {
+  const memberships = await prisma.threadParticipant.findMany({
+    where: { userId },
+    select: { threadId: true, lastReadAt: true },
+  });
+  if (memberships.length === 0) return 0;
+
+  const lastReadMap = new Map(
+    memberships.map((m) => [m.threadId, m.lastReadAt?.getTime() ?? 0])
+  );
+  const threadIds = memberships.map((m) => m.threadId);
+
+  const threads = await prisma.messageThread.findMany({
+    where: { id: { in: threadIds } },
+    select: {
+      id: true,
+      messages: {
+        orderBy: { createdAt: "desc" },
+        take: 1,
+        select: { senderId: true, createdAt: true },
+      },
+    },
+  });
+
+  let unread = 0;
+  for (const t of threads) {
+    const last = t.messages[0];
+    if (!last) continue;
+    if (last.senderId === userId) continue;
+    const lastRead = lastReadMap.get(t.id) ?? 0;
+    if (last.createdAt.getTime() > lastRead) unread += 1;
+  }
+  return unread;
+}
