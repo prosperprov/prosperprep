@@ -16,8 +16,34 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
   const course = await prisma.course.findUnique({
     where: { id: params.id },
     include: {
-      lessons: { orderBy: { order: "asc" } },
-      quizzes: { orderBy: { order: "asc" }, include: { questions: { select: { id: true } } } },
+      lessons: {
+        where: { NOT: { sectionKey: { startsWith: "retired" } } },
+        orderBy: { order: "asc" },
+        select: {
+          id: true,
+          title: true,
+          description: true,
+          order: true,
+          durationMin: true,
+          sectionKey: true,
+        },
+      },
+      quizzes: {
+        where: {
+          OR: [
+            { sectionKey: null },
+            { NOT: { sectionKey: { startsWith: "retired" } } },
+          ],
+        },
+        orderBy: { order: "asc" },
+        select: {
+          id: true,
+          title: true,
+          order: true,
+          sectionKey: true,
+          _count: { select: { questions: true } },
+        },
+      },
       sessions: {
         where: { scheduledAt: { gte: new Date() } },
         orderBy: { scheduledAt: "asc" },
@@ -179,7 +205,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
               id: q.id,
               title: q.title,
               sectionKey: q.sectionKey,
-              questionCount: q.questions.length,
+              questionCount: q._count.questions,
             }))}
           completedIds={Array.from(completedIds)}
           quizUnlocked={quizUnlockedRecord}
@@ -261,7 +287,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
                         {quiz.title}
                       </p>
                       <p className="mt-1 text-sm text-emerald-900">
-                        {quiz.questions.length} questions · unlocked · section weight{" "}
+                        {quiz._count.questions} questions · unlocked · section weight{" "}
                         {Math.round(SECTION_WEIGHT * 100)}%
                       </p>
                       {g6 && (
@@ -280,7 +306,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
                     >
                       <p className="font-semibold text-slate-800">{quiz.title} · locked</p>
                       <p className="mt-1">
-                        Complete all lessons in this section to unlock ({quiz.questions.length}{" "}
+                        Complete all lessons in this section to unlock ({quiz._count.questions}{" "}
                         questions).
                       </p>
                     </div>
@@ -323,7 +349,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
                           {quiz.title}
                         </p>
                         <p className="mt-1 text-sm text-indigo-900">
-                          {quiz.questions.length} questions · diagnostic / practice
+                          {quiz._count.questions} questions · diagnostic / practice
                         </p>
                       </Link>
                     ) : (

@@ -20,7 +20,15 @@ export default async function SectionQuizPage({
     where: { id: params.quizId },
     include: {
       questions: { orderBy: { order: "asc" } },
-      course: { include: { lessons: { orderBy: { order: "asc" } } } },
+      course: {
+        include: {
+          lessons: {
+            where: { NOT: { sectionKey: { startsWith: "retired" } } },
+            orderBy: { order: "asc" },
+            select: { id: true, sectionKey: true, order: true, title: true },
+          },
+        },
+      },
     },
   });
   if (!quiz || quiz.courseId !== params.id) notFound();

@@ -35,9 +35,28 @@ export default async function StudentDashboard() {
           where: { grade },
           orderBy: { order: "asc" },
           include: {
-            lessons: { orderBy: { order: "asc" } },
-            quizzes: { orderBy: { order: "asc" } },
-            _count: { select: { lessons: true } },
+            lessons: {
+              where: { NOT: { sectionKey: { startsWith: "retired" } } },
+              orderBy: { order: "asc" },
+              select: {
+                id: true,
+                title: true,
+                order: true,
+                sectionKey: true,
+                durationMin: true,
+                courseId: true,
+              },
+            },
+            quizzes: {
+              where: { NOT: { sectionKey: { startsWith: "retired" } } },
+              orderBy: { order: "asc" },
+              select: {
+                id: true,
+                title: true,
+                order: true,
+                sectionKey: true,
+              },
+            },
           },
         })
       : [];
@@ -232,7 +251,7 @@ export default async function StudentDashboard() {
             subject: course.subject,
             title: course.title,
             done: course.lessons.filter((l) => completedSet.has(l.id)).length,
-            total: course._count.lessons,
+            total: course.lessons.length,
           }))}
           liveSessions={liveSessions.map((s) => {
             const msUntil = s.scheduledAt.getTime() - Date.now();
@@ -329,7 +348,7 @@ export default async function StudentDashboard() {
                     <p className="text-xs text-emerald-800">{course.subject}</p>
                     <p className="font-semibold text-slate-900">{course.title}</p>
                     <p className="mt-2 text-xs text-slate-500">
-                      {doneCount}/{course._count.lessons} lessons marked complete
+                      {doneCount}/{course.lessons.length} lessons marked complete
                     </p>
                   </Link>
                 );

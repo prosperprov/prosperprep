@@ -44,8 +44,31 @@ export default async function LessonPage({
   const course = await prisma.course.findUnique({
     where: { id: params.id },
     include: {
-      lessons: { orderBy: { order: "asc" } },
-      quizzes: { orderBy: { order: "asc" } },
+      lessons: {
+        where: { NOT: { sectionKey: { startsWith: "retired" } } },
+        orderBy: { order: "asc" },
+        select: {
+          id: true,
+          title: true,
+          order: true,
+          sectionKey: true,
+        },
+      },
+      quizzes: {
+        where: {
+          OR: [
+            { sectionKey: null },
+            { NOT: { sectionKey: { startsWith: "retired" } } },
+          ],
+        },
+        orderBy: { order: "asc" },
+        select: {
+          id: true,
+          title: true,
+          order: true,
+          sectionKey: true,
+        },
+      },
     },
   });
   if (!course) notFound();
