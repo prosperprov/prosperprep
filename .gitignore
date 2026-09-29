@@ -47,3 +47,6 @@ prisma/dev.db-journal
 *.db-*
 .data/
 demo-shots/
+
+# Generated SQL fragments (assembled into migrations/0007)
+scripts/generated/

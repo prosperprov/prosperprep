@@ -1,6 +1,6 @@
 /**
- * Generate Grade 6 Math full-year content (11 units) + D1 migration SQL.
- * Original Prosper Prep prose; scope aligned to OUR/IM (CC BY) + Khan unit map.
+ * Generate Grade 6 Math full-year content (11 units) + content UPDATE migration.
+ * Prosper Prep teaching text — no competitor attribution in student-facing bodies.
  * Run: node scripts/gen-grade6-math-year.mjs
  */
 import { writeFileSync, mkdirSync } from "node:fs";
@@ -56,13 +56,11 @@ function rotChoices(correct, wrong, seed) {
   return { choices, correctIndex: choices.indexOf(correct) };
 }
 
-/** Full-year outline: Khan unit titles 1–11, OUR/IM-aligned skill progression. */
+/** Full-year outline: 11 units, Grade 6 skill progression. */
 const UNITS = [
   {
     n: 1,
     title: "Ratios",
-    khanNote: "Khan Unit 1 · Ratios",
-    ourNote: "Aligns with OUR/IM Grade 6 Introducing Ratios (CC BY 4.0 scope)",
     lessons: [
       ["What Is a Ratio?", "Compare two quantities with order that matters; write a:b, a to b, and a/b."],
       ["Equivalent Ratios", "Scale ratios up and down; recognize equivalent ratios in tables."],
@@ -79,8 +77,6 @@ const UNITS = [
   {
     n: 2,
     title: "Arithmetic with Rational Numbers",
-    khanNote: "Khan Unit 2 · Arithmetic with rational numbers",
-    ourNote: "Aligns with fraction/decimal arithmetic fluency goals in OUR/IM Grade 6",
     lessons: [
       ["Fraction Sense Refresh", "Review fraction meaning, equivalence, and benchmarks on a number line."],
       ["Adding and Subtracting Fractions", "Add/subtract with like and unlike denominators; estimate first."],
@@ -97,8 +93,6 @@ const UNITS = [
   {
     n: 3,
     title: "Rates and Percentages",
-    khanNote: "Khan Unit 3 · Rates and percentages",
-    ourNote: "Aligns with OUR/IM Unit Rates and Percentages (CC BY 4.0 scope)",
     lessons: [
       ["Unit Rates", "Find 'how many per one' and use unit rates to compare options."],
       ["Speed, Price, and Work Rates", "Apply unit rates to speed, unit price, and work contexts."],
@@ -115,8 +109,6 @@ const UNITS = [
   {
     n: 4,
     title: "Exponents and Order of Operations",
-    khanNote: "Khan Unit 4 · Exponents and order of operations",
-    ourNote: "Grade 6 numerical expressions / exponents readiness",
     lessons: [
       ["Powers as Repeated Multiplication", "Interpret a^n as n factors of a for whole-number exponents."],
       ["Evaluating Powers", "Evaluate numerical powers and compare sizes."],
@@ -131,8 +123,6 @@ const UNITS = [
   {
     n: 5,
     title: "Negative Numbers",
-    khanNote: "Khan Unit 5 · Negative numbers",
-    ourNote: "Aligns with OUR/IM Rational Numbers introductions (CC BY 4.0 scope)",
     lessons: [
       ["Integers on the Number Line", "Plot integers; interpret left/right of zero."],
       ["Opposites and Absolute Value", "Define opposite and absolute value as distance from zero."],
@@ -149,8 +139,6 @@ const UNITS = [
   {
     n: 6,
     title: "Variables & Expressions",
-    khanNote: "Khan Unit 6 · Variables & expressions",
-    ourNote: "Aligns with OUR/IM Expressions and Equations (expressions focus)",
     lessons: [
       ["What Is a Variable?", "Use letters to stand for numbers that can change."],
       ["Writing Algebraic Expressions", "Translate verbal phrases into expressions."],
@@ -167,8 +155,6 @@ const UNITS = [
   {
     n: 7,
     title: "Equations & Inequalities",
-    khanNote: "Khan Unit 7 · Equations & inequalities",
-    ourNote: "Aligns with OUR/IM one-step equations and inequality introductions",
     lessons: [
       ["Equations vs Expressions", "Distinguish equations (balance) from expressions."],
       ["One-Step Addition and Subtraction Equations", "Solve with inverse operations; check solutions."],
@@ -185,8 +171,6 @@ const UNITS = [
   {
     n: 8,
     title: "Plane Figures",
-    khanNote: "Khan Unit 8 · Plane figures",
-    ourNote: "Aligns with Grade 6 area of triangles/polygons (OUR Unit 1 geometry themes)",
     lessons: [
       ["Area Meaning and Square Units", "Define area as covering; choose correct square units."],
       ["Area of Rectangles and Parallelograms", "Use base × height with perpendicular height."],
@@ -201,8 +185,6 @@ const UNITS = [
   {
     n: 9,
     title: "Coordinate Plane",
-    khanNote: "Khan Unit 9 · Coordinate plane",
-    ourNote: "Grade 6 coordinate plane in all four quadrants",
     lessons: [
       ["Axes, Origin, and Ordered Pairs", "Plot (x,y) and read coordinates accurately."],
       ["Four Quadrants", "Identify quadrants and signs of coordinates."],
@@ -217,8 +199,6 @@ const UNITS = [
   {
     n: 10,
     title: "3D Figures",
-    khanNote: "Khan Unit 10 · 3D figures",
-    ourNote: "Aligns with surface area nets and volume of rectangular prisms",
     lessons: [
       ["Prisms and Pyramids Overview", "Name 3D figures; count faces, edges, vertices."],
       ["Nets of Rectangular Prisms", "Match nets to solids; sketch valid nets."],
@@ -233,8 +213,6 @@ const UNITS = [
   {
     n: 11,
     title: "Data and Statistics",
-    khanNote: "Khan Unit 11 · Data and statistics",
-    ourNote: "Aligns with OUR/IM Data Sets and Distributions (CC BY 4.0 scope)",
     lessons: [
       ["Statistical Questions", "Distinguish questions that anticipate variability."],
       ["Collecting and Organizing Data", "Use tables and tallies; discuss fair samples at intro level."],
@@ -328,8 +306,6 @@ function buildLessonBody(unit, lessonTitle, lessonDesc, orderInUnit, globalOrder
   parts.push("");
   parts.push(`*Grade 6 Mathematics · ${unitLabel} · Lesson ${orderInUnit}*`);
   parts.push("");
-  parts.push(`*Prosper Prep original teaching text. ${unit.ourNote}. ${unit.khanNote} is a coverage map only — wording, examples, and practice are original. Do not treat this as Khan Academy content.*`);
-  parts.push("");
   parts.push(`## Objective`);
   parts.push("");
   parts.push(`**I can** ${lessonDesc.charAt(0).toLowerCase()}${lessonDesc.slice(1)}`);
@@ -353,7 +329,7 @@ function buildLessonBody(unit, lessonTitle, lessonDesc, orderInUnit, globalOrder
   parts.push(`### Why it matters`);
   parts.push("");
   parts.push(
-    `Families use these ideas when comparing prices, reading sports stats, planning travel time, scaling recipes, or tracking fundraising goals. At Prosper Prep we also connect careful quantitative reasoning to scholarship habits: check units, estimate first, and explain your thinking so a teacher (or future you) can follow it.`
+    `Families use these ideas when comparing prices, reading sports stats, planning travel time, scaling recipes, or tracking fundraising goals. Connect careful quantitative reasoning to scholarship habits: check units, estimate first, and explain your thinking so a teacher (or future you) can follow it.`
   );
   parts.push("");
   parts.push(`### Language bank`);
@@ -467,19 +443,6 @@ function buildLessonBody(unit, lessonTitle, lessonDesc, orderInUnit, globalOrder
     `Write a short CER paragraph (4–6 sentences) arguing that a clear representation improves trust in an answer for “${lessonTitle}.” Use one concrete numeric example with ${n.a} and ${n.b}. Then invent a harder variant that would challenge a classmate who already finished the independent set.`
   );
   parts.push("");
-  parts.push(`## Extra practice (optional, free)`);
-  parts.push("");
-  parts.push(
-    `For additional free practice aligned to this topic family, families may use Khan Academy’s Grade 6 Math course (Unit: ${unit.title}) at https://www.khanacademy.org/math/cc-sixth-grade-math — **free at Khan Academy**. Prosper Prep lessons are original; Khan is an optional enrichment link, not a content source we copy.`
-  );
-  parts.push("");
-  parts.push(`## Source note`);
-  parts.push("");
-  parts.push(
-    `Original Prosper Prep instruction. Conceptual scope aligned with Open Up Resources / Illustrative Mathematics Grade 6 (CC BY 4.0) and the publicly observed Khan Grade 6 unit map for family-familiar sequencing. No Khan text or video is reproduced here.`
-  );
-  parts.push("");
-
   return parts.join("\n");
 }
 
@@ -660,7 +623,7 @@ function tsString(s) {
 let ts = `/**
  * Auto-generated Grade 6 Math year path (Units 1–11).
  * Regenerate: node scripts/gen-grade6-math-year.mjs
- * Original Prosper Prep lesson bodies; OUR/IM-aligned scope (CC BY).
+ * Prosper Prep Grade 6 Math lesson bodies (no third-party attribution in student text).
  */
 import type { LessonSeed } from "../curriculum";
 import type { QuestionSeed } from "../assessments";
@@ -757,66 +720,22 @@ export function grade6MathUnitLabel(sectionKey: string): string | null {
 
 writeFileSync("prisma/grade6-math/year.ts", ts);
 
-// ——— Migration SQL ———
+// ——— Content UPDATE fragment (do not overwrite applied 0005) ———
 const sql = [];
-sql.push("-- Grade 6 Math full-year path (11 units). Generated by scripts/gen-grade6-math-year.mjs");
-sql.push("-- Safe for production D1: does NOT wipe users/enrollments. Do NOT run db:setup.");
-sql.push("-- Retires old 9 math stubs + old section quizzes; INSERTs year lessons + unit checks.");
+sql.push("-- Grade 6 Math year: strip attribution / clean lesson bodies. Generated by scripts/gen-grade6-math-year.mjs");
+sql.push("-- UPDATE content + course description only. Do NOT run db:setup.");
 sql.push("");
-sql.push(`UPDATE "Course" SET "title" = 'Mathematics · Grade 6', "description" = '${esc(
-  "Full-year Grade 6 Mathematics at Prosper Preparatory: 11 units (Ratios through Data and statistics), original Prosper Prep lessons with practice and unit checks. Lesson checks = 40%; unit checks = 60%. Latest attempt counts. Scope aligned with OUR/IM (CC BY) and family-familiar Grade 6 topic sequencing."
+sql.push(`UPDATE "Course" SET "description" = '${esc(
+  "Full-year Grade 6 Mathematics at Prosper Preparatory: 11 units (Ratios through Data and statistics), with practice and unit checks. Lesson checks = 40%; unit checks = 60%. Latest attempt counts."
 )}' WHERE "id" = '${COURSE_ID}';`);
 sql.push("");
-
-// Retire old stubs
-let retireOrder = 900;
-for (const id of OLD_STUBS) {
-  sql.push(
-    `UPDATE "Lesson" SET "sectionKey" = 'retired', "order" = ${retireOrder}, "title" = '[Archived stub] ' || "title", "description" = 'Archived — replaced by full-year Grade 6 Math path.' WHERE "id" = '${id}' AND "courseId" = '${COURSE_ID}' AND "sectionKey" != 'retired';`
-  );
-  retireOrder += 1;
-}
-sql.push("");
-
-// Remove questions tied to old section quizzes, then quizzes
-for (const qid of OLD_QUIZZES) {
-  sql.push(`DELETE FROM "Question" WHERE "quizId" = '${qid}';`);
-  sql.push(`DELETE FROM "Attempt" WHERE "quizId" = '${qid}';`);
-  sql.push(`DELETE FROM "Quiz" WHERE "id" = '${qid}';`);
-}
-sql.push("");
-
-// Insert lessons (OR IGNORE / use INSERT OR REPLACE pattern for SQLite/D1)
 for (const L of allLessons) {
   sql.push(
-    `INSERT INTO "Lesson" ("id","courseId","title","description","content","objectives","order","durationMin","sectionKey","videoUrl") VALUES ('${L.id}','${COURSE_ID}','${esc(L.title)}','${esc(L.description)}','${esc(L.content)}','${esc(L.objectives)}',${L.order},${L.durationMin},'${L.sectionKey}',NULL) ON CONFLICT("id") DO UPDATE SET "title"=excluded."title","description"=excluded."description","content"=excluded."content","objectives"=excluded."objectives","order"=excluded."order","durationMin"=excluded."durationMin","sectionKey"=excluded."sectionKey","courseId"=excluded."courseId";`
+    `UPDATE "Lesson" SET "content" = '${esc(L.content)}', "description" = '${esc(L.description)}', "objectives" = '${esc(L.objectives)}', "title" = '${esc(L.title)}' WHERE "id" = '${L.id}';`
   );
-  // Replace lesson questions: delete prior for this lesson id then insert
-  sql.push(`DELETE FROM "Question" WHERE "lessonId" = '${L.id}';`);
-  for (const q of L.questions) {
-    const qid = stableId(`q-${L.id}-${q.order}`);
-    sql.push(
-      `INSERT INTO "Question" ("id","lessonId","quizId","type","prompt","choices","correctIndex","explanation","points","order") VALUES ('${qid}','${L.id}',NULL,'MULTIPLE_CHOICE','${esc(q.prompt)}','${esc(JSON.stringify(q.choices))}',${q.correctIndex},'${esc(q.explanation)}',1,${q.order}) ON CONFLICT("id") DO UPDATE SET "prompt"=excluded."prompt","choices"=excluded."choices","correctIndex"=excluded."correctIndex","explanation"=excluded."explanation","points"=excluded."points","order"=excluded."order","lessonId"=excluded."lessonId","quizId"=excluded."quizId";`
-    );
-  }
-  sql.push("");
 }
-
-for (const Q of unitQuizzes) {
-  sql.push(
-    `INSERT INTO "Quiz" ("id","courseId","title","description","order","sectionKey") VALUES ('${Q.id}','${COURSE_ID}','${esc(Q.title)}','${esc(Q.description)}',${Q.order},'${Q.sectionKey}') ON CONFLICT("id") DO UPDATE SET "title"=excluded."title","description"=excluded."description","order"=excluded."order","sectionKey"=excluded."sectionKey","courseId"=excluded."courseId";`
-  );
-  sql.push(`DELETE FROM "Question" WHERE "quizId" = '${Q.id}';`);
-  for (const q of Q.questions) {
-    const qid = stableId(`qq-${Q.id}-${q.order}`);
-    sql.push(
-      `INSERT INTO "Question" ("id","lessonId","quizId","type","prompt","choices","correctIndex","explanation","points","order") VALUES ('${qid}',NULL,'${Q.id}','MULTIPLE_CHOICE','${esc(q.prompt)}','${esc(JSON.stringify(q.choices))}',${q.correctIndex},'${esc(q.explanation)}',1,${q.order}) ON CONFLICT("id") DO UPDATE SET "prompt"=excluded."prompt","choices"=excluded."choices","correctIndex"=excluded."correctIndex","explanation"=excluded."explanation","points"=excluded."points","order"=excluded."order","lessonId"=excluded."lessonId","quizId"=excluded."quizId";`
-    );
-  }
-  sql.push("");
-}
-
-writeFileSync("migrations/0005_grade6_math_year.sql", sql.join("\n"));
+mkdirSync("scripts/generated", { recursive: true });
+writeFileSync("scripts/generated/_fragment_grade6_math_content_update.sql", sql.join("\n"));
 
 // Stats
 const avgLen =

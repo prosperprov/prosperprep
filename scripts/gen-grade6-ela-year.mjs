@@ -1,7 +1,7 @@
 /**
- * Generate Grade 6 ELA full-year content (16 units) + D1 migration SQL.
+ * Generate Grade 6 ELA full-year content (16 units) + content UPDATE migration.
  * Combines Reading & Vocabulary + Grammar into one Prosper Prep year path.
- * Original PP prose; CKLA G6-aligned topics with attribution notes; Khan = coverage map only.
+ * No competitor attribution or "original" self-branding in student-facing bodies.
  * Run: node scripts/gen-grade6-ela-year.mjs
  */
 import { writeFileSync, mkdirSync } from "node:fs";
@@ -57,14 +57,12 @@ function rotChoices(correct, wrong, seed) {
   return { choices, correctIndex: choices.indexOf(correct) };
 }
 
-/** Full-year outline: Reading+Vocab + Grammar spine (Khan map → PP brand titles). */
+/** Full-year outline: Reading+Vocab + Grammar spine. */
 const UNITS = [
   {
     n: 1,
     title: "Vocabulary Power",
     kind: "vocab",
-    cklaNote: "Topic affinity with Core Knowledge Language Arts Grade 6 vocabulary / morphology goals (attribution: CKLA free materials — Prosper Prep writes original instruction)",
-    khanNote: "Khan G6 Reading & Vocabulary · Vocabulary (roots, context clues)",
     lessons: [
       ["What Context Clues Do", "Use surrounding words to infer meaning of unfamiliar vocabulary."],
       ["Definition and Restatement Clues", "Spot definition, restatement, and synonym clues in sentences."],
@@ -79,8 +77,6 @@ const UNITS = [
     n: 2,
     title: "Reading: Key Ideas and Details",
     kind: "reading",
-    cklaNote: "Aligned to CKLA Grade 6 close-reading habits: main idea, supporting detail, evidence (original PP passages)",
-    khanNote: "Khan G6 Reading · Key ideas and details",
     lessons: [
       ["Topic vs Main Idea", "Distinguish a topic label from a complete main-idea statement."],
       ["Supporting Details That Matter", "Select details that actually support the main idea."],
@@ -95,8 +91,6 @@ const UNITS = [
     n: 3,
     title: "Reading: Key Ideas — Long Passages",
     kind: "reading-long",
-    cklaNote: "Extended practice mirroring CKLA multi-paragraph reading stamina (original PP passages)",
-    khanNote: "Khan G6 Reading · Key ideas — long passage practice",
     lessons: [
       ["Stamina Strategies for Long Text", "Chunk, annotate, and track main ideas across paragraphs."],
       ["Tracking Multiple Characters", "Keep who-did-what straight across a longer narrative."],
@@ -110,8 +104,6 @@ const UNITS = [
     n: 4,
     title: "Grammar: Nouns",
     kind: "grammar",
-    cklaNote: "Grade 6 language standards — nouns; original PP instruction (not Khan grammar text)",
-    khanNote: "Khan Grammar · Nouns",
     lessons: [
       ["Common and Proper Nouns", "Capitalize proper nouns; keep common nouns clear and specific."],
       ["Concrete and Abstract Nouns", "Recognize ideas and qualities as nouns you can still name."],
@@ -125,8 +117,6 @@ const UNITS = [
     n: 5,
     title: "Grammar: Pronouns",
     kind: "grammar",
-    cklaNote: "Grade 6 pronoun clarity and agreement; original PP instruction",
-    khanNote: "Khan Grammar · Pronouns",
     lessons: [
       ["Subject and Object Pronouns", "Choose I/me, we/us, he/him correctly in sentences."],
       ["Possessive Pronouns vs Contractions", "Keep its/it's, your/you're, their/they're straight."],
@@ -140,8 +130,6 @@ const UNITS = [
     n: 6,
     title: "Grammar: Verbs",
     kind: "grammar",
-    cklaNote: "Grade 6 verb tense, agreement, and voice awareness; original PP instruction",
-    khanNote: "Khan Grammar · Verbs",
     lessons: [
       ["Action vs Linking Verbs", "Identify what the verb is doing — action or linking."],
       ["Simple Verb Tenses", "Use past, present, and future tense consistently."],
@@ -156,8 +144,6 @@ const UNITS = [
     n: 7,
     title: "Reading: Craft and Structure",
     kind: "reading",
-    cklaNote: "CKLA-aligned craft: word choice, structure, point of view (original PP texts)",
-    khanNote: "Khan G6 Reading · Craft and structure",
     lessons: [
       ["Word Choice and Connotation", "Explain how a word's feeling changes a sentence's tone."],
       ["Figurative Language That Works", "Interpret simile, metaphor, and personification in context."],
@@ -172,11 +158,9 @@ const UNITS = [
     n: 8,
     title: "Reading: Craft — Long Passages",
     kind: "reading-long",
-    cklaNote: "Extended craft analysis practice with original multi-paragraph PP passages",
-    khanNote: "Khan G6 Reading · Craft and structure — long passages",
     lessons: [
       ["Annotating Craft Across Pages", "Track diction, structure, and POV through a longer text."],
-      ["Poetry Craft Close Read", "Analyze imagery and sound devices in an original short poem."],
+      ["Poetry Craft Close Read", "Analyze imagery and sound devices in a short poem."],
       ["Speech Excerpt: Purpose and Tone", "Explain how craft supports purpose in a speech-like text."],
       ["Narrative Craft Case Study", "Trace how flashback or foreshadowing shapes meaning."],
       ["Structure Map of a Feature Article", "Map sections and justify the author's organization."],
@@ -187,8 +171,6 @@ const UNITS = [
     n: 9,
     title: "Grammar: Adjectives and Adverbs",
     kind: "grammar",
-    cklaNote: "Grade 6 modifiers; original PP instruction",
-    khanNote: "Khan Grammar · Adjectives and adverbs",
     lessons: [
       ["What Adjectives Modify", "Place adjectives clearly to describe nouns and pronouns."],
       ["What Adverbs Modify", "Use adverbs for verbs, adjectives, and other adverbs."],
@@ -202,8 +184,6 @@ const UNITS = [
     n: 10,
     title: "Grammar: Prepositions and Interjections",
     kind: "grammar",
-    cklaNote: "Grade 6 prepositional phrases and interjections; original PP instruction",
-    khanNote: "Khan Grammar · Prepositions and interjections",
     lessons: [
       ["Prepositions and Their Objects", "Identify prepositions and the objects they connect."],
       ["Prepositional Phrases as Modifiers", "See how phrases act like adjectives or adverbs."],
@@ -216,8 +196,6 @@ const UNITS = [
     n: 11,
     title: "Grammar: Sentences, Clauses, and Phrases",
     kind: "grammar",
-    cklaNote: "Grade 6 sentence structure — fragments, run-ons, clauses; original PP instruction",
-    khanNote: "Khan Grammar · Sentences, clauses, and phrases",
     lessons: [
       ["Subjects and Predicates", "Find complete subjects and predicates in sentences."],
       ["Independent vs Dependent Clauses", "Label clauses and explain what each can do alone."],
@@ -232,8 +210,6 @@ const UNITS = [
     n: 12,
     title: "Reading: Integration of Knowledge and Ideas",
     kind: "reading",
-    cklaNote: "CKLA-aligned integration: compare texts, evaluate arguments, media literacy (original PP)",
-    khanNote: "Khan G6 Reading · Integration of knowledge and ideas",
     lessons: [
       ["Claim, Evidence, Reasoning (CER)", "Build CER paragraphs that link evidence to a precise claim."],
       ["Comparing Two Texts on One Topic", "Compare claims, evidence, and organization across texts."],
@@ -248,12 +224,10 @@ const UNITS = [
     n: 13,
     title: "Reading: Integration — Long Passages",
     kind: "reading-long",
-    cklaNote: "Extended multi-text practice with original PP paired passages",
-    khanNote: "Khan G6 Reading · Integration — long passages",
     lessons: [
       ["Paired Passages: Sleep and Schedules", "Compare two longer texts on the same issue."],
       ["Argument + Counterargument Practice", "Track a claim and the opposing view across pages."],
-      ["Media + Text Pairing", "Integrate a news-style text with a data table (original)."],
+      ["Media + Text Pairing", "Integrate a news-style text with a data table."],
       ["Literature and Informational Pair", "Connect a story theme to a related nonfiction idea."],
       ["Building a Mini DBQ-Lite", "Use two sources to answer one compelling question."],
       ["Integration Capstone Response", "Write a multi-paragraph integration CER with citations."],
@@ -263,8 +237,6 @@ const UNITS = [
     n: 14,
     title: "Grammar: Punctuation and Capitalization",
     kind: "grammar",
-    cklaNote: "Grade 6 conventions; original PP instruction",
-    khanNote: "Khan Grammar · Punctuation and capitalization",
     lessons: [
       ["Capitalization That Signals Importance", "Capitalize proper nouns, titles, and sentence starts."],
       ["Commas in a Series and Introductory Elements", "Place commas for lists and openers."],
@@ -278,8 +250,6 @@ const UNITS = [
     n: 15,
     title: "Grammar: Word Study",
     kind: "grammar",
-    cklaNote: "Word study / commonly confused words; original PP instruction",
-    khanNote: "Khan Grammar · Word study",
     lessons: [
       ["Homophones That Trick Writers", "Master there/their/they're, to/too/two, and kin."],
       ["Affect vs Effect and Similar Pairs", "Choose among commonly confused academic words."],
@@ -293,8 +263,6 @@ const UNITS = [
     n: 16,
     title: "Grammar: Style and Tone",
     kind: "grammar",
-    cklaNote: "Style, tone, and consistency for Grade 6 writing; original PP instruction",
-    khanNote: "Khan Grammar · Style and tone",
     lessons: [
       ["What Style Means in Writing", "Notice sentence length, diction, and patterning choices."],
       ["Keeping Tone Consistent", "Revise shifts that accidentally sound sarcastic or stiff."],
@@ -386,10 +354,6 @@ function buildLessonBody(unit, lessonTitle, lessonDesc, orderInUnit) {
   parts.push("");
   parts.push(`*Grade 6 English Language Arts · ${unitLabel} · Lesson ${orderInUnit}*`);
   parts.push("");
-  parts.push(
-    `*Prosper Prep original teaching text. ${unit.cklaNote}. ${unit.khanNote} is a coverage map only — wording, passages, and practice are original. Do not treat this as Khan Academy content.*`
-  );
-  parts.push("");
   parts.push(`## Objective`);
   parts.push("");
   parts.push(`**I can** ${lessonDesc.charAt(0).toLowerCase()}${lessonDesc.slice(1)}`);
@@ -451,7 +415,7 @@ function buildLessonBody(unit, lessonTitle, lessonDesc, orderInUnit) {
   parts.push(`Imagine ${ctx}. Related practice numbers/labels you may see in items: set ${n.a}, set ${n.b}.`);
   parts.push("");
   if (isGrammar) {
-    parts.push(`**Mentor sentence (original):** “Because the evidence was incomplete, the jury asked for more time.”`);
+    parts.push(`**Mentor sentence:** “Because the evidence was incomplete, the jury asked for more time.”`);
     parts.push("");
     parts.push(`**Step 1 — Find the structure.** Dependent clause + comma + independent clause.`);
     parts.push(`**Step 2 — Apply today’s rule for “${lessonTitle}.”** Mark the words doing that job.`);
@@ -462,7 +426,7 @@ function buildLessonBody(unit, lessonTitle, lessonDesc, orderInUnit) {
       `**Model talk:** “I checked the subject and the verb. They match. Then I read the sentence aloud to catch any leftover awkwardness.”`
     );
   } else {
-    parts.push(`**Mentor passage (original Prosper Prep):**`);
+    parts.push(`**Mentor passage:**`);
     parts.push("");
     parts.push(`> ${passage}`);
     parts.push("");
@@ -599,19 +563,6 @@ function buildLessonBody(unit, lessonTitle, lessonDesc, orderInUnit) {
     );
   }
   parts.push("");
-  parts.push(`## Extra practice (optional, free)`);
-  parts.push("");
-  parts.push(
-    `For additional free practice aligned to this topic family, families may use Khan Academy’s Grade 6 Reading & Vocabulary / Grammar courses — **free at Khan Academy** (https://www.khanacademy.org/ela). Prosper Prep lessons are original; Khan is an optional enrichment link, not a content source we copy.`
-  );
-  parts.push("");
-  parts.push(`## Source note`);
-  parts.push("");
-  parts.push(
-    `Original Prosper Prep instruction and passages. Topical scope informed by Core Knowledge Language Arts (CKLA) Grade 6 free materials (adapt-with-attribution / do not sell CKLA as a commercial package — we author original student-facing text) and by the publicly observed Khan Grade 6 ELA unit map for family-familiar sequencing. No Khan text or video is reproduced here.`
-  );
-  parts.push("");
-
   return parts.join("\n");
 }
 
@@ -836,7 +787,7 @@ function tsString(s) {
 let ts = `/**
  * Auto-generated Grade 6 ELA year path (Units 1–16).
  * Regenerate: node scripts/gen-grade6-ela-year.mjs
- * Original Prosper Prep lesson bodies; CKLA-aligned topics + Khan coverage map.
+ * Prosper Prep Grade 6 ELA lesson bodies (no third-party attribution in student text).
  */
 import type { LessonSeed } from "../curriculum";
 import type { QuestionSeed } from "../assessments";
@@ -934,62 +885,22 @@ export function grade6ElaUnitLabel(sectionKey: string): string | null {
 
 writeFileSync("prisma/grade6-ela/year.ts", ts);
 
-// ——— Migration SQL ———
+// ——— Content UPDATE fragment (do not overwrite applied 0006) ———
 const sql = [];
-sql.push("-- Grade 6 ELA full-year path (16 units). Generated by scripts/gen-grade6-ela-year.mjs");
-sql.push("-- Safe for production D1: does NOT wipe users/enrollments. Do NOT run db:setup.");
-sql.push("-- Retires old 9 ELA stubs + old section quizzes; INSERTs year lessons + unit checks.");
+sql.push("-- Grade 6 ELA year: strip attribution / clean lesson bodies. Generated by scripts/gen-grade6-ela-year.mjs");
+sql.push("-- UPDATE content + course description only. Do NOT run db:setup.");
 sql.push("");
-sql.push(`UPDATE "Course" SET "title" = 'English Language Arts · Grade 6', "description" = '${esc(
-  "Full-year Grade 6 ELA at Prosper Preparatory: 16 units combining Reading & Vocabulary with Grammar (Vocabulary Power through Style and Tone), original Prosper Prep lessons with practice and unit checks. Lesson checks = 40%; unit checks = 60%. Latest attempt counts. Topics aligned with CKLA Grade 6 goals and family-familiar ELA sequencing."
+sql.push(`UPDATE "Course" SET "description" = '${esc(
+  "Full-year Grade 6 ELA at Prosper Preparatory: 16 units combining Reading & Vocabulary with Grammar (Vocabulary Power through Style and Tone), with practice and unit checks. Lesson checks = 40%; unit checks = 60%. Latest attempt counts."
 )}' WHERE "id" = '${COURSE_ID}';`);
 sql.push("");
-
-let retireOrder = 900;
-for (const id of OLD_STUBS) {
-  sql.push(
-    `UPDATE "Lesson" SET "sectionKey" = 'retired', "order" = ${retireOrder}, "title" = '[Archived stub] ' || "title", "description" = 'Archived — replaced by full-year Grade 6 ELA path.' WHERE "id" = '${id}' AND "courseId" = '${COURSE_ID}' AND "sectionKey" != 'retired';`
-  );
-  retireOrder += 1;
-}
-sql.push("");
-
-for (const qid of OLD_QUIZZES) {
-  sql.push(`DELETE FROM "Question" WHERE "quizId" = '${qid}';`);
-  sql.push(`DELETE FROM "Attempt" WHERE "quizId" = '${qid}';`);
-  sql.push(`DELETE FROM "Quiz" WHERE "id" = '${qid}';`);
-}
-sql.push("");
-
 for (const L of allLessons) {
   sql.push(
-    `INSERT INTO "Lesson" ("id","courseId","title","description","content","objectives","order","durationMin","sectionKey","videoUrl") VALUES ('${L.id}','${COURSE_ID}','${esc(L.title)}','${esc(L.description)}','${esc(L.content)}','${esc(L.objectives)}',${L.order},${L.durationMin},'${L.sectionKey}',NULL) ON CONFLICT("id") DO UPDATE SET "title"=excluded."title","description"=excluded."description","content"=excluded."content","objectives"=excluded."objectives","order"=excluded."order","durationMin"=excluded."durationMin","sectionKey"=excluded."sectionKey","courseId"=excluded."courseId";`
+    `UPDATE "Lesson" SET "content" = '${esc(L.content)}', "description" = '${esc(L.description)}', "objectives" = '${esc(L.objectives)}', "title" = '${esc(L.title)}' WHERE "id" = '${L.id}';`
   );
-  sql.push(`DELETE FROM "Question" WHERE "lessonId" = '${L.id}';`);
-  for (const q of L.questions) {
-    const qid = stableId(`q-${L.id}-${q.order}`);
-    sql.push(
-      `INSERT INTO "Question" ("id","lessonId","quizId","type","prompt","choices","correctIndex","explanation","points","order") VALUES ('${qid}','${L.id}',NULL,'MULTIPLE_CHOICE','${esc(q.prompt)}','${esc(JSON.stringify(q.choices))}',${q.correctIndex},'${esc(q.explanation)}',1,${q.order}) ON CONFLICT("id") DO UPDATE SET "prompt"=excluded."prompt","choices"=excluded."choices","correctIndex"=excluded."correctIndex","explanation"=excluded."explanation","points"=excluded."points","order"=excluded."order","lessonId"=excluded."lessonId","quizId"=excluded."quizId";`
-    );
-  }
-  sql.push("");
 }
-
-for (const Q of unitQuizzes) {
-  sql.push(
-    `INSERT INTO "Quiz" ("id","courseId","title","description","order","sectionKey") VALUES ('${Q.id}','${COURSE_ID}','${esc(Q.title)}','${esc(Q.description)}',${Q.order},'${Q.sectionKey}') ON CONFLICT("id") DO UPDATE SET "title"=excluded."title","description"=excluded."description","order"=excluded."order","sectionKey"=excluded."sectionKey","courseId"=excluded."courseId";`
-  );
-  sql.push(`DELETE FROM "Question" WHERE "quizId" = '${Q.id}';`);
-  for (const q of Q.questions) {
-    const qid = stableId(`qq-${Q.id}-${q.order}`);
-    sql.push(
-      `INSERT INTO "Question" ("id","lessonId","quizId","type","prompt","choices","correctIndex","explanation","points","order") VALUES ('${qid}',NULL,'${Q.id}','MULTIPLE_CHOICE','${esc(q.prompt)}','${esc(JSON.stringify(q.choices))}',${q.correctIndex},'${esc(q.explanation)}',1,${q.order}) ON CONFLICT("id") DO UPDATE SET "prompt"=excluded."prompt","choices"=excluded."choices","correctIndex"=excluded."correctIndex","explanation"=excluded."explanation","points"=excluded."points","order"=excluded."order","lessonId"=excluded."lessonId","quizId"=excluded."quizId";`
-    );
-  }
-  sql.push("");
-}
-
-writeFileSync("migrations/0006_grade6_ela_year.sql", sql.join("\n"));
+mkdirSync("scripts/generated", { recursive: true });
+writeFileSync("scripts/generated/_fragment_grade6_ela_content_update.sql", sql.join("\n"));
 
 const avgLen =
   allLessons.reduce((s, L) => s + L.content.length, 0) / allLessons.length;
