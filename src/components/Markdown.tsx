@@ -2,6 +2,9 @@
 
 import ReactMarkdown from "react-markdown";
 
+/** Renders lesson Markdown only — raw HTML in content is NOT interpreted (by design).
+ *  Use Markdown headings like `### Answer key (try first)`; do not embed <details>/<summary>.
+ *  Collapsible keys can be a future React component; keep lesson bodies HTML-free. */
 export function Markdown({ content }: { content: string }) {
   return (
     <div className="prose-lesson space-y-4 text-slate-800 leading-relaxed">
