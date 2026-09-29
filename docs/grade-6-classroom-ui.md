@@ -68,7 +68,7 @@ Reuse existing LiveSession list:
 ## Implementation path
 
 1. **Phase 1 (shipped in messaging branch):** shared inbox at `/dashboard/student/messages` + teacher blast/group.
-2. **Phase 2:** Grade 6–specific dashboard skin (`/dashboard/student?theme=g6` or route `/classroom/6`) using subject islands + unread badge.
+2. **Phase 2 (shipped):** Grade 6 immersive classroom on `/dashboard/student` when `enrollment.grade === 6` (subject islands, progress ring, big Next Lesson CTA, Messages badge, live strip). Course/lesson chrome scales for grade 6 via `course.grade === 6`. Teacher glance when assigned grade 6.
 3. **Phase 3:** avatars, reactions in GROUP threads, parent read-only mirror of announcements.
 
 ## Copy tone

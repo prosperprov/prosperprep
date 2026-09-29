@@ -8,6 +8,9 @@ import { brand } from "@/config/brand";
 import { ManageBillingButton } from "@/components/ManageBillingButton";
 import { StudentNotifications } from "@/components/StudentNotifications";
 import { ChangePasswordForm } from "@/components/ChangePasswordForm";
+import { isGrade6Classroom } from "@/lib/grade6Classroom";
+import { Grade6ClassroomHub } from "@/components/grade6/Grade6ClassroomHub";
+import { loadInboxForUser } from "@/lib/messageInbox";
 
 export const dynamic = "force-dynamic";
 
@@ -27,17 +30,18 @@ export default async function StudentDashboard() {
   // Curriculum lock: only ACTIVE enrollment grade counts (not register-time user.grade alone).
   const grade = active?.grade ?? null;
 
-  const courses = grade != null
-    ? await prisma.course.findMany({
-        where: { grade },
-        orderBy: { order: "asc" },
-        include: {
-          lessons: { orderBy: { order: "asc" } },
-          quizzes: { orderBy: { order: "asc" } },
-          _count: { select: { lessons: true } },
-        },
-      })
-    : [];
+  const courses =
+    grade != null
+      ? await prisma.course.findMany({
+          where: { grade },
+          orderBy: { order: "asc" },
+          include: {
+            lessons: { orderBy: { order: "asc" } },
+            quizzes: { orderBy: { order: "asc" } },
+            _count: { select: { lessons: true } },
+          },
+        })
+      : [];
 
   const lessonIds = courses.flatMap((c) => c.lessons.map((l) => l.id));
   const progress = lessonIds.length
@@ -54,7 +58,9 @@ export default async function StudentDashboard() {
         select: { quizId: true },
       })
     : [];
-  const attemptedQuizzes = new Set(quizAttempts.map((a) => a.quizId).filter(Boolean) as string[]);
+  const attemptedQuizzes = new Set(
+    quizAttempts.map((a) => a.quizId).filter(Boolean) as string[]
+  );
 
   type TodoItem =
     | {
@@ -131,43 +137,71 @@ export default async function StudentDashboard() {
     orderBy: { createdAt: "desc" },
     take: 20,
   });
-  const notifications = notificationRows.map((n) => {
-    let meetingUrl: string | null = null;
-    let targetGrade: number | null = null;
-    try {
-      const meta = JSON.parse(n.meta || "{}") as { meetingUrl?: string | null; targetGrade?: number | null };
-      meetingUrl = meta.meetingUrl ?? null;
-      targetGrade = meta.targetGrade ?? null;
-    } catch {
-      meetingUrl = null;
-    }
-    return {
-      id: n.id,
-      title: n.title,
-      body: n.body,
-      createdAt: n.createdAt.toISOString(),
-      meetingUrl,
-      kind: n.type,
-      targetGrade,
-    };
-  }).filter((notice) => grade != null && notice.targetGrade === grade);
+  const notifications = notificationRows
+    .map((n) => {
+      let meetingUrl: string | null = null;
+      let targetGrade: number | null = null;
+      try {
+        const meta = JSON.parse(n.meta || "{}") as {
+          meetingUrl?: string | null;
+          targetGrade?: number | null;
+        };
+        meetingUrl = meta.meetingUrl ?? null;
+        targetGrade = meta.targetGrade ?? null;
+      } catch {
+        meetingUrl = null;
+      }
+      return {
+        id: n.id,
+        title: n.title,
+        body: n.body,
+        createdAt: n.createdAt.toISOString(),
+        meetingUrl,
+        kind: n.type,
+        targetGrade,
+      };
+    })
+    .filter((notice) => grade != null && notice.targetGrade === grade);
 
   const totalLessons = lessonIds.length;
   const done = completedSet.size;
 
+  const nav = [
+    { href: "/dashboard/student", label: isGrade6Classroom(grade) ? "Classroom" : "Overview" },
+    { href: "/dashboard/student/messages", label: "Messages" },
+    { href: "/dashboard/student/grades", label: "Grades" },
+    { href: "/dashboard/student/report-cards", label: "Report cards" },
+    { href: "/courses", label: "Catalog" },
+    { href: "/enroll", label: "Enrollment" },
+    { href: "/dashboard/student#account", label: "Account" },
+  ];
+
+  const grade6 = isGrade6Classroom(grade);
+
+  let unreadMessages = 0;
+  if (grade6) {
+    try {
+      const { inboxThreads } = await loadInboxForUser(session.user.id);
+      unreadMessages = inboxThreads.filter((t) => t.unread).length;
+    } catch {
+      unreadMessages = 0;
+    }
+  }
+
+  const todayNotes = notifications
+    .filter((n) => n.kind === "live_session_updated")
+    .slice(0, 3)
+    .map((n) => n.title || "Live class updated");
+
   return (
     <DashboardShell
-      title={`Welcome, ${session.user.name}`}
-      subtitle={`${brand.shortName} student dashboard`}
-      nav={[
-        { href: "/dashboard/student", label: "Overview" },
-        { href: "/dashboard/student/messages", label: "Messages" },
-        { href: "/dashboard/student/grades", label: "Grades" },
-        { href: "/dashboard/student/report-cards", label: "Report cards" },
-        { href: "/courses", label: "Catalog" },
-        { href: "/enroll", label: "Enrollment" },
-        { href: "/dashboard/student#account", label: "Account" },
-      ]}
+      title={grade6 ? `Grade 6 classroom` : `Welcome, ${session.user.name}`}
+      subtitle={
+        grade6
+          ? `${brand.shortName} · immersive middle-school home base`
+          : `${brand.shortName} student dashboard`
+      }
+      nav={nav}
     >
       <StudentNotifications items={notifications} />
 
@@ -183,7 +217,8 @@ export default async function StudentDashboard() {
 
       {active?.demoMode && (
         <div className="mb-6 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
-          Enrollment is <strong>active in demo mode</strong> (no Stripe charge). Plan: {active.plan.name}.
+          Enrollment is <strong>active in demo mode</strong> (no Stripe charge). Plan:{" "}
+          {active.plan.name}.
         </div>
       )}
 
@@ -196,126 +231,167 @@ export default async function StudentDashboard() {
         />
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <p className="text-sm text-slate-500">Grade</p>
-          <p className="mt-1 text-2xl font-bold text-slate-900">
-            {grade != null ? gradeLabel(grade) : "—"}
-          </p>
-        </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <p className="text-sm text-slate-500">Courses</p>
-          <p className="mt-1 text-2xl font-bold text-slate-900">{courses.length}</p>
-        </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <p className="text-sm text-slate-500">Lessons completed</p>
-          <p className="mt-1 text-2xl font-bold text-slate-900">
-            {done}/{totalLessons || 0} lessons
-          </p>
-        </div>
-      </div>
-
-      <section className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Up next</h2>
-        <p className="mt-1 text-sm text-slate-500">
-          Incomplete lessons and unlocked section quizzes — your to-do list.
-        </p>
-        <ul className="mt-4 space-y-2">
-          {upNext.map((item) => (
-            <li key={`${item.kind}-${item.href}`}>
-              <Link
-                href={item.href}
-                className="flex min-h-[48px] flex-col justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 hover:border-emerald-300 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <div>
-                  <p className="font-medium text-slate-900">{item.label}</p>
-                  <p className="text-xs text-slate-500">{item.meta}</p>
-                </div>
-                <span
-                  className={`mt-2 inline-flex w-fit rounded-full px-2.5 py-1 text-xs font-semibold sm:mt-0 ${
-                    item.kind === "quiz"
-                      ? "bg-amber-100 text-amber-900"
-                      : "bg-emerald-100 text-emerald-900"
-                  }`}
-                >
-                  {item.kind === "quiz" ? "Section quiz" : "Lesson"}
-                </span>
-              </Link>
-            </li>
-          ))}
-          {upNext.length === 0 && (
-            <p className="text-sm text-slate-500">
-              {grade != null
-                ? "You’re caught up — no incomplete lessons or unlocked quizzes waiting."
-                : "Enroll to see your to-do list here."}
-            </p>
-          )}
-        </ul>
-        {todos.length > upNext.length && (
-          <p className="mt-3 text-xs text-slate-500">
-            Showing {upNext.length} of {todos.length} open items.
-          </p>
-        )}
-      </section>
-
-      <section className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Your courses</h2>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          {courses.map((course) => {
-            const doneCount = course.lessons.filter((l) => completedSet.has(l.id)).length;
-            return (
-              <Link
-                key={course.id}
-                href={`/courses/${course.id}`}
-                className="rounded-xl border border-slate-200 bg-white p-4 hover:border-emerald-300"
-              >
-                <p className="text-xs text-emerald-800">{course.subject}</p>
-                <p className="font-semibold text-slate-900">{course.title}</p>
-                <p className="mt-2 text-xs text-slate-500">
-                  {doneCount}/{course._count.lessons} lessons marked complete
-                </p>
-              </Link>
-            );
+      {grade6 ? (
+        <Grade6ClassroomHub
+          studentName={session.user.name}
+          done={done}
+          total={totalLessons}
+          unreadMessages={unreadMessages}
+          nextItem={upNext[0] ?? null}
+          upNext={upNext.map((t) => ({
+            kind: t.kind,
+            href: t.href,
+            label: t.label,
+            meta: t.meta,
+          }))}
+          courses={courses.map((course) => ({
+            id: course.id,
+            subject: course.subject,
+            title: course.title,
+            done: course.lessons.filter((l) => completedSet.has(l.id)).length,
+            total: course._count.lessons,
+          }))}
+          liveSessions={liveSessions.map((s) => {
+            const msUntil = s.scheduledAt.getTime() - Date.now();
+            const joinable = msUntil <= 15 * 60 * 1000 && msUntil >= -30 * 60 * 1000;
+            return {
+              id: s.id,
+              title: s.title,
+              scheduledAtLabel: `${s.scheduledAt.toLocaleString("en-US", {
+                timeZone: "America/Chicago",
+              })} CT`,
+              teacherName: s.teacher.name,
+              courseTitle: s.course?.title ?? null,
+              meetingUrl: s.meetingUrl,
+              joinable,
+            };
           })}
-          {courses.length === 0 && (
-            <p className="text-sm text-slate-500">Enroll to see grade-level courses here.</p>
-          )}
-        </div>
-      </section>
+          todayNotes={todayNotes}
+        />
+      ) : (
+        <>
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <p className="text-sm text-slate-500">Grade</p>
+              <p className="mt-1 text-2xl font-bold text-slate-900">
+                {grade != null ? gradeLabel(grade) : "—"}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <p className="text-sm text-slate-500">Courses</p>
+              <p className="mt-1 text-2xl font-bold text-slate-900">{courses.length}</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <p className="text-sm text-slate-500">Lessons completed</p>
+              <p className="mt-1 text-2xl font-bold text-slate-900">
+                {done}/{totalLessons || 0} lessons
+              </p>
+            </div>
+          </div>
 
-      <section className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Upcoming live sessions</h2>
-        <ul className="mt-4 space-y-3">
-          {liveSessions.map((s) => (
-            <li
-              key={s.id}
-              className="flex flex-col gap-2 rounded-xl border border-slate-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between"
-            >
-              <div>
-                <p className="font-medium text-slate-900">{s.title}</p>
-                <p className="text-sm text-slate-600">
-                  {s.scheduledAt.toLocaleString("en-US", { timeZone: "America/Chicago" })} CT ·{" "}
-                  {s.teacher.name}
-                  {s.course ? ` · ${s.course.title}` : ""}
+          <section className="mt-10">
+            <h2 className="text-lg font-semibold text-slate-900">Up next</h2>
+            <p className="mt-1 text-sm text-slate-500">
+              Incomplete lessons and unlocked section quizzes — your to-do list.
+            </p>
+            <ul className="mt-4 space-y-2">
+              {upNext.map((item) => (
+                <li key={`${item.kind}-${item.href}`}>
+                  <Link
+                    href={item.href}
+                    className="flex min-h-[48px] flex-col justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 hover:border-emerald-300 sm:flex-row sm:items-center sm:justify-between"
+                  >
+                    <div>
+                      <p className="font-medium text-slate-900">{item.label}</p>
+                      <p className="text-xs text-slate-500">{item.meta}</p>
+                    </div>
+                    <span
+                      className={`mt-2 inline-flex w-fit rounded-full px-2.5 py-1 text-xs font-semibold sm:mt-0 ${
+                        item.kind === "quiz"
+                          ? "bg-amber-100 text-amber-900"
+                          : "bg-emerald-100 text-emerald-900"
+                      }`}
+                    >
+                      {item.kind === "quiz" ? "Section quiz" : "Lesson"}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+              {upNext.length === 0 && (
+                <p className="text-sm text-slate-500">
+                  {grade != null
+                    ? "You’re caught up — no incomplete lessons or unlocked quizzes waiting."
+                    : "Enroll to see your to-do list here."}
                 </p>
-              </div>
-              {s.meetingUrl && (
-                <a
-                  href={s.meetingUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-lg bg-emerald-800 px-3 py-2 text-center text-sm font-medium text-white hover:bg-emerald-900"
-                >
-                  Join live room
-                </a>
               )}
-            </li>
-          ))}
-          {liveSessions.length === 0 && (
-            <p className="text-sm text-slate-500">No upcoming sessions scheduled yet.</p>
-          )}
-        </ul>
-      </section>
+            </ul>
+            {todos.length > upNext.length && (
+              <p className="mt-3 text-xs text-slate-500">
+                Showing {upNext.length} of {todos.length} open items.
+              </p>
+            )}
+          </section>
+
+          <section className="mt-10">
+            <h2 className="text-lg font-semibold text-slate-900">Your courses</h2>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {courses.map((course) => {
+                const doneCount = course.lessons.filter((l) => completedSet.has(l.id)).length;
+                return (
+                  <Link
+                    key={course.id}
+                    href={`/courses/${course.id}`}
+                    className="rounded-xl border border-slate-200 bg-white p-4 hover:border-emerald-300"
+                  >
+                    <p className="text-xs text-emerald-800">{course.subject}</p>
+                    <p className="font-semibold text-slate-900">{course.title}</p>
+                    <p className="mt-2 text-xs text-slate-500">
+                      {doneCount}/{course._count.lessons} lessons marked complete
+                    </p>
+                  </Link>
+                );
+              })}
+              {courses.length === 0 && (
+                <p className="text-sm text-slate-500">Enroll to see grade-level courses here.</p>
+              )}
+            </div>
+          </section>
+
+          <section className="mt-10">
+            <h2 className="text-lg font-semibold text-slate-900">Upcoming live sessions</h2>
+            <ul className="mt-4 space-y-3">
+              {liveSessions.map((s) => (
+                <li
+                  key={s.id}
+                  className="flex flex-col gap-2 rounded-xl border border-slate-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div>
+                    <p className="font-medium text-slate-900">{s.title}</p>
+                    <p className="text-sm text-slate-600">
+                      {s.scheduledAt.toLocaleString("en-US", { timeZone: "America/Chicago" })} CT ·{" "}
+                      {s.teacher.name}
+                      {s.course ? ` · ${s.course.title}` : ""}
+                    </p>
+                  </div>
+                  {s.meetingUrl && (
+                    <a
+                      href={s.meetingUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-lg bg-emerald-800 px-3 py-2 text-center text-sm font-medium text-white hover:bg-emerald-900"
+                    >
+                      Join live room
+                    </a>
+                  )}
+                </li>
+              ))}
+              {liveSessions.length === 0 && (
+                <p className="text-sm text-slate-500">No upcoming sessions scheduled yet.</p>
+              )}
+            </ul>
+          </section>
+        </>
+      )}
 
       <section id="account" className="mt-10">
         <h2 className="text-lg font-semibold text-slate-900">Account</h2>

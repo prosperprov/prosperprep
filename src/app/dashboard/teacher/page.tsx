@@ -9,6 +9,8 @@ import { brand } from "@/config/brand";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
 import { ChangePasswordForm } from "@/components/ChangePasswordForm";
 import { GradeWrittenPanel } from "@/components/GradeWrittenPanel";
+import { isGrade6Classroom } from "@/lib/grade6Classroom";
+import { Grade6TeacherGlance } from "@/components/grade6/Grade6TeacherGlance";
 
 export const dynamic = "force-dynamic";
 
@@ -104,6 +106,21 @@ export default async function TeacherDashboard() {
           Your account has no teaching grades yet. An admin must assign grades under{" "}
           <strong>Admin → Teachers</strong> before roster and scheduling unlock.
         </div>
+      )}
+
+      {assignedGrades.includes(6) && (
+        <Grade6TeacherGlance
+          students={enrollments
+            .filter((e) => isGrade6Classroom(e.grade))
+            .map((e) => ({
+              id: e.user.id,
+              name: e.user.name,
+              email: e.user.email,
+              planName: e.plan.name,
+            }))}
+          liveCount={mySessions.filter((s) => s.grade === 6).length}
+          writtenPending={writtenToGrade.filter((w) => w.course.grade === 6).length}
+        />
       )}
 
       <div className="grid gap-8 lg:grid-cols-2">
