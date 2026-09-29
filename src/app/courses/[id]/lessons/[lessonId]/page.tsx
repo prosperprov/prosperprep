@@ -14,6 +14,8 @@ import { brandAssets } from "@/config/brand";
 import { canAccessCourseContent } from "@/lib/curriculumAccess";
 import { GuidedPractice } from "@/components/GuidedPractice";
 import { guidedPracticeForLesson } from "@/lib/guidedPractice";
+import { isGrade6Classroom } from "@/lib/grade6Classroom";
+import { Grade6LessonChrome } from "@/components/grade6/Grade6LessonChrome";
 
 export const dynamic = "force-dynamic";
 
@@ -122,6 +124,22 @@ export default async function LessonPage({
   const sectionQuiz = course.quizzes.find((q) => q.sectionKey === lesson.sectionKey);
   const sectionLessons = course.lessons.filter((l) => l.sectionKey === lesson.sectionKey);
 
+  let sectionQuizUnlocked = false;
+  if (sectionQuiz && canGrade && session?.user?.id) {
+    const sectionProgress = await prisma.progress.findMany({
+      where: {
+        userId: session.user.id,
+        lessonId: { in: sectionLessons.map((l) => l.id) },
+        completed: true,
+      },
+      select: { lessonId: true },
+    });
+    const doneSection = new Set(sectionProgress.map((p) => p.lessonId));
+    sectionQuizUnlocked =
+      sectionLessons.length > 0 &&
+      sectionLessons.every((l) => doneSection.has(l.id));
+  }
+
   const questions = lesson.questions.map((q) => ({
     id: q.id,
     prompt: q.prompt,
@@ -130,53 +148,115 @@ export default async function LessonPage({
     points: q.points,
   }));
 
+  const g6 = isGrade6Classroom(course.grade);
+
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10">
-      <div className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
-        <Link href="/courses" className="text-emerald-800 hover:underline">
-          Catalog
-        </Link>
-        <span>/</span>
-        <Link href={`/courses/${course.id}`} className="text-emerald-800 hover:underline">
-          {course.title}
-        </Link>
-        <span>/</span>
-        <span className="text-slate-500">Lesson {lesson.order}</span>
-      </div>
+    <div className={`mx-auto px-4 py-10 ${g6 ? "max-w-4xl" : "max-w-3xl"}`}>
+      {g6 ? (
+        <Grade6LessonChrome
+          courseId={course.id}
+          courseTitle={course.title}
+          subject={course.subject}
+          lessonTitle={lesson.title}
+          lessonOrder={lesson.order}
+          lessonIndex={idx}
+          lessonCount={course.lessons.length}
+          completed={completed}
+          hasVideo={Boolean(lesson.videoUrl)}
+          hasQuizQuestions={questions.length > 0}
+          nextHref={
+            next
+              ? `/courses/${course.id}/lessons/${next.id}`
+              : sectionQuiz && sectionQuizUnlocked
+                ? `/courses/${course.id}/quizzes/${sectionQuiz.id}`
+                : null
+          }
+          nextLabel={
+            next
+              ? next.title
+              : sectionQuiz && sectionQuizUnlocked
+                ? sectionQuiz.title
+                : null
+          }
+          sectionQuizHref={
+            sectionQuiz ? `/courses/${course.id}/quizzes/${sectionQuiz.id}` : null
+          }
+          sectionQuizUnlocked={sectionQuizUnlocked}
+        />
+      ) : (
+        <>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
+            <Link href="/courses" className="text-emerald-800 hover:underline">
+              Catalog
+            </Link>
+            <span>/</span>
+            <Link href={`/courses/${course.id}`} className="text-emerald-800 hover:underline">
+              {course.title}
+            </Link>
+            <span>/</span>
+            <span className="text-slate-500">Lesson {lesson.order}</span>
+          </div>
 
-      <p className="mt-4 text-sm font-medium text-emerald-800">
-        {course.subject} · {gradeLabel(course.grade)} · {lesson.durationMin} min ·{" "}
-        {lesson.sectionKey}
-      </p>
-      <h1 className="mt-1 text-3xl font-bold text-slate-900">{lesson.title}</h1>
-      <p className="mt-2 text-slate-600">{lesson.description}</p>
+          <p className="mt-4 text-sm font-medium text-emerald-800">
+            {course.subject} · {gradeLabel(course.grade)} · {lesson.durationMin} min ·{" "}
+            {lesson.sectionKey}
+          </p>
+          <h1 className="mt-1 text-3xl font-bold text-slate-900">{lesson.title}</h1>
+          <p className="mt-2 text-slate-600">{lesson.description}</p>
+        </>
+      )}
 
-      <p className="mt-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-600">
-        Course grade weights: lesson checks {Math.round(LESSON_WEIGHT * 100)}% · section quizzes{" "}
-        {Math.round(SECTION_WEIGHT * 100)}%. Latest attempt counts.
-      </p>
+      {!g6 && (
+        <p className="mt-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-600">
+          Course grade weights: lesson checks {Math.round(LESSON_WEIGHT * 100)}% · section quizzes{" "}
+          {Math.round(SECTION_WEIGHT * 100)}%. Latest attempt counts.
+        </p>
+      )}
+
+      {g6 && (
+        <>
+          <p className="text-base text-slate-700">{lesson.description}</p>
+          <p className="mt-2 text-sm font-medium text-slate-500">
+            {lesson.durationMin} min · {lesson.sectionKey.replace(/-/g, " ")}
+          </p>
+        </>
+      )}
 
       {lesson.objectives && (
-        <div className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
+        <div
+          className={`mt-6 rounded-xl border border-emerald-200 bg-emerald-50/60 p-4 ${
+            g6 ? "rounded-2xl p-5" : ""
+          }`}
+        >
           <h2 className="text-sm font-semibold uppercase tracking-wide text-emerald-900">
             Objectives
           </h2>
-          <pre className="mt-2 whitespace-pre-wrap font-sans text-sm text-slate-800">
+          <pre
+            className={`mt-2 whitespace-pre-wrap font-sans text-slate-800 ${
+              g6 ? "text-base" : "text-sm"
+            }`}
+          >
             {lesson.objectives}
           </pre>
         </div>
       )}
 
-      <article className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <article
+        className={`mt-8 rounded-2xl border border-slate-200 bg-white shadow-sm ${
+          g6 ? "border-2 p-6 text-base sm:p-8" : "p-6 sm:p-8"
+        }`}
+      >
         <Markdown content={displayContent || "_Lesson content coming soon._"} />
       </article>
 
       {lesson.videoUrl ? (
-        <LessonVideo
-          videoUrl={lesson.videoUrl}
-          title={lesson.title}
-          posterUrl={lessonPosterUrl(lesson.title, course.grade)}
-        />
+        <div id="lesson-video">
+          <LessonVideo
+            videoUrl={lesson.videoUrl}
+            title={lesson.title}
+            posterUrl={lessonPosterUrl(lesson.title, course.grade)}
+          />
+        </div>
       ) : null}
 
       <GuidedPractice items={guidedPracticeForLesson(lesson.title, course.grade)} />
@@ -195,7 +275,7 @@ export default async function LessonPage({
           />
         ))}
 
-      <div className="mt-8">
+      <div id="lesson-check" className="mt-8 scroll-mt-24">
         {canGrade ? (
           questions.length > 0 ? (
             <LessonQuiz
@@ -204,7 +284,11 @@ export default async function LessonPage({
               priorPercent={priorPercent}
             />
           ) : (
-            <MarkCompleteButton lessonId={lesson.id} initiallyCompleted={completed} />
+            <MarkCompleteButton
+              lessonId={lesson.id}
+              initiallyCompleted={completed}
+              size={g6 ? "large" : "default"}
+            />
           )
         ) : (
           <p className="text-sm text-slate-500">
@@ -217,24 +301,47 @@ export default async function LessonPage({
       </div>
 
       {completed && sectionQuiz && (
-        <div className="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-950">
+        <div
+          className={`mt-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-amber-950 ${
+            g6 ? "rounded-2xl border-2 p-5 text-base" : "text-sm"
+          }`}
+        >
           Lesson complete. This lesson is part of{" "}
           <strong>{sectionQuiz.title}</strong> ({sectionLessons.length} lessons in section).{" "}
-          <Link
-            href={`/courses/${course.id}/quizzes/${sectionQuiz.id}`}
-            className="font-semibold underline"
-          >
-            Open section quiz
-          </Link>{" "}
-          after all section lessons are done.
+          {sectionQuizUnlocked ? (
+            <Link
+              href={`/courses/${course.id}/quizzes/${sectionQuiz.id}`}
+              className="font-semibold underline"
+            >
+              Take section quiz →
+            </Link>
+          ) : (
+            <>
+              <Link
+                href={`/courses/${course.id}/quizzes/${sectionQuiz.id}`}
+                className="font-semibold underline"
+              >
+                Open section quiz
+              </Link>{" "}
+              after all section lessons are done.
+            </>
+          )}
         </div>
       )}
 
-      <nav className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <nav
+        className={`mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between ${
+          g6 ? "gap-4" : ""
+        }`}
+      >
         {prev ? (
           <Link
             href={`/courses/${course.id}/lessons/${prev.id}`}
-            className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:border-emerald-300"
+            className={
+              g6
+                ? "inline-flex min-h-[48px] items-center rounded-2xl border-2 border-slate-200 bg-white px-5 py-3 text-base font-bold text-slate-800 hover:border-emerald-300"
+                : "rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:border-emerald-300"
+            }
           >
             ← Prev: {prev.title}
           </Link>
@@ -244,14 +351,22 @@ export default async function LessonPage({
         {next ? (
           <Link
             href={`/courses/${course.id}/lessons/${next.id}`}
-            className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:border-emerald-300 sm:text-right"
+            className={
+              g6
+                ? "inline-flex min-h-[48px] items-center rounded-2xl bg-emerald-700 px-5 py-3 text-base font-bold text-white hover:bg-emerald-800 sm:text-right"
+                : "rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:border-emerald-300 sm:text-right"
+            }
           >
             Next: {next.title} →
           </Link>
         ) : (
           <Link
             href={`/courses/${course.id}`}
-            className="rounded-lg bg-emerald-800 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-900 sm:text-right"
+            className={
+              g6
+                ? "inline-flex min-h-[48px] items-center rounded-2xl bg-emerald-700 px-5 py-3 text-base font-bold text-white hover:bg-emerald-800 sm:text-right"
+                : "rounded-lg bg-emerald-800 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-900 sm:text-right"
+            }
           >
             Back to course
           </Link>

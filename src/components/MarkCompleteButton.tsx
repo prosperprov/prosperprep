@@ -6,9 +6,12 @@ import { useState } from "react";
 export function MarkCompleteButton({
   lessonId,
   initiallyCompleted,
+  size = "default",
 }: {
   lessonId: string;
   initiallyCompleted: boolean;
+  /** Grade 6 immersive: larger tap targets */
+  size?: "default" | "large";
 }) {
   const router = useRouter();
   const [completed, setCompleted] = useState(initiallyCompleted);
@@ -37,6 +40,8 @@ export function MarkCompleteButton({
     }
   }
 
+  const large = size === "large";
+
   return (
     <div className="flex flex-col items-start gap-2">
       <button
@@ -45,11 +50,23 @@ export function MarkCompleteButton({
         disabled={pending}
         className={
           completed
-            ? "rounded-lg border border-emerald-700 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 disabled:opacity-60"
-            : "rounded-lg bg-emerald-800 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-900 disabled:opacity-60"
+            ? large
+              ? "min-h-[52px] rounded-2xl border-2 border-emerald-700 bg-emerald-50 px-6 py-3 text-base font-bold text-emerald-900 hover:bg-emerald-100 disabled:opacity-60"
+              : "rounded-lg border border-emerald-700 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 disabled:opacity-60"
+            : large
+              ? "min-h-[52px] rounded-2xl bg-emerald-700 px-6 py-3 text-base font-bold text-white hover:bg-emerald-800 disabled:opacity-60"
+              : "rounded-lg bg-emerald-800 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-900 disabled:opacity-60"
         }
       >
-        {pending ? "Saving…" : completed ? "Completed ✓ (undo)" : "Mark complete"}
+        {pending
+          ? "Saving…"
+          : completed
+            ? large
+              ? "Completed ✓ (tap to undo)"
+              : "Completed ✓ (undo)"
+            : large
+              ? "✓ Mark complete"
+              : "Mark complete"}
       </button>
       {error && <p className="text-sm text-red-700">{error}</p>}
     </div>
