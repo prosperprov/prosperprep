@@ -5,6 +5,7 @@ import { getSession } from "@/lib/auth";
 import { LessonQuiz } from "@/components/LessonQuiz";
 import { SECTION_WEIGHT } from "@/lib/grading";
 import { canAccessCourseContent } from "@/lib/curriculumAccess";
+import { isRetiredSection } from "@/lib/grade6Classroom";
 
 export const dynamic = "force-dynamic";
 
@@ -23,7 +24,6 @@ export default async function SectionQuizPage({
       course: {
         include: {
           lessons: {
-            where: { NOT: { sectionKey: { startsWith: "retired" } } },
             orderBy: { order: "asc" },
             select: { id: true, sectionKey: true, order: true, title: true },
           },
@@ -40,18 +40,26 @@ export default async function SectionQuizPage({
   });
   if (!access.ok) notFound();
 
+  const activeLessons = quiz.course.lessons.filter((l) => !isRetiredSection(l.sectionKey));
   const sectionLessons = quiz.sectionKey
-    ? quiz.course.lessons.filter((l) => l.sectionKey === quiz.sectionKey)
-    : quiz.course.lessons;
+    ? activeLessons.filter((l) => l.sectionKey === quiz.sectionKey)
+    : activeLessons;
 
+  // Relation filter — avoid D1 100-bound-param limit when section spans many lessons.
   const progress = await prisma.progress.findMany({
     where: {
       userId: session.user.id,
-      lessonId: { in: sectionLessons.map((l) => l.id) },
       completed: true,
+      lesson: quiz.sectionKey
+        ? { courseId: quiz.courseId, sectionKey: quiz.sectionKey }
+        : { courseId: quiz.courseId },
     },
+    select: { lessonId: true },
   });
-  const unlocked = progress.length >= sectionLessons.length && sectionLessons.length > 0;
+  const doneSet = new Set(progress.map((p) => p.lessonId));
+  const unlocked =
+    sectionLessons.length > 0 &&
+    sectionLessons.every((l) => doneSet.has(l.id));
 
   const prior = await prisma.attempt.findFirst({
     where: { userId: session.user.id, quizId: quiz.id },

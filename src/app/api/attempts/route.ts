@@ -174,14 +174,17 @@ export async function POST(req: Request) {
       .map((l) => l.id);
     // Diagnostic/practice quizzes with no lessons for their sectionKey stay open
     if (sectionLessonIds.length > 0) {
+      // Relation filter — D1 caps bound params at 100 (large units can exceed `in:`).
       const done = await prisma.progress.findMany({
         where: {
           userId,
-          lessonId: { in: sectionLessonIds },
           completed: true,
+          lesson: { courseId: quiz.courseId, sectionKey: quiz.sectionKey },
         },
+        select: { lessonId: true },
       });
-      if (done.length < sectionLessonIds.length) {
+      const doneSet = new Set(done.map((d) => d.lessonId));
+      if (!sectionLessonIds.every((id) => doneSet.has(id))) {
         return NextResponse.json(
           { error: "Complete all lessons in this section before taking the section quiz." },
           { status: 403 }
