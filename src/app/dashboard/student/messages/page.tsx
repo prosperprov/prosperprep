@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth";
 import { DashboardShell } from "@/components/DashboardShell";
+import { studentDashNavCompact } from "@/lib/dashboardNav";
 import { MessagingInbox } from "@/components/messaging/InboxClient";
 import { loadDirectoryForUser, loadInboxForUser } from "@/lib/messageInbox";
 import { brand } from "@/config/brand";
@@ -25,12 +26,7 @@ export default async function StudentMessagesPage() {
     <DashboardShell
       title="Messages"
       subtitle={`${brand.shortName} inbox · talk with teachers and classmates`}
-      nav={[
-        { href: "/dashboard/student", label: "Overview" },
-        { href: "/dashboard/student/messages", label: "Messages" },
-        { href: "/dashboard/student/grades", label: "Grades" },
-        { href: "/courses", label: "Catalog" },
-      ]}
+      nav={studentDashNavCompact()}
     >
       <MessagingInbox
         basePath="/dashboard/student/messages"

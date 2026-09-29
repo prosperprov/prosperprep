@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { DashboardShell } from "@/components/DashboardShell";
+import { teacherDashNav } from "@/lib/dashboardNav";
 import { MessagingInbox } from "@/components/messaging/InboxClient";
 import { loadDirectoryForUser, loadInboxForUser } from "@/lib/messageInbox";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
@@ -39,11 +40,7 @@ export default async function TeacherMessagesPage() {
     <DashboardShell
       title="Messages"
       subtitle={`${brand.shortName} · DMs, class blasts, and classroom groups`}
-      nav={[
-        { href: "/dashboard/teacher", label: "Classroom" },
-        { href: "/dashboard/teacher/messages", label: "Messages" },
-        { href: "/courses", label: "Catalog" },
-      ]}
+      nav={teacherDashNav()}
     >
       <MessagingInbox
         basePath="/dashboard/teacher/messages"

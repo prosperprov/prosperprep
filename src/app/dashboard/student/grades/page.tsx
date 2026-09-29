@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { DashboardShell } from "@/components/DashboardShell";
+import { studentDashNavCompact } from "@/lib/dashboardNav";
 import { courseAverage, letterGrade, LESSON_WEIGHT, SECTION_WEIGHT } from "@/lib/grading";
 import { brand } from "@/config/brand";
 
@@ -87,12 +88,7 @@ export default async function StudentGradesPage({
     <DashboardShell
       title={title}
       subtitle={subtitle}
-      nav={[
-        { href: "/dashboard/student", label: "Overview" },
-        { href: "/dashboard/student/grades", label: "Grades" },
-        { href: "/dashboard/student/report-cards", label: "Report cards" },
-        { href: "/courses", label: "Catalog" },
-      ]}
+      nav={studentDashNavCompact()}
     >
       <p className="mb-6 text-sm text-slate-600">
         Weights: lesson checks {Math.round(LESSON_WEIGHT * 100)}% · section quizzes{" "}
