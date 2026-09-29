@@ -2,6 +2,7 @@ import { redirect, notFound } from "next/navigation";
 import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { DashboardShell } from "@/components/DashboardShell";
+import { studentDashNavCompact } from "@/lib/dashboardNav";
 import { ThreadViewClient } from "@/components/messaging/ThreadViewClient";
 import { markThreadRead, userIsParticipant } from "@/lib/messaging";
 import { brand } from "@/config/brand";
@@ -42,10 +43,7 @@ export default async function StudentThreadPage({
     <DashboardShell
       title="Conversation"
       subtitle={brand.shortName}
-      nav={[
-        { href: "/dashboard/student", label: "Overview" },
-        { href: "/dashboard/student/messages", label: "Messages" },
-      ]}
+      nav={studentDashNavCompact()}
     >
       <ThreadViewClient
         threadId={thread.id}

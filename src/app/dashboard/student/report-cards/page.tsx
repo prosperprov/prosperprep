@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { DashboardShell } from "@/components/DashboardShell";
+import { studentDashNavCompact } from "@/lib/dashboardNav";
 import { getOrCreateReportCard } from "@/lib/reportCards";
 import { previousMonthBounds } from "@/lib/grading";
 import { brand } from "@/config/brand";
@@ -43,12 +44,7 @@ export default async function ReportCardsPage({
     <DashboardShell
       title={heading}
       subtitle={`${brand.shortName} · monthly academic summary`}
-      nav={[
-        { href: "/dashboard/student", label: "Overview" },
-        { href: "/dashboard/student/grades", label: "Grades" },
-        { href: "/dashboard/student/report-cards", label: "Report cards" },
-        { href: "/courses", label: "Catalog" },
-      ]}
+      nav={studentDashNavCompact()}
     >
       <div className="mb-6 flex flex-wrap gap-2">
         <Link

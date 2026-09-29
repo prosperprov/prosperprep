@@ -5,9 +5,8 @@ import { prisma } from "@/lib/prisma";
 import { DashboardShell } from "@/components/DashboardShell";
 import { gradeLabel } from "@/lib/grades";
 import { brand } from "@/config/brand";
-import { ManageBillingButton } from "@/components/ManageBillingButton";
 import { StudentNotifications } from "@/components/StudentNotifications";
-import { ChangePasswordForm } from "@/components/ChangePasswordForm";
+import { studentDashNav } from "@/lib/dashboardNav";
 import { isGrade6Classroom } from "@/lib/grade6Classroom";
 import { Grade6ClassroomHub } from "@/components/grade6/Grade6ClassroomHub";
 import { loadInboxForUser } from "@/lib/messageInbox";
@@ -166,15 +165,7 @@ export default async function StudentDashboard() {
   const totalLessons = lessonIds.length;
   const done = completedSet.size;
 
-  const nav = [
-    { href: "/dashboard/student", label: isGrade6Classroom(grade) ? "Classroom" : "Overview" },
-    { href: "/dashboard/student/messages", label: "Messages" },
-    { href: "/dashboard/student/grades", label: "Grades" },
-    { href: "/dashboard/student/report-cards", label: "Report cards" },
-    { href: "/courses", label: "Catalog" },
-    { href: "/enroll", label: "Enrollment" },
-    { href: "/dashboard/student#account", label: "Account" },
-  ];
+  const nav = studentDashNav(isGrade6Classroom(grade) ? "Classroom" : "Overview");
 
   const grade6 = isGrade6Classroom(grade);
 
@@ -222,14 +213,6 @@ export default async function StudentDashboard() {
         </div>
       )}
 
-      <div className="mb-6">
-        <ManageBillingButton
-          hasStripeCustomer={Boolean(
-            enrollments.some((e) => e.stripeCustomerId && !e.demoMode)
-          )}
-          demoOnly={Boolean(active?.demoMode) && !enrollments.some((e) => e.stripeCustomerId)}
-        />
-      </div>
 
       {grade6 ? (
         <Grade6ClassroomHub
@@ -393,13 +376,6 @@ export default async function StudentDashboard() {
         </>
       )}
 
-      <section id="account" className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Account</h2>
-        <p className="mt-1 mb-4 text-sm text-slate-500">
-          Change the password you use to sign in to Prosper Prep.
-        </p>
-        <ChangePasswordForm />
-      </section>
     </DashboardShell>
   );
 }

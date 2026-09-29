@@ -7,7 +7,7 @@ import { RescheduleSessionForm } from "@/components/RescheduleSessionForm";
 import { gradeLabel } from "@/lib/grades";
 import { brand } from "@/config/brand";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
-import { ChangePasswordForm } from "@/components/ChangePasswordForm";
+import { teacherDashNav } from "@/lib/dashboardNav";
 import { GradeWrittenPanel } from "@/components/GradeWrittenPanel";
 import { isGrade6Classroom } from "@/lib/grade6Classroom";
 import { Grade6TeacherGlance } from "@/components/grade6/Grade6TeacherGlance";
@@ -93,13 +93,7 @@ export default async function TeacherDashboard() {
     <DashboardShell
       title="Teacher dashboard"
       subtitle={`${brand.shortName} · ${gradeSummary}`}
-      nav={[
-        { href: "/dashboard/teacher", label: "Classroom" },
-        { href: "/dashboard/teacher/messages", label: "Messages" },
-        { href: "/courses", label: "Catalog" },
-        { href: "/dashboard/teacher#grades", label: "Grades" },
-        { href: "/dashboard/teacher#account", label: "Account" },
-      ]}
+      nav={teacherDashNav()}
     >
       {session.user.role === "TEACHER" && assignedGrades.length === 0 && (
         <div className="mb-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-950">
@@ -224,13 +218,6 @@ export default async function TeacherDashboard() {
         />
       </section>
 
-      <section id="account" className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Account</h2>
-        <p className="mt-1 mb-4 text-sm text-slate-500">
-          Change the password you use to sign in to Prosper Prep.
-        </p>
-        <ChangePasswordForm />
-      </section>
     </DashboardShell>
   );
 }
