@@ -1,0 +1,3774 @@
+{
+  "2|Fraction Sense Refresh": {
+    "objectives": "\u2022 Explain a fraction as parts of a whole and locate it on a number line.\n\u2022 Recognize equivalent fractions.\n\u2022 Use benchmarks (0, 1/2, 1) to estimate.",
+    "description": "Review fraction meaning, equivalence, and benchmarks on a number line.",
+    "teach_core": "## Objective\n\n**I can** explain a fraction as parts of a whole and locate it on a number line.\n\n## Warm-up (2 minutes)\n\nShade **3** of **4** equal parts of a rectangle. Say the fraction. Is it closer to 0, 1/2, or 1?\n\n## Teach\n\n### What a fraction means\n\nA fraction `a/b` means **a** equal parts when the whole is split into **b** equal parts.\n\n- Numerator = how many parts you have\n- Denominator = how many equal parts make one whole\n\n### Example 1 \u2014 number line\n\nPlace **3/4** on a number line from 0 to 1.\n\n1. Split the segment into **4** equal lengths.\n2. Count **3** marks from 0.\n3. That point is **3/4**, between 1/2 and 1.\n\n### Try this\n\nWhich is larger: **2/5** or **1/2**?\n\n**Check:** 2/5 = 0.4 and 1/2 = 0.5, so **1/2** is larger.\n\n### Example 2 \u2014 equivalent fractions\n\n**2/3** and **4/6** name the same amount: multiply top and bottom by 2 \u2192 `(2\u00d72)/(3\u00d72) = 4/6`.\n\n### Common mistake (this lesson only)\n\nClaiming a larger denominator always makes a larger fraction (e.g. 1/8 > 1/3). Fix: with the same numerator, a **smaller** denominator means **larger** pieces.\n\n## Guided practice (we do)\n\n1. Place 1/4, 1/2, and 3/4 on a 0\u20131 number line.  \n   **Answer:** Equally spaced quarters; 1/2 in the middle.\n\n2. Write two fractions equivalent to 3/5.  \n   **Answer:** Examples: 6/10, 9/15.\n\n3. True or false: 4/8 equals 1/2.  \n   **Answer:** True \u2014 divide top and bottom by 4.",
+    "exit": "## Exit ticket\n\n1. Place 2/3 on a 0\u20131 number line using a benchmark.\n2. Give one fraction equivalent to 5/6.\n\n## Stretch (optional)\n\nExplain why 5/8 > 1/2 without decimals.",
+    "questions": [
+      {
+        "prompt": "Which fraction is closest to 1 on a 0\u20131 number line?",
+        "choices": [
+          "1/8",
+          "3/8",
+          "1/2",
+          "7/8"
+        ],
+        "correctIndex": 3,
+        "explanation": "7/8 is one eighth short of a whole."
+      },
+      {
+        "prompt": "Which pair is equivalent?",
+        "choices": [
+          "2/3 and 3/2",
+          "2/4 and 1/2",
+          "1/3 and 3/1",
+          "3/5 and 5/3"
+        ],
+        "correctIndex": 1,
+        "explanation": "2/4 simplifies to 1/2."
+      },
+      {
+        "prompt": "A pizza has 6 equal slices; you eat 2. What fraction remains?",
+        "choices": [
+          "2/6",
+          "4/6",
+          "2/4",
+          "6/2"
+        ],
+        "correctIndex": 1,
+        "explanation": "4 of 6 left \u2192 4/6."
+      }
+    ]
+  },
+  "2|Adding and Subtracting Fractions": {
+    "objectives": "\u2022 Add and subtract fractions with like and unlike denominators.\n\u2022 Estimate before computing.\n\u2022 Rewrite with a common denominator when needed.",
+    "description": "Add/subtract with like and unlike denominators; estimate first.",
+    "teach_core": "## Objective\n\n**I can** add and subtract fractions with like and unlike denominators.\n\n## Warm-up (2 minutes)\n\nWithout writing: is **1/2 + 1/3** more or less than 1? How do you know?\n\n## Teach\n\n### Like denominators\n\nAdd or subtract numerators; keep the denominator.\n\n`3/8 + 2/8 = 5/8`\n\n### Example 1 \u2014 unlike denominators\n\n`1/2 + 1/3`\n\n1. Estimate: \u2248 0.5 + 0.33 \u2248 0.83 (less than 1).\n2. Common denominator of 2 and 3 is **6**.\n3. `1/2 = 3/6`, `1/3 = 2/6`.\n4. `3/6 + 2/6 = 5/6`.\n\n### Try this\n\n`3/4 \u2212 1/6`\n\n**Check:** Common denominator 12 \u2192 `9/12 \u2212 2/12 = 7/12`.\n\n### Common mistake (this lesson only)\n\nAdding denominators (`1/2 + 1/3 = 2/5`). Fix: make piece sizes match first.\n\n## Guided practice (we do)\n\n1. 2/5 + 1/5  \n   **Answer:** 3/5\n\n2. 5/6 \u2212 1/4  \n   **Answer:** 10/12 \u2212 3/12 = 7/12\n\n3. Estimate only: 7/8 + 1/9 \u2014 over or under 1?  \n   **Answer:** Over 1.",
+    "exit": "## Exit ticket\n\n1. Compute 1/2 + 2/5.\n2. Name the mistake in \u201c1/4 + 1/4 = 2/8.\u201d\n\n## Stretch (optional)\n\nWrite a word problem for 3/4 \u2212 1/8 and solve it.",
+    "questions": [
+      {
+        "prompt": "What is 2/7 + 3/7?",
+        "choices": [
+          "5/14",
+          "5/7",
+          "6/7",
+          "5/49"
+        ],
+        "correctIndex": 1,
+        "explanation": "Same denominator \u2192 5/7."
+      },
+      {
+        "prompt": "A correct first step for 1/4 + 1/6 is\u2026",
+        "choices": [
+          "Add to get 2/10",
+          "Use common denominator 12",
+          "Multiply 1/4 \u00d7 1/6",
+          "Subtract denominators"
+        ],
+        "correctIndex": 1,
+        "explanation": "12 is a common multiple of 4 and 6."
+      },
+      {
+        "prompt": "Compute 5/6 \u2212 1/3.",
+        "choices": [
+          "4/3",
+          "4/6",
+          "1/2",
+          "1/6"
+        ],
+        "correctIndex": 2,
+        "explanation": "1/3=2/6; 5/6\u22122/6=3/6=1/2."
+      }
+    ]
+  },
+  "2|Multiplying Fractions": {
+    "objectives": "\u2022 Multiply fractions and interpret the product as a portion of a portion.\n\u2022 Multiply numerators and denominators.\n\u2022 Simplify when helpful.",
+    "description": "Multiply fractions and mixed numbers; interpret area models.",
+    "teach_core": "## Objective\n\n**I can** multiply fractions and interpret the product as a portion of a portion.\n\n## Warm-up (2 minutes)\n\nWhat is half of one-half of a sandwich? Talk it out before writing a fraction.\n\n## Teach\n\n### Rule\n\n`(a/b) \u00d7 (c/d) = (a\u00d7c)/(b\u00d7d)`. Then simplify if you can.\n\n### Example 1 \u2014 portion of a portion\n\n`1/2 \u00d7 3/4` means half of three-fourths.\n\n`(1\u00d73)/(2\u00d74) = 3/8`.\n\n### Try this\n\n`2/3 \u00d7 3/5`\n\n**Check:** `(2\u00d73)/(3\u00d75) = 6/15 = 2/5`.\n\n### Example 2 \u2014 area model\n\nA 1-by-1 square: shade 2/3 horizontally and 1/2 vertically. The overlap is `2/3 \u00d7 1/2 = 1/3` of the square.\n\n### Common mistake (this lesson only)\n\nFinding a common denominator before multiplying (that step is for add/subtract). Fix: multiply straight across, then simplify.\n\n## Guided practice (we do)\n\n1. 1/4 \u00d7 2/3  \n   **Answer:** 2/12 = 1/6\n\n2. 3/5 \u00d7 10/9  \n   **Answer:** 30/45 = 2/3\n\n3. True or false: multiplying two fractions each less than 1 can give a result greater than 1.  \n   **Answer:** False \u2014 product is smaller than each factor when both are between 0 and 1.",
+    "exit": "## Exit ticket\n\n1. Compute 3/4 \u00d7 2/5.\n2. Explain \u201chalf of 2/3\u201d as a multiplication.\n\n## Stretch (optional)\n\nDraw an area model for 1/3 \u00d7 3/4.",
+    "questions": [
+      {
+        "prompt": "What is 1/2 \u00d7 2/5?",
+        "choices": [
+          "2/10",
+          "3/7",
+          "1/5",
+          "2/7"
+        ],
+        "correctIndex": 2,
+        "explanation": "1/2\u00d72/5=2/10=1/5."
+      },
+      {
+        "prompt": "Which expression means \u201cone-third of three-fourths\u201d?",
+        "choices": [
+          "1/3 + 3/4",
+          "1/3 \u00d7 3/4",
+          "3/4 \u2212 1/3",
+          "3/4 \u00f7 1/3"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u201cOf\u201d for fractions usually means multiply."
+      },
+      {
+        "prompt": "Simplify 4/9 \u00d7 3/8.",
+        "choices": [
+          "12/72",
+          "1/6",
+          "7/17",
+          "32/27"
+        ],
+        "correctIndex": 1,
+        "explanation": "12/72 = 1/6."
+      }
+    ]
+  },
+  "2|Dividing Fractions by Whole Numbers": {
+    "objectives": "\u2022 Interpret dividing a fraction by a whole number as sharing.\n\u2022 Use the rule (a/b) \u00f7 n = a/(b\u00d7n).\n\u2022 Check with multiplication.",
+    "description": "Interpret division as sharing and partitioning.",
+    "teach_core": "## Objective\n\n**I can** interpret dividing a fraction by a whole number as sharing.\n\n## Warm-up (2 minutes)\n\nYou have **3/4** of a pan of brownies to share equally among **3** people. About how much does each get?\n\n## Teach\n\n### Meaning\n\n`(a/b) \u00f7 n` means split the amount `a/b` into **n** equal shares.\n\n### Example 1\n\n`3/4 \u00f7 3`\n\nEach person gets one-third of three-fourths: `3/4 \u00d7 1/3 = 3/12 = 1/4`.\n\nOr: `3/4 \u00f7 3 = 3/(4\u00d73) = 3/12 = 1/4`.\n\n### Try this\n\n`2/5 \u00f7 4`\n\n**Check:** `2/(5\u00d74) = 2/20 = 1/10`.\n\n### Check with multiplication\n\nDoes `1/4 \u00d7 3 = 3/4`? Yes \u2014 so the quotient is correct.\n\n### Common mistake (this lesson only)\n\nDividing the denominator only (`3/4 \u00f7 3 = 3/1`). Fix: you are making more, smaller pieces \u2014 denominator grows (or multiply by 1/n).\n\n## Guided practice (we do)\n\n1. 1/2 \u00f7 2  \n   **Answer:** 1/4\n\n2. 4/5 \u00f7 2  \n   **Answer:** 4/10 = 2/5\n\n3. Check: if 3/8 \u00f7 3 = 1/8, does 1/8 \u00d7 3 = 3/8?  \n   **Answer:** Yes.",
+    "exit": "## Exit ticket\n\n1. Compute 5/6 \u00f7 5.\n2. Write a sharing story for 2/3 \u00f7 2.\n\n## Stretch (optional)\n\nWhy is 3/4 \u00f7 3 equal to 3/4 \u00d7 1/3?",
+    "questions": [
+      {
+        "prompt": "What is 3/4 \u00f7 3?",
+        "choices": [
+          "1",
+          "1/4",
+          "9/4",
+          "3/12 only (unsimplified)"
+        ],
+        "correctIndex": 1,
+        "explanation": "3/4\u00f73=1/4 (3/12 simplifies to 1/4)."
+      },
+      {
+        "prompt": "2/3 \u00f7 4 equals\u2026",
+        "choices": [
+          "8/3",
+          "2/12",
+          "1/6",
+          "6/4"
+        ],
+        "correctIndex": 2,
+        "explanation": "2/(3\u00d74)=2/12=1/6."
+      },
+      {
+        "prompt": "Best check for 1/2 \u00f7 2 = 1/4?",
+        "choices": [
+          "1/4 + 2 = 1/2",
+          "1/4 \u00d7 2 = 1/2",
+          "1/4 \u00f7 2 = 1/2",
+          "2 \u00d7 2 = 1/2"
+        ],
+        "correctIndex": 1,
+        "explanation": "Quotient \u00d7 divisor = dividend."
+      }
+    ]
+  },
+  "2|Dividing by a Fraction": {
+    "objectives": "\u2022 Divide by a fraction using keep-change-flip with meaning.\n\u2022 Check the quotient with multiplication.\n\u2022 Estimate whether the quotient should be greater or less than 1.",
+    "description": "Use keep-change-flip with meaning; check with multiplication.",
+    "teach_core": "## Objective\n\n**I can** divide by a fraction using keep-change-flip with meaning.\n\n## Warm-up (2 minutes)\n\nHow many **1/2**-cup servings are in **3** cups of juice? Estimate before computing.\n\n## Teach\n\n### Meaning\n\n`a \u00f7 (c/d)` asks: how many groups of size `c/d` fit into `a`?\n\n### Keep-change-flip\n\n`a/b \u00f7 c/d = a/b \u00d7 d/c` (multiply by the reciprocal).\n\n### Example 1\n\n`3 \u00f7 1/2`\n\nHow many halves in 3? Keep 3, change to \u00d7, flip 1/2 \u2192 2/1.\n\n`3 \u00d7 2 = 6` servings.\n\n### Try this\n\n`2/3 \u00f7 1/6`\n\n**Check:** `2/3 \u00d7 6/1 = 12/3 = 4`.\n\n### Example 2 \u2014 estimate first\n\n`1/2 \u00f7 1/4`: half is bigger than one-fourth, so the quotient should be **greater than 1**. Indeed `1/2 \u00d7 4/1 = 2`.\n\n### Common mistake (this lesson only)\n\nFlipping the first fraction instead of the second. Fix: only the divisor (the one you divide *by*) becomes its reciprocal.\n\n## Guided practice (we do)\n\n1. 4 \u00f7 1/4  \n   **Answer:** 16\n\n2. 3/4 \u00f7 3/8  \n   **Answer:** 3/4 \u00d7 8/3 = 2\n\n3. Is 1/3 \u00f7 2/3 greater or less than 1?  \n   **Answer:** Less than 1 (equals 1/2).",
+    "exit": "## Exit ticket\n\n1. Compute 5/6 \u00f7 1/3.\n2. Why does dividing by 1/2 double the number?\n\n## Stretch (optional)\n\nWrite a serving story for 2 \u00f7 1/4.",
+    "questions": [
+      {
+        "prompt": "What is 2 \u00f7 1/4?",
+        "choices": [
+          "1/2",
+          "8",
+          "1/8",
+          "4"
+        ],
+        "correctIndex": 1,
+        "explanation": "2\u00d74=8."
+      },
+      {
+        "prompt": "3/5 \u00f7 1/5 equals\u2026",
+        "choices": [
+          "3",
+          "3/25",
+          "1/3",
+          "15"
+        ],
+        "correctIndex": 0,
+        "explanation": "3/5\u00d75/1=3."
+      },
+      {
+        "prompt": "Which is the reciprocal of 2/7?",
+        "choices": [
+          "7/2",
+          "2/7",
+          "\u22122/7",
+          "7/2 only if improper"
+        ],
+        "correctIndex": 0,
+        "explanation": "Reciprocal swaps numerator and denominator: 7/2."
+      }
+    ]
+  },
+  "2|Mixed Numbers and Improper Fractions": {
+    "objectives": "\u2022 Convert mixed numbers to improper fractions and back.\n\u2022 Choose the form that fits the problem.\n\u2022 Avoid mixing whole and fraction parts incorrectly when computing.",
+    "description": "Convert fluently; choose the form that fits the problem.",
+    "teach_core": "## Objective\n\n**I can** convert mixed numbers to improper fractions and back.\n\n## Warm-up (2 minutes)\n\nIs **2 1/3** closer to 2 or to 3? Rewrite it as a single fraction greater than 1.\n\n## Teach\n\n### Mixed \u2192 improper\n\n`a b/c = (a\u00d7c + b)/c`.\n\n`2 1/3 = (2\u00d73 + 1)/3 = 7/3`.\n\n### Improper \u2192 mixed\n\nDivide numerator by denominator: `11/4 = 2 3/4` because 11 = 2\u00d74 + 3.\n\n### Try this\n\nConvert `3 2/5` to improper form.\n\n**Check:** `(3\u00d75 + 2)/5 = 17/5`.\n\n### When to convert\n\nMultiplying or dividing mixed numbers is often easier after converting to improper fractions first.\n\n### Common mistake (this lesson only)\n\nWriting `2 1/3` as `2/3` (dropping the whole). Fix: the whole number counts full groups of the denominator.\n\n## Guided practice (we do)\n\n1. Convert 4 1/2 to improper.  \n   **Answer:** 9/2\n\n2. Convert 17/5 to mixed.  \n   **Answer:** 3 2/5\n\n3. Which is greater: 5/3 or 1 1/2?  \n   **Answer:** 5/3 = 1 2/3 > 1 1/2.",
+    "exit": "## Exit ticket\n\n1. Convert 2 3/4 to improper.\n2. Convert 10/3 to mixed.\n\n## Stretch (optional)\n\nMultiply 1 1/2 \u00d7 2/3 by converting first.",
+    "questions": [
+      {
+        "prompt": "2 1/4 as an improper fraction is\u2026",
+        "choices": [
+          "5/4",
+          "9/4",
+          "6/4",
+          "3/4"
+        ],
+        "correctIndex": 1,
+        "explanation": "(2\u00d74+1)/4=9/4."
+      },
+      {
+        "prompt": "14/3 as a mixed number is\u2026",
+        "choices": [
+          "3 5/3",
+          "4 2/3",
+          "5 1/3",
+          "4 1/3"
+        ],
+        "correctIndex": 1,
+        "explanation": "14=4\u00d73+2 \u2192 4 2/3."
+      },
+      {
+        "prompt": "Which equals 7/2?",
+        "choices": [
+          "3 1/2",
+          "2 7/2",
+          "3 2/7",
+          "2 1/2"
+        ],
+        "correctIndex": 0,
+        "explanation": "7/2=3 1/2."
+      }
+    ]
+  },
+  "2|Decimal Place Value": {
+    "objectives": "\u2022 Read, write, and compare decimals through thousandths.\n\u2022 Name place values (tenths, hundredths, thousandths).\n\u2022 Use a place-value chart or number line to compare.",
+    "description": "Read, write, and compare decimals through thousandths.",
+    "teach_core": "## Objective\n\n**I can** read, write, and compare decimals through thousandths.\n\n## Warm-up (2 minutes)\n\nWhich is larger: **0.45** or **0.5**? Say both aloud with place-value words.\n\n## Teach\n\n### Place values\n\nAfter the decimal point: tenths, hundredths, thousandths.\n\n`0. sn` \u2192 3 tenths, 5 hundredths, 2 thousandths.\n\n### Example 1 \u2014 compare\n\nCompare **0.45** and **0.5**.\n\nWrite 0.5 as **0.50**. Compare hundredths: 45 hundredths < 50 hundredths, so **0.45 < 0.5**.\n\n### Try this\n\nOrder from least to greatest: 0.8, 0.75, 0.805.\n\n**Check:** 0.75 < 0.8 < 0.805 (compare as 750, 800, 805 thousandths).\n\n### Example 2 \u2014 read aloud\n\n`0.06` is **six hundredths**, not \u201cpoint zero six\u201d only \u2014 name the place.\n\n### Common mistake (this lesson only)\n\nThinking more digits always means larger (claiming 0.399 > 0.4). Fix: line up places; 0.400 > 0.399.\n\n## Guided practice (we do)\n\n1. Which is greater: 0.6 or 0.58?  \n   **Answer:** 0.6 = 0.60 > 0.58\n\n2. Write \u201cfour hundredths\u201d as a decimal.  \n   **Answer:** 0.04\n\n3. True or false: 0.30 = 0.3  \n   **Answer:** True \u2014 equivalent decimals.",
+    "exit": "## Exit ticket\n\n1. Compare 0.207 and 0.27.\n2. Write 0.008 in words.\n\n## Stretch (optional)\n\nPlace 0.3, 0.33, and 0.303 on a number line from 0.3 to 0.34.",
+    "questions": [
+      {
+        "prompt": "Which is greatest?",
+        "choices": [
+          "0.09",
+          "0.9",
+          "0.19",
+          "0.091"
+        ],
+        "correctIndex": 1,
+        "explanation": "0.9 is nine tenths."
+      },
+      {
+        "prompt": "0.045 is\u2026",
+        "choices": [
+          "45 tenths",
+          "45 hundredths",
+          "45 thousandths",
+          "45 ones"
+        ],
+        "correctIndex": 2,
+        "explanation": "Ends in thousandths place."
+      },
+      {
+        "prompt": "Which shows 0.7 = 0.70?",
+        "choices": [
+          "Never true",
+          "Always true",
+          "Only in money",
+          "Only if you round"
+        ],
+        "correctIndex": 1,
+        "explanation": "Trailing zeros after decimal do not change value."
+      }
+    ]
+  },
+  "2|Adding and Subtracting Decimals": {
+    "objectives": "\u2022 Add and subtract decimals by aligning place values.\n\u2022 Estimate to catch errors.\n\u2022 Annex zeros so place columns match.",
+    "description": "Align place values; estimate to catch errors.",
+    "teach_core": "## Objective\n\n**I can** add and subtract decimals by aligning place values.\n\n## Warm-up (2 minutes)\n\nAbout how much is **12.6 + 3.45**? Is your estimate closer to 15 or to 16?\n\n## Teach\n\n### Align the decimal points\n\nWrite numbers in a column with decimal points lined up. Annex zeros if needed.\n\n### Example 1\n\n`12.6 + 3.45`\n\n```\n  12.60\n+  3.45\n  -----\n  16.05\n```\n\nEstimate: 13 + 3 = 16 \u2014 matches.\n\n### Try this\n\n`5 \u2212 1.28`\n\n**Check:** `5.00 \u2212 1.28 = 3.72`.\n\n### Common mistake (this lesson only)\n\nLining up the rightmost digits instead of decimal points (`1.2 + 0.35` treated like 12+35). Fix: points in a vertical line first.\n\n## Guided practice (we do)\n\n1. 3.5 + 2.25  \n   **Answer:** 5.75\n\n2. 10 \u2212 0.4  \n   **Answer:** 9.6\n\n3. Estimate 9.9 + 0.15  \n   **Answer:** About 10.",
+    "exit": "## Exit ticket\n\n1. Compute 4.08 + 2.7.\n2. Compute 6 \u2212 2.35.\n\n## Stretch (optional)\n\nFind the error in a fictional student who wrote 1.5 + 0.25 = 0.40.",
+    "questions": [
+      {
+        "prompt": "1.2 + 0.35 =",
+        "choices": [
+          "0.47",
+          "1.55",
+          "1.37",
+          "4.7"
+        ],
+        "correctIndex": 1,
+        "explanation": "1.20+0.35=1.55."
+      },
+      {
+        "prompt": "Best first step for 7 \u2212 0.86?",
+        "choices": [
+          "Ignore the decimal",
+          "Write 7.00 \u2212 0.86",
+          "Add instead",
+          "Round 0.86 to 1 and stop"
+        ],
+        "correctIndex": 1,
+        "explanation": "Annex zeros and align points."
+      },
+      {
+        "prompt": "3.04 \u2212 1.2 =",
+        "choices": [
+          "1.84",
+          "2.84",
+          "1.82",
+          "4.24"
+        ],
+        "correctIndex": 0,
+        "explanation": "3.04\u22121.20=1.84."
+      }
+    ]
+  },
+  "2|Multiplying and Dividing Decimals": {
+    "objectives": "\u2022 Multiply and divide decimals with place-value reasoning.\n\u2022 Count decimal places when multiplying.\n\u2022 Estimate to check reasonableness.",
+    "description": "Compute with place-value reasoning and estimation checks.",
+    "teach_core": "## Objective\n\n**I can** multiply and divide decimals with place-value reasoning.\n\n## Warm-up (2 minutes)\n\nAbout how much is **0.5 \u00d7 0.4**? Should the product be less than 0.5?\n\n## Teach\n\n### Multiply\n\nMultiply as whole numbers, then place the decimal so the total number of decimal digits matches the factors.\n\n`0.5 \u00d7 0.4` \u2192 5 \u00d7 4 = 20, two decimal digits total \u2192 **0.20 = 0.2**.\n\n### Example 1\n\n`1.2 \u00d7 0.3` \u2192 12 \u00d7 3 = 36, two decimal places \u2192 **0.36**.\n\nEstimate: a bit more than 1 \u00d7 0.3 = 0.3 \u2014 yes.\n\n### Divide\n\n`1.8 \u00f7 0.3`: rewrite as `18 \u00f7 3 = 6` by multiplying both by 10 (same quotient).\n\n### Try this\n\n`2.5 \u00d7 0.4`\n\n**Check:** 25\u00d74=100 \u2192 **1.00 = 1**.\n\n### Common mistake (this lesson only)\n\nCounting places incorrectly (writing 1.2 \u00d7 0.3 = 3.6). Fix: count decimal digits in **both** factors.\n\n## Guided practice (we do)\n\n1. 0.6 \u00d7 0.2  \n   **Answer:** 0.12\n\n2. 3.6 \u00f7 0.4  \n   **Answer:** 9\n\n3. Estimate 0.99 \u00d7 4  \n   **Answer:** About 4.",
+    "exit": "## Exit ticket\n\n1. Compute 0.8 \u00d7 0.5.\n2. Compute 4.2 \u00f7 0.7.\n\n## Stretch (optional)\n\nExplain why 0.5 \u00d7 0.5 = 0.25 using an area model.",
+    "questions": [
+      {
+        "prompt": "0.4 \u00d7 0.2 =",
+        "choices": [
+          "0.8",
+          "0.08",
+          "0.6",
+          "8"
+        ],
+        "correctIndex": 1,
+        "explanation": "8 with two decimal places \u2192 0.08."
+      },
+      {
+        "prompt": "1.5 \u00f7 0.5 =",
+        "choices": [
+          "0.3",
+          "3",
+          "7.5",
+          "0.75"
+        ],
+        "correctIndex": 1,
+        "explanation": "1.5\u00d72=3; or 15\u00f75=3."
+      },
+      {
+        "prompt": "How many decimal places in the product 1.25 \u00d7 0.4 before simplifying?",
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "0"
+        ],
+        "correctIndex": 2,
+        "explanation": "2+1=3 decimal digits."
+      }
+    ]
+  },
+  "2|Fraction\u2013Decimal Connections": {
+    "objectives": "\u2022 Convert fluently between common fractions and decimals.\n\u2022 Recognize benchmarks (1/2=0.5, 1/4=0.25, 3/4=0.75).\n\u2022 Choose the form that makes the problem easier.",
+    "description": "Move fluently between fractions and decimals in context.",
+    "teach_core": "## Objective\n\n**I can** convert fluently between common fractions and decimals.\n\n## Warm-up (2 minutes)\n\nWrite **3/4** as a decimal and as a percent-ready hundredths amount.\n\n## Teach\n\n### Fraction \u2192 decimal\n\nDivide numerator by denominator: `3/4 = 3 \u00f7 4 = 0.75`.\n\n### Benchmarks to memorize\n\n`1/2 = 0.5`, `1/4 = 0.25`, `3/4 = 0.75`, `1/5 = 0.2`, `1/10 = 0.1`.\n\n### Example 1\n\n`2/5 = 4/10 = 0.4`.\n\n### Try this\n\nWrite 0.6 as a fraction in simplest form.\n\n**Check:** `0.6 = 6/10 = 3/5`.\n\n### Common mistake (this lesson only)\n\nWriting 1/4 = 0.4. Fix: 1\u00f74 = 0.25; 0.4 is 2/5.\n\n## Guided practice (we do)\n\n1. Convert 1/5 to a decimal.  \n   **Answer:** 0.2\n\n2. Convert 0.125 to a fraction.  \n   **Answer:** 125/1000 = 1/8\n\n3. Which is greater: 2/3 or 0.6?  \n   **Answer:** 2/3 \u2248 0.666\u2026 > 0.6",
+    "exit": "## Exit ticket\n\n1. Convert 7/10 to a decimal.\n2. Convert 0.05 to a fraction in simplest form.\n\n## Stretch (optional)\n\nExplain two ways to show that 3/4 = 0.75.",
+    "questions": [
+      {
+        "prompt": "3/5 as a decimal is\u2026",
+        "choices": [
+          "0.35",
+          "0.6",
+          "0.8",
+          "1.5"
+        ],
+        "correctIndex": 1,
+        "explanation": "3\u00f75=0.6."
+      },
+      {
+        "prompt": "0.25 as a fraction in simplest form is\u2026",
+        "choices": [
+          "25/100",
+          "1/4",
+          "2/5",
+          "1/25"
+        ],
+        "correctIndex": 1,
+        "explanation": "25/100=1/4."
+      },
+      {
+        "prompt": "Which equals 0.2?",
+        "choices": [
+          "1/2",
+          "1/5",
+          "2/5",
+          "1/4"
+        ],
+        "correctIndex": 1,
+        "explanation": "1/5=0.2."
+      }
+    ]
+  },
+  "3|Unit Rates": {
+    "objectives": "\u2022 Find a unit rate (\u201chow many per one\u201d).\n\u2022 Use unit rates to compare options.\n\u2022 Label units carefully.",
+    "description": "Find 'how many per one' and use unit rates to compare options.",
+    "teach_core": "## Objective\n\n**I can** find a unit rate (\u201chow many per one\u201d).\n\n## Warm-up (2 minutes)\n\nA pack of **8** pencils costs **$4**. About how much is one pencil?\n\n## Teach\n\n### Unit rate\n\nA **unit rate** tells the amount for **one** of something (per 1 mile, per 1 item, per 1 hour).\n\n### Example 1\n\n8 pencils for $4 \u2192 dollars per pencil: `4 \u00f7 8 = 0.5`, so **$0.50 per pencil**.\n\nAlso pencils per dollar: `8 \u00f7 4 = 2` pencils per dollar.\n\n### Try this\n\n15 miles in 3 hours \u2014 miles per hour?\n\n**Check:** `15 \u00f7 3 = 5` mph.\n\n### Example 2 \u2014 compare\n\nBrand A: 6 oz for $3 \u2192 $0.50/oz. Brand B: 10 oz for $4 \u2192 $0.40/oz. **B** is the better buy per ounce.\n\n### Common mistake (this lesson only)\n\nDividing in the wrong order (pencils \u00f7 dollars when you wanted dollars per pencil). Fix: say the unit words first: \u201cdollars **per** pencil\u201d \u2192 dollars \u00f7 pencils.\n\n## Guided practice (we do)\n\n1. 12 cookies for $3 \u2014 price per cookie?  \n   **Answer:** $1\n\n2. 180 miles in 3 hours \u2014 mph?  \n   **Answer:** 60 mph\n\n3. Which is better buy: 4 lb/$8 or 5 lb/$9?  \n   **Answer:** 5 lb/$9 \u2192 $1.80/lb vs $2/lb",
+    "exit": "## Exit ticket\n\n1. Find the unit price: 5 notebooks for $10.\n2. Compare 2 lb/$5 vs 3 lb/$6.\n\n## Stretch (optional)\n\nCreate two store offers and decide the better buy using unit rates.",
+    "questions": [
+      {
+        "prompt": "10 apples for $5. Unit price per apple?",
+        "choices": [
+          "$2",
+          "$0.50",
+          "$5",
+          "$10"
+        ],
+        "correctIndex": 1,
+        "explanation": "5\u00f710=0.5."
+      },
+      {
+        "prompt": "240 miles in 4 hours. Speed?",
+        "choices": [
+          "60 mph",
+          "244 mph",
+          "40 mph",
+          "960 mph"
+        ],
+        "correctIndex": 0,
+        "explanation": "240\u00f74=60."
+      },
+      {
+        "prompt": "\u201cMiles per hour\u201d means divide\u2026",
+        "choices": [
+          "hours \u00f7 miles",
+          "miles \u00f7 hours",
+          "miles \u00d7 hours",
+          "hours \u2212 miles"
+        ],
+        "correctIndex": 1,
+        "explanation": "Per hour \u2192 miles divided by hours."
+      }
+    ]
+  },
+  "3|Speed, Price, and Work Rates": {
+    "objectives": "\u2022 Apply unit rates to speed, unit price, and work contexts.\n\u2022 Scale rates with multiplication.\n\u2022 Keep units visible in every step.",
+    "description": "Apply unit rates to speed, unit price, and work contexts.",
+    "teach_core": "## Objective\n\n**I can** apply unit rates to speed, unit price, and work contexts.\n\n## Warm-up (2 minutes)\n\nA bus travels **50** miles per hour. How far in **3** hours?\n\n## Teach\n\n### Scaling a rate\n\nIf the rate is constant, multiply: distance = speed \u00d7 time.\n\n### Example 1 \u2014 speed\n\n50 mph \u00d7 3 h = **150 miles**.\n\n### Example 2 \u2014 work\n\nA printer makes 12 posters per hour. In 5 hours: `12 \u00d7 5 = 60` posters.\n\n### Try this\n\nUnit price $2.50 per lb. Cost for 4 lb?\n\n**Check:** `2.50 \u00d7 4 = $10`.\n\n### Common mistake (this lesson only)\n\nMixing hours and minutes without converting. Fix: convert to the same time unit before multiplying.\n\n## Guided practice (we do)\n\n1. 40 mph for 2.5 h \u2014 distance?  \n   **Answer:** 100 miles\n\n2. $1.25/lb for 6 lb?  \n   **Answer:** $7.50\n\n3. 15 jobs/hour for 4 hours?  \n   **Answer:** 60 jobs",
+    "exit": "## Exit ticket\n\n1. 60 mph for 1.5 hours \u2014 distance?\n2. $3 per pack, 7 packs \u2014 total?\n\n## Stretch (optional)\n\nA trail is 9 miles; you walk 3 mph. How long does it take?",
+    "questions": [
+      {
+        "prompt": "55 mph for 2 hours. Distance?",
+        "choices": [
+          "57 miles",
+          "110 miles",
+          "27.5 miles",
+          "550 miles"
+        ],
+        "correctIndex": 1,
+        "explanation": "55\u00d72=110."
+      },
+      {
+        "prompt": "$0.80 per ounce for 5 ounces?",
+        "choices": [
+          "$0.16",
+          "$4.00",
+          "$5.80",
+          "$0.85"
+        ],
+        "correctIndex": 1,
+        "explanation": "0.8\u00d75=4."
+      },
+      {
+        "prompt": "Work rate 8 tasks/hour \u00d7 3 hours =",
+        "choices": [
+          "11",
+          "24",
+          "5",
+          "3/8"
+        ],
+        "correctIndex": 1,
+        "explanation": "8\u00d73=24."
+      }
+    ]
+  },
+  "3|Complex Rate Tables": {
+    "objectives": "\u2022 Build and extend rate tables for multi-step planning.\n\u2022 Find missing values with equivalent rates.\n\u2022 Check that every row keeps the same unit rate.",
+    "description": "Extend rate tables for multi-step planning problems.",
+    "teach_core": "## Objective\n\n**I can** build and extend rate tables for multi-step planning.\n\n## Warm-up (2 minutes)\n\nA table shows 2 hours \u2192 10 miles. What should 4 hours show if the rate stays the same?\n\n## Teach\n\n### Rate tables\n\nEach row scales both quantities by the same factor so the unit rate stays constant.\n\n### Example 1\n\nHours: 2, Miles: 10 \u2192 unit rate 5 mph.\n\nFor 4 hours: multiply both by 2 \u2192 **20 miles**.\nFor 1 hour: divide by 2 \u2192 **5 miles**.\n\n### Try this\n\n3 packs \u2192 $12. Complete for 1 pack and 6 packs.\n\n**Check:** $4 per pack; 6 packs \u2192 $24.\n\n### Common mistake (this lesson only)\n\nAdding the same number to both columns instead of multiplying. Fix: ask \u201cWhat factor scaled the first column?\u201d\n\n## Guided practice (we do)\n\n1. 2\u21928 extends to 5\u2192?  \n   **Answer:** 20\n\n2. Fill: 4 cups mix for 10 cookies; cups for 25 cookies?  \n   **Answer:** 10 cups\n\n3. Check unit rate for rows (1,4) and (3,12).  \n   **Answer:** Both 4 per 1",
+    "exit": "## Exit ticket\n\n1. Rate table: 5 min \u2192 2 pages. Pages in 20 min?\n2. Why must both columns scale by the same factor?\n\n## Stretch (optional)\n\nBuild a 4-row rate table for a $3.50 lunch special per student.",
+    "questions": [
+      {
+        "prompt": "2 hours \u2192 12 miles. At same rate, 5 hours \u2192",
+        "choices": [
+          "15 miles",
+          "30 miles",
+          "24 miles",
+          "10 miles"
+        ],
+        "correctIndex": 1,
+        "explanation": "6 mph \u00d7 5 = 30."
+      },
+      {
+        "prompt": "Best way to find a missing table value?",
+        "choices": [
+          "Add 1 to both",
+          "Keep the unit rate; scale both columns",
+          "Guess",
+          "Only scale one column"
+        ],
+        "correctIndex": 1,
+        "explanation": "Equivalent rates scale both parts."
+      },
+      {
+        "prompt": "3 items cost $9. Unit rate?",
+        "choices": [
+          "$3/item",
+          "$9/item",
+          "$12/item",
+          "$1/item"
+        ],
+        "correctIndex": 0,
+        "explanation": "9\u00f73=3."
+      }
+    ]
+  },
+  "3|Percent as Per Hundred": {
+    "objectives": "\u2022 Define percent as parts per hundred.\n\u2022 Convert among fractions, decimals, and percents.\n\u2022 Use 100-grids and benchmarks.",
+    "description": "Define percent; convert among fractions, decimals, and percents.",
+    "teach_core": "## Objective\n\n**I can** define percent as parts per hundred.\n\n## Warm-up (2 minutes)\n\nShade **25** of **100** squares. What percent is shaded? What decimal?\n\n## Teach\n\n### Definition\n\n**Percent** means \u201cper hundred.\u201d `p% = p/100`.\n\n### Example 1\n\n`25% = 25/100 = 0.25 = 1/4`.\n\n### Conversions\n\n- Percent \u2192 decimal: divide by 100 (`40% \u2192 0.40`).\n- Decimal \u2192 percent: multiply by 100 (`0.3 \u2192 30%`).\n- Fraction \u2192 percent: make denominator 100 or divide then \u00d7100.\n\n### Try this\n\nWrite 3/5 as a percent.\n\n**Check:** `3/5 = 0.6 = 60%`.\n\n### Common mistake (this lesson only)\n\nWriting 5% as 0.5. Fix: 5% = 0.05 (five hundredths).\n\n## Guided practice (we do)\n\n1. 40% as decimal  \n   **Answer:** 0.4\n\n2. 0.07 as percent  \n   **Answer:** 7%\n\n3. 1/4 as percent  \n   **Answer:** 25%",
+    "exit": "## Exit ticket\n\n1. Convert 12% to a decimal.\n2. Convert 0.8 to a percent.\n\n## Stretch (optional)\n\nExplain why 100% of a quantity equals the whole quantity.",
+    "questions": [
+      {
+        "prompt": "35% as a decimal?",
+        "choices": [
+          "3.5",
+          "0.35",
+          "0.035",
+          "35"
+        ],
+        "correctIndex": 1,
+        "explanation": "35\u00f7100=0.35."
+      },
+      {
+        "prompt": "0.2 as a percent?",
+        "choices": [
+          "2%",
+          "20%",
+          "0.2%",
+          "200%"
+        ],
+        "correctIndex": 1,
+        "explanation": "0.2\u00d7100=20%."
+      },
+      {
+        "prompt": "Which equals 3/4?",
+        "choices": [
+          "34%",
+          "75%",
+          "0.34",
+          "7.5%"
+        ],
+        "correctIndex": 1,
+        "explanation": "3/4=0.75=75%."
+      }
+    ]
+  },
+  "3|Percent of a Number": {
+    "objectives": "\u2022 Find a percent of a quantity using decimals or benchmarks.\n\u2022 Compute p% of N as (p/100)\u00d7N.\n\u2022 Estimate with 10% and 50% benchmarks.",
+    "description": "Find a percent of a quantity with decimals or benchmark methods.",
+    "teach_core": "## Objective\n\n**I can** find a percent of a quantity using decimals or benchmarks.\n\n## Warm-up (2 minutes)\n\nAbout what is **10% of 80**? What about **50% of 80**?\n\n## Teach\n\n### Method\n\n`p% of N = (p/100) \u00d7 N`.\n\n### Example 1\n\n`30% of 80 = 0.30 \u00d7 80 = 24`.\n\n### Benchmarks\n\n10% of 80 = 8; so 30% = 3\u00d78 = 24. 50% of 80 = 40.\n\n### Try this\n\n25% of 60.\n\n**Check:** `0.25 \u00d7 60 = 15` (or half of half of 60).\n\n### Common mistake (this lesson only)\n\nMultiplying by p instead of p/100 (30% of 80 \u2192 2400). Fix: convert percent to decimal first.\n\n## Guided practice (we do)\n\n1. 20% of 45  \n   **Answer:** 9\n\n2. 5% of 200  \n   **Answer:** 10\n\n3. 75% of 40  \n   **Answer:** 30",
+    "exit": "## Exit ticket\n\n1. Find 40% of 50.\n2. Find 15% of 80 using 10% + 5%.\n\n## Stretch (optional)\n\nA jacket is $80; sales tax is 8%. Find the tax amount only.",
+    "questions": [
+      {
+        "prompt": "10% of 90?",
+        "choices": [
+          "9",
+          "10",
+          "81",
+          "900"
+        ],
+        "correctIndex": 0,
+        "explanation": "0.1\u00d790=9."
+      },
+      {
+        "prompt": "25% of 80?",
+        "choices": [
+          "20",
+          "25",
+          "40",
+          "2"
+        ],
+        "correctIndex": 0,
+        "explanation": "0.25\u00d780=20."
+      },
+      {
+        "prompt": "Best equation for 12% of 50?",
+        "choices": [
+          "12\u00d750",
+          "0.12\u00d750",
+          "50\u00f712",
+          "12\u00f750"
+        ],
+        "correctIndex": 1,
+        "explanation": "Percent of \u2192 decimal \u00d7 number."
+      }
+    ]
+  },
+  "3|Finding the Whole from a Percent": {
+    "objectives": "\u2022 Work backwards from a part and a percent to the whole.\n\u2022 Solve (p/100)\u00d7W = part for W.\n\u2022 Check by taking the percent of your answer.",
+    "description": "Work backwards from a part and a percent to the whole.",
+    "teach_core": "## Objective\n\n**I can** work backwards from a part and a percent to the whole.\n\n## Warm-up (2 minutes)\n\n**30%** of a number is **15**. About how big is the whole?\n\n## Teach\n\n### Idea\n\nIf `p% of W = part`, then `W = part \u00f7 (p/100)`.\n\n### Example 1\n\n30% of W = 15 \u2192 `W = 15 \u00f7 0.30 = 50`.\n\nCheck: 30% of 50 = 15. \u2713\n\n### Try this\n\n20% of a number is 8. Find the number.\n\n**Check:** `8 \u00f7 0.20 = 40`.\n\n### Common mistake (this lesson only)\n\nMultiplying the part by the percent (`15 \u00d7 0.30`) instead of dividing. Fix: the part is a *slice* of the whole \u2014 divide by the decimal percent.\n\n## Guided practice (we do)\n\n1. 25% of W = 10 \u2192 W?  \n   **Answer:** 40\n\n2. 50% of W = 17 \u2192 W?  \n   **Answer:** 34\n\n3. 10% of W = 6.5 \u2192 W?  \n   **Answer:** 65",
+    "exit": "## Exit ticket\n\n1. 40% of a number is 20. Find the number.\n2. Check your answer by taking 40% of it.\n\n## Stretch (optional)\n\nA tip of $9 is 15% of the bill. Find the bill before tip.",
+    "questions": [
+      {
+        "prompt": "20% of a number is 14. The number is\u2026",
+        "choices": [
+          "2.8",
+          "70",
+          "28",
+          "34"
+        ],
+        "correctIndex": 1,
+        "explanation": "14\u00f70.2=70."
+      },
+      {
+        "prompt": "5% of W = 3. W =",
+        "choices": [
+          "15",
+          "60",
+          "1.5",
+          "0.15"
+        ],
+        "correctIndex": 1,
+        "explanation": "3\u00f70.05=60."
+      },
+      {
+        "prompt": "Best check for \u201c25% of W = 8 \u21d2 W=32\u201d?",
+        "choices": [
+          "8\u00d725",
+          "0.25\u00d732=8",
+          "32\u00f725",
+          "8\u00f732=25"
+        ],
+        "correctIndex": 1,
+        "explanation": "Take 25% of 32."
+      }
+    ]
+  },
+  "3|Percent Increase and Decrease": {
+    "objectives": "\u2022 Compute and interpret percent change.\n\u2022 Use (change/original)\u00d7100%.\n\u2022 Distinguish increase vs decrease.",
+    "description": "Compute and interpret percent change.",
+    "teach_core": "## Objective\n\n**I can** compute and interpret percent change.\n\n## Warm-up (2 minutes)\n\nA price goes from **$40** to **$50**. Did it rise by half? By what percent?\n\n## Teach\n\n### Formula\n\nPercent change = `(new \u2212 original) / original \u00d7 100%`.\n\nPositive \u2192 increase; negative \u2192 decrease (or use absolute change and say \u201cdecrease\u201d).\n\n### Example 1 \u2014 increase\n\n40 \u2192 50: change = 10; `10/40 \u00d7 100% = 25%` increase.\n\n### Example 2 \u2014 decrease\n\n50 \u2192 40: `|40\u221250|/50 \u00d7 100% = 20%` decrease.\n\n### Try this\n\nFrom 80 to 100 \u2014 percent increase?\n\n**Check:** `20/80 \u00d7 100% = 25%`.\n\n### Common mistake (this lesson only)\n\nDividing by the *new* value instead of the original. Fix: original is always the starting amount in the denominator.\n\n## Guided practice (we do)\n\n1. 20\u219230 percent increase  \n   **Answer:** 50%\n\n2. 90\u219281 percent decrease  \n   **Answer:** 10%\n\n3. 50\u219250 percent change  \n   **Answer:** 0%",
+    "exit": "## Exit ticket\n\n1. From $25 to $30 \u2014 percent increase?\n2. From 60 to 45 \u2014 percent decrease?\n\n## Stretch (optional)\n\nA population grows 10% then shrinks 10%. Is it back to the start? Explain.",
+    "questions": [
+      {
+        "prompt": "From 40 to 50 is what percent increase?",
+        "choices": [
+          "10%",
+          "20%",
+          "25%",
+          "125%"
+        ],
+        "correctIndex": 2,
+        "explanation": "10/40=25%."
+      },
+      {
+        "prompt": "From 50 to 40 is what percent decrease?",
+        "choices": [
+          "20%",
+          "25%",
+          "10%",
+          "80%"
+        ],
+        "correctIndex": 0,
+        "explanation": "10/50=20%."
+      },
+      {
+        "prompt": "Denominator in percent change is\u2026",
+        "choices": [
+          "The new value",
+          "The original value",
+          "The average",
+          "Always 100"
+        ],
+        "correctIndex": 1,
+        "explanation": "Compare change to the start."
+      }
+    ]
+  },
+  "3|Tax, Tip, and Discount": {
+    "objectives": "\u2022 Solve everyday money percent problems carefully.\n\u2022 Decide whether to add tax/tip or subtract discount.\n\u2022 Compute final price in clear steps.",
+    "description": "Solve everyday money percent problems carefully.",
+    "teach_core": "## Objective\n\n**I can** solve everyday money percent problems carefully.\n\n## Warm-up (2 minutes)\n\nA $40 meal with **10% tip** \u2014 about how much is the tip? The total?\n\n## Teach\n\n### Discount\n\nSale price = original \u2212 (discount% \u00d7 original).\n\nOr multiply by `(1 \u2212 discount decimal)`.\n\n### Example 1 \u2014 discount\n\n$80 jacket, 25% off \u2192 discount `0.25\u00d780=20` \u2192 pay **$60**.\n\n### Example 2 \u2014 tax\n\n$50 item, 8% tax \u2192 tax `0.08\u00d750=4` \u2192 total **$54**.\n\n### Try this\n\n$40 meal, 15% tip. Tip and total?\n\n**Check:** Tip $6; total $46.\n\n### Common mistake (this lesson only)\n\nTaking tax on the discounted price when the problem says tax on original (or the reverse). Fix: read which amount the percent applies to.\n\n## Guided practice (we do)\n\n1. $20 with 10% off \u2192 pay?  \n   **Answer:** $18\n\n2. $30 + 5% tax \u2192 total?  \n   **Answer:** $31.50\n\n3. $50 + 20% tip \u2192 total?  \n   **Answer:** $60",
+    "exit": "## Exit ticket\n\n1. $70 shoes, 30% off \u2014 sale price?\n2. $25 lunch, 8% tax \u2014 total?\n\n## Stretch (optional)\n\nStack a 20% discount then 10% off the sale price on $100. Final price?",
+    "questions": [
+      {
+        "prompt": "$40 with 25% off. Sale price?",
+        "choices": [
+          "$10",
+          "$30",
+          "$15",
+          "$65"
+        ],
+        "correctIndex": 1,
+        "explanation": "0.25\u00d740=10; 40\u221210=30."
+      },
+      {
+        "prompt": "$50 + 6% tax. Total?",
+        "choices": [
+          "$3",
+          "$53",
+          "$56",
+          "$47"
+        ],
+        "correctIndex": 1,
+        "explanation": "Tax $3; total $53."
+      },
+      {
+        "prompt": "15% tip on $40?",
+        "choices": [
+          "$6",
+          "$15",
+          "$25",
+          "$4"
+        ],
+        "correctIndex": 0,
+        "explanation": "0.15\u00d740=6."
+      }
+    ]
+  },
+  "3|Percent Error and Estimation": {
+    "objectives": "\u2022 Use estimation and percent error to check reasonableness.\n\u2022 Compute |estimate\u2212actual|/actual \u00d7 100%.\n\u2022 Decide if an answer is \u201cclose enough\u201d for the context.",
+    "description": "Use estimation and percent error thinking to check reasonableness.",
+    "teach_core": "## Objective\n\n**I can** use estimation and percent error to check reasonableness.\n\n## Warm-up (2 minutes)\n\nYou estimate **50** but the exact value is **40**. Is that a big miss?\n\n## Teach\n\n### Percent error\n\n`|estimate \u2212 actual| / actual \u00d7 100%`.\n\n### Example 1\n\nEstimate 50, actual 40: `|50\u221240|/40 \u00d7 100% = 25%` error.\n\n### Try this\n\nEstimate 90, actual 100. Percent error?\n\n**Check:** `10/100 \u00d7 100% = 10%`.\n\n### Estimation habit\n\nBefore fine calculation, rough numbers catch impossible results (like a 15% tip larger than the bill).\n\n### Common mistake (this lesson only)\n\nDividing by the estimate instead of the actual. Fix: actual (true value) goes in the denominator.\n\n## Guided practice (we do)\n\n1. Est 25, actual 20 \u2014 % error?  \n   **Answer:** 25%\n\n2. Est 48, actual 50 \u2014 % error?  \n   **Answer:** 4%\n\n3. Is 2% error usually smaller than 20%?  \n   **Answer:** Yes",
+    "exit": "## Exit ticket\n\n1. Estimate 70, actual 50 \u2014 percent error?\n2. Why estimate before computing tax?\n\n## Stretch (optional)\n\nInvent a shopping estimate and compute its percent error vs a \u201creceipt\u201d total.",
+    "questions": [
+      {
+        "prompt": "Estimate 60, actual 50. Percent error?",
+        "choices": [
+          "10%",
+          "20%",
+          "16.7% approx",
+          "Both B and C"
+        ],
+        "correctIndex": 3,
+        "explanation": "10/50=20%."
+      },
+      {
+        "prompt": "Denominator in percent error is\u2026",
+        "choices": [
+          "Estimate",
+          "Actual",
+          "Difference",
+          "100 always"
+        ],
+        "correctIndex": 1,
+        "explanation": "Compare error to the true value."
+      },
+      {
+        "prompt": "Estimate 99, actual 100. Percent error?",
+        "choices": [
+          "1%",
+          "99%",
+          "0%",
+          "100%"
+        ],
+        "correctIndex": 0,
+        "explanation": "1/100=1%."
+      }
+    ]
+  },
+  "3|Rates & Percents Unit Review": {
+    "objectives": "\u2022 Connect unit rates, tables, and percents in mixed practice.\n\u2022 Choose a representation that fits the question.\n\u2022 Catch common order and percent mistakes.",
+    "description": "Mixed practice connecting rates, ratios, and percents.",
+    "teach_core": "## Objective\n\n**I can** connect unit rates, tables, and percents in mixed practice.\n\n## Warm-up (2 minutes)\n\nName one tool from this unit (unit rate, table, or percent) you would use to compare two cereal boxes.\n\n## Teach\n\n### Review map\n\n- Unit rate \u2192 compare \u201cper one.\u201d\n- Tables \u2192 scale equivalent rates.\n- Percents \u2192 parts per hundred; of / change / tax-tip-discount.\n\n### Example mix\n\n12 oz for $3 \u2192 $0.25/oz. A coupon takes 20% off $3 \u2192 pay $2.40 \u2192 new unit price $0.20/oz.\n\n### Try this\n\nSpeed 40 mph for 2 hours, then what percent of a 100-mile trip is done?\n\n**Check:** 80 miles; 80% of the trip.\n\n### Common mistake (this lesson only)\n\nMixing \u201cpercent of\u201d with \u201cpercent change\u201d formulas. Fix: ask whether you already know the whole or are comparing two totals.\n\n## Guided practice (we do)\n\n1. Unit price 5 for $10?  \n   **Answer:** $2 each\n\n2. 25% of 80?  \n   **Answer:** 20\n\n3. From 40 to 50 % increase?  \n   **Answer:** 25%",
+    "exit": "## Exit ticket\n\n1. Better buy: 8 for $6 vs 12 for $8?\n2. 15% tip on $40 \u2014 tip amount?\n\n## Stretch (optional)\n\nWrite a 3-step problem that uses a rate table and a percent discount.",
+    "questions": [
+      {
+        "prompt": "6 items for $15. Unit price?",
+        "choices": [
+          "$2.50",
+          "$9",
+          "$21",
+          "$0.40"
+        ],
+        "correctIndex": 0,
+        "explanation": "15\u00f76=2.5."
+      },
+      {
+        "prompt": "30% of 90?",
+        "choices": [
+          "27",
+          "30",
+          "60",
+          "3"
+        ],
+        "correctIndex": 0,
+        "explanation": "0.3\u00d790=27."
+      },
+      {
+        "prompt": "From 20 to 30 is what % increase?",
+        "choices": [
+          "10%",
+          "50%",
+          "33%",
+          "150%"
+        ],
+        "correctIndex": 1,
+        "explanation": "10/20=50%."
+      }
+    ]
+  },
+  "4|Powers as Repeated Multiplication": {
+    "objectives": "\u2022 Interpret a^n as n factors of a.\n\u2022 Write products as powers.\n\u2022 Distinguish a^n from a\u00d7n.",
+    "description": "Interpret a^n as n factors of a for whole-number exponents.",
+    "teach_core": "## Objective\n\n**I can** interpret a^n as n factors of a.\n\n## Warm-up (2 minutes)\n\nWrite 5\u00d75\u00d75 in a shorter way. How many factors of 5?\n\n## Teach\n\n### Power notation\n\n`a^n` means **n** factors of **a** (base a, exponent n).\n\n### Example 1\n\n`2^5 = 32`. Note `3^2 = 9`, not 6.\n\n### Try this\n\nWrite 7\u00d77\u00d77\u00d77 as a power.\n\n**Check:** 7^4\n\n### Example 2\n\nSquare side 4: area `4^2 = 16` square units.\n\n### Common mistake (this lesson only)\n\nReading 3^2 as 3\u00d72. Fix: exponent counts factors.\n\n## Guided practice (we do)\n\n1. Expand 5^3  \n   **Answer:** 125\n\n2. 2\u00d72\u00d72\u00d72 as a power  \n   **Answer:** 2^4\n\n3. True/false: 4^2=8  \n   **Answer:** False; equals 16",
+    "exit": "## Exit ticket\n\n1. Expand 6^2.\n2. Why is 2^3 not equal to 6?\n\n## Stretch (optional)\n\nExplain 10^3 using place value.",
+    "questions": [
+      {
+        "prompt": "2^4 =",
+        "choices": [
+          "8",
+          "16",
+          "6",
+          "24"
+        ],
+        "correctIndex": 1,
+        "explanation": "2\u00d72\u00d72\u00d72=16."
+      },
+      {
+        "prompt": "3^2 means",
+        "choices": [
+          "3\u00d72",
+          "3+2",
+          "3\u00d73",
+          "2\u00d72\u00d72"
+        ],
+        "correctIndex": 2,
+        "explanation": "Two factors of 3."
+      },
+      {
+        "prompt": "5\u00d75\u00d75 equals",
+        "choices": [
+          "5^2",
+          "5^3",
+          "3^5",
+          "15"
+        ],
+        "correctIndex": 1,
+        "explanation": "Three factors \u2192 5^3."
+      }
+    ]
+  },
+  "4|Evaluating Powers": {
+    "objectives": "\u2022 Evaluate numerical powers.\n\u2022 Compare powers with different bases or exponents.\n\u2022 Estimate before computing.",
+    "description": "Evaluate numerical powers and compare sizes.",
+    "teach_core": "## Objective\n\n**I can** evaluate numerical powers.\n\n## Warm-up (2 minutes)\n\nWhich is larger: 2^5 or 5^2?\n\n## Teach\n\n### Evaluate\n\nMultiply the base by itself according to the exponent.\n\n### Example 1\n\n`2^5=32`, `5^2=25`, so 2^5 is larger.\n\n### Try this\n\nEvaluate 4^3.\n\n**Check:** 64\n\n### Example 2\n\n`10^3=1000`. Raising the exponent by 1 multiplies by another 10.\n\n### Common mistake (this lesson only)\n\nTreating a^n as a\u00d7n.\n\n## Guided practice (we do)\n\n1. 3^4  \n   **Answer:** 81\n\n2. Larger: 6^2 or 2^6?  \n   **Answer:** 2^6=64\n\n3. 10^4  \n   **Answer:** 10000",
+    "exit": "## Exit ticket\n\n1. Evaluate 5^3.\n2. Compare 3^3 and 4^2.\n\n## Stretch (optional)\n\nIs 2^10 nearer 500 or 1000?",
+    "questions": [
+      {
+        "prompt": "4^3 =",
+        "choices": [
+          "12",
+          "64",
+          "16",
+          "81"
+        ],
+        "correctIndex": 1,
+        "explanation": "64."
+      },
+      {
+        "prompt": "Which is greater?",
+        "choices": [
+          "2^3",
+          "3^2",
+          "Equal",
+          "Unknown"
+        ],
+        "correctIndex": 1,
+        "explanation": "8 vs 9."
+      },
+      {
+        "prompt": "10^2 =",
+        "choices": [
+          "20",
+          "100",
+          "1000",
+          "12"
+        ],
+        "correctIndex": 1,
+        "explanation": "100."
+      }
+    ]
+  },
+  "4|Order of Operations Foundations": {
+    "objectives": "\u2022 Apply order of operations.\n\u2022 Work left to right within the same priority.\n\u2022 Show each step.",
+    "description": "Apply parentheses, exponents, multiply/divide, add/subtract consistently.",
+    "teach_core": "## Objective\n\n**I can** apply order of operations.\n\n## Warm-up (2 minutes)\n\nCompute 3+4\u00d72. Why is 14 incorrect?\n\n## Teach\n\n### Order\n\nGrouping \u2192 exponents \u2192 \u00d7\u00f7 left-to-right \u2192 +\u2212 left-to-right.\n\n### Example 1\n\n`3+4\u00d72 = 3+8 = 11`.\n\n### Try this\n\n10 \u2212 3^2.\n\n**Check:** 1\n\n### Example 2\n\n`20\u00f74\u00d75 = 5\u00d75 = 25`.\n\n### Common mistake (this lesson only)\n\nAdding before multiplying.\n\n## Guided practice (we do)\n\n1. 5+2\u00d76  \n   **Answer:** 17\n\n2. 18\u00f73\u00d72  \n   **Answer:** 12\n\n3. (5+2)\u00d76  \n   **Answer:** 42",
+    "exit": "## Exit ticket\n\n1. Evaluate 8+4\u00f72.\n2. Evaluate 2^3+1.\n\n## Stretch (optional)\n\nTwo expressions that differ only by parentheses.",
+    "questions": [
+      {
+        "prompt": "3+4\u00d72 =",
+        "choices": [
+          "14",
+          "11",
+          "10",
+          "24"
+        ],
+        "correctIndex": 1,
+        "explanation": "11."
+      },
+      {
+        "prompt": "10\u22122^2 =",
+        "choices": [
+          "64",
+          "6",
+          "8",
+          "16"
+        ],
+        "correctIndex": 1,
+        "explanation": "6."
+      },
+      {
+        "prompt": "16\u00f74\u00d72 =",
+        "choices": [
+          "2",
+          "8",
+          "1",
+          "32"
+        ],
+        "correctIndex": 1,
+        "explanation": "8."
+      }
+    ]
+  },
+  "4|Expressions with Grouping Symbols": {
+    "objectives": "\u2022 Use grouping symbols to control order.\n\u2022 Simplify inside groups first.\n\u2022 Match verbal meaning with parentheses.",
+    "description": "Use parentheses and brackets to control evaluation order.",
+    "teach_core": "## Objective\n\n**I can** use grouping symbols to control order.\n\n## Warm-up (2 minutes)\n\nHow do (8\u22123)\u00d72 and 8\u22123\u00d72 differ?\n\n## Teach\n\n### Grouping first\n\nFinish inside () or [] before outside operations.\n\n### Example 1\n\n`(8\u22123)\u00d72=10` but `8\u22123\u00d72=2`.\n\n### Try this\n\n2(7\u22124)^2.\n\n**Check:** 18\n\n### Example 2\n\n`[12\u00f7(2+4)]+1=3`.\n\n### Common mistake (this lesson only)\n\nLeaving a group unfinished.\n\n## Guided practice (we do)\n\n1. (9\u22125)^2  \n   **Answer:** 16\n\n2. 3(2+5)  \n   **Answer:** 21\n\n3. 20\u00f7(2\u00d75)  \n   **Answer:** 2",
+    "exit": "## Exit ticket\n\n1. (6+2)/4.\n2. Add parentheses so 8\u22123\u00d72 becomes 10.\n\n## Stretch (optional)\n\nA story that needs parentheses.",
+    "questions": [
+      {
+        "prompt": "(5+3)\u00d72 =",
+        "choices": [
+          "11",
+          "16",
+          "13",
+          "10"
+        ],
+        "correctIndex": 1,
+        "explanation": "16."
+      },
+      {
+        "prompt": "4+2^2\u00d73 =",
+        "choices": [
+          "36",
+          "16",
+          "20",
+          "12"
+        ],
+        "correctIndex": 1,
+        "explanation": "16."
+      },
+      {
+        "prompt": "First step in 3[8\u2212(2+1)]?",
+        "choices": [
+          "3\u00d78",
+          "2+1",
+          "8\u22122",
+          "3\u00d77"
+        ],
+        "correctIndex": 1,
+        "explanation": "Innermost first."
+      }
+    ]
+  },
+  "4|Exponents in Area and Volume Contexts": {
+    "objectives": "\u2022 Connect a^2 to square area and a^3 to cube volume.\n\u2022 Use square/cubic units.\n\u2022 Find a side length from area when appropriate.",
+    "description": "Connect squares and cubes to geometric meaning.",
+    "teach_core": "## Objective\n\n**I can** connect a^2 to square area and a^3 to cube volume.\n\n## Warm-up (2 minutes)\n\nA square has side 6 cm. What expression gives its area?\n\n## Teach\n\n### Geometry link\n\nSquare area s^2; cube volume s^3.\n\n### Example 1\n\nSide 6 \u2192 area 36 square cm.\n\n### Try this\n\nCube side 3 in \u2014 volume?\n\n**Check:** 27 cubic inches\n\n### Example 2\n\nArea 49 ft^2 \u2192 side 7 ft.\n\n### Common mistake (this lesson only)\n\nLabeling area with linear units.\n\n## Guided practice (we do)\n\n1. Side 5 \u2192 area  \n   **Answer:** 25 square units\n\n2. Side 4 \u2192 cube volume  \n   **Answer:** 64 cubic units\n\n3. Area 81 \u2192 side  \n   **Answer:** 9",
+    "exit": "## Exit ticket\n\n1. Area of square side 8.\n2. Volume of cube side 2.\n\n## Stretch (optional)\n\nWhy 4^3 is not the area of a square with side 4.",
+    "questions": [
+      {
+        "prompt": "Square side 7. Area?",
+        "choices": [
+          "14",
+          "49",
+          "21",
+          "28"
+        ],
+        "correctIndex": 1,
+        "explanation": "49."
+      },
+      {
+        "prompt": "Cube side 5. Volume?",
+        "choices": [
+          "15",
+          "25",
+          "125",
+          "75"
+        ],
+        "correctIndex": 2,
+        "explanation": "125."
+      },
+      {
+        "prompt": "Units for s^2 when s is in meters?",
+        "choices": [
+          "meters",
+          "square meters",
+          "cubic meters",
+          "none"
+        ],
+        "correctIndex": 1,
+        "explanation": "Area uses square units."
+      }
+    ]
+  },
+  "4|Writing Expressions with Exponents": {
+    "objectives": "\u2022 Translate verbal phrases that include powers.\n\u2022 Distinguish square of a sum from sum of squares.\n\u2022 Use parentheses when the base is a sum.",
+    "description": "Translate verbal phrases that include powers.",
+    "teach_core": "## Objective\n\n**I can** translate verbal phrases that include powers.\n\n## Warm-up (2 minutes)\n\nDoes \u201cthe square of a number plus 3\u201d mean (n+3)^2 or n^2+3?\n\n## Teach\n\n### Phrases\n\nSquare of n \u2192 n^2. Square of (n+3) \u2192 (n+3)^2. n squared plus 3 \u2192 n^2+3.\n\n### Example 1\n\n\u201cFive squared times 2\u201d \u2192 5^2\u00d72=50.\n\n### Try this\n\nWrite: the cube of (x+1).\n\n**Check:** (x+1)^3\n\n### Example 2\n\n\u201cTwice the square of 4\u201d \u2192 2\u00d74^2=32, not (2\u00d74)^2.\n\n### Common mistake (this lesson only)\n\nDropping parentheses when the base is a sum.\n\n## Guided practice (we do)\n\n1. Square of 9  \n   **Answer:** 81\n\n2. Twice 3 squared  \n   **Answer:** 18\n\n3. (2+3)^2 vs 2^2+3^2  \n   **Answer:** 25 vs 13",
+    "exit": "## Exit ticket\n\n1. Write: square of (y\u22121).\n2. Evaluate twice five squared.\n\n## Stretch (optional)\n\nTwo similar phrases needing different parentheses.",
+    "questions": [
+      {
+        "prompt": "\u201cFour squared plus 1\u201d",
+        "choices": [
+          "(4+1)^2",
+          "4^2+1",
+          "4^(2+1)",
+          "16"
+        ],
+        "correctIndex": 1,
+        "explanation": "4^2+1."
+      },
+      {
+        "prompt": "\u201cSquare of the sum of 2 and 3\u201d",
+        "choices": [
+          "2^2+3",
+          "(2+3)^2",
+          "2+3^2",
+          "2^2+3^2"
+        ],
+        "correctIndex": 1,
+        "explanation": "(2+3)^2."
+      },
+      {
+        "prompt": "2\u00d75^2 =",
+        "choices": [
+          "100",
+          "50",
+          "14",
+          "20"
+        ],
+        "correctIndex": 1,
+        "explanation": "50."
+      }
+    ]
+  },
+  "4|Common Order Mistakes": {
+    "objectives": "\u2022 Diagnose classic order-of-operations errors.\n\u2022 Repair from the broken step.\n\u2022 Explain why a wrong path fails.",
+    "description": "Diagnose and fix classic PEMDAS/GEMS errors.",
+    "teach_core": "## Objective\n\n**I can** diagnose classic order-of-operations errors.\n\n## Warm-up (2 minutes)\n\nA student says 8\u22122+1=5. What went wrong?\n\n## Teach\n\n### Error hunt\n\nName the broken rule, recompute, state the correct value.\n\n### Example 1\n\nWrong: 8\u22122+1\u21925. Correct left-to-right: **7**.\n\n### Try this\n\nFix 4+18\u00f72\u00d73.\n\n**Check:** 31\n\n### Example 2\n\nWrong: 2+3^2=25. Correct: 2+9=11.\n\n### Common mistake (this lesson only)\n\nAlways doing multiplication before division even when division is leftmost.\n\n## Guided practice (we do)\n\n1. Correct value of 10\u22123\u22122  \n   **Answer:** 5\n\n2. Correct 5\u00d72^2  \n   **Answer:** 20\n\n3. 16\u00f74\u00f72  \n   **Answer:** 2",
+    "exit": "## Exit ticket\n\n1. Repair 9\u22123\u00d72 if someone got 12.\n2. Repair 2^3\u00d72 if someone got 2^6.\n\n## Stretch (optional)\n\nA wrong solution plus a one-sentence coach note.",
+    "questions": [
+      {
+        "prompt": "8\u22122+1 =",
+        "choices": [
+          "5",
+          "7",
+          "9",
+          "6"
+        ],
+        "correctIndex": 1,
+        "explanation": "7."
+      },
+      {
+        "prompt": "Error in 2+3^2=25?",
+        "choices": [
+          "Forgot exponent",
+          "Added before exponent",
+          "Multiplied wrong",
+          "Used parentheses"
+        ],
+        "correctIndex": 1,
+        "explanation": "Added then squared."
+      },
+      {
+        "prompt": "16\u00f74\u00d72 =",
+        "choices": [
+          "2",
+          "8",
+          "1",
+          "32"
+        ],
+        "correctIndex": 1,
+        "explanation": "8."
+      }
+    ]
+  },
+  "4|Exponents & Order Unit Review": {
+    "objectives": "\u2022 Evaluate mixed expressions with powers.\n\u2022 Translate and compare verbal phrases.\n\u2022 Catch left-to-right and parentheses errors.",
+    "description": "Mixed fluency with powers and multi-step expressions.",
+    "teach_core": "## Objective\n\n**I can** evaluate mixed expressions with powers.\n\n## Warm-up (2 minutes)\n\nList the order-of-operations steps in your own words.\n\n## Teach\n\n### Checklist\n\nPowers; grouping first; \u00d7\u00f7 then +\u2212 left-to-right; s^2 area; s^3 volume.\n\n### Example mix\n\n`2(3+1)^2 \u2212 5 = 32 \u2212 5 = 27`.\n\n### Try this\n\n5^2 \u2212 3^2.\n\n**Check:** 16\n\n### Example 2\n\nSquare side 9 \u2192 area 81; cube side 3 \u2192 volume 27.\n\n### Common mistake (this lesson only)\n\nStopping after one step while higher-priority ops remain.\n\n## Guided practice (we do)\n\n1. (2+3)^2  \n   **Answer:** 25\n\n2. 2^3+2^2  \n   **Answer:** 12\n\n3. Cube side 3 volume  \n   **Answer:** 27",
+    "exit": "## Exit ticket\n\n1. Evaluate 18\u00f73^2.\n2. Area of square side 9.\n\n## Stretch (optional)\n\nCreate a 3-step expression whose value is 10.",
+    "questions": [
+      {
+        "prompt": "3^2+4^2 =",
+        "choices": [
+          "49",
+          "25",
+          "14",
+          "24"
+        ],
+        "correctIndex": 1,
+        "explanation": "25."
+      },
+      {
+        "prompt": "(8\u22123)\u00d72^2 =",
+        "choices": [
+          "20",
+          "40",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0,
+        "explanation": "20."
+      },
+      {
+        "prompt": "Side 6 square area?",
+        "choices": [
+          "12",
+          "36",
+          "18",
+          "216"
+        ],
+        "correctIndex": 1,
+        "explanation": "36."
+      }
+    ]
+  },
+  "5|Integers on the Number Line": {
+    "objectives": "\u2022 Plot integers on a number line.\n\u2022 Describe positions relative to zero.\n\u2022 Identify opposites.",
+    "description": "Plot integers; interpret left/right of zero.",
+    "teach_core": "## Objective\n\n**I can** plot integers on a number line.\n\n## Warm-up (2 minutes)\n\nWhere is \u22123 relative to 0? To 2?\n\n## Teach\n\n### Big idea\n\nIntegers sit on a number line; negatives are left of zero on the standard line.\n\n### Example 1\n\nPlot \u22124: four units left of 0.\n\n### Try this\n\nPlot 3 and \u22123. What is true?\n\n**Check:** Opposites \u2014 same distance from 0.\n\n### Example 2\n\nFrom \u22122 move 5 right \u2192 land on 3.\n\n### Common mistake (this lesson only)\n\nPutting negatives to the right of zero.\n\n## Guided practice (we do)\n\n1. Rightmost of \u22125 and \u22121?  \n   **Answer:** \u22121\n\n2. Distance 0 to \u22127?  \n   **Answer:** 7\n\n3. Is \u22128 left of \u22123?  \n   **Answer:** Yes",
+    "exit": "## Exit ticket\n\n1. Plot \u22126,0,4.\n2. Number 3 left of \u22121.\n\n## Stretch (optional)\n\nTemperature story with \u22122 and 5.",
+    "questions": [
+      {
+        "prompt": "Farthest left?",
+        "choices": [
+          "\u22121",
+          "0",
+          "2",
+          "\u22125"
+        ],
+        "correctIndex": 3,
+        "explanation": "\u22125."
+      },
+      {
+        "prompt": "Opposite of \u22122?",
+        "choices": [
+          "2",
+          "\u22122",
+          "0",
+          "1"
+        ],
+        "correctIndex": 0,
+        "explanation": "2."
+      },
+      {
+        "prompt": "From \u22121 move 4 left \u2192",
+        "choices": [
+          "3",
+          "\u22125",
+          "5",
+          "\u22123"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u22125."
+      }
+    ]
+  },
+  "5|Opposites and Absolute Value": {
+    "objectives": "\u2022 Name opposites.\n\u2022 Compute absolute value as distance from zero.\n\u2022 Use |a| in simple sums.",
+    "description": "Define opposite and absolute value as distance from zero.",
+    "teach_core": "## Objective\n\n**I can** name opposites.\n\n## Warm-up (2 minutes)\n\nOpposite of \u22125? How far is \u22125 from 0?\n\n## Teach\n\n### Big idea\n\nOpposite of a is \u2212a. Absolute value |a| is distance from 0 (\u22650).\n\n### Example 1\n\n|\u22125|=5; opposite of \u22125 is 5.\n\n### Try this\n\n|\u221212| and |7|?\n\n**Check:** 12 and 7\n\n### Example 2\n\n|\u22123|+|2|=5.\n\n### Common mistake (this lesson only)\n\nWriting |\u22124|=\u22124.\n\n## Guided practice (we do)\n\n1. |\u22129|  \n   **Answer:** 9\n\n2. Opposite of 6  \n   **Answer:** \u22126\n\n3. |0|  \n   **Answer:** 0",
+    "exit": "## Exit ticket\n\n1. |\u221215|.\n2. Opposite of \u221211.\n\n## Stretch (optional)\n\nWhen is |x|=x?",
+    "questions": [
+      {
+        "prompt": "|\u22128|=",
+        "choices": [
+          "\u22128",
+          "8",
+          "0",
+          "16"
+        ],
+        "correctIndex": 1,
+        "explanation": "8."
+      },
+      {
+        "prompt": "Opposite of 0?",
+        "choices": [
+          "0",
+          "1",
+          "\u22121",
+          "undef"
+        ],
+        "correctIndex": 0,
+        "explanation": "0."
+      },
+      {
+        "prompt": "|\u22123|+2=",
+        "choices": [
+          "\u22121",
+          "5",
+          "1",
+          "6"
+        ],
+        "correctIndex": 1,
+        "explanation": "5."
+      }
+    ]
+  },
+  "5|Comparing and Ordering Integers": {
+    "objectives": "\u2022 Compare integers using a number line.\n\u2022 Order lists of integers.\n\u2022 Explain why a more-left integer is smaller.",
+    "description": "Order signed numbers using the number line.",
+    "teach_core": "## Objective\n\n**I can** compare integers using a number line.\n\n## Warm-up (2 minutes)\n\nGreater: \u22122 or \u22127?\n\n## Teach\n\n### Big idea\n\nRightmost is greater. \u22122 > \u22127.\n\n### Example 1\n\nOrder \u22125,2,\u22121,0 \u2192 \u22125,\u22121,0,2.\n\n### Try this\n\nCompare \u22128 and \u22123.\n\n**Check:** \u22123 > \u22128\n\n### Example 2\n\nLeast to greatest: 4,\u22124,1 \u2192 \u22124,1,4.\n\n### Common mistake (this lesson only)\n\nThinking more negative means larger.\n\n## Guided practice (we do)\n\n1. Greater: \u22121 or \u221210?  \n   **Answer:** \u22121\n\n2. Order 3,\u22122,0  \n   **Answer:** \u22122,0,3\n\n3. \u22125 < \u22124?  \n   **Answer:** True",
+    "exit": "## Exit ticket\n\n1. Order \u22126,\u22121,2.\n2. Fill \u22129 __ \u22122.\n\n## Stretch (optional)\n\nYard-line story with negatives.",
+    "questions": [
+      {
+        "prompt": "Least of \u22123,\u22127,1?",
+        "choices": [
+          "\u22123",
+          "\u22127",
+          "1",
+          "0"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u22127."
+      },
+      {
+        "prompt": "\u22124 ? \u22121",
+        "choices": [
+          "<",
+          ">",
+          "=",
+          ">="
+        ],
+        "correctIndex": 0,
+        "explanation": "\u22124<\u22121."
+      },
+      {
+        "prompt": "Greatest of \u221220,\u22125,\u221212?",
+        "choices": [
+          "\u221220",
+          "\u22125",
+          "\u221212",
+          "0"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u22125."
+      }
+    ]
+  },
+  "5|Real-World Signed Quantities": {
+    "objectives": "\u2022 Model real situations with signed numbers.\n\u2022 Explain what zero means in context.\n\u2022 Translate words \u2194 signs.",
+    "description": "Model temperature, elevation, debt, and sports scores.",
+    "teach_core": "## Objective\n\n**I can** model real situations with signed numbers.\n\n## Warm-up (2 minutes)\n\nDebt of $20 as a signed number \u2014 what does 0 mean?\n\n## Teach\n\n### Big idea\n\nChoose zero carefully (sea level, break-even). Below/above \u2192 \u2212/+.\n\n### Example 1\n\nElevation \u221240 ft = 40 ft below sea level.\n\n### Try this\n\nFrom \u22125\u00b0F to 3\u00b0F \u2014 change?\n\n**Check:** +8 degrees\n\n### Example 2\n\nStart 0; +30 deposit; \u221212 withdraw \u2192 balance 18.\n\n### Common mistake (this lesson only)\n\nUsing + for debt when credit is defined positive.\n\n## Guided practice (we do)\n\n1. 50 ft below sea level  \n   **Answer:** \u221250\n\n2. Loss of 7 points  \n   **Answer:** \u22127\n\n3. Zero in a bank story?  \n   **Answer:** Break-even / empty",
+    "exit": "## Exit ticket\n\n1. Write 12\u00b0 below 0.\n2. Explain zero for elevator floors.\n\n## Stretch (optional)\n\nMap three elevations with signs.",
+    "questions": [
+      {
+        "prompt": "3 below zero as integer",
+        "choices": [
+          "3",
+          "\u22123",
+          "0",
+          "1/3"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u22123."
+      },
+      {
+        "prompt": "Gain of 9",
+        "choices": [
+          "\u22129",
+          "9",
+          "0",
+          "90"
+        ],
+        "correctIndex": 1,
+        "explanation": "+9."
+      },
+      {
+        "prompt": "0 means for debt?",
+        "choices": [
+          "Always broke",
+          "Break-even if + is credit",
+          "Sea level",
+          "Noon"
+        ],
+        "correctIndex": 1,
+        "explanation": "Break-even."
+      }
+    ]
+  },
+  "5|Rational Numbers Beyond Integers": {
+    "objectives": "\u2022 Place signed fractions/decimals on a number line.\n\u2022 Order mixed signed rationals.\n\u2022 Compare using equivalent forms.",
+    "description": "Place fractions and decimals on both sides of zero.",
+    "teach_core": "## Objective\n\n**I can** place signed fractions/decimals on a number line.\n\n## Warm-up (2 minutes)\n\nWhere does \u22121/2 sit between \u22121 and 0?\n\n## Teach\n\n### Big idea\n\nNegatives sit left of zero at matching distance.\n\n### Example 1\n\n\u22120.5 is halfway from 0 to \u22121.\n\n### Try this\n\nOrder \u22120.2, \u22121.5, 0.5.\n\n**Check:** \u22121.5, \u22120.2, 0.5\n\n### Example 2\n\n\u22123/4 is left of \u22121/2.\n\n### Common mistake (this lesson only)\n\nPlacing \u22121/4 left of \u22121.\n\n## Guided practice (we do)\n\n1. Plot \u22122.5 roughly  \n   **Answer:** Between \u22123 and \u22122\n\n2. Compare \u22121/3 and \u22121/2  \n   **Answer:** \u22121/3 > \u22121/2\n\n3. |\u22120.75|  \n   **Answer:** 0.75",
+    "exit": "## Exit ticket\n\n1. Order \u22120.8,\u22120.2,0.1.\n2. Place \u22123/5.\n\n## Stretch (optional)\n\nWhy \u22120.1 > \u22120.9.",
+    "questions": [
+      {
+        "prompt": "\u22120.25 is between \u22121 and 0?",
+        "choices": [
+          "Yes",
+          "No",
+          "Only if positive",
+          "Undefined"
+        ],
+        "correctIndex": 0,
+        "explanation": "Yes."
+      },
+      {
+        "prompt": "Greater: \u22120.1 or \u22120.01?",
+        "choices": [
+          "\u22120.1",
+          "\u22120.01",
+          "Equal",
+          "Neither"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u22120.01 closer to 0."
+      },
+      {
+        "prompt": "|\u22122.5|=",
+        "choices": [
+          "\u22122.5",
+          "2.5",
+          "5",
+          "0"
+        ],
+        "correctIndex": 1,
+        "explanation": "2.5."
+      }
+    ]
+  },
+  "5|Distance Between Signed Numbers": {
+    "objectives": "\u2022 Find distance between signed numbers with |a\u2212b|.\n\u2022 Keep distance nonnegative.\n\u2022 Distinguish distance from signed change.",
+    "description": "Compute distances on the number line with absolute value.",
+    "teach_core": "## Objective\n\n**I can** find distance between signed numbers with |a\u2212b|.\n\n## Warm-up (2 minutes)\n\nHow far apart are \u22122 and 5?\n\n## Teach\n\n### Big idea\n\nDistance = |a\u2212b| \u2265 0.\n\n### Example 1\n\n|5\u2212(\u22122)|=7.\n\n### Try this\n\nDistance \u22128 to \u22123?\n\n**Check:** 5\n\n### Example 2\n\n|\u22124\u22126|=10.\n\n### Common mistake (this lesson only)\n\nKeeping a negative after subtraction without absolute value.\n\n## Guided practice (we do)\n\n1. \u22121 to 4  \n   **Answer:** 5\n\n2. \u221210 to \u22122  \n   **Answer:** 8\n\n3. 3 to \u22123  \n   **Answer:** 6",
+    "exit": "## Exit ticket\n\n1. Distance \u22126 to 2.\n2. Distance \u22129 to \u22124.\n\n## Stretch (optional)\n\nNumber-line map of two cities.",
+    "questions": [
+      {
+        "prompt": "|7\u2212(\u22121)|=",
+        "choices": [
+          "6",
+          "8",
+          "\u22128",
+          "0"
+        ],
+        "correctIndex": 1,
+        "explanation": "8."
+      },
+      {
+        "prompt": "Distance \u22125 to 0",
+        "choices": [
+          "\u22125",
+          "5",
+          "0",
+          "10"
+        ],
+        "correctIndex": 1,
+        "explanation": "5."
+      },
+      {
+        "prompt": "|\u22122\u2212(\u22128)|=",
+        "choices": [
+          "\u22126",
+          "6",
+          "10",
+          "16"
+        ],
+        "correctIndex": 1,
+        "explanation": "6."
+      }
+    ]
+  },
+  "5|Coordinate Thinking Preview": {
+    "objectives": "\u2022 Describe moves with signed horizontal/vertical changes.\n\u2022 Link left/down to negatives.\n\u2022 Preview ordered-pair thinking.",
+    "description": "Connect signed numbers to horizontal/vertical moves.",
+    "teach_core": "## Objective\n\n**I can** describe moves with signed horizontal/vertical changes.\n\n## Warm-up (2 minutes)\n\nFrom 0, move 4 right and 3 down \u2014 what signs?\n\n## Teach\n\n### Big idea\n\nRight/up often +; left/down often \u2212 (preview of coordinates).\n\n### Example 1\n\nStart 0: +4 horizontal, \u22123 vertical.\n\n### Try this\n\nFrom \u22122 move +5 horizontally. Land?\n\n**Check:** 3\n\n### Example 2\n\nLeft 2 and up 1 from origin foreshadows (\u22122,1).\n\n### Common mistake (this lesson only)\n\nMixing which direction is horizontal.\n\n## Guided practice (we do)\n\n1. Left 6 signed  \n   **Answer:** \u22126\n\n2. Up 4  \n   **Answer:** +4\n\n3. From 5 move \u22127  \n   **Answer:** \u22122",
+    "exit": "## Exit ticket\n\n1. Start 0; \u22123 horiz, +2 vert.\n2. From 4 move \u22124.\n\n## Stretch (optional)\n\nArrows for (+3,\u22122).",
+    "questions": [
+      {
+        "prompt": "Down 5 as signed",
+        "choices": [
+          "5",
+          "\u22125",
+          "0",
+          "\u00b15"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u22125."
+      },
+      {
+        "prompt": "Right 2 then left 5 net",
+        "choices": [
+          "\u22123",
+          "3",
+          "7",
+          "\u22127"
+        ],
+        "correctIndex": 0,
+        "explanation": "\u22123."
+      },
+      {
+        "prompt": "From \u22121 + +6",
+        "choices": [
+          "5",
+          "7",
+          "\u22127",
+          "6"
+        ],
+        "correctIndex": 0,
+        "explanation": "5."
+      }
+    ]
+  },
+  "5|Comparing Rational Numbers": {
+    "objectives": "\u2022 Compare signed fractions and decimals.\n\u2022 Convert forms when helpful.\n\u2022 Use \u201ccloser to zero\u201d reasoning for negatives.",
+    "description": "Compare mixed signed fractions and decimals.",
+    "teach_core": "## Objective\n\n**I can** compare signed fractions and decimals.\n\n## Warm-up (2 minutes)\n\nGreater: \u22122/5 or \u22120.5?\n\n## Teach\n\n### Big idea\n\nSame form or number line; more right = greater.\n\n### Example 1\n\n\u22122/5=\u22120.4 > \u22120.5.\n\n### Try this\n\nCompare \u22121.25 and \u22125/4.\n\n**Check:** Equal\n\n### Example 2\n\n\u22120.03 > \u22120.3.\n\n### Common mistake (this lesson only)\n\nComparing absolute values only for two negatives.\n\n## Guided practice (we do)\n\n1. Greater: \u22123/8 or \u22120.4?  \n   **Answer:** \u22123/8\u2248\u22120.375\n\n2. Order \u22121,\u22120.2,\u22121.1  \n   **Answer:** \u22121.1,\u22121,\u22120.2\n\n3. \u22122/3 ? \u22120.6  \n   **Answer:** \u22122/3 < \u22120.6",
+    "exit": "## Exit ticket\n\n1. Compare \u22127/10 and \u22120.75.\n2. Order \u22120.5,\u22121/4,\u22120.8.\n\n## Stretch (optional)\n\nExplain \u22120.01 > \u22120.1.",
+    "questions": [
+      {
+        "prompt": "\u22121/2 vs \u22120.49",
+        "choices": [
+          "\u22121/2 greater",
+          "\u22120.49 greater",
+          "Equal",
+          "Unknown"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u22120.49 > \u22120.5."
+      },
+      {
+        "prompt": "Least: \u22120.2,\u22120.02,\u22122",
+        "choices": [
+          "\u22120.2",
+          "\u22120.02",
+          "\u22122",
+          "0"
+        ],
+        "correctIndex": 2,
+        "explanation": "\u22122."
+      },
+      {
+        "prompt": "\u22123/2 equals \u22121.5?",
+        "choices": [
+          "Yes",
+          "No",
+          "Only positive",
+          "Never"
+        ],
+        "correctIndex": 0,
+        "explanation": "Yes."
+      }
+    ]
+  },
+  "5|Negative Numbers in Stories": {
+    "objectives": "\u2022 Write stories for signed numbers.\n\u2022 Translate words \u2194 signs with clear zero.\n\u2022 Report signed change.",
+    "description": "Write and interpret signed-number story problems.",
+    "teach_core": "## Objective\n\n**I can** write stories for signed numbers.\n\n## Warm-up (2 minutes)\n\nInvent a one-sentence story for \u22128 that is not about temperature.\n\n## Teach\n\n### Big idea\n\nTranslate words \u2194 signed numbers; keep units and zero\u2019s meaning.\n\n### Example 1\n\n\u201c8 dollars in debt\u201d \u2192 \u22128 if credit is positive.\n\n### Try this\n\nStory for +12 elevation change.\n\n**Check:** Climbed 12 ft\n\n### Example 2\n\nFrom \u22123 to 4 is change +7.\n\n### Common mistake (this lesson only)\n\nForcing negatives when zero is clearer.\n\n## Guided practice (we do)\n\n1. \u221215 in sports  \n   **Answer:** e.g. \u221215 yard penalty\n\n2. Interpret +6 bank  \n   **Answer:** Deposit/gain 6\n\n3. Change \u22122 to 5  \n   **Answer:** +7",
+    "exit": "## Exit ticket\n\n1. Story for \u22124.\n2. Rose 9\u00b0 from \u22122.\n\n## Stretch (optional)\n\nTwo different zeros for same numbers.",
+    "questions": [
+      {
+        "prompt": "Debt $25 signed",
+        "choices": [
+          "25",
+          "\u221225",
+          "0",
+          "1/25"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u221225."
+      },
+      {
+        "prompt": "Below sea 30 ft",
+        "choices": [
+          "30",
+          "\u221230",
+          "0",
+          "300"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u221230."
+      },
+      {
+        "prompt": "Net \u22123 to 1",
+        "choices": [
+          "\u22122",
+          "4",
+          "\u22124",
+          "3"
+        ],
+        "correctIndex": 1,
+        "explanation": "+4."
+      }
+    ]
+  },
+  "5|Negative Numbers Unit Review": {
+    "objectives": "\u2022 Synthesize plotting, comparing, and absolute value.\n\u2022 Use signed rationals in context.\n\u2022 Separate distance from signed change.",
+    "description": "Synthesize plotting, comparing, and absolute value.",
+    "teach_core": "## Objective\n\n**I can** synthesize plotting, comparing, and absolute value.\n\n## Warm-up (2 minutes)\n\nName three skills from this unit useful for later graphing.\n\n## Teach\n\n### Big idea\n\nPlot, compare, distance, contexts, signed rationals.\n\n### Example 1\n\nOrder \u22123.5,\u22121,0,2 and find |\u22123.5\u22122|.\n\n### Try this\n\nDistance \u22124 to 6; compare \u22121/2 and \u22120.4.\n\n**Check:** 10; \u22120.4 > \u22120.5\n\n### Example 2\n\nElevation \u221220 to \u22125 is rise 15.\n\n### Common mistake (this lesson only)\n\nMixing distance with signed change.\n\n## Guided practice (we do)\n\n1. Order \u22128,\u22122,3  \n   **Answer:** \u22128,\u22122,3\n\n2. |\u221211|  \n   **Answer:** 11\n\n3. Greater \u22120.2 or \u22120.25  \n   **Answer:** \u22120.2",
+    "exit": "## Exit ticket\n\n1. Plot \u22127 and 2; distance.\n2. |\u22129| and opposite of 9.\n\n## Stretch (optional)\n\nWrite a 5-item mini quiz.",
+    "questions": [
+      {
+        "prompt": "Least of \u22121,\u22126,0",
+        "choices": [
+          "\u22121",
+          "\u22126",
+          "0",
+          "1"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u22126."
+      },
+      {
+        "prompt": "|3\u2212(\u22125)|=",
+        "choices": [
+          "\u22122",
+          "8",
+          "2",
+          "15"
+        ],
+        "correctIndex": 1,
+        "explanation": "8."
+      },
+      {
+        "prompt": "\u22122/5 vs \u22120.5",
+        "choices": [
+          "\u22122/5 greater",
+          "\u22120.5 greater",
+          "Equal",
+          "Unknown"
+        ],
+        "correctIndex": 0,
+        "explanation": "\u22120.4 > \u22120.5."
+      }
+    ]
+  },
+  "6|What Is a Variable?": {
+    "objectives": "\u2022 Explain what a variable is.\n\u2022 Evaluate a simple expression for a given value.\n\u2022 Distinguish variables from labels.",
+    "description": "Use letters to stand for numbers that can change.",
+    "teach_core": "## Objective\n\n**I can** explain what a variable is.\n\n## Warm-up (2 minutes)\n\nIf n stands for the number of notebooks you own, what could n be tomorrow?\n\n## Teach\n\n### Big idea\n\nA variable is a letter that stands for a number that can change.\n\n### Example 1\n\nIf n=4, then n+3=7.\n\n### Try this\n\nIf x=5, value of 2x?\n\n**Check:** 10\n\n### Example 2\n\nPerimeter idea: if s is side of a square, perimeter is 4s.\n\n### Common mistake (this lesson only)\n\nTreating the letter as a word label only (never substituting a number).\n\n## Guided practice (we do)\n\n1. x=3; x+7?  \n   **Answer:** 10\n\n2. b=10; b\u22124?  \n   **Answer:** 6\n\n3. Why can n change?  \n   **Answer:** It represents a quantity that may vary",
+    "exit": "## Exit ticket\n\n1. If m=8, find m\u22122.\n2. Invent a variable for your age in years.\n\n## Stretch (optional)\n\nTwo stories for the same letter n.",
+    "questions": [
+      {
+        "prompt": "If a=6, a+5=?",
+        "choices": [
+          "11",
+          "65",
+          "1",
+          "30"
+        ],
+        "correctIndex": 0,
+        "explanation": "11."
+      },
+      {
+        "prompt": "A variable is\u2026",
+        "choices": [
+          "Always 0",
+          "A letter for a number",
+          "A unit",
+          "An answer key"
+        ],
+        "correctIndex": 1,
+        "explanation": "Letter for a number."
+      },
+      {
+        "prompt": "If t=2, 3t=?",
+        "choices": [
+          "5",
+          "6",
+          "32",
+          "1"
+        ],
+        "correctIndex": 1,
+        "explanation": "6."
+      }
+    ]
+  },
+  "6|Writing Algebraic Expressions": {
+    "objectives": "\u2022 Translate verbal phrases into expressions.\n\u2022 Use parentheses when order matters.\n\u2022 Avoid turning phrases into equations unless \u201cequals\u201d appears.",
+    "description": "Translate verbal phrases into expressions.",
+    "teach_core": "## Objective\n\n**I can** translate verbal phrases into expressions.\n\n## Warm-up (2 minutes)\n\n\u201c5 more than a number n\u201d \u2014 expression?\n\n## Teach\n\n### Big idea\n\nWords like more than, times, less than \u2192 + \u00d7 \u2212; \u201ca number\u201d \u2192 a variable.\n\n### Example 1\n\n5 more than n \u2192 n+5. Twice n \u2192 2n.\n\n### Try this\n\nProduct of 4 and y.\n\n**Check:** 4y\n\n### Example 2\n\n7 less than x \u2192 x\u22127 (not 7\u2212x unless words say \u201c7 minus x\u201d).\n\n### Common mistake (this lesson only)\n\nWriting 7\u2212x for \u201c7 less than x.\u201d\n\n## Guided practice (we do)\n\n1. Sum of k and 9  \n   **Answer:** k+9\n\n2. Triple w  \n   **Answer:** 3w\n\n3. n divided by 4  \n   **Answer:** n/4",
+    "exit": "## Exit ticket\n\n1. 6 less than p.\n2. 3 more than twice m.\n\n## Stretch (optional)\n\nPhrase that needs parentheses.",
+    "questions": [
+      {
+        "prompt": "5 more than n",
+        "choices": [
+          "5n",
+          "n+5",
+          "5\u2212n",
+          "n/5"
+        ],
+        "correctIndex": 1,
+        "explanation": "n+5."
+      },
+      {
+        "prompt": "Twice a number x",
+        "choices": [
+          "2+x",
+          "2x",
+          "x^2",
+          "x/2"
+        ],
+        "correctIndex": 1,
+        "explanation": "2x."
+      },
+      {
+        "prompt": "7 less than x",
+        "choices": [
+          "7\u2212x",
+          "x\u22127",
+          "7x",
+          "x/7"
+        ],
+        "correctIndex": 1,
+        "explanation": "x\u22127."
+      }
+    ]
+  },
+  "6|Evaluating Expressions": {
+    "objectives": "\u2022 Substitute a value for each variable.\n\u2022 Simplify with order of operations.\n\u2022 Use parentheses when substituting negatives later.",
+    "description": "Substitute values and simplify carefully.",
+    "teach_core": "## Objective\n\n**I can** substitute a value for each variable.\n\n## Warm-up (2 minutes)\n\nEvaluate 3a+2 for a=4.\n\n## Teach\n\n### Big idea\n\nReplace the letter with the number, then simplify.\n\n### Example 1\n\n3(4)+2=12+2=14.\n\n### Try this\n\n2x\u22125 for x=6.\n\n**Check:** 7\n\n### Example 2\n\nFor x=3, x^2+1=10.\n\n### Common mistake (this lesson only)\n\nSubstituting then ignoring order (3+4\u00d72 style errors).\n\n## Guided practice (we do)\n\n1. 5b for b=3  \n   **Answer:** 15\n\n2. 10\u2212c for c=4  \n   **Answer:** 6\n\n3. 2(n+1) for n=5  \n   **Answer:** 12",
+    "exit": "## Exit ticket\n\n1. Evaluate 4m\u22121 for m=3.\n2. Evaluate 2(k+3) for k=2.\n\n## Stretch (optional)\n\nWhy substitute before simplifying remaining ops?",
+    "questions": [
+      {
+        "prompt": "3a+2 for a=4",
+        "choices": [
+          "14",
+          "9",
+          "20",
+          "12"
+        ],
+        "correctIndex": 0,
+        "explanation": "14."
+      },
+      {
+        "prompt": "2x\u22125 for x=6",
+        "choices": [
+          "7",
+          "17",
+          "\u22123",
+          "12"
+        ],
+        "correctIndex": 0,
+        "explanation": "7."
+      },
+      {
+        "prompt": "x^2 for x=3",
+        "choices": [
+          "6",
+          "9",
+          "5",
+          "1"
+        ],
+        "correctIndex": 1,
+        "explanation": "9."
+      }
+    ]
+  },
+  "6|Terms, Coefficients, and Constants": {
+    "objectives": "\u2022 Identify terms, coefficients, and constants.\n\u2022 Count terms in an expression.\n\u2022 Name the coefficient of a variable term.",
+    "description": "Name parts of an expression precisely.",
+    "teach_core": "## Objective\n\n**I can** identify terms, coefficients, and constants.\n\n## Warm-up (2 minutes)\n\nIn 3x+7, what is the coefficient of x? What is the constant?\n\n## Teach\n\n### Big idea\n\nTerms are addends. Coefficient multiplies the variable. Constant has no variable.\n\n### Example 1\n\nIn 3x+7: terms 3x and 7; coefficient of x is 3; constant 7.\n\n### Try this\n\nIn 5y\u22122, coefficient of y? Constant?\n\n**Check:** 5; \u22122\n\n### Example 2\n\nExpression 2a+0.5b+4 has three terms.\n\n### Common mistake (this lesson only)\n\nCalling 3x+7 a single term.\n\n## Guided practice (we do)\n\n1. Terms in 4x+1  \n   **Answer:** 2\n\n2. Coefficient in \u22126n  \n   **Answer:** \u22126\n\n3. Constant in 2x  \n   **Answer:** 0 (none written)",
+    "exit": "## Exit ticket\n\n1. Parts of 7x\u22123.\n2. How many terms in a+b+5?\n\n## Stretch (optional)\n\nWhy \u22123 is a constant in 2x\u22123.",
+    "questions": [
+      {
+        "prompt": "Coefficient of x in 3x+7",
+        "choices": [
+          "3",
+          "7",
+          "3x",
+          "10"
+        ],
+        "correctIndex": 0,
+        "explanation": "3."
+      },
+      {
+        "prompt": "Constant in 5y\u22122",
+        "choices": [
+          "5",
+          "\u22122",
+          "y",
+          "0"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u22122."
+      },
+      {
+        "prompt": "Terms in 2a+b+4",
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "correctIndex": 2,
+        "explanation": "3."
+      }
+    ]
+  },
+  "6|Like Terms": {
+    "objectives": "\u2022 Identify like terms.\n\u2022 Combine like terms by adding coefficients.\n\u2022 Leave unlike terms separate.",
+    "description": "Identify and combine like terms.",
+    "teach_core": "## Objective\n\n**I can** identify like terms.\n\n## Warm-up (2 minutes)\n\nCan you add 3x and 5x? What about 3x and 5?\n\n## Teach\n\n### Big idea\n\nLike terms have the same variable factors. Combine by adding coefficients.\n\n### Example 1\n\n3x+5x=8x. 3x+5 stays 3x+5.\n\n### Try this\n\nSimplify 4a+2+a.\n\n**Check:** 5a+2\n\n### Example 2\n\n2x+3y+5x=7x+3y.\n\n### Common mistake (this lesson only)\n\nAdding 3x+5 to get 8x.\n\n## Guided practice (we do)\n\n1. 7n\u22122n  \n   **Answer:** 5n\n\n2. x+x+x  \n   **Answer:** 3x\n\n3. 2b+3+4b  \n   **Answer:** 6b+3",
+    "exit": "## Exit ticket\n\n1. Simplify 6y+y\u22124.\n2. Why can\u2019t 2x and 2 combine?\n\n## Stretch (optional)\n\nArea expression with like terms.",
+    "questions": [
+      {
+        "prompt": "3x+5x=",
+        "choices": [
+          "8x",
+          "15x",
+          "8",
+          "35x"
+        ],
+        "correctIndex": 0,
+        "explanation": "8x."
+      },
+      {
+        "prompt": "4a+2+a=",
+        "choices": [
+          "5a+2",
+          "7a",
+          "4a+2a",
+          "6a"
+        ],
+        "correctIndex": 0,
+        "explanation": "5a+2."
+      },
+      {
+        "prompt": "2x+3y+5x=",
+        "choices": [
+          "10xy",
+          "7x+3y",
+          "10x+3y",
+          "2x+8y"
+        ],
+        "correctIndex": 1,
+        "explanation": "7x+3y."
+      }
+    ]
+  },
+  "6|The Distributive Property": {
+    "objectives": "\u2022 Expand a(b+c).\n\u2022 Factor a common factor when easy.\n\u2022 Avoid distributing only to one term.",
+    "description": "Expand a(b+c) and recognize factored forms.",
+    "teach_core": "## Objective\n\n**I can** expand a(b+c).\n\n## Warm-up (2 minutes)\n\nWhat does 3(x+2) mean as area of a rectangle?\n\n## Teach\n\n### Big idea\n\na(b+c)=ab+ac. Distribute to every term inside.\n\n### Example 1\n\n3(x+2)=3x+6.\n\n### Try this\n\n2(5+y)?\n\n**Check:** 10+2y\n\n### Example 2\n\nFactor 4x+12=4(x+3).\n\n### Common mistake (this lesson only)\n\nWriting 3(x+2)=3x+2.\n\n## Guided practice (we do)\n\n1. 5(n\u22121)  \n   **Answer:** 5n\u22125\n\n2. \u22122(x+4) intro if ready  \n   **Answer:** \u22122x\u22128 or note signs\n\n3. 3(2+a)  \n   **Answer:** 6+3a",
+    "exit": "## Exit ticket\n\n1. Expand 4(y+3).\n2. Factor 6x+18.\n\n## Stretch (optional)\n\nDraw a rectangle for 2(x+5).",
+    "questions": [
+      {
+        "prompt": "3(x+2)=",
+        "choices": [
+          "3x+2",
+          "3x+6",
+          "x+6",
+          "5x"
+        ],
+        "correctIndex": 1,
+        "explanation": "3x+6."
+      },
+      {
+        "prompt": "2(5+y)=",
+        "choices": [
+          "10+2y",
+          "7+y",
+          "10+y",
+          "2+5y"
+        ],
+        "correctIndex": 0,
+        "explanation": "10+2y."
+      },
+      {
+        "prompt": "4x+12 factored",
+        "choices": [
+          "4(x+3)",
+          "4(x+12)",
+          "x+3",
+          "4x+3"
+        ],
+        "correctIndex": 0,
+        "explanation": "4(x+3)."
+      }
+    ]
+  },
+  "6|Equivalent Expressions": {
+    "objectives": "\u2022 Decide if two expressions are equivalent.\n\u2022 Test with substitution and by simplifying.\n\u2022 Use distributive property to prove.",
+    "description": "Decide when two expressions are equivalent.",
+    "teach_core": "## Objective\n\n**I can** decide if two expressions are equivalent.\n\n## Warm-up (2 minutes)\n\nAre 2(x+3) and 2x+6 the same for every x?\n\n## Teach\n\n### Big idea\n\nEquivalent expressions give the same value for every allowed input.\n\n### Example 1\n\n2(x+3)=2x+6 for all x \u2014 expand to match.\n\n### Try this\n\nAre x+x and 2x equivalent?\n\n**Check:** Yes\n\n### Example 2\n\n3x+3 vs 3(x+1) \u2014 equivalent.\n\n### Common mistake (this lesson only)\n\nChecking only one value and declaring always equivalent (can miss).\n\n## Guided practice (we do)\n\n1. x+5 and 5+x  \n   **Answer:** Yes\n\n2. 2x and x^2  \n   **Answer:** No\n\n3. 3(x+2) and 3x+6  \n   **Answer:** Yes",
+    "exit": "## Exit ticket\n\n1. Show 4x+2 \u2261 2(2x+1).\n2. Test x=0 and x=2 on a candidate pair.\n\n## Stretch (optional)\n\nFind a non-equivalent pair that matches at one value.",
+    "questions": [
+      {
+        "prompt": "2(x+3) equals 2x+6?",
+        "choices": [
+          "Always",
+          "Never",
+          "Only x=0",
+          "Only x=3"
+        ],
+        "correctIndex": 0,
+        "explanation": "Always."
+      },
+      {
+        "prompt": "x+x and 2x",
+        "choices": [
+          "Equivalent",
+          "Never",
+          "Only positives",
+          "Only x=1"
+        ],
+        "correctIndex": 0,
+        "explanation": "Equivalent."
+      },
+      {
+        "prompt": "2x and x^2",
+        "choices": [
+          "Equivalent",
+          "Not equivalent",
+          "Only x=2",
+          "Always"
+        ],
+        "correctIndex": 1,
+        "explanation": "Not equivalent."
+      }
+    ]
+  },
+  "6|Expressions from Diagrams": {
+    "objectives": "\u2022 Write expressions from diagrams.\n\u2022 Use variables for unknown lengths/prices.\n\u2022 Simplify when like terms appear.",
+    "description": "Write expressions for perimeter, cost, and patterned figures.",
+    "teach_core": "## Objective\n\n**I can** write expressions from diagrams.\n\n## Warm-up (2 minutes)\n\nA rectangle has length L and width 3. Perimeter expression?\n\n## Teach\n\n### Big idea\n\nTranslate a figure into an expression; combine like terms.\n\n### Example 1\n\nPerimeter 2L+2\u00b73=2L+6.\n\n### Try this\n\n3 bags cost d each \u2014 total?\n\n**Check:** 3d\n\n### Example 2\n\nPattern: 1,3,5,... step \u2192 2n\u22121 for nth term (intro).\n\n### Common mistake (this lesson only)\n\nAdding all sides but forgetting a side.\n\n## Guided practice (we do)\n\n1. Square side s perimeter  \n   **Answer:** 4s\n\n2. Cost: 5 items at p  \n   **Answer:** 5p\n\n3. L+L+W+W  \n   **Answer:** 2L+2W",
+    "exit": "## Exit ticket\n\n1. Perimeter for length x width 4.\n2. 2 shirts at c dollars.\n\n## Stretch (optional)\n\nFigure needing parentheses.",
+    "questions": [
+      {
+        "prompt": "Square side s perimeter",
+        "choices": [
+          "2s",
+          "4s",
+          "s^2",
+          "s+4"
+        ],
+        "correctIndex": 1,
+        "explanation": "4s."
+      },
+      {
+        "prompt": "5 items at price p",
+        "choices": [
+          "5+p",
+          "5p",
+          "p/5",
+          "p^5"
+        ],
+        "correctIndex": 1,
+        "explanation": "5p."
+      },
+      {
+        "prompt": "2L+2W equals",
+        "choices": [
+          "2(L+W)",
+          "L+W",
+          "2L+W",
+          "L^2+W^2"
+        ],
+        "correctIndex": 0,
+        "explanation": "2(L+W)."
+      }
+    ]
+  },
+  "6|From Tables to Expressions": {
+    "objectives": "\u2022 Notice patterns in input\u2013output tables.\n\u2022 Write an expression for the nth or input x.\n\u2022 Check the expression on every row.",
+    "description": "Notice patterns in tables and write a matching expression.",
+    "teach_core": "## Objective\n\n**I can** notice patterns in input\u2013output tables.\n\n## Warm-up (2 minutes)\n\nTable: x=1\u21923, 2\u21925, 3\u21927. What expression fits?\n\n## Teach\n\n### Big idea\n\nLook for constant rate of change; write y in terms of x.\n\n### Example 1\n\nOutputs increase by 2; y=2x+1 fits.\n\n### Try this\n\nx:1,2,3 \u2192 y:4,7,10. Expression?\n\n**Check:** 3x+1\n\n### Example 2\n\nCheck all rows before trusting.\n\n### Common mistake (this lesson only)\n\nFitting only the first row.\n\n## Guided practice (we do)\n\n1. x\u21922x  \n   **Answer:** Double\n\n2. x:1.. \u2192 5,10,15  \n   **Answer:** 5x\n\n3. Verify 2x+1 at x=4  \n   **Answer:** 9",
+    "exit": "## Exit ticket\n\n1. Table 1\u21926,2\u21927,3\u21928 \u2014 expression?\n2. Check your rule at x=5.\n\n## Stretch (optional)\n\nNonlinear warning: 1,4,9 is x^2.",
+    "questions": [
+      {
+        "prompt": "1\u21923,2\u21925,3\u21927 rule",
+        "choices": [
+          "2x+1",
+          "x+2",
+          "3x",
+          "2x"
+        ],
+        "correctIndex": 0,
+        "explanation": "2x+1."
+      },
+      {
+        "prompt": "1\u21924,2\u21927,3\u219210",
+        "choices": [
+          "3x+1",
+          "4x",
+          "x+3",
+          "2x+2"
+        ],
+        "correctIndex": 0,
+        "explanation": "3x+1."
+      },
+      {
+        "prompt": "Best check?",
+        "choices": [
+          "One row only",
+          "All given rows",
+          "Guess",
+          "Average"
+        ],
+        "correctIndex": 1,
+        "explanation": "All rows."
+      }
+    ]
+  },
+  "6|Variables & Expressions Unit Review": {
+    "objectives": "\u2022 Write, evaluate, and simplify expressions.\n\u2022 Combine like terms and distribute.\n\u2022 Decide equivalence.",
+    "description": "Mixed practice on writing, evaluating, and simplifying.",
+    "teach_core": "## Objective\n\n**I can** write, evaluate, and simplify expressions.\n\n## Warm-up (2 minutes)\n\nName the steps to evaluate 2(x+3) for x=5.\n\n## Teach\n\n### Big idea\n\nTranslate \u2192 substitute \u2192 simplify; combine like terms; distribute.\n\n### Example 1\n\n2(5+3)=16; 3x+2x+4=5x+4.\n\n### Try this\n\nExpand 4(n\u22122); then n=3.\n\n**Check:** 4n\u22128; value 4.\n\n### Example 2\n\nAre 2x+6 and 2(x+3) equivalent? Yes.\n\n### Common mistake (this lesson only)\n\nSkipping distribution on the second term.\n\n## Guided practice (we do)\n\n1. Simplify 7a\u2212a+3  \n   **Answer:** 6a+3\n\n2. Evaluate 2x+1 for x=4  \n   **Answer:** 9\n\n3. Expand 3(y+5)  \n   **Answer:** 3y+15",
+    "exit": "## Exit ticket\n\n1. Simplify 2(x+4)+x.\n2. Expression: 5 less than twice n.\n\n## Stretch (optional)\n\nTable + expression challenge.",
+    "questions": [
+      {
+        "prompt": "2(x+3) for x=5",
+        "choices": [
+          "13",
+          "16",
+          "10",
+          "11"
+        ],
+        "correctIndex": 1,
+        "explanation": "16."
+      },
+      {
+        "prompt": "3x+2x+4",
+        "choices": [
+          "5x+4",
+          "6x",
+          "5x",
+          "9x"
+        ],
+        "correctIndex": 0,
+        "explanation": "5x+4."
+      },
+      {
+        "prompt": "4(n\u22122)=",
+        "choices": [
+          "4n\u22122",
+          "4n\u22128",
+          "n\u22128",
+          "4n+8"
+        ],
+        "correctIndex": 1,
+        "explanation": "4n\u22128."
+      }
+    ]
+  },
+  "7|Equations vs Expressions": {
+    "objectives": "\u2022 Distinguish equations from expressions.\n\u2022 Explain that equations can be true or false.\n\u2022 Identify the equals sign as balance.",
+    "description": "Distinguish equations (balance) from expressions.",
+    "teach_core": "## Objective\n\n**I can** distinguish equations from expressions.\n\n## Warm-up (2 minutes)\n\nIs 3x+2 an equation? Is 3x+2=11?\n\n## Teach\n\n### Big idea\n\nExpression: no equals. Equation: states two quantities are equal.\n\n### Example 1\n\n3x+2 is an expression. 3x+2=11 is an equation.\n\n### Try this\n\nClassify 5+4 and 5+4=9.\n\n**Check:** Expression; equation\n\n### Example 2\n\nx=7 is an equation saying x equals 7.\n\n### Common mistake (this lesson only)\n\nCalling every expression an equation.\n\n## Guided practice (we do)\n\n1. 2n+1 type?  \n   **Answer:** Expression\n\n2. 2n+1=9 type?  \n   **Answer:** Equation\n\n3. Can an equation be false?  \n   **Answer:** Yes, e.g. 2=5",
+    "exit": "## Exit ticket\n\n1. Label three examples.\n2. Why does = matter?\n\n## Stretch (optional)\n\nTrue and false equations with numbers only.",
+    "questions": [
+      {
+        "prompt": "3x+2 is a\u2026",
+        "choices": [
+          "Equation",
+          "Expression",
+          "Inequality",
+          "Solution"
+        ],
+        "correctIndex": 1,
+        "explanation": "Expression."
+      },
+      {
+        "prompt": "3x+2=11 is a\u2026",
+        "choices": [
+          "Expression",
+          "Equation",
+          "Term",
+          "Factor"
+        ],
+        "correctIndex": 1,
+        "explanation": "Equation."
+      },
+      {
+        "prompt": "Equals sign means\u2026",
+        "choices": [
+          "Guess",
+          "Balance/equality",
+          "Multiply",
+          "Variable"
+        ],
+        "correctIndex": 1,
+        "explanation": "Balance."
+      }
+    ]
+  },
+  "7|One-Step Addition and Subtraction Equations": {
+    "objectives": "\u2022 Solve one-step +/\u2212 equations.\n\u2022 Check by substituting.\n\u2022 Explain inverse operations.",
+    "description": "Solve with inverse operations; check solutions.",
+    "teach_core": "## Objective\n\n**I can** solve one-step +/\u2212 equations.\n\n## Warm-up (2 minutes)\n\nIf x+5=12, what do you do to both sides?\n\n## Teach\n\n### Big idea\n\nUndo addition with subtraction (and vice versa) on both sides.\n\n### Example 1\n\nx+5=12 \u2192 x=12\u22125=7. Check: 7+5=12.\n\n### Try this\n\nx\u22124=10.\n\n**Check:** x=14\n\n### Example 2\n\n8=y+3 \u2192 y=5.\n\n### Common mistake (this lesson only)\n\nSubtracting from only one side.\n\n## Guided practice (we do)\n\n1. n+7=15  \n   **Answer:** 8\n\n2. m\u22129=2  \n   **Answer:** 11\n\n3. Check x=6 in x+1=7  \n   **Answer:** True",
+    "exit": "## Exit ticket\n\n1. Solve x+9=20.\n2. Solve y\u22126=11.\n\n## Stretch (optional)\n\nStory \u2192 equation \u2192 solve.",
+    "questions": [
+      {
+        "prompt": "x+5=12 \u2192 x=",
+        "choices": [
+          "7",
+          "17",
+          "5",
+          "12"
+        ],
+        "correctIndex": 0,
+        "explanation": "7."
+      },
+      {
+        "prompt": "x\u22124=10 \u2192 x=",
+        "choices": [
+          "6",
+          "14",
+          "40",
+          "\u22126"
+        ],
+        "correctIndex": 1,
+        "explanation": "14."
+      },
+      {
+        "prompt": "Check for x=7 in x+5=12?",
+        "choices": [
+          "7+5=12",
+          "7=12",
+          "5=12",
+          "12\u22127=5 only"
+        ],
+        "correctIndex": 0,
+        "explanation": "Substitute."
+      }
+    ]
+  },
+  "7|One-Step Multiplication and Division Equations": {
+    "objectives": "\u2022 Solve one-step \u00d7/\u00f7 equations.\n\u2022 Check solutions.\n\u2022 Keep coefficients clear.",
+    "description": "Solve ax=b and x/a=b forms.",
+    "teach_core": "## Objective\n\n**I can** solve one-step \u00d7/\u00f7 equations.\n\n## Warm-up (2 minutes)\n\nIf 3x=18, how do you find x?\n\n## Teach\n\n### Big idea\n\nUndo \u00d7 with \u00f7 and \u00f7 with \u00d7 on both sides.\n\n### Example 1\n\n3x=18 \u2192 x=6. Check 3\u00b76=18.\n\n### Try this\n\nx/4=5.\n\n**Check:** x=20\n\n### Example 2\n\n2x=\u221210 \u2192 x=\u22125 (preview ok if negatives known).\n\n### Common mistake (this lesson only)\n\nDividing only the coefficient and forgetting the variable side.\n\n## Guided practice (we do)\n\n1. 5x=35  \n   **Answer:** 7\n\n2. n/3=9  \n   **Answer:** 27\n\n3. Check 4x=20 for x=5  \n   **Answer:** True",
+    "exit": "## Exit ticket\n\n1. Solve 6x=42.\n2. Solve y/5=8.\n\n## Stretch (optional)\n\nWord problem for 2x=16.",
+    "questions": [
+      {
+        "prompt": "3x=18 \u2192 x=",
+        "choices": [
+          "6",
+          "15",
+          "21",
+          "54"
+        ],
+        "correctIndex": 0,
+        "explanation": "6."
+      },
+      {
+        "prompt": "x/4=5 \u2192 x=",
+        "choices": [
+          "1",
+          "9",
+          "20",
+          "4/5"
+        ],
+        "correctIndex": 2,
+        "explanation": "20."
+      },
+      {
+        "prompt": "5x=35 \u2192 x=",
+        "choices": [
+          "7",
+          "30",
+          "40",
+          "175"
+        ],
+        "correctIndex": 0,
+        "explanation": "7."
+      }
+    ]
+  },
+  "7|Modeling with One-Step Equations": {
+    "objectives": "\u2022 Write one-step equations from stories.\n\u2022 Solve and interpret the answer with units.\n\u2022 Check reasonableness.",
+    "description": "Write equations from word problems and solve.",
+    "teach_core": "## Objective\n\n**I can** write one-step equations from stories.\n\n## Warm-up (2 minutes)\n\n\u201cA number plus 8 is 20.\u201d Equation?\n\n## Teach\n\n### Big idea\n\nDefine variable \u2192 write equation \u2192 solve \u2192 label units.\n\n### Example 1\n\nn+8=20 \u2192 n=12.\n\n### Try this\n\nThrice a number is 27.\n\n**Check:** 3n=27 \u2192 n=9\n\n### Example 2\n\n$5 per ticket times t tickets = $40 \u2192 5t=40 \u2192 t=8.\n\n### Common mistake (this lesson only)\n\nSolving without defining what the variable stands for.\n\n## Guided practice (we do)\n\n1. 7 less than x is 10  \n   **Answer:** x\u22127=10 \u2192 17\n\n2. Half of m is 6  \n   **Answer:** m/2=6 \u2192 12\n\n3. 4 packs cost $20  \n   **Answer:** 4p=20 \u2192 $5",
+    "exit": "## Exit ticket\n\n1. 9 more than k is 31.\n2. Tickets $3 each total $24.\n\n## Stretch (optional)\n\nWrite two stories for 2x=18.",
+    "questions": [
+      {
+        "prompt": "n+8=20 \u2192 n=",
+        "choices": [
+          "12",
+          "28",
+          "8",
+          "20"
+        ],
+        "correctIndex": 0,
+        "explanation": "12."
+      },
+      {
+        "prompt": "3n=27 \u2192 n=",
+        "choices": [
+          "9",
+          "24",
+          "30",
+          "81"
+        ],
+        "correctIndex": 0,
+        "explanation": "9."
+      },
+      {
+        "prompt": "5t=40 \u2192 t=",
+        "choices": [
+          "8",
+          "35",
+          "45",
+          "200"
+        ],
+        "correctIndex": 0,
+        "explanation": "8."
+      }
+    ]
+  },
+  "7|What Is an Inequality?": {
+    "objectives": "\u2022 Interpret inequality symbols.\n\u2022 Decide if a number makes an inequality true.\n\u2022 Contrast with equations.",
+    "description": "Interpret <, >, \u2264, \u2265 with number-line meaning.",
+    "teach_core": "## Objective\n\n**I can** interpret inequality symbols.\n\n## Warm-up (2 minutes)\n\nIs 3 < 5 true? Is x > 2 an equation?\n\n## Teach\n\n### Big idea\n\nInequalities compare sizes; many solutions may work.\n\n### Example 1\n\nx > 2 means x is to the right of 2. 5 makes it true; 1 does not.\n\n### Try this\n\nIs 7 \u2265 7 true?\n\n**Check:** Yes\n\n### Example 2\n\nx \u2264 \u22121 includes \u22121 and all left of \u22121.\n\n### Common mistake (this lesson only)\n\nTreating > like = and hunting one answer only.\n\n## Guided practice (we do)\n\n1. True? 4 < 9  \n   **Answer:** Yes\n\n2. Does x=2 satisfy x>2?  \n   **Answer:** No\n\n3. Symbol for at least  \n   **Answer:** \u2265",
+    "exit": "## Exit ticket\n\n1. Test x=0 in x\u2265\u22123.\n2. Words for x < 5.\n\n## Stretch (optional)\n\nWhen is \u2264 different from <?",
+    "questions": [
+      {
+        "prompt": "3<5?",
+        "choices": [
+          "True",
+          "False",
+          "Sometimes",
+          "Equation"
+        ],
+        "correctIndex": 0,
+        "explanation": "True."
+      },
+      {
+        "prompt": "x>2 satisfied by x=2?",
+        "choices": [
+          "Yes",
+          "No",
+          "Only if =",
+          "Always"
+        ],
+        "correctIndex": 1,
+        "explanation": "No."
+      },
+      {
+        "prompt": "\u201cAt least 4\u201d",
+        "choices": [
+          "x<4",
+          "x\u22644",
+          "x\u22654",
+          "x>4"
+        ],
+        "correctIndex": 2,
+        "explanation": "\u2265."
+      }
+    ]
+  },
+  "7|Graphing Inequalities on a Number Line": {
+    "objectives": "\u2022 Graph inequalities on a number line.\n\u2022 Use open/closed circles correctly.\n\u2022 Shade the correct ray.",
+    "description": "Graph solution sets with open/closed circles.",
+    "teach_core": "## Objective\n\n**I can** graph inequalities on a number line.\n\n## Warm-up (2 minutes)\n\nHow do you show x > 2 vs x \u2265 2?\n\n## Teach\n\n### Big idea\n\nOpen circle for < or >; closed for \u2264 or \u2265. Shade the solution ray.\n\n### Example 1\n\nx>2: open at 2, shade right. x\u22652: closed at 2, shade right.\n\n### Try this\n\nGraph x \u2264 \u22121.\n\n**Check:** Closed at \u22121, shade left\n\n### Example 2\n\nx < 0: open at 0, shade left.\n\n### Common mistake (this lesson only)\n\nUsing a closed circle with >.\n\n## Guided practice (we do)\n\n1. Circle for x>3  \n   **Answer:** Open\n\n2. Shade for x\u22640  \n   **Answer:** Left including 0\n\n3. x\u22655 circle  \n   **Answer:** Closed",
+    "exit": "## Exit ticket\n\n1. Graph x < 4.\n2. Graph x \u2265 \u22122.\n\n## Stretch (optional)\n\nMatch four graphs to four inequalities.",
+    "questions": [
+      {
+        "prompt": "Circle for x>2",
+        "choices": [
+          "Open",
+          "Closed",
+          "None",
+          "Two"
+        ],
+        "correctIndex": 0,
+        "explanation": "Open."
+      },
+      {
+        "prompt": "x\u2264\u22121 shade",
+        "choices": [
+          "Right",
+          "Left",
+          "Only \u22121",
+          "None"
+        ],
+        "correctIndex": 1,
+        "explanation": "Left."
+      },
+      {
+        "prompt": "x\u22655 circle",
+        "choices": [
+          "Open",
+          "Closed",
+          "Square",
+          "Dashed"
+        ],
+        "correctIndex": 1,
+        "explanation": "Closed."
+      }
+    ]
+  },
+  "7|Writing Inequalities from Stories": {
+    "objectives": "\u2022 Translate stories into inequalities.\n\u2022 Choose the correct symbol.\n\u2022 Define the variable clearly.",
+    "description": "Translate constraints into inequalities.",
+    "teach_core": "## Objective\n\n**I can** translate stories into inequalities.\n\n## Warm-up (2 minutes)\n\n\u201cYou must be at least 12 years old\u201d \u2014 inequality?\n\n## Teach\n\n### Big idea\n\nAt least \u2192 \u2265; at most \u2192 \u2264; more than \u2192 >; fewer than \u2192 <.\n\n### Example 1\n\nAge a \u2265 12.\n\n### Try this\n\nAt most 5 tickets t.\n\n**Check:** t \u2264 5\n\n### Example 2\n\nScore s must exceed 70 \u2192 s > 70.\n\n### Common mistake (this lesson only)\n\nUsing < for \u201cat least.\u201d\n\n## Guided practice (we do)\n\n1. More than 3  \n   **Answer:** x>3\n\n2. No more than 10  \n   **Answer:** x\u226410\n\n3. Under 18  \n   **Answer:** x<18",
+    "exit": "## Exit ticket\n\n1. At least $20.\n2. Fewer than 8 people.\n\n## Stretch (optional)\n\nTwo English phrases for x \u2265 0.",
+    "questions": [
+      {
+        "prompt": "At least 12",
+        "choices": [
+          "a<12",
+          "a\u226412",
+          "a\u226512",
+          "a>12"
+        ],
+        "correctIndex": 2,
+        "explanation": "\u2265."
+      },
+      {
+        "prompt": "At most 5",
+        "choices": [
+          "t<5",
+          "t\u22645",
+          "t\u22655",
+          "t>5"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u2264."
+      },
+      {
+        "prompt": "Exceeds 70",
+        "choices": [
+          "s\u226570",
+          "s>70",
+          "s\u226470",
+          "s<70"
+        ],
+        "correctIndex": 1,
+        "explanation": ">."
+      }
+    ]
+  },
+  "7|Checking Solutions in Inequalities": {
+    "objectives": "\u2022 Test candidate values in inequalities.\n\u2022 Explain true/false with substitution.\n\u2022 Find one solution and one non-solution.",
+    "description": "Test candidate values; explain why they work or fail.",
+    "teach_core": "## Objective\n\n**I can** test candidate values in inequalities.\n\n## Warm-up (2 minutes)\n\nDoes x=3 make x \u2265 3 true? Does x=2?\n\n## Teach\n\n### Big idea\n\nSubstitute and simplify the comparison.\n\n### Example 1\n\nx\u22653: 3\u22653 true; 2\u22653 false.\n\n### Try this\n\nDoes \u22121 satisfy x < 0?\n\n**Check:** Yes\n\n### Example 2\n\nFor x>5, x=5 fails; x=5.1 works.\n\n### Common mistake (this lesson only)\n\nStopping after one true value and ignoring boundary rules.\n\n## Guided practice (we do)\n\n1. 5 in x>5?  \n   **Answer:** No\n\n2. 5 in x\u22655?  \n   **Answer:** Yes\n\n3. 0 in x\u2264\u22121?  \n   **Answer:** No",
+    "exit": "## Exit ticket\n\n1. Test 4 and 6 in x>5.\n2. Test \u22122 in x\u2264\u22122.\n\n## Stretch (optional)\n\nFind three solutions for x < 1.",
+    "questions": [
+      {
+        "prompt": "x=3 in x\u22653?",
+        "choices": [
+          "True",
+          "False",
+          "Unknown",
+          "Equation only"
+        ],
+        "correctIndex": 0,
+        "explanation": "True."
+      },
+      {
+        "prompt": "x=5 in x>5?",
+        "choices": [
+          "True",
+          "False",
+          "Sometimes",
+          "Always"
+        ],
+        "correctIndex": 1,
+        "explanation": "False."
+      },
+      {
+        "prompt": "\u22121 in x<0?",
+        "choices": [
+          "True",
+          "False",
+          "Borderline",
+          "No"
+        ],
+        "correctIndex": 0,
+        "explanation": "True."
+      }
+    ]
+  },
+  "7|Equations & Inequalities Mistakes": {
+    "objectives": "\u2022 Catch common equation/inequality mistakes.\n\u2022 Repair balance errors.\n\u2022 Fix symbol mix-ups.",
+    "description": "Catch sign errors and balance mistakes.",
+    "teach_core": "## Objective\n\n**I can** catch common equation/inequality mistakes.\n\n## Warm-up (2 minutes)\n\nStudent solves x+4=10 as x=14. Name the error.\n\n## Teach\n\n### Big idea\n\nError hunt: wrong inverse, one-sided change, symbol swap.\n\n### Example 1\n\nShould subtract 4 \u2192 x=6, not add.\n\n### Try this\n\nFix: student graphs x>2 with closed circle.\n\n**Check:** Use open circle\n\n### Example 2\n\nWriting \u201cat least\u201d as <. Repair to \u2265.\n\n### Common mistake (this lesson only)\n\nFlipping inequality without multiplying/dividing by a negative (Grade 7 preview note: we avoid that here).\n\n## Guided practice (we do)\n\n1. Repair x\u22123=7 \u2192 student got 4  \n   **Answer:** Should be 10\n\n2. Repair 2x=10 \u2192 x=20  \n   **Answer:** Should be 5\n\n3. At least as symbol  \n   **Answer:** \u2265",
+    "exit": "## Exit ticket\n\n1. Repair x+8=5 \u2192 student got 13.\n2. Repair open/closed mix-up for \u2264.\n\n## Stretch (optional)\n\nCoach note for a wrong balance step.",
+    "questions": [
+      {
+        "prompt": "x+4=10 \u2192 x=",
+        "choices": [
+          "14",
+          "6",
+          "4",
+          "10"
+        ],
+        "correctIndex": 1,
+        "explanation": "6."
+      },
+      {
+        "prompt": "Graph x>2 needs",
+        "choices": [
+          "Closed",
+          "Open",
+          "Dot only",
+          "Arrow left"
+        ],
+        "correctIndex": 1,
+        "explanation": "Open."
+      },
+      {
+        "prompt": "At least symbol",
+        "choices": [
+          "<",
+          "\u2264",
+          ">",
+          "\u2265"
+        ],
+        "correctIndex": 3,
+        "explanation": "\u2265."
+      }
+    ]
+  },
+  "7|Equations & Inequalities Unit Review": {
+    "objectives": "\u2022 Solve one-step equations.\n\u2022 Graph and write inequalities.\n\u2022 Check solutions.",
+    "description": "Mixed one-step equations and inequality practice.",
+    "teach_core": "## Objective\n\n**I can** solve one-step equations.\n\n## Warm-up (2 minutes)\n\nSolve 2x=16 and graph x \u2265 3 \u2014 different tools, same course unit.\n\n## Teach\n\n### Big idea\n\nEquation \u2192 one/few solutions; inequality \u2192 a set. Check everything.\n\n### Example 1\n\nx\u22125=2 \u2192 x=7; x<1 open circle shade left.\n\n### Try this\n\nWrite and solve: 4 more than n is 19.\n\n**Check:** n+4=19 \u2192 15\n\n### Example 2\n\nAt most 8 \u2192 x\u22648 closed shade left.\n\n### Common mistake (this lesson only)\n\nTreating inequality graphs like single-point equation marks only.\n\n## Guided practice (we do)\n\n1. Solve 5x=45  \n   **Answer:** 9\n\n2. Graph x>0 key features  \n   **Answer:** Open at 0, right\n\n3. Check 2 in x\u22642  \n   **Answer:** True",
+    "exit": "## Exit ticket\n\n1. Solve y/3=6.\n2. Graph x \u2264 \u22121.\n\n## Stretch (optional)\n\nStory requiring an inequality and an equation.",
+    "questions": [
+      {
+        "prompt": "2x=16 \u2192 x=",
+        "choices": [
+          "8",
+          "14",
+          "18",
+          "32"
+        ],
+        "correctIndex": 0,
+        "explanation": "8."
+      },
+      {
+        "prompt": "x\u22653 circle",
+        "choices": [
+          "Open",
+          "Closed",
+          "None",
+          "Two"
+        ],
+        "correctIndex": 1,
+        "explanation": "Closed."
+      },
+      {
+        "prompt": "n+4=19 \u2192 n=",
+        "choices": [
+          "15",
+          "23",
+          "4",
+          "19"
+        ],
+        "correctIndex": 0,
+        "explanation": "15."
+      }
+    ]
+  },
+  "9|Coordinate Plane Stories": {
+    "objectives": "\u2022 Interpret points in context.\n\u2022 Describe paths with ordered pairs.\n\u2022 Connect signs to directions in a story.",
+    "description": "Interpret points and paths in real contexts on the plane.",
+    "teach_core": "## Objective\n\n**I can** interpret points in context.\n\n## Warm-up (2 minutes)\n\nA map uses (0,0) as the school. What could (\u22122,3) mean?\n\n## Teach\n\n### Big idea\n\nContext turns coordinates into locations and moves.\n\n### Example 1\n\nSchool at (0,0); library at (2,1) is 2 east, 1 north if +x east +y north.\n\n### Try this\n\nPath from (0,0) to (3,0) to (3,2) \u2014 describe.\n\n**Check:** 3 east, then 2 north\n\n### Example 2\n\nA treasure at (\u22124,\u22121) is west and south of school.\n\n### Common mistake (this lesson only)\n\nIgnoring the story\u2019s direction agreement.\n\n## Guided practice (we do)\n\n1.  (0,0) meaning   \n   **Answer:** Origin/start\n\n2. East 4 if +x east  \n   **Answer:** (4,y)\n\n3. South 2 if +y north  \n   **Answer:** negative y",
+    "exit": "## Exit ticket\n\n1. Story for (5,\u22122).\n2. Path of three points.\n\n## Stretch (optional)\n\nMake a campus map with 4 landmarks.",
+    "questions": [
+      {
+        "prompt": "If +x is east, (3,0) is",
+        "choices": [
+          "3 west",
+          "3 east",
+          "3 north",
+          "Origin"
+        ],
+        "correctIndex": 1,
+        "explanation": "East."
+      },
+      {
+        "prompt": "Path (0,0)\u2192(0,4)",
+        "choices": [
+          "4 east",
+          "4 north if +y north",
+          "4 south",
+          "4 west"
+        ],
+        "correctIndex": 1,
+        "explanation": "North."
+      },
+      {
+        "prompt": "(\u22122,3) from school",
+        "choices": [
+          "West and north",
+          "East and south",
+          "Only west",
+          "Only south"
+        ],
+        "correctIndex": 0,
+        "explanation": "West+north."
+      }
+    ]
+  },
+  "9|From Tables to Graphs": {
+    "objectives": "\u2022 Plot (x,y) pairs from a table.\n\u2022 Notice linear patterns when points align.\n\u2022 Read a value from a graph.",
+    "description": "Plot table pairs and notice patterns on the plane.",
+    "teach_core": "## Objective\n\n**I can** plot (x,y) pairs from a table.\n\n## Warm-up (2 minutes)\n\nTable x:1,2,3 y:2,4,6 \u2014 what do you expect for x=4?\n\n## Teach\n\n### Big idea\n\nEach row becomes a point; patterns may form lines.\n\n### Example 1\n\nPoints (1,2),(2,4),(3,6) lie on a line; y=2x.\n\n### Try this\n\nPlot (0,1),(1,3),(2,5). Pattern?\n\n**Check:** y=2x+1\n\n### Example 2\n\nRead y when x=2 from the graph.\n\n### Common mistake (this lesson only)\n\nConnecting points randomly without checking the table order.\n\n## Guided practice (we do)\n\n1. Next in 2,4,6  \n   **Answer:** 8\n\n2. Point for x=0 y=5  \n   **Answer:** (0,5)\n\n3. Collinear meaning  \n   **Answer:** On one line",
+    "exit": "## Exit ticket\n\n1. Plot a 4-row table.\n2. Predict one more point.\n\n## Stretch (optional)\n\nTable that is not linear.",
+    "questions": [
+      {
+        "prompt": "For y=2x, x=4 \u2192",
+        "choices": [
+          "6",
+          "8",
+          "4",
+          "2"
+        ],
+        "correctIndex": 1,
+        "explanation": "8."
+      },
+      {
+        "prompt": "Table row x=2 y=5 \u2192 point",
+        "choices": [
+          "(5,2)",
+          "(2,5)",
+          "(0,5)",
+          "(2,0)"
+        ],
+        "correctIndex": 1,
+        "explanation": "(2,5)."
+      },
+      {
+        "prompt": "Points of y=2x+1 include",
+        "choices": [
+          "(0,1)",
+          "(1,1)",
+          "(2,2)",
+          "(0,0)"
+        ],
+        "correctIndex": 0,
+        "explanation": "(0,1)."
+      }
+    ]
+  },
+  "10|Prisms and Pyramids Overview": {
+    "objectives": "\u2022 Distinguish prisms from pyramids.\n\u2022 Name bases and lateral faces.\n\u2022 Count faces/edges/vertices for rectangular prisms.",
+    "description": "Identify prisms vs pyramids and name bases/faces.",
+    "teach_core": "## Objective\n\n**I can** distinguish prisms from pyramids.\n\n## Warm-up (2 minutes)\n\nHow is a triangular prism different from a triangular pyramid?\n\n## Teach\n\n### Big idea\n\nPrism: two parallel congruent bases. Pyramid: one base; lateral faces meet at an apex.\n\n### Example 1\n\nRectangular prism has 6 faces, 12 edges, 8 vertices.\n\n### Try this\n\nPyramid with square base \u2014 lateral faces?\n\n**Check:** 4 triangles\n\n### Example 2\n\nA cube is a special rectangular prism.\n\n### Common mistake (this lesson only)\n\nCalling any 3D figure a prism.\n\n## Guided practice (we do)\n\n1. Prism bases  \n   **Answer:** 2 parallel congruent\n\n2. Pyramid apex  \n   **Answer:** Yes\n\n3. Cube faces  \n   **Answer:** 6",
+    "exit": "## Exit ticket\n\n1. Name prism vs pyramid in pictures.\n2. Cube edges count.\n\n## Stretch (optional)\n\nNet preview: unfold a prism.",
+    "questions": [
+      {
+        "prompt": "Rectangular prism faces",
+        "choices": [
+          "4",
+          "5",
+          "6",
+          "8"
+        ],
+        "correctIndex": 2,
+        "explanation": "6."
+      },
+      {
+        "prompt": "Pyramid has how many bases?",
+        "choices": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "correctIndex": 1,
+        "explanation": "1."
+      },
+      {
+        "prompt": "Cube is a",
+        "choices": [
+          "Pyramid",
+          "Cylinder",
+          "Rectangular prism",
+          "Cone"
+        ],
+        "correctIndex": 2,
+        "explanation": "Prism."
+      }
+    ]
+  },
+  "10|Nets of Rectangular Prisms": {
+    "objectives": "\u2022 Recognize nets of rectangular prisms.\n\u2022 Draw a valid net.\n\u2022 Reject nets that leave gaps/overlaps when folded.",
+    "description": "Recognize and draw nets that fold to a rectangular prism.",
+    "teach_core": "## Objective\n\n**I can** recognize nets of rectangular prisms.\n\n## Warm-up (2 minutes)\n\nCan six identical squares fold to a cube? Which arrangements fail?\n\n## Teach\n\n### Big idea\n\nA net is a 2D unfolding that folds to the solid without overlap.\n\n### Example 1\n\nCube nets: 11 hexomino types work; a straight chain of 6 does not.\n\n### Try this\n\nNet with a cross of 5 squares +1 \u2014 valid cube?\n\n**Check:** Often yes if arranged properly\n\n### Example 2\n\nRectangular prism net uses rectangles matching face dimensions.\n\n### Common mistake (this lesson only)\n\nDrawing a net that overlaps when folded.\n\n## Guided practice (we do)\n\n1. Cube faces in net  \n   **Answer:** 6 squares\n\n2. Valid net test  \n   **Answer:** Folds without overlap\n\n3. Long chain of 6  \n   **Answer:** Invalid for cube",
+    "exit": "## Exit ticket\n\n1. Sketch a cube net.\n2. Mark which face is opposite.\n\n## Stretch (optional)\n\nDesign a rectangular (non-cube) prism net.",
+    "questions": [
+      {
+        "prompt": "Cube net needs",
+        "choices": [
+          "4 squares",
+          "6 squares",
+          "8 squares",
+          "1 square"
+        ],
+        "correctIndex": 1,
+        "explanation": "6."
+      },
+      {
+        "prompt": "Chain of 6 squares for cube?",
+        "choices": [
+          "Always valid",
+          "Invalid",
+          "Only if colored",
+          "Only 3D"
+        ],
+        "correctIndex": 1,
+        "explanation": "Invalid."
+      },
+      {
+        "prompt": "Net means",
+        "choices": [
+          "Perspective drawing",
+          "2D unfolding",
+          "Volume",
+          "Diagonal"
+        ],
+        "correctIndex": 1,
+        "explanation": "Unfolding."
+      }
+    ]
+  },
+  "10|Surface Area from Nets": {
+    "objectives": "\u2022 Find surface area from a net.\n\u2022 Sum all face areas.\n\u2022 Use square units.",
+    "description": "Compute surface area by summing net face areas.",
+    "teach_core": "## Objective\n\n**I can** find surface area from a net.\n\n## Warm-up (2 minutes)\n\nNet shows faces 4\u00d73, 4\u00d73, 5\u00d73 twice, 5\u00d74 twice \u2014 total area?\n\n## Teach\n\n### Big idea\n\nSurface area = sum of areas of all faces (net makes them visible).\n\n### Example 1\n\n2(4\u00d73)+2(5\u00d73)+2(5\u00d74)=24+30+40=94.\n\n### Try this\n\nCube edge 2 \u2014 SA from net?\n\n**Check:** 6\u00d74=24\n\n### Example 2\n\nCount each face once.\n\n### Common mistake (this lesson only)\n\nForgetting a face that is behind in a 3D sketch (nets help avoid that).\n\n## Guided practice (we do)\n\n1. Cube edge 3 SA  \n   **Answer:** 54\n\n2. Sum faces carefully  \n   **Answer:** Yes\n\n3. Units  \n   **Answer:** Square",
+    "exit": "## Exit ticket\n\n1. SA from a labeled net.\n2. Cube edge 5 SA.\n\n## Stretch (optional)\n\nExplain why nets prevent missing faces.",
+    "questions": [
+      {
+        "prompt": "Cube edge 2 SA",
+        "choices": [
+          "8",
+          "24",
+          "12",
+          "16"
+        ],
+        "correctIndex": 1,
+        "explanation": "24."
+      },
+      {
+        "prompt": "SA means",
+        "choices": [
+          "Volume",
+          "Sum of face areas",
+          "Perimeter",
+          "Diagonal"
+        ],
+        "correctIndex": 1,
+        "explanation": "Face areas."
+      },
+      {
+        "prompt": "2(4\u00d73)+2(5\u00d73)+2(5\u00d74)",
+        "choices": [
+          "94",
+          "47",
+          "60",
+          "80"
+        ],
+        "correctIndex": 0,
+        "explanation": "94."
+      }
+    ]
+  },
+  "10|Surface Area Formula for Rectangular Prisms": {
+    "objectives": "\u2022 Use SA=2(lw+lh+wh) for rectangular prisms.\n\u2022 Match l,w,h to faces.\n\u2022 Check with a net sum.",
+    "description": "Use SA = 2(lw+lh+wh).",
+    "teach_core": "## Objective\n\n**I can** use SA=2(lw+lh+wh) for rectangular prisms.\n\n## Warm-up (2 minutes)\n\nPrism 5\u00d73\u00d72 \u2014 compute SA two ways.\n\n## Teach\n\n### Big idea\n\nOpposite faces match: SA=2(lw+lh+wh).\n\n### Example 1\n\n2(5\u00b73+5\u00b72+3\u00b72)=2(15+10+6)=62.\n\n### Try this\n\n4\u00d74\u00d74 cube with formula.\n\n**Check:** 2(16+16+16)=96\n\n### Example 2\n\nVerify by net for small numbers.\n\n### Common mistake (this lesson only)\n\nAdding lw+lh+wh without multiplying by 2.\n\n## Guided practice (we do)\n\n1. 3\u00d72\u00d71 SA  \n   **Answer:** 2(6+3+2)=22\n\n2. Missing \u00d72 error  \n   **Answer:** Halves SA\n\n3. Cube s SA  \n   **Answer:** 6s^2",
+    "exit": "## Exit ticket\n\n1. SA 6\u00d74\u00d72.\n2. Check with face list.\n\n## Stretch (optional)\n\nWhen is cube formula faster?",
+    "questions": [
+      {
+        "prompt": "5\u00d73\u00d72 SA",
+        "choices": [
+          "30",
+          "62",
+          "31",
+          "60"
+        ],
+        "correctIndex": 1,
+        "explanation": "62."
+      },
+      {
+        "prompt": "Formula SA=",
+        "choices": [
+          "lwh",
+          "2(lw+lh+wh)",
+          "lw+lh+wh",
+          "6lw"
+        ],
+        "correctIndex": 1,
+        "explanation": "2(lw+lh+wh)."
+      },
+      {
+        "prompt": "Cube edge 4 SA",
+        "choices": [
+          "64",
+          "96",
+          "48",
+          "16"
+        ],
+        "correctIndex": 1,
+        "explanation": "96."
+      }
+    ]
+  },
+  "10|Volume as Filling Space": {
+    "objectives": "\u2022 Define volume as filling space.\n\u2022 Count unit cubes.\n\u2022 Use cubic units.",
+    "description": "Interpret volume as filling with unit cubes.",
+    "teach_core": "## Objective\n\n**I can** define volume as filling space.\n\n## Warm-up (2 minutes)\n\nHow many 1\u00d71\u00d71 cubes pack a 2\u00d73\u00d74 box?\n\n## Teach\n\n### Big idea\n\nVolume measures space inside; unit cubes fill it.\n\n### Example 1\n\n2\u00d73\u00d74=24 unit cubes.\n\n### Try this\n\nLayers: 3 layers of 2\u00d74. Volume?\n\n**Check:** 24\n\n### Example 2\n\nCubic units: cm^3, in^3.\n\n### Common mistake (this lesson only)\n\nUsing square units for volume.\n\n## Guided practice (we do)\n\n1. 1\u00d71\u00d75 volume  \n   **Answer:** 5\n\n2. Packing meaning  \n   **Answer:** Fill\n\n3. Units  \n   **Answer:** Cubic",
+    "exit": "## Exit ticket\n\n1. Cubes in 3\u00d73\u00d73.\n2. Why volume \u2260 surface area.\n\n## Stretch (optional)\n\nBuild a 12-cube rectangular solid two ways.",
+    "questions": [
+      {
+        "prompt": "2\u00d73\u00d74 cubes",
+        "choices": [
+          "9",
+          "24",
+          "14",
+          "48"
+        ],
+        "correctIndex": 1,
+        "explanation": "24."
+      },
+      {
+        "prompt": "Volume units",
+        "choices": [
+          "cm",
+          "cm^2",
+          "cm^3",
+          "no units"
+        ],
+        "correctIndex": 2,
+        "explanation": "Cubic."
+      },
+      {
+        "prompt": "Volume measures",
+        "choices": [
+          "Covering",
+          "Around",
+          "Filling space",
+          "Angle"
+        ],
+        "correctIndex": 2,
+        "explanation": "Filling."
+      }
+    ]
+  },
+  "10|Volume of Rectangular Prisms": {
+    "objectives": "\u2022 Compute V=lwh.\n\u2022 Use base area \u00d7 height.\n\u2022 Include cubic units.",
+    "description": "Compute V = lwh and relate to base area \u00d7 height.",
+    "teach_core": "## Objective\n\n**I can** compute V=lwh.\n\n## Warm-up (2 minutes)\n\nBase 5\u00d73 and height 2 \u2014 volume?\n\n## Teach\n\n### Big idea\n\nV=lwh = (base area)\u00d7height.\n\n### Example 1\n\n5\u00d73\u00d72=30.\n\n### Try this\n\nBase area 12, height 4.\n\n**Check:** 48\n\n### Example 2\n\nCube edge 5 \u2192 V=125.\n\n### Common mistake (this lesson only)\n\nMultiplying only two dimensions.\n\n## Guided practice (we do)\n\n1. 6\u00d72\u00d73  \n   **Answer:** 36\n\n2. Base 10 height 5  \n   **Answer:** 50\n\n3. Cube 3  \n   **Answer:** 27",
+    "exit": "## Exit ticket\n\n1. V of 4\u00d75\u00d76.\n2. Base 8 height 3.\n\n## Stretch (optional)\n\nSame volume different dimensions.",
+    "questions": [
+      {
+        "prompt": "5\u00d73\u00d72 V",
+        "choices": [
+          "10",
+          "30",
+          "15",
+          "60"
+        ],
+        "correctIndex": 1,
+        "explanation": "30."
+      },
+      {
+        "prompt": "Base 12 height 4 V",
+        "choices": [
+          "16",
+          "48",
+          "3",
+          "48 only if cube"
+        ],
+        "correctIndex": 1,
+        "explanation": "48."
+      },
+      {
+        "prompt": "Cube edge 5 V",
+        "choices": [
+          "25",
+          "15",
+          "125",
+          "75"
+        ],
+        "correctIndex": 2,
+        "explanation": "125."
+      }
+    ]
+  },
+  "10|Surface Area vs Volume": {
+    "objectives": "\u2022 Contrast surface area and volume.\n\u2022 Choose the correct measure for a context.\n\u2022 Compute both for one prism.",
+    "description": "Compare what SA and volume measure; avoid mix-ups.",
+    "teach_core": "## Objective\n\n**I can** contrast surface area and volume.\n\n## Warm-up (2 minutes)\n\nPaint for a box vs packing peanuts inside \u2014 SA or volume?\n\n## Teach\n\n### Big idea\n\nSA = wrapping/paint (square units). Volume = filling (cubic units).\n\n### Example 1\n\nPrism 2\u00d73\u00d74: V=24, SA=2(6+8+12)=52.\n\n### Try this\n\nWhich for gift wrap?\n\n**Check:** Surface area\n\n### Example 2\n\nWhich for water in a tank? Volume.\n\n### Common mistake (this lesson only)\n\nReporting V with cm^2.\n\n## Guided practice (we do)\n\n1. Paint \u2192  \n   **Answer:** SA\n\n2. Fill \u2192  \n   **Answer:** Volume\n\n3. 2\u00d73\u00d74 V and SA  \n   **Answer:** 24 and 52",
+    "exit": "## Exit ticket\n\n1. Compute both for 3\u00d73\u00d73.\n2. Context: shipping fill.\n\n## Stretch (optional)\n\nTwo prisms same V different SA.",
+    "questions": [
+      {
+        "prompt": "Gift wrap needs",
+        "choices": [
+          "Volume",
+          "Surface area",
+          "Mass",
+          "Speed"
+        ],
+        "correctIndex": 1,
+        "explanation": "SA."
+      },
+      {
+        "prompt": "Tank water needs",
+        "choices": [
+          "SA",
+          "Volume",
+          "Perimeter",
+          "Net only"
+        ],
+        "correctIndex": 1,
+        "explanation": "Volume."
+      },
+      {
+        "prompt": "2\u00d73\u00d74 volume",
+        "choices": [
+          "24",
+          "52",
+          "9",
+          "48"
+        ],
+        "correctIndex": 0,
+        "explanation": "24."
+      }
+    ]
+  },
+  "10|3D Figures Unit Review": {
+    "objectives": "\u2022 Identify prisms and use nets.\n\u2022 Compute SA and volume.\n\u2022 Match measures to contexts.",
+    "description": "Mixed nets, surface area, and volume practice.",
+    "teach_core": "## Objective\n\n**I can** identify prisms and use nets.\n\n## Warm-up (2 minutes)\n\nName one SA formula and one volume formula from this unit.\n\n## Teach\n\n### Big idea\n\nNets; SA=2(lw+lh+wh); V=lwh; units matter.\n\n### Example 1\n\nCube edge 3: V=27, SA=54.\n\n### Try this\n\nPrism 5\u00d72\u00d72 \u2014 V and SA.\n\n**Check:** 20; 2(10+10+4)=48\n\n### Example 2\n\nPaint vs fill decision.\n\n### Common mistake (this lesson only)\n\nMixing SA and V numbers.\n\n## Guided practice (we do)\n\n1. Cube edge 2 V  \n   **Answer:** 8\n\n2. Cube edge 2 SA  \n   **Answer:** 24\n\n3. Net purpose  \n   **Answer:** Show faces",
+    "exit": "## Exit ticket\n\n1. SA and V for 4\u00d73\u00d72.\n2. Valid cube net sketch.\n\n## Stretch (optional)\n\nError hunt: student used slant as height in 3D.",
+    "questions": [
+      {
+        "prompt": "Cube edge 3 V",
+        "choices": [
+          "9",
+          "27",
+          "18",
+          "54"
+        ],
+        "correctIndex": 1,
+        "explanation": "27."
+      },
+      {
+        "prompt": "Cube edge 3 SA",
+        "choices": [
+          "27",
+          "54",
+          "36",
+          "9"
+        ],
+        "correctIndex": 1,
+        "explanation": "54."
+      },
+      {
+        "prompt": "V formula rectangular prism",
+        "choices": [
+          "2(lw+lh+wh)",
+          "lwh",
+          "lw+lh+wh",
+          "6lw"
+        ],
+        "correctIndex": 1,
+        "explanation": "lwh."
+      }
+    ]
+  },
+  "11|Statistical Questions": {
+    "objectives": "\u2022 Distinguish statistical vs non-statistical questions.\n\u2022 Explain variability.\n\u2022 Rewrite a non-statistical question to make it statistical.",
+    "description": "Distinguish questions that anticipate variability.",
+    "teach_core": "## Objective\n\n**I can** distinguish statistical vs non-statistical questions.\n\n## Warm-up (2 minutes)\n\nWhich anticipates variability: \u201cHow tall is Ms. Lee?\u201d vs \u201cHow tall are Grade 6 students?\u201d\n\n## Teach\n\n### Big idea\n\nStatistical questions anticipate varied answers in a data set.\n\n### Example 1\n\n\u201cHow tall are Grade 6 students?\u201d is statistical; one person\u2019s height is not.\n\n### Try this\n\nIs \u201cWhat is 7+5?\u201d statistical?\n\n**Check:** No\n\n### Example 2\n\n\u201cHow many pets do students have?\u201d \u2014 statistical.\n\n### Common mistake (this lesson only)\n\nThinking any question with a number is statistical.\n\n## Guided practice (we do)\n\n1. Varying answers?  \n   **Answer:** Statistical\n\n2. Exact one fact?  \n   **Answer:** Often not statistical\n\n3. Rewrite \u201cHow old is Jordan?\u201d  \n   **Answer:** Ages of students in class",
+    "exit": "## Exit ticket\n\n1. Label 4 questions.\n2. Rewrite one to be statistical.\n\n## Stretch (optional)\n\nSurvey topic for your class.",
+    "questions": [
+      {
+        "prompt": "Grade 6 heights question",
+        "choices": [
+          "Not statistical",
+          "Statistical",
+          "Equation",
+          "Net"
+        ],
+        "correctIndex": 1,
+        "explanation": "Statistical."
+      },
+      {
+        "prompt": "7+5 statistical?",
+        "choices": [
+          "Yes",
+          "No",
+          "Sometimes",
+          "Only odd"
+        ],
+        "correctIndex": 1,
+        "explanation": "No."
+      },
+      {
+        "prompt": "Pets students have",
+        "choices": [
+          "Statistical",
+          "Never",
+          "Formula",
+          "Area"
+        ],
+        "correctIndex": 0,
+        "explanation": "Statistical."
+      }
+    ]
+  },
+  "11|Collecting and Organizing Data": {
+    "objectives": "\u2022 Plan data collection.\n\u2022 Organize with tallies/tables.\n\u2022 Keep categories clear.",
+    "description": "Collect data and organize in tables/tally charts.",
+    "teach_core": "## Objective\n\n**I can** plan data collection.\n\n## Warm-up (2 minutes)\n\nHow would you record favorite lunch options for 20 students?\n\n## Teach\n\n### Big idea\n\nDecide the question, collect consistently, organize (tally \u2192 frequency table).\n\n### Example 1\n\nTallies for pizza, salad, sandwich \u2192 frequencies.\n\n### Try this\n\nFrequency of a category with |||| =?\n\n**Check:** 4\n\n### Example 2\n\nCategories should not overlap.\n\n### Common mistake (this lesson only)\n\nChanging categories mid-collection.\n\n## Guided practice (we do)\n\n1. Tally ||||- =5  \n   **Answer:** 5\n\n2. Frequency table purpose  \n   **Answer:** Counts by category\n\n3. Clear categories  \n   **Answer:** Non-overlapping",
+    "exit": "## Exit ticket\n\n1. Make a tally for a mini data set.\n2. Convert to frequencies.\n\n## Stretch (optional)\n\nBias warning: who you ask matters.",
+    "questions": [
+      {
+        "prompt": "|||| tallies",
+        "choices": [
+          "3",
+          "4",
+          "5",
+          "10"
+        ],
+        "correctIndex": 1,
+        "explanation": "4."
+      },
+      {
+        "prompt": "Frequency means",
+        "choices": [
+          "Average",
+          "Count in category",
+          "Area",
+          "Slope"
+        ],
+        "correctIndex": 1,
+        "explanation": "Count."
+      },
+      {
+        "prompt": "Overlapping categories?",
+        "choices": [
+          "Good",
+          "Confusing/bad",
+          "Required",
+          "Only for dots"
+        ],
+        "correctIndex": 1,
+        "explanation": "Bad."
+      }
+    ]
+  },
+  "11|Dot Plots": {
+    "objectives": "\u2022 Build a dot plot.\n\u2022 Read frequencies from dots.\n\u2022 Describe a simple cluster/gap.",
+    "description": "Build and read dot plots.",
+    "teach_core": "## Objective\n\n**I can** build a dot plot.\n\n## Warm-up (2 minutes)\n\nData 2,3,3,4,5 \u2014 sketch dots above a number line.\n\n## Teach\n\n### Big idea\n\nEach value gets a stack of dots; height = frequency.\n\n### Example 1\n\nTwo dots above 3 means frequency 2.\n\n### Try this\n\nMode on a dot plot?\n\n**Check:** Tallest stack\n\n### Example 2\n\nGaps show values with no data.\n\n### Common mistake (this lesson only)\n\nSpacing dots unevenly on the scale.\n\n## Guided practice (we do)\n\n1. Dots above 4:3 \u2192 freq  \n   **Answer:** 3\n\n2. Cluster meaning  \n   **Answer:** Values bunched\n\n3. Gap meaning  \n   **Answer:** Missing values",
+    "exit": "## Exit ticket\n\n1. Dot plot for 1,1,2,4,4,4.\n2. Read the mode.\n\n## Stretch (optional)\n\nCompare two tiny dot plots.",
+    "questions": [
+      {
+        "prompt": "Two dots above 3 \u2192 freq",
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "5"
+        ],
+        "correctIndex": 1,
+        "explanation": "2."
+      },
+      {
+        "prompt": "Tallest stack is",
+        "choices": [
+          "Mean",
+          "Mode oft",
+          "Range",
+          "MAD"
+        ],
+        "correctIndex": 1,
+        "explanation": "Mode."
+      },
+      {
+        "prompt": "Dot plots use",
+        "choices": [
+          "Bars only",
+          "Dots on scale",
+          "Pies",
+          "Nets"
+        ],
+        "correctIndex": 1,
+        "explanation": "Dots."
+      }
+    ]
+  },
+  "11|Histograms Intro": {
+    "objectives": "\u2022 Read a histogram.\n\u2022 Understand bins/intervals.\n\u2022 Contrast with bar graphs for categories.",
+    "description": "Read histograms and choose bins carefully.",
+    "teach_core": "## Objective\n\n**I can** read a histogram.\n\n## Warm-up (2 minutes)\n\nA bar from 10\u201320 reaches height 5 \u2014 what does that mean?\n\n## Teach\n\n### Big idea\n\nHistograms show frequencies for numeric intervals (bins).\n\n### Example 1\n\nBin 10\u201320 with height 5 \u2192 five data values in that interval.\n\n### Try this\n\nWhy bins matter?\n\n**Check:** Different bins can change the look\n\n### Example 2\n\nBars touch for continuous numeric data.\n\n### Common mistake (this lesson only)\n\nTreating histogram bars as unrelated categories like favorite color.\n\n## Guided practice (we do)\n\n1. Bin height =  \n   **Answer:** Frequency\n\n2. Bars touch?  \n   **Answer:** Often yes\n\n3. Numeric data?  \n   **Answer:** Yes",
+    "exit": "## Exit ticket\n\n1. Read a histogram\u2019s tallest bin.\n2. Explain one bin in words.\n\n## Stretch (optional)\n\nBad bin width example.",
+    "questions": [
+      {
+        "prompt": "Bin height 5 means",
+        "choices": [
+          "Value 5 only",
+          "5 data in bin",
+          "Width 5",
+          "Area 5 always"
+        ],
+        "correctIndex": 1,
+        "explanation": "Frequency 5."
+      },
+      {
+        "prompt": "Histograms best for",
+        "choices": [
+          "Favorite color",
+          "Numeric intervals",
+          "Names",
+          "Nets"
+        ],
+        "correctIndex": 1,
+        "explanation": "Numeric."
+      },
+      {
+        "prompt": "Bars usually",
+        "choices": [
+          "Separated always",
+          "Touch for numeric bins",
+          "3D",
+          "Circular"
+        ],
+        "correctIndex": 1,
+        "explanation": "Touch."
+      }
+    ]
+  },
+  "11|Measures of Center: Mean": {
+    "objectives": "\u2022 Compute the mean.\n\u2022 Interpret mean as fair share/balance.\n\u2022 Notice outliers can pull the mean.",
+    "description": "Compute and interpret the mean.",
+    "teach_core": "## Objective\n\n**I can** compute the mean.\n\n## Warm-up (2 minutes)\n\nMean of 2,4,6,8?\n\n## Teach\n\n### Big idea\n\nMean = sum \u00f7 count.\n\n### Example 1\n\n(2+4+6+8)/4=5.\n\n### Try this\n\nMean of 10,10,40.\n\n**Check:** 20\n\n### Example 2\n\nOutlier 40 pulls mean up vs median.\n\n### Common mistake (this lesson only)\n\nDividing by the wrong count.\n\n## Guided practice (we do)\n\n1. 1,3,5 mean  \n   **Answer:** 3\n\n2. Sum 30 count 5  \n   **Answer:** 6\n\n3. Fair share idea  \n   **Answer:** Mean",
+    "exit": "## Exit ticket\n\n1. Mean of 4,5,6,9.\n2. Effect of changing 9 to 29.\n\n## Stretch (optional)\n\nWhen mean misleads.",
+    "questions": [
+      {
+        "prompt": "Mean of 2,4,6,8",
+        "choices": [
+          "5",
+          "4",
+          "6",
+          "20"
+        ],
+        "correctIndex": 0,
+        "explanation": "5."
+      },
+      {
+        "prompt": "Mean of 10,10,40",
+        "choices": [
+          "10",
+          "20",
+          "40",
+          "60"
+        ],
+        "correctIndex": 1,
+        "explanation": "20."
+      },
+      {
+        "prompt": "Mean formula",
+        "choices": [
+          "Max\u2212min",
+          "Sum\u00f7count",
+          "Middle value",
+          "Most frequent"
+        ],
+        "correctIndex": 1,
+        "explanation": "Sum\u00f7count."
+      }
+    ]
+  },
+  "11|Measures of Center: Median": {
+    "objectives": "\u2022 Find the median of odd/even data sets.\n\u2022 Order data first.\n\u2022 Compare median to mean.",
+    "description": "Find the median; compare to mean.",
+    "teach_core": "## Objective\n\n**I can** find the median of odd/even data sets.\n\n## Warm-up (2 minutes)\n\nMedian of 3,1,7?\n\n## Teach\n\n### Big idea\n\nOrder data; median is middle (or average of two middle for even count).\n\n### Example 1\n\nOrdered 1,3,7 \u2192 median 3.\n\n### Try this\n\nMedian of 2,4,6,8.\n\n**Check:** (4+6)/2=5\n\n### Example 2\n\nFor skewed data, median may better represent a typical value.\n\n### Common mistake (this lesson only)\n\nForgetting to sort before finding the middle.\n\n## Guided practice (we do)\n\n1. 5,1,3 median  \n   **Answer:** 3\n\n2. Even set two middles  \n   **Answer:** Average them\n\n3. Sort first  \n   **Answer:** Yes",
+    "exit": "## Exit ticket\n\n1. Median of 9,2,7,4,6.\n2. Median of 1,2,3,100.\n\n## Stretch (optional)\n\nMean vs median for 1,2,3,100.",
+    "questions": [
+      {
+        "prompt": "Median of 1,3,7",
+        "choices": [
+          "1",
+          "3",
+          "7",
+          "4"
+        ],
+        "correctIndex": 1,
+        "explanation": "3."
+      },
+      {
+        "prompt": "Median 2,4,6,8",
+        "choices": [
+          "4",
+          "5",
+          "6",
+          "8"
+        ],
+        "correctIndex": 1,
+        "explanation": "5."
+      },
+      {
+        "prompt": "Before median",
+        "choices": [
+          "Sort",
+          "Multiply",
+          "Square",
+          "Ignore order"
+        ],
+        "correctIndex": 0,
+        "explanation": "Sort."
+      }
+    ]
+  },
+  "11|Spread: Range and MAD Intro": {
+    "objectives": "\u2022 Compute range.\n\u2022 Interpret spread.\n\u2022 Compute a simple MAD intro example.",
+    "description": "Describe spread with range and intro MAD.",
+    "teach_core": "## Objective\n\n**I can** compute range.\n\n## Warm-up (2 minutes)\n\nData 2,5,9 \u2014 range? Is the data tightly clustered?\n\n## Teach\n\n### Big idea\n\nRange = max \u2212 min. MAD \u2248 mean of absolute deviations from the mean (intro).\n\n### Example 1\n\nRange 9\u22122=7.\n\n### Try this\n\nMean of 2,4,6 is 4; MAD = (|2\u22124|+|4\u22124|+|6\u22124|)/3=4/3.\n\n**Check:** 4/3\n\n### Example 2\n\nLarger spread \u2192 values more scattered.\n\n### Common mistake (this lesson only)\n\nCalling range the same as mean.\n\n## Guided practice (we do)\n\n1. Range 3 to 10  \n   **Answer:** 7\n\n2. Small range \u2192  \n   **Answer:** More clustered often\n\n3. MAD uses  \n   **Answer:** Absolute deviations",
+    "exit": "## Exit ticket\n\n1. Range of 4,4,4,10.\n2. MAD of 1,3,5 (mean 3).\n\n## Stretch (optional)\n\nWhen range misleads (one outlier).",
+    "questions": [
+      {
+        "prompt": "Range 2 to 9",
+        "choices": [
+          "5",
+          "7",
+          "11",
+          "18"
+        ],
+        "correctIndex": 1,
+        "explanation": "7."
+      },
+      {
+        "prompt": "Range means",
+        "choices": [
+          "Average",
+          "Max\u2212min",
+          "Mode",
+          "Median"
+        ],
+        "correctIndex": 1,
+        "explanation": "Max\u2212min."
+      },
+      {
+        "prompt": "MAD intro uses",
+        "choices": [
+          "Only max",
+          "Abs deviations from mean",
+          "Area",
+          "Slope"
+        ],
+        "correctIndex": 1,
+        "explanation": "Abs deviations."
+      }
+    ]
+  },
+  "11|Shape of a Distribution": {
+    "objectives": "\u2022 Describe shape: symmetric/skewed, peaks, gaps.\n\u2022 Connect shape language to displays.\n\u2022 Avoid overclaiming from tiny samples.",
+    "description": "Describe symmetric, skewed, peaks, and gaps.",
+    "teach_core": "## Objective\n\n**I can** describe shape: symmetric/skewed, peaks, gaps.\n\n## Warm-up (2 minutes)\n\nA dot plot piled on the left with a long right tail \u2014 skewed which way?\n\n## Teach\n\n### Big idea\n\nRight-skewed has a long right tail; left-skewed long left tail; symmetric mirrors.\n\n### Example 1\n\nPeak = mode region; gaps = empty stretches.\n\n### Try this\n\nSymmetric about mean roughly?\n\n**Check:** Mirror left/right\n\n### Example 2\n\nTwo peaks \u2192 bimodal.\n\n### Common mistake (this lesson only)\n\nCalling every uneven plot \u201cskewed right\u201d without looking at the tail.\n\n## Guided practice (we do)\n\n1. Long right tail  \n   **Answer:** Right-skewed\n\n2. Two peaks  \n   **Answer:** Bimodal\n\n3. Gap  \n   **Answer:** Empty values",
+    "exit": "## Exit ticket\n\n1. Describe a given sketch.\n2. Sketch a left-skewed set.\n\n## Stretch (optional)\n\nWhy sample size matters for shape talk.",
+    "questions": [
+      {
+        "prompt": "Long right tail",
+        "choices": [
+          "Left-skewed",
+          "Right-skewed",
+          "Symmetric",
+          "Uniform only"
+        ],
+        "correctIndex": 1,
+        "explanation": "Right-skewed."
+      },
+      {
+        "prompt": "Two peaks",
+        "choices": [
+          "Gap",
+          "Bimodal",
+          "Range",
+          "MAD"
+        ],
+        "correctIndex": 1,
+        "explanation": "Bimodal."
+      },
+      {
+        "prompt": "Symmetric roughly",
+        "choices": [
+          "Mirror sides",
+          "Always skewed",
+          "No peak",
+          "Only circles"
+        ],
+        "correctIndex": 0,
+        "explanation": "Mirror."
+      }
+    ]
+  },
+  "11|Comparing Distributions": {
+    "objectives": "\u2022 Compare two distributions\u2019 centers.\n\u2022 Compare spreads.\n\u2022 Use display evidence in a sentence.",
+    "description": "Compare centers and spreads of two displays.",
+    "teach_core": "## Objective\n\n**I can** compare two distributions\u2019 centers.\n\n## Warm-up (2 minutes)\n\nTwo classes\u2019 score dot plots \u2014 which is typically higher? More spread?\n\n## Teach\n\n### Big idea\n\nCompare medians/means and ranges/MAD visually and numerically.\n\n### Example 1\n\nClass A median 80, Class B median 70 \u2192 A typically higher.\n\n### Try this\n\nLarger range usually means\u2026\n\n**Check:** More spread\n\n### Example 2\n\nWrite: \u201cClass A is centered higher; Class B is more spread out.\u201d\n\n### Common mistake (this lesson only)\n\nComparing only the highest single score.\n\n## Guided practice (we do)\n\n1. Higher median \u2192  \n   **Answer:** Typically higher center\n\n2. Compare spreads with  \n   **Answer:** Range/MAD\n\n3. Evidence  \n   **Answer:** Use the display",
+    "exit": "## Exit ticket\n\n1. Compare two tiny data sets\u2019 medians and ranges.\n2. One-sentence comparison.\n\n## Stretch (optional)\n\nFairness: same scale on both plots.",
+    "questions": [
+      {
+        "prompt": "Higher median suggests",
+        "choices": [
+          "Lower center",
+          "Higher typical center",
+          "No center",
+          "Only mode"
+        ],
+        "correctIndex": 1,
+        "explanation": "Higher center."
+      },
+      {
+        "prompt": "More spread often",
+        "choices": [
+          "Smaller range",
+          "Larger range",
+          "Mean 0",
+          "No dots"
+        ],
+        "correctIndex": 1,
+        "explanation": "Larger range."
+      },
+      {
+        "prompt": "Best comparison uses",
+        "choices": [
+          "One max only",
+          "Center and spread",
+          "Colors only",
+          "Volume"
+        ],
+        "correctIndex": 1,
+        "explanation": "Center+spread."
+      }
+    ]
+  },
+  "11|Data & Statistics Unit Review": {
+    "objectives": "\u2022 Choose statistical questions.\n\u2022 Read dot plots/histograms.\n\u2022 Compute mean, median, range and compare sets.",
+    "description": "Synthesize questions, displays, center, and spread.",
+    "teach_core": "## Objective\n\n**I can** choose statistical questions.\n\n## Warm-up (2 minutes)\n\nFor data 2,2,3,7 \u2014 find mean, median, range.\n\n## Teach\n\n### Big idea\n\nStatistical questions \u2192 organize \u2192 display \u2192 center/spread \u2192 compare.\n\n### Example 1\n\nMean=3.5, median=2.5, range=5.\n\n### Try this\n\nIs \u201cfavorite sport\u201d statistical?\n\n**Check:** Yes, varies\n\n### Example 2\n\nCompare two classes with median and range.\n\n### Common mistake (this lesson only)\n\nComputing median without sorting.\n\n## Guided practice (we do)\n\n1. Mean of 1,2,3  \n   **Answer:** 2\n\n2. Median of 1,2,3,4  \n   **Answer:** 2.5\n\n3. Range 1 to 9  \n   **Answer:** 8",
+    "exit": "## Exit ticket\n\n1. Stats for 4,5,5,6,10.\n2. Write a statistical question.\n\n## Stretch (optional)\n\nBuild a dot plot and describe shape.",
+    "questions": [
+      {
+        "prompt": "Mean of 2,2,3,7",
+        "choices": [
+          "3.5",
+          "2",
+          "7",
+          "14"
+        ],
+        "correctIndex": 0,
+        "explanation": "3.5."
+      },
+      {
+        "prompt": "Median of 2,2,3,7",
+        "choices": [
+          "2",
+          "2.5",
+          "3",
+          "7"
+        ],
+        "correctIndex": 1,
+        "explanation": "2.5."
+      },
+      {
+        "prompt": "Range 2 to 7",
+        "choices": [
+          "5",
+          "9",
+          "3.5",
+          "2"
+        ],
+        "correctIndex": 0,
+        "explanation": "5."
+      }
+    ]
+  },
+  "8|Area Meaning and Square Units": {
+    "objectives": "\u2022 Define area as covering with square units.\n\u2022 Choose square units.\n\u2022 Count unit squares on a grid.",
+    "description": "Define area as covering; choose correct square units.",
+    "teach_core": "## Objective\n\n**I can** define area as covering with square units.\n\n## Warm-up (2 minutes)\n\nHow many 1\u00d71 squares cover a 3-by-4 rectangle?\n\n## Teach\n\n### Big idea\n\nArea measures covering of a 2D region; unit is square (cm^2, in^2).\n\n### Example 1\n\n3-by-4 grid \u2192 12 square units.\n\n### Try this\n\nWhy not label area with cm only?\n\n**Check:** Need cm^2 for covering\n\n### Example 2\n\nA region of 7 unit squares has area 7 square units.\n\n### Common mistake (this lesson only)\n\nUsing perimeter units for area.\n\n## Guided practice (we do)\n\n1. 2\u00d75 grid area  \n   **Answer:** 10\n\n2. Units for area  \n   **Answer:** Square units\n\n3. Covering vs fencing  \n   **Answer:** Area vs perimeter",
+    "exit": "## Exit ticket\n\n1. Area of 6\u00d72 grid.\n2. Name a square unit.\n\n## Stretch (optional)\n\nDraw two shapes with area 8.",
+    "questions": [
+      {
+        "prompt": "3\u00d74 grid area",
+        "choices": [
+          "7",
+          "12",
+          "14",
+          "24"
+        ],
+        "correctIndex": 1,
+        "explanation": "12."
+      },
+      {
+        "prompt": "Area units",
+        "choices": [
+          "cm",
+          "cm^2",
+          "cm^3",
+          "none"
+        ],
+        "correctIndex": 1,
+        "explanation": "Square."
+      },
+      {
+        "prompt": "Area measures",
+        "choices": [
+          "Length",
+          "Covering",
+          "Temperature",
+          "Speed"
+        ],
+        "correctIndex": 1,
+        "explanation": "Covering."
+      }
+    ]
+  },
+  "8|Area of Rectangles and Parallelograms": {
+    "objectives": "\u2022 Compute rectangle/parallelogram area as base\u00d7height.\n\u2022 Use perpendicular height.\n\u2022 Include units.",
+    "description": "Use base \u00d7 height with perpendicular height.",
+    "teach_core": "## Objective\n\n**I can** compute rectangle/parallelogram area as base\u00d7height.\n\n## Warm-up (2 minutes)\n\nRectangle 5 by 3 \u2014 area? Why multiply?\n\n## Teach\n\n### Big idea\n\nA=b\u00d7h with h perpendicular to the chosen base.\n\n### Example 1\n\nRectangle 5\u00d73 \u2192 15 square units.\n\n### Try this\n\nParallelogram base 8, height 4.\n\n**Check:** 32\n\n### Example 2\n\nTilted parallelogram uses perpendicular height, not slant side.\n\n### Common mistake (this lesson only)\n\nUsing slant side as height.\n\n## Guided practice (we do)\n\n1. 6\u00d79 rectangle  \n   **Answer:** 54\n\n2. Base 10 height 2.5  \n   **Answer:** 25\n\n3. Why perpendicular?  \n   **Answer:** Height is perpendicular distance",
+    "exit": "## Exit ticket\n\n1. Area base 7 height 4.\n2. Sketch height on a tilted parallelogram.\n\n## Stretch (optional)\n\nExplain why slant \u2260 height.",
+    "questions": [
+      {
+        "prompt": "5\u00d73 rectangle area",
+        "choices": [
+          "8",
+          "15",
+          "16",
+          "30"
+        ],
+        "correctIndex": 1,
+        "explanation": "15."
+      },
+      {
+        "prompt": "Para base 8 height 4",
+        "choices": [
+          "12",
+          "32",
+          "16",
+          "24"
+        ],
+        "correctIndex": 1,
+        "explanation": "32."
+      },
+      {
+        "prompt": "Height must be",
+        "choices": [
+          "Slant",
+          "Perimeter",
+          "Perpendicular to base",
+          "Diagonal"
+        ],
+        "correctIndex": 2,
+        "explanation": "Perpendicular."
+      }
+    ]
+  },
+  "8|Area of Triangles": {
+    "objectives": "\u2022 Compute triangle area with \u00bdbh.\n\u2022 Relate a triangle to a parallelogram.\n\u2022 Identify base/height pairs.",
+    "description": "Use A = \u00bdbh; connect triangles to parallelograms.",
+    "teach_core": "## Objective\n\n**I can** compute triangle area with \u00bdbh.\n\n## Warm-up (2 minutes)\n\nParallelogram area 20 splits into two equal triangles \u2014 each?\n\n## Teach\n\n### Big idea\n\nTriangle area is half a parallelogram with same base and height: A=\u00bdbh.\n\n### Example 1\n\nb=6,h=4 \u2192 A=12.\n\n### Try this\n\nb=10,h=5.\n\n**Check:** 25\n\n### Example 2\n\nRight triangle legs 3 and 4 \u2192 area 6.\n\n### Common mistake (this lesson only)\n\nForgetting the 1/2.\n\n## Guided practice (we do)\n\n1. b=8 h=3  \n   **Answer:** 12\n\n2. Half of parallelogram 18  \n   **Answer:** 9\n\n3. Legs 5 and 6  \n   **Answer:** 15",
+    "exit": "## Exit ticket\n\n1. Area b=9 h=4.\n2. Why 1/2 appears.\n\n## Stretch (optional)\n\nTwo base/height pairs same triangle.",
+    "questions": [
+      {
+        "prompt": "\u00bd\u00b76\u00b74=",
+        "choices": [
+          "24",
+          "12",
+          "10",
+          "48"
+        ],
+        "correctIndex": 1,
+        "explanation": "12."
+      },
+      {
+        "prompt": "b=10 h=5 area",
+        "choices": [
+          "50",
+          "25",
+          "15",
+          "2"
+        ],
+        "correctIndex": 1,
+        "explanation": "25."
+      },
+      {
+        "prompt": "Forget 1/2 on 8\u00d73",
+        "choices": [
+          "24",
+          "12",
+          "11",
+          "5"
+        ],
+        "correctIndex": 0,
+        "explanation": "Wrong 24."
+      }
+    ]
+  },
+  "8|Choosing Base and Height": {
+    "objectives": "\u2022 Choose a valid base\u2013height pair.\n\u2022 Reject slant sides as height.\n\u2022 Compute area with a correct pair.",
+    "description": "Identify valid base\u2013height pairs on tilted figures.",
+    "teach_core": "## Objective\n\n**I can** choose a valid base\u2013height pair.\n\n## Warm-up (2 minutes)\n\nOn a tilted triangle, which segment is height to the bottom base?\n\n## Teach\n\n### Big idea\n\nHeight is perpendicular distance from opposite vertex to the base line.\n\n### Example 1\n\nBase=10 and perpendicular height=3 \u2192 triangle area 15.\n\n### Try this\n\nSlant 5 and height 3, base 8 \u2014 which multiply?\n\n**Check:** Use 8 and 3, not 5\n\n### Example 2\n\nSame area with a different base if matching height is used.\n\n### Common mistake (this lesson only)\n\nAlways using the longest side as height.\n\n## Guided practice (we do)\n\n1. Valid height?  \n   **Answer:** Perpendicular\n\n2. Base 12 height 2 triangle  \n   **Answer:** 12\n\n3. Reject slant when h shown  \n   **Answer:** Use perpendicular h",
+    "exit": "## Exit ticket\n\n1. Mark height to a chosen base.\n2. Compute with that pair.\n\n## Stretch (optional)\n\nHeight outside the triangle.",
+    "questions": [
+      {
+        "prompt": "Height to a base is",
+        "choices": [
+          "Any side",
+          "Perpendicular distance",
+          "Perimeter/3",
+          "Diagonal"
+        ],
+        "correctIndex": 1,
+        "explanation": "Perpendicular."
+      },
+      {
+        "prompt": "Triangle base 10 height 3",
+        "choices": [
+          "30",
+          "15",
+          "13",
+          "7"
+        ],
+        "correctIndex": 1,
+        "explanation": "15."
+      },
+      {
+        "prompt": "Slant as height?",
+        "choices": [
+          "Always OK",
+          "Only if perpendicular",
+          "Required",
+          "Never ever"
+        ],
+        "correctIndex": 1,
+        "explanation": "Only if perpendicular."
+      }
+    ]
+  },
+  "8|Area of Trapezoids (Intro)": {
+    "objectives": "\u2022 Find trapezoid area by decomposition or average bases.\n\u2022 Identify the two bases.\n\u2022 Use height perpendicular to bases.",
+    "description": "Decompose or use average-bases thinking.",
+    "teach_core": "## Objective\n\n**I can** find trapezoid area by decomposition or average bases.\n\n## Warm-up (2 minutes)\n\nTrapezoid bases 6 and 10, height 4 \u2014 estimate area.\n\n## Teach\n\n### Big idea\n\nA=\u00bd(b1+b2)h.\n\n### Example 1\n\n\u00bd(6+10)\u00b74=32.\n\n### Try this\n\nBases 5 and 9, h=3.\n\n**Check:** 21\n\n### Example 2\n\nDecompose into rectangle + triangle to verify.\n\n### Common mistake (this lesson only)\n\nAveraging all four sides instead of the two bases.\n\n## Guided practice (we do)\n\n1. \u00bd(4+8)\u00b75  \n   **Answer:** 30\n\n2. Need height?  \n   **Answer:** Yes\n\n3. Bases means  \n   **Answer:** Parallel sides",
+    "exit": "## Exit ticket\n\n1. Bases 7 and 11, h=2.\n2. Sketch decomposition.\n\n## Stretch (optional)\n\nWhy average bases?",
+    "questions": [
+      {
+        "prompt": "\u00bd(6+10)\u00b74=",
+        "choices": [
+          "40",
+          "32",
+          "20",
+          "64"
+        ],
+        "correctIndex": 1,
+        "explanation": "32."
+      },
+      {
+        "prompt": "Bases 5 and 9, h=3",
+        "choices": [
+          "27",
+          "21",
+          "14",
+          "45"
+        ],
+        "correctIndex": 1,
+        "explanation": "21."
+      },
+      {
+        "prompt": "Bases are",
+        "choices": [
+          "All sides",
+          "Parallel sides",
+          "Diagonals",
+          "Heights"
+        ],
+        "correctIndex": 1,
+        "explanation": "Parallel."
+      }
+    ]
+  },
+  "8|Composite Plane Figures": {
+    "objectives": "\u2022 Decompose composites into rectangles/triangles.\n\u2022 Add or subtract areas.\n\u2022 Label dimensions on each piece.",
+    "description": "Decompose complex shapes into rectangles and triangles.",
+    "teach_core": "## Objective\n\n**I can** decompose composites into rectangles/triangles.\n\n## Warm-up (2 minutes)\n\nL-shape: how can you split it into rectangles?\n\n## Teach\n\n### Big idea\n\nAdd piece areas or subtract a cutout from a whole.\n\n### Example 1\n\nWhole 8\u00d76 rectangle minus 3\u00d72 cutout \u2192 48\u22126=42.\n\n### Try this\n\nTwo rectangles 4\u00d73 and 5\u00d72. Total?\n\n**Check:** 22\n\n### Example 2\n\nHouse shape: rectangle + triangle roof.\n\n### Common mistake (this lesson only)\n\nMissing a shared length when labeling.\n\n## Guided practice (we do)\n\n1. Add 10+7  \n   **Answer:** 17\n\n2. Subtract cutout 5 from 20  \n   **Answer:** 15\n\n3. Need all lengths  \n   **Answer:** Yes",
+    "exit": "## Exit ticket\n\n1. Split an L and find area.\n2. Subtract a square cutout.\n\n## Stretch (optional)\n\nComposite with area 50.",
+    "questions": [
+      {
+        "prompt": "8\u00d76 minus 3\u00d72",
+        "choices": [
+          "42",
+          "48",
+          "36",
+          "54"
+        ],
+        "correctIndex": 0,
+        "explanation": "42."
+      },
+      {
+        "prompt": "4\u00d73 + 5\u00d72",
+        "choices": [
+          "14",
+          "22",
+          "20",
+          "9"
+        ],
+        "correctIndex": 1,
+        "explanation": "22."
+      },
+      {
+        "prompt": "Strategy",
+        "choices": [
+          "Only perimeter",
+          "Decompose/add/subtract",
+          "Guess",
+          "Slant only"
+        ],
+        "correctIndex": 1,
+        "explanation": "Decompose."
+      }
+    ]
+  },
+  "8|Polygons and Perimeter Connections": {
+    "objectives": "\u2022 Compute perimeter of polygons.\n\u2022 Contrast perimeter with area.\n\u2022 Avoid mixing linear and square units.",
+    "description": "Relate perimeter and area; avoid mixing them up.",
+    "teach_core": "## Objective\n\n**I can** compute perimeter of polygons.\n\n## Warm-up (2 minutes)\n\nFence around a garden vs sod covering \u2014 which is perimeter?\n\n## Teach\n\n### Big idea\n\nPerimeter = distance around (linear). Area = covering (square).\n\n### Example 1\n\nRectangle 5 by 3: P=16, A=15.\n\n### Try this\n\nEquilateral triangle side 4 \u2014 perimeter?\n\n**Check:** 12\n\n### Example 2\n\nSame perimeter can wrap different areas.\n\n### Common mistake (this lesson only)\n\nReporting area with the perimeter number.\n\n## Guided practice (we do)\n\n1. P of 2\u00d77 rectangle  \n   **Answer:** 18\n\n2. Units for P  \n   **Answer:** Linear\n\n3. A vs P for 5\u00d73  \n   **Answer:** 15 vs 16",
+    "exit": "## Exit ticket\n\n1. Perimeter of square side 6.\n2. Area of same square.\n\n## Stretch (optional)\n\nTwo rectangles same P different A.",
+    "questions": [
+      {
+        "prompt": "5\u00d73 perimeter",
+        "choices": [
+          "15",
+          "16",
+          "8",
+          "30"
+        ],
+        "correctIndex": 1,
+        "explanation": "16."
+      },
+      {
+        "prompt": "Perimeter units",
+        "choices": [
+          "Square",
+          "Linear",
+          "Cubic",
+          "None"
+        ],
+        "correctIndex": 1,
+        "explanation": "Linear."
+      },
+      {
+        "prompt": "Area of 5\u00d73",
+        "choices": [
+          "16",
+          "15",
+          "8",
+          "30"
+        ],
+        "correctIndex": 1,
+        "explanation": "15."
+      }
+    ]
+  },
+  "8|Plane Figures Unit Review": {
+    "objectives": "\u2022 Compute areas of rectangles, triangles, parallelograms, trapezoids.\n\u2022 Decompose composites.\n\u2022 Keep units straight.",
+    "description": "Mixed area problems with units and decomposition.",
+    "teach_core": "## Objective\n\n**I can** compute areas of rectangles, triangles, parallelograms, trapezoids.\n\n## Warm-up (2 minutes)\n\nList formulas you need for this unit in 20 seconds.\n\n## Teach\n\n### Big idea\n\nA=bh, \u00bdbh, \u00bd(b1+b2)h; decompose; perimeter \u2260 area.\n\n### Example 1\n\nTriangle b=8 h=5 \u2192 20; composite 12+9=21.\n\n### Try this\n\nPara base 7 height 3 + rectangle 4\u00d72.\n\n**Check:** 21+8=29\n\n### Example 2\n\nTrapezoid bases 4 and 6 h=5 \u2192 25.\n\n### Common mistake (this lesson only)\n\nUsing slant as height on review items.\n\n## Guided practice (we do)\n\n1. \u00bd\u00b710\u00b76  \n   **Answer:** 30\n\n2. P vs A  \n   **Answer:** Around vs cover\n\n3. Trap \u00bd(3+7)\u00b74  \n   **Answer:** 20",
+    "exit": "## Exit ticket\n\n1. Area triangle b=12 h=3.\n2. L-shape area.\n\n## Stretch (optional)\n\nError hunt on a composite.",
+    "questions": [
+      {
+        "prompt": "Triangle \u00bd\u00b78\u00b75",
+        "choices": [
+          "40",
+          "20",
+          "13",
+          "80"
+        ],
+        "correctIndex": 1,
+        "explanation": "20."
+      },
+      {
+        "prompt": "Trap \u00bd(4+6)\u00b75",
+        "choices": [
+          "25",
+          "50",
+          "15",
+          "20"
+        ],
+        "correctIndex": 0,
+        "explanation": "25."
+      },
+      {
+        "prompt": "Height must be",
+        "choices": [
+          "Slant",
+          "Perpendicular",
+          "Perimeter",
+          "Area"
+        ],
+        "correctIndex": 1,
+        "explanation": "Perpendicular."
+      }
+    ]
+  },
+  "9|Axes, Origin, and Ordered Pairs": {
+    "objectives": "\u2022 Plot and read ordered pairs (x,y).\n\u2022 Name axes and origin.\n\u2022 Keep x horizontal, y vertical.",
+    "description": "Plot (x,y) and read coordinates accurately.",
+    "teach_core": "## Objective\n\n**I can** plot and read ordered pairs (x,y).\n\n## Warm-up (2 minutes)\n\nWhere is (0,0)? Which number moves first in (3,2)?\n\n## Teach\n\n### Big idea\n\nOrigin (0,0). Pair (x,y): x right/left, y up/down.\n\n### Example 1\n\nPlot (3,2): 3 right, 2 up.\n\n### Try this\n\nPoint 2 left, 4 up from origin?\n\n**Check:** (\u22122,4)\n\n### Example 2\n\nRead plotted points by counting grid marks.\n\n### Common mistake (this lesson only)\n\nSwapping x and y.\n\n## Guided practice (we do)\n\n1. (0,5)  \n   **Answer:** On y-axis\n\n2. (4,0)  \n   **Answer:** On x-axis\n\n3. Plot (\u22121,3)  \n   **Answer:** 1 left, 3 up",
+    "exit": "## Exit ticket\n\n1. Plot (2,\u22123).\n2. Read a drawn point.\n\n## Stretch (optional)\n\nWhy order in (x,y) matters.",
+    "questions": [
+      {
+        "prompt": "Origin",
+        "choices": [
+          "(1,1)",
+          "(0,0)",
+          "(0,1)",
+          "(1,0)"
+        ],
+        "correctIndex": 1,
+        "explanation": "(0,0)."
+      },
+      {
+        "prompt": "(3,2) means",
+        "choices": [
+          "3 up 2 right",
+          "3 right 2 up",
+          "3 left 2 down",
+          "2 right 3 up"
+        ],
+        "correctIndex": 1,
+        "explanation": "x then y."
+      },
+      {
+        "prompt": "Swap of (2,5)",
+        "choices": [
+          "(5,2)",
+          "(2,5)",
+          "(0,0)",
+          "(2,0)"
+        ],
+        "correctIndex": 0,
+        "explanation": "(5,2)."
+      }
+    ]
+  },
+  "9|Four Quadrants": {
+    "objectives": "\u2022 Identify the four quadrants.\n\u2022 Connect sign pairs to quadrants.\n\u2022 Note axis points are not in a quadrant.",
+    "description": "Identify quadrants and signs of coordinates.",
+    "teach_core": "## Objective\n\n**I can** identify the four quadrants.\n\n## Warm-up (2 minutes)\n\nIn which quadrant is (\u22123,4)?\n\n## Teach\n\n### Big idea\n\nI (+,+), II (\u2212,+), III (\u2212,\u2212), IV (+,\u2212).\n\n### Example 1\n\n(\u22123,4) is Quadrant II.\n\n### Try this\n\n(2,\u22125) quadrant?\n\n**Check:** IV\n\n### Example 2\n\nPoints on axes are not in a quadrant.\n\n### Common mistake (this lesson only)\n\nCalling (0,4) Quadrant I.\n\n## Guided practice (we do)\n\n1. (\u22121,\u22122)  \n   **Answer:** III\n\n2. (5,1)  \n   **Answer:** I\n\n3. (0,\u22123)  \n   **Answer:** On axis",
+    "exit": "## Exit ticket\n\n1. Quadrant of (\u22124,\u22121).\n2. Sign pattern for II.\n\n## Stretch (optional)\n\nOne point in each quadrant.",
+    "questions": [
+      {
+        "prompt": "(\u22123,4) quadrant",
+        "choices": [
+          "I",
+          "II",
+          "III",
+          "IV"
+        ],
+        "correctIndex": 1,
+        "explanation": "II."
+      },
+      {
+        "prompt": "(2,\u22125) quadrant",
+        "choices": [
+          "I",
+          "II",
+          "III",
+          "IV"
+        ],
+        "correctIndex": 3,
+        "explanation": "IV."
+      },
+      {
+        "prompt": "(0,4) is",
+        "choices": [
+          "QI",
+          "QII",
+          "On axis",
+          "QIII"
+        ],
+        "correctIndex": 2,
+        "explanation": "On axis."
+      }
+    ]
+  },
+  "9|Reflecting Points": {
+    "objectives": "\u2022 Reflect points across axes.\n\u2022 Describe coordinate changes.\n\u2022 Reflect across origin as extension.",
+    "description": "Reflect across axes; describe coordinate changes.",
+    "teach_core": "## Objective\n\n**I can** reflect points across axes.\n\n## Warm-up (2 minutes)\n\nReflect (3,2) across the y-axis \u2014 new point?\n\n## Teach\n\n### Big idea\n\nAcross y: (x,y)\u2192(\u2212x,y). Across x: (x,y)\u2192(x,\u2212y).\n\n### Example 1\n\n(3,2) across y \u2192 (\u22123,2).\n\n### Try this\n\n(4,\u22121) across x-axis?\n\n**Check:** (4,1)\n\n### Example 2\n\nAcross origin: (x,y)\u2192(\u2212x,\u2212y).\n\n### Common mistake (this lesson only)\n\nReflecting across y by changing y\u2019s sign.\n\n## Guided practice (we do)\n\n1. (2,5) across y  \n   **Answer:** (\u22122,5)\n\n2. (\u22123,4) across x  \n   **Answer:** (\u22123,\u22124)\n\n3. (1,1) across origin  \n   **Answer:** (\u22121,\u22121)",
+    "exit": "## Exit ticket\n\n1. Reflect (6,\u22122) across y.\n2. Reflect (\u22125,3) across x.\n\n## Stretch (optional)\n\n3-step reflection path.",
+    "questions": [
+      {
+        "prompt": "(3,2) across y",
+        "choices": [
+          "(3,\u22122)",
+          "(\u22123,2)",
+          "(\u22123,\u22122)",
+          "(2,3)"
+        ],
+        "correctIndex": 1,
+        "explanation": "(\u22123,2)."
+      },
+      {
+        "prompt": "(4,\u22121) across x",
+        "choices": [
+          "(\u22124,\u22121)",
+          "(4,1)",
+          "(\u22124,1)",
+          "(1,4)"
+        ],
+        "correctIndex": 1,
+        "explanation": "(4,1)."
+      },
+      {
+        "prompt": "Origin reflect (1,1)",
+        "choices": [
+          "(1,\u22121)",
+          "(\u22121,1)",
+          "(\u22121,\u22121)",
+          "(0,0)"
+        ],
+        "correctIndex": 2,
+        "explanation": "(\u22121,\u22121)."
+      }
+    ]
+  },
+  "9|Distances on Horizontal and Vertical Segments": {
+    "objectives": "\u2022 Find lengths of horizontal/vertical segments.\n\u2022 Use absolute difference of coordinates.\n\u2022 Avoid diagonal distance (later).",
+    "description": "Find lengths of axis-aligned segments.",
+    "teach_core": "## Objective\n\n**I can** find lengths of horizontal/vertical segments.\n\n## Warm-up (2 minutes)\n\nFrom (1,2) to (1,7) \u2014 how long?\n\n## Teach\n\n### Big idea\n\nVertical |y2\u2212y1|; horizontal |x2\u2212x1|.\n\n### Example 1\n\n|7\u22122|=5.\n\n### Try this\n\n(3,4) to (9,4)?\n\n**Check:** 6\n\n### Example 2\n\n(\u22122,5) to (\u22122,\u22121) \u2192 6.\n\n### Common mistake (this lesson only)\n\nReporting negative length.\n\n## Guided practice (we do)\n\n1. (0,0) to (0,4)  \n   **Answer:** 4\n\n2. (2,3) to (2,\u22122)  \n   **Answer:** 5\n\n3. (\u22121,0) to (4,0)  \n   **Answer:** 5",
+    "exit": "## Exit ticket\n\n1. Distance (5,1) to (5,8).\n2. Distance (\u22123,2) to (6,2).\n\n## Stretch (optional)\n\nWhy diagonals need other tools.",
+    "questions": [
+      {
+        "prompt": "(1,2) to (1,7)",
+        "choices": [
+          "5",
+          "6",
+          "3",
+          "9"
+        ],
+        "correctIndex": 0,
+        "explanation": "5."
+      },
+      {
+        "prompt": "(3,4) to (9,4)",
+        "choices": [
+          "6",
+          "12",
+          "5",
+          "7"
+        ],
+        "correctIndex": 0,
+        "explanation": "6."
+      },
+      {
+        "prompt": "Axis-aligned length",
+        "choices": [
+          "x+y",
+          "|difference|",
+          "Product",
+          "Always 1"
+        ],
+        "correctIndex": 1,
+        "explanation": "Abs diff."
+      }
+    ]
+  },
+  "9|Polygons on the Coordinate Plane": {
+    "objectives": "\u2022 Plot polygons from vertices.\n\u2022 Find axis-aligned side lengths.\n\u2022 Compute area of axis-aligned rectangles.",
+    "description": "Plot vertices and compute side lengths/areas when aligned.",
+    "teach_core": "## Objective\n\n**I can** plot polygons from vertices.\n\n## Warm-up (2 minutes)\n\nVertices (0,0),(4,0),(4,3),(0,3) \u2014 shape and area?\n\n## Teach\n\n### Big idea\n\nConnect vertices; use \u0394x/\u0394y; rectangle area L\u00d7W.\n\n### Example 1\n\nRectangle 4 by 3 \u2192 area 12.\n\n### Try this\n\nTriangle (0,0),(6,0),(0,4) area?\n\n**Check:** 12\n\n### Example 2\n\nCheck sides before calling a figure a square.\n\n### Common mistake (this lesson only)\n\nAssuming every quadrilateral is a rectangle.\n\n## Guided practice (we do)\n\n1. Rectangle 5\u00d72 area  \n   **Answer:** 10\n\n2. Perimeter 4\u00d73 rectangle  \n   **Answer:** 14\n\n3. List vertices carefully  \n   **Answer:** Yes",
+    "exit": "## Exit ticket\n\n1. Area (1,1),(5,1),(5,4),(1,4).\n2. Perimeter same.\n\n## Stretch (optional)\n\nNon-aligned side warning.",
+    "questions": [
+      {
+        "prompt": "4\u00d73 rectangle area",
+        "choices": [
+          "12",
+          "7",
+          "14",
+          "24"
+        ],
+        "correctIndex": 0,
+        "explanation": "12."
+      },
+      {
+        "prompt": "Triangle legs 6 and 4",
+        "choices": [
+          "24",
+          "12",
+          "10",
+          "5"
+        ],
+        "correctIndex": 1,
+        "explanation": "12."
+      },
+      {
+        "prompt": "Sides from",
+        "choices": [
+          "Diagonals only",
+          "\u0394x and \u0394y",
+          "Angles",
+          "Circumference"
+        ],
+        "correctIndex": 1,
+        "explanation": "\u0394x, \u0394y."
+      }
+    ]
+  },
+  "9|Coordinate Plane Unit Review": {
+    "objectives": "\u2022 Plot/read points and name quadrants.\n\u2022 Reflect and measure axis-aligned distances.\n\u2022 Find simple polygon areas on the grid.",
+    "description": "Mixed plotting, reflecting, and segment work.",
+    "teach_core": "## Objective\n\n**I can** plot/read points and name quadrants.\n\n## Warm-up (2 minutes)\n\nPlot (2,\u22123), name its quadrant, reflect across x.\n\n## Teach\n\n### Big idea\n\nQuadrants, reflections, distances, simple areas, tables\u2192graphs.\n\n### Example 1\n\n(2,\u22123) is IV; across x \u2192 (2,3); distance to (2,0) is 3.\n\n### Try this\n\nArea of rectangle (0,0),(5,0),(5,2),(0,2).\n\n**Check:** 10\n\n### Example 2\n\nQuadrant of (\u22124,1) is II.\n\n### Common mistake (this lesson only)\n\nSwapping coordinates on review plots.\n\n## Guided practice (we do)\n\n1. (\u22122,\u22125) quadrant  \n   **Answer:** III\n\n2. Reflect (3,4) across y  \n   **Answer:** (\u22123,4)\n\n3. Vertical (0,1) to (0,6)  \n   **Answer:** 5",
+    "exit": "## Exit ticket\n\n1. Plot (\u22123,2); quadrant; distance to (\u22123,\u22122).\n2. Rectangle area from vertices.\n\n## Stretch (optional)\n\n4-point polygon challenge.",
+    "questions": [
+      {
+        "prompt": "(2,\u22123) quadrant",
+        "choices": [
+          "I",
+          "II",
+          "III",
+          "IV"
+        ],
+        "correctIndex": 3,
+        "explanation": "IV."
+      },
+      {
+        "prompt": "(2,\u22123) across x",
+        "choices": [
+          "(\u22122,\u22123)",
+          "(2,3)",
+          "(\u22122,3)",
+          "(3,2)"
+        ],
+        "correctIndex": 1,
+        "explanation": "(2,3)."
+      },
+      {
+        "prompt": "5\u00d72 rectangle area",
+        "choices": [
+          "10",
+          "7",
+          "14",
+          "25"
+        ],
+        "correctIndex": 0,
+        "explanation": "10."
+      }
+    ]
+  }
+}

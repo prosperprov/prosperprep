@@ -9,6 +9,8 @@ import { isGrade6Classroom } from "@/lib/grade6Classroom";
 import { Grade6CourseHeader } from "@/components/grade6/Grade6CourseHeader";
 import { Grade6UnitAccordion } from "@/components/grade6/Grade6UnitAccordion";
 import { isRetiredSection } from "@/lib/grade6Classroom";
+import { UNIT_UNLOCK_RULE_SUMMARY } from "@/lib/unitUnlock";
+import { resolveMaxUnlockedUnit } from "@/lib/resolveUnitUnlock";
 
 export const dynamic = "force-dynamic";
 
@@ -107,10 +109,32 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
   const activeLessons = course.lessons.filter((l) => !isRetiredSection(l.sectionKey));
   const sections = Array.from(new Set(activeLessons.map((l) => l.sectionKey)));
   const g6 = isGrade6Classroom(course.grade);
-  const nextIncomplete = activeLessons.find((l) => !completedIds.has(l.id));
   const quizUnlockedRecord: Record<string, boolean> = Object.fromEntries(
     Array.from(quizUnlocked.entries())
   );
+
+  const role = session?.user?.role ?? "";
+  const staffBypass = role === "ADMIN" || role === "TEACHER";
+  let maxUnlockedUnit = 99;
+  if (g6 && session?.user?.id) {
+    maxUnlockedUnit = await resolveMaxUnlockedUnit({
+      userId: session.user.id,
+      role,
+      courseId: course.id,
+      courseGrade: course.grade,
+      lessons: activeLessons,
+      quizzes: course.quizzes.map((q) => ({ id: q.id, sectionKey: q.sectionKey })),
+      completedLessonIds: completedIds,
+    });
+  }
+
+  const nextIncomplete = activeLessons.find((l) => {
+    if (completedIds.has(l.id)) return false;
+    if (!g6 || staffBypass) return true;
+    const m = /^unit-(\d+)$/.exec(l.sectionKey);
+    if (!m) return true;
+    return Number(m[1]) <= maxUnlockedUnit;
+  });
 
   return (
     <div className={`mx-auto px-4 py-12 ${g6 ? "max-w-4xl" : "max-w-3xl"}`}>
@@ -184,6 +208,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
         {g6 ? "Year path · Units" : "Lesson plan"}
       </h2>
       {g6 ? (
+        <>
         <Grade6UnitAccordion
           courseId={course.id}
           subject={course.subject}
@@ -206,7 +231,10 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
           completedIds={Array.from(completedIds)}
           quizUnlocked={quizUnlockedRecord}
           defaultOpenUnit={nextIncomplete?.sectionKey ?? sections[0] ?? null}
+          maxUnlockedUnit={maxUnlockedUnit}
         />
+        <p className="mt-3 text-sm text-slate-500">{UNIT_UNLOCK_RULE_SUMMARY}</p>
+        </>
       ) : (
         <>
       {sections.map((sectionKey) => {

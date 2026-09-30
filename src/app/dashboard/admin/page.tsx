@@ -10,6 +10,7 @@ import { AdminCreateTeacher } from "@/components/AdminCreateTeacher";
 import { AdminCreateStudent } from "@/components/AdminCreateStudent";
 import { AdminUsersTable } from "@/components/AdminUsersTable";
 import { AdminEnrollmentsTable } from "@/components/AdminEnrollmentsTable";
+import { AdminUnitUnlock } from "@/components/AdminUnitUnlock";
 
 export const dynamic = "force-dynamic";
 
@@ -73,6 +74,7 @@ export default async function AdminDashboard() {
         { href: "/dashboard/admin#teachers", label: "Teachers" },
         { href: "/dashboard/admin#students", label: "Students" },
         { href: "/dashboard/admin#enrollments", label: "Enrollments" },
+        { href: "/dashboard/admin#unit-unlock", label: "Unit unlock" },
         { href: "/courses", label: "Catalog" },
       ]}
     >
@@ -113,7 +115,18 @@ export default async function AdminDashboard() {
         </div>
       </section>
 
-      <section className="mt-10" id="teachers">
+      
+      <section className="mt-10" id="unit-unlock">
+        <h2 className="text-lg font-semibold text-slate-900">Grade 6 unit unlock</h2>
+        <p className="mt-1 text-sm text-slate-500">
+          Override sequential unit gates for a student (Math course ID prefilled).
+        </p>
+        <div className="mt-4">
+          <AdminUnitUnlock students={studentRows} />
+        </div>
+      </section>
+
+<section className="mt-10" id="teachers">
         <h2 className="text-lg font-semibold">Teachers</h2>
         <p className="mt-1 text-sm text-slate-500">
           Assign which grades each teacher can see on roster, catalog, and scheduling.

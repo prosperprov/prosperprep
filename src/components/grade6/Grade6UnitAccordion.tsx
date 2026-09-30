@@ -2,8 +2,9 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { grade6UnitLabel, isRetiredSection } from "@/lib/grade6Classroom";
+import { grade6UnitLabel, grade6UnitNumber, isRetiredSection } from "@/lib/grade6Classroom";
 import { SECTION_WEIGHT } from "@/lib/grading";
+import { unitLockMessage } from "@/lib/unitUnlock";
 
 type LessonRow = {
   id: string;
@@ -29,6 +30,7 @@ export function Grade6UnitAccordion({
   quizUnlocked,
   defaultOpenUnit,
   subject,
+  maxUnlockedUnit,
 }: {
   courseId: string;
   lessons: LessonRow[];
@@ -37,6 +39,8 @@ export function Grade6UnitAccordion({
   quizUnlocked: Record<string, boolean>;
   defaultOpenUnit?: string | null;
   subject?: string | null;
+  /** Highest unit number the student may enter (1-based). Defaults to all open. */
+  maxUnlockedUnit?: number;
 }) {
   const done = useMemo(() => new Set(completedIds), [completedIds]);
 
@@ -52,6 +56,8 @@ export function Grade6UnitAccordion({
     }
     return keys;
   }, [lessons]);
+
+  const ceiling = maxUnlockedUnit ?? Math.max(units.length, 99);
 
   const [open, setOpen] = useState<Record<string, boolean>>(() => {
     const init: Record<string, boolean> = {};
@@ -73,98 +79,148 @@ export function Grade6UnitAccordion({
         const completedCount = unitLessons.filter((l) => done.has(l.id)).length;
         const isOpen = open[sectionKey] ?? false;
         const label = grade6UnitLabel(sectionKey, units.length, subject);
+        const unitN = grade6UnitNumber(sectionKey);
+        const locked = unitN != null && unitN > ceiling;
+        const lockMsg = locked ? unitLockMessage(sectionKey) : "";
+
         return (
           <div
             key={sectionKey}
-            className="overflow-hidden rounded-3xl border-2 border-slate-200 bg-white shadow-sm"
+            className={
+              locked
+                ? "overflow-hidden rounded-3xl border-2 border-slate-200 bg-slate-100 opacity-75 shadow-sm"
+                : "overflow-hidden rounded-3xl border-2 border-slate-200 bg-white shadow-sm"
+            }
           >
             <button
               type="button"
-              className="flex w-full items-center justify-between gap-3 bg-slate-50 px-5 py-4 text-left hover:bg-sky-50"
+              className={
+                locked
+                  ? "flex w-full items-center justify-between gap-3 bg-slate-200/80 px-5 py-4 text-left"
+                  : "flex w-full items-center justify-between gap-3 bg-slate-50 px-5 py-4 text-left hover:bg-sky-50"
+              }
               aria-expanded={isOpen}
+              aria-disabled={locked}
               onClick={() => setOpen((s) => ({ ...s, [sectionKey]: !isOpen }))}
             >
               <div className="min-w-0">
-                <p className="text-xs font-bold uppercase tracking-wide text-sky-800">
+                <p
+                  className={
+                    locked
+                      ? "text-xs font-bold uppercase tracking-wide text-slate-500"
+                      : "text-xs font-bold uppercase tracking-wide text-sky-800"
+                  }
+                >
                   Year path · {idx + 1}/{units.length}
+                  {locked ? " · Locked" : ""}
                 </p>
-                <h3 className="mt-0.5 text-lg font-bold text-slate-900 sm:text-xl">{label}</h3>
+                <h3
+                  className={
+                    locked
+                      ? "mt-0.5 text-lg font-bold text-slate-500 sm:text-xl"
+                      : "mt-0.5 text-lg font-bold text-slate-900 sm:text-xl"
+                  }
+                >
+                  {label}
+                </h3>
                 <p className="mt-1 text-sm text-slate-600">
-                  {completedCount}/{unitLessons.length} lessons complete
-                  {unitQuizzes.length > 0 ? " · ends with Unit Check" : ""}
+                  {locked ? (
+                    <span className="font-semibold text-slate-700">{lockMsg}</span>
+                  ) : (
+                    <>
+                      {completedCount}/{unitLessons.length} lessons complete
+                      {unitQuizzes.length > 0 ? " · ends with Unit Check" : ""}
+                    </>
+                  )}
                 </p>
               </div>
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-lg font-bold text-slate-700 shadow-sm">
-                {isOpen ? "−" : "+"}
+              <span
+                className={
+                  locked
+                    ? "flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-300 text-lg font-bold text-slate-600 shadow-sm"
+                    : "flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-lg font-bold text-slate-700 shadow-sm"
+                }
+                aria-hidden
+              >
+                {locked ? "🔒" : isOpen ? "−" : "+"}
               </span>
             </button>
 
             {isOpen && (
               <div className="border-t border-slate-200 px-4 py-4 sm:px-5">
-                <ol className="space-y-3">
-                  {unitLessons.map((lesson) => {
-                    const finished = done.has(lesson.id);
-                    return (
-                      <li key={lesson.id}>
-                        <Link
-                          href={`/courses/${courseId}/lessons/${lesson.id}`}
-                          className="block rounded-2xl border-2 border-slate-200 bg-white p-4 transition hover:border-sky-400 hover:shadow-md sm:p-5"
-                        >
-                          <div className="flex items-start justify-between gap-3">
-                            <div>
-                              <p className="text-lg font-medium text-slate-900">
-                                {lesson.order}. {lesson.title}
-                                {finished && (
-                                  <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-900">
-                                    Done
-                                  </span>
-                                )}
-                              </p>
-                              <p className="mt-1 text-base text-slate-600">{lesson.description}</p>
-                            </div>
-                            <span className="shrink-0 rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-600">
-                              {lesson.durationMin} min
-                            </span>
-                          </div>
-                          <span className="mt-3 inline-flex min-h-[40px] items-center rounded-xl bg-sky-50 px-3 text-sm font-bold text-sky-950">
-                            {finished ? "Review lesson" : "Open lesson →"}
-                          </span>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ol>
+                {locked ? (
+                  <p className="rounded-2xl border border-slate-300 bg-slate-50 p-4 text-sm text-slate-700">
+                    This unit is locked. {lockMsg}. Lessons stay visible on the year map so you can
+                    see what is coming next.
+                  </p>
+                ) : (
+                  <>
+                    <ol className="space-y-3">
+                      {unitLessons.map((lesson) => {
+                        const finished = done.has(lesson.id);
+                        return (
+                          <li key={lesson.id}>
+                            <Link
+                              href={`/courses/${courseId}/lessons/${lesson.id}`}
+                              className="block rounded-2xl border-2 border-slate-200 bg-white p-4 transition hover:border-sky-400 hover:shadow-md sm:p-5"
+                            >
+                              <div className="flex items-start justify-between gap-3">
+                                <div>
+                                  <p className="text-lg font-medium text-slate-900">
+                                    {lesson.order}. {lesson.title}
+                                    {finished && (
+                                      <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-900">
+                                        Done
+                                      </span>
+                                    )}
+                                  </p>
+                                  <p className="mt-1 text-base text-slate-600">{lesson.description}</p>
+                                </div>
+                                <span className="shrink-0 rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-600">
+                                  {lesson.durationMin} min
+                                </span>
+                              </div>
+                              <span className="mt-3 inline-flex min-h-[40px] items-center rounded-xl bg-sky-50 px-3 text-sm font-bold text-sky-950">
+                                {finished ? "Review lesson" : "Open lesson →"}
+                              </span>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ol>
 
-                {unitQuizzes.map((quiz) => {
-                  const unlocked = quizUnlocked[quiz.id] ?? false;
-                  return (
-                    <div key={quiz.id} className="mt-3">
-                      {unlocked ? (
-                        <Link
-                          href={`/courses/${courseId}/quizzes/${quiz.id}`}
-                          className="block rounded-2xl border-2 border-emerald-400 bg-emerald-50 p-5 hover:bg-emerald-100"
-                        >
-                          <p className="text-lg font-semibold text-emerald-950">{quiz.title}</p>
-                          <p className="mt-1 text-sm text-emerald-900">
-                            {quiz.questionCount} questions · unlocked · unit weight{" "}
-                            {Math.round(SECTION_WEIGHT * 100)}%
-                          </p>
-                          <span className="mt-3 inline-flex min-h-[44px] items-center rounded-xl bg-emerald-700 px-4 text-sm font-bold text-white">
-                            Take unit check →
-                          </span>
-                        </Link>
-                      ) : (
-                        <div className="rounded-2xl border-2 border-slate-200 bg-slate-50 p-5 text-base text-slate-600">
-                          <p className="font-semibold text-slate-800">{quiz.title} · locked</p>
-                          <p className="mt-1">
-                            Complete all {unitLessons.length} lessons in this unit to unlock (
-                            {quiz.questionCount} questions).
-                          </p>
+                    {unitQuizzes.map((quiz) => {
+                      const unlocked = quizUnlocked[quiz.id] ?? false;
+                      return (
+                        <div key={quiz.id} className="mt-3">
+                          {unlocked ? (
+                            <Link
+                              href={`/courses/${courseId}/quizzes/${quiz.id}`}
+                              className="block rounded-2xl border-2 border-emerald-400 bg-emerald-50 p-5 hover:bg-emerald-100"
+                            >
+                              <p className="text-lg font-semibold text-emerald-950">{quiz.title}</p>
+                              <p className="mt-1 text-sm text-emerald-900">
+                                {quiz.questionCount} questions · unlocked · unit weight{" "}
+                                {Math.round(SECTION_WEIGHT * 100)}%
+                              </p>
+                              <span className="mt-3 inline-flex min-h-[44px] items-center rounded-xl bg-emerald-700 px-4 text-sm font-bold text-white">
+                                Take unit check →
+                              </span>
+                            </Link>
+                          ) : (
+                            <div className="rounded-2xl border-2 border-slate-200 bg-slate-50 p-5 text-base text-slate-600">
+                              <p className="font-semibold text-slate-800">{quiz.title} · locked</p>
+                              <p className="mt-1">
+                                Complete all {unitLessons.length} lessons in this unit to unlock (
+                                {quiz.questionCount} questions).
+                              </p>
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
-                  );
-                })}
+                      );
+                    })}
+                  </>
+                )}
               </div>
             )}
           </div>

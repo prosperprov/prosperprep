@@ -17,6 +17,8 @@ import { guidedPracticeForLesson } from "@/lib/guidedPractice";
 import { isGrade6Classroom } from "@/lib/grade6Classroom";
 import { Grade6LessonChrome } from "@/components/grade6/Grade6LessonChrome";
 import { grade6UnitLabel, isRetiredSection } from "@/lib/grade6Classroom";
+import { unitLockMessage } from "@/lib/unitUnlock";
+import { resolveMaxUnlockedUnit, isUnitUnlocked } from "@/lib/resolveUnitUnlock";
 
 export const dynamic = "force-dynamic";
 
@@ -82,6 +84,28 @@ export default async function LessonPage({
   const idx = pathLessons.findIndex((l) => l.id === lesson.id);
   const prev = idx > 0 ? pathLessons[idx - 1] : null;
   const next = idx >= 0 && idx < pathLessons.length - 1 ? pathLessons[idx + 1] : null;
+
+  const g6Early = isGrade6Classroom(course.grade);
+  let unitLocked = false;
+  let lockMsg = "";
+  if (g6Early && session.user.role === "STUDENT") {
+    const progressRows = await prisma.progress.findMany({
+      where: { userId: session.user.id, completed: true, lesson: { courseId: course.id } },
+      select: { lessonId: true },
+    });
+    const completedLessonIds = new Set(progressRows.map((r) => r.lessonId));
+    const maxUnlocked = await resolveMaxUnlockedUnit({
+      userId: session.user.id,
+      role: session.user.role,
+      courseId: course.id,
+      courseGrade: course.grade,
+      lessons: pathLessons,
+      quizzes: course.quizzes,
+      completedLessonIds,
+    });
+    unitLocked = !isUnitUnlocked(lesson.sectionKey, maxUnlocked);
+    if (unitLocked) lockMsg = unitLockMessage(lesson.sectionKey);
+  }
 
   const canGrade =
     session?.user &&
@@ -178,6 +202,34 @@ export default async function LessonPage({
     )
   );
   const g6UnitTotal = g6UnitKeys.length || 11;
+
+
+  if (unitLocked) {
+    return (
+      <div className="mx-auto max-w-3xl px-4 py-12">
+        <Link href={`/courses/${course.id}`} className="text-sm text-emerald-800 hover:underline">
+          ← Back to year path
+        </Link>
+        <div className="mt-6 rounded-3xl border-2 border-slate-300 bg-slate-100 p-8 text-center">
+          <p className="text-4xl" aria-hidden>
+            🔒
+          </p>
+          <h1 className="mt-3 text-2xl font-bold text-slate-800">{lesson.title}</h1>
+          <p className="mt-2 text-lg font-semibold text-slate-700">{lockMsg}</p>
+          <p className="mt-3 text-slate-600">
+            Units unlock in order. Finish the previous unit&apos;s lessons (or pass its Unit Check) to
+            open this one. Your teacher or an admin can unlock ahead if needed.
+          </p>
+          <Link
+            href={`/courses/${course.id}`}
+            className="mt-6 inline-flex min-h-[48px] items-center rounded-2xl bg-emerald-700 px-5 text-sm font-bold text-white hover:bg-emerald-800"
+          >
+            View year map
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
 
   return (
