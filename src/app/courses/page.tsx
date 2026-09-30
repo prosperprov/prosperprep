@@ -45,8 +45,8 @@ export default async function CoursesPage() {
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="text-3xl font-bold text-slate-900">Course catalog</h1>
       <p className="mt-2 max-w-2xl text-slate-600">
-        {brand.name} Foundations / MVP modules: core K–12 subjects plus ACT/SAT, college athletic
-        pathway, entrepreneurship & financial independence, and Bible (Hallelujah Scriptures &
+        {brand.name} Foundations / MVP modules: core K–12 subjects plus ACT/SAT, athletics,
+        entrepreneurship & financial independence, and Bible study (Hallelujah Scriptures &
         Paleo-Hebrew). Grade 10 showcase courses are expanding toward deeper modules; most courses
         still ship as starter modules — not yet a full-year credit map.
       </p>

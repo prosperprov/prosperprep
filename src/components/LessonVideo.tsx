@@ -6,15 +6,11 @@ import { flushSync } from "react-dom";
 /**
  * Lesson YouTube embed with Prosper Prep branded cover.
  *
- * Desktop: branded poster → tap → controls=1 embed with unmuted autoplay.
- *
- * Phone (iOS Safari especially): the same branded cover stays up until tap.
- * That tap mounts the embed in the same gesture with
- * autoplay=1&mute=1&playsinline=1&controls=1. iOS allows muted inline
- * autoplay after a user gesture, so playback starts without a second tap
- * on YouTube's button. controls=1 stays so the student can unmute.
- * Unmuted autoplay is still not used on phones — iOS rejects it once the
- * iframe document loads and the player looks stuck.
+ * Desktop + phone: branded poster → tap → controls=1 embed with unmuted
+ * autoplay (autoplay=1&mute=0&playsinline=1). The cover tap mounts the
+ * iframe in the same gesture (flushSync) and immediately calls the YouTube
+ * IFrame API playVideo()/unMute() so playback starts WITH SOUND — no second
+ * YouTube tap when the gesture is honored. mute=1 is never the happy path.
  */
 
 const MOBILE_PLAYER_QUERY = "(max-width: 767px), (pointer: coarse)";
@@ -61,10 +57,11 @@ function forceCaptionsOff(win: Window | null | undefined) {
   postPlayerCommand(win, "setOption", ["cc", "track", {}]);
 }
 
-/** Ask an already-mounted player to start muted. Safe to repeat. */
-function startMutedPlayback(win: Window | null | undefined) {
+/** Ask an already-mounted player to start WITH SOUND. Safe to repeat. */
+function startUnmutedPlayback(win: Window | null | undefined) {
   if (!win) return;
-  postPlayerCommand(win, "mute");
+  postPlayerCommand(win, "unMute");
+  postPlayerCommand(win, "setVolume", [100]);
   postPlayerCommand(win, "playVideo");
 }
 
@@ -89,9 +86,11 @@ export function youtubeEmbedUrl(
   if (opts?.autoplay) {
     params.set("autoplay", "1");
   }
-  if (opts?.mute) {
-    // Muted autoplay is what iOS will start after a cover tap. Do not set mute=0.
+  // Explicit mute flag: happy path is unmuted (mute=0). Never default to mute=1.
+  if (opts?.mute === true) {
     params.set("mute", "1");
+  } else if (opts?.autoplay) {
+    params.set("mute", "0");
   }
   if (typeof window !== "undefined") {
     params.set("origin", window.location.origin);
@@ -112,10 +111,7 @@ export function LessonVideo({
 }) {
   const id = useMemo(() => extractYouTubeId(videoUrl), [videoUrl]);
   const [playing, setPlaying] = useState(false);
-  // Phones start muted autoplay; desktop keeps unmuted autoplay.
   const [isMobile, setIsMobile] = useState(false);
-  // Frozen at the tap so a later resize does not reload the player.
-  const [mutedAutoplay, setMutedAutoplay] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useLayoutEffect(() => {
@@ -128,35 +124,31 @@ export function LessonVideo({
 
   // Branded cover until the student taps; then mount the iframe.
   const showIframe = playing;
-  // Desktop: autoplay, not muted. Phone: autoplay=1&mute=1 in the same tap.
+  // Always unmuted autoplay after the cover gesture (desktop + phone).
   const embed = useMemo(
     () =>
       id && showIframe
-        ? youtubeEmbedUrl(videoUrl, { autoplay: playing, mute: mutedAutoplay })
+        ? youtubeEmbedUrl(videoUrl, { autoplay: playing, mute: false })
         : null,
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [id, videoUrl, playing, mutedAutoplay, showIframe]
+    [id, videoUrl, playing, showIframe]
   );
 
   function kickPlayer() {
     const win = iframeRef.current?.contentWindow;
     forceCaptionsOff(win);
-    if (mutedAutoplay) startMutedPlayback(win);
+    startUnmutedPlayback(win);
   }
 
   // Mount the iframe before this click returns so iOS treats it as the gesture,
-  // then ask the player to play (muted on phones) in that same handler.
+  // then ask the player to play unmuted in that same handler.
   function startFromCover() {
-    const mute = isMobile;
     flushSync(() => {
-      setMutedAutoplay(mute);
       setPlaying(true);
     });
-    if (mute) {
-      const win = iframeRef.current?.contentWindow;
-      forceCaptionsOff(win);
-      startMutedPlayback(win);
-    }
+    const win = iframeRef.current?.contentWindow;
+    forceCaptionsOff(win);
+    startUnmutedPlayback(win);
   }
 
   useEffect(() => {
@@ -164,7 +156,7 @@ export function LessonVideo({
     const run = () => {
       const win = iframeRef.current?.contentWindow;
       forceCaptionsOff(win);
-      if (mutedAutoplay) startMutedPlayback(win);
+      startUnmutedPlayback(win);
     };
     run();
     const t1 = window.setTimeout(run, 400);
@@ -175,7 +167,7 @@ export function LessonVideo({
       window.clearTimeout(t2);
       window.clearTimeout(t3);
     };
-  }, [showIframe, embed, mutedAutoplay]);
+  }, [showIframe, embed]);
 
   if (!id) return null;
 
@@ -188,9 +180,9 @@ export function LessonVideo({
       </div>
       <div
         className="relative aspect-video w-full overflow-hidden bg-black"
-        data-lesson-video-mode={showIframe ? (mutedAutoplay ? "mobile-playing" : "playing") : "poster"}
+        data-lesson-video-mode={showIframe ? "playing" : "poster"}
         data-lesson-video-mobile={isMobile ? "1" : "0"}
-        data-lesson-video-autoplay={showIframe ? (mutedAutoplay ? "muted" : "sound") : "0"}
+        data-lesson-video-autoplay={showIframe ? "sound" : "0"}
       >
         {showIframe && embed ? (
           <iframe

@@ -174,7 +174,7 @@ function buildCoreLesson(
 
 function buildBibleLesson(topic: Topic, order: number, questions: QuestionSeed[]): LessonSeed {
   const content = [
-    `Welcome to **Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study** at Prosper Preparatory (Grade 10).`,
+    `Welcome to **Bible Study: Hallelujah Scriptures & Paleo-Hebrew** at Prosper Preparatory (Grade 10).`,
     ``,
     `Today's lesson: **${topic.title}**. ${topic.focus}`,
     ``,
@@ -419,11 +419,11 @@ export function grade10ElaLessons(): LessonSeed[] {
 /* ===== Bible topics (24) — academic; no East Texas framing ===== */
 const BIBLE_SPECS: Array<{ title: string; focus: string; ideas: [string, string, string]; example: string }> = [
   {
-    title: "Why Word Study Matters",
+    title: "Why Bible Study Matters",
     focus: "Approach Scripture with reverence, careful reading, and attention to original words.",
     ideas: [
       "Hallelujah Scriptures emphasize the Name and a return to Hebraic understanding of the text.",
-      "Word study slows reading so meaning is not skipped; roots and usage clarify English renderings.",
+      "Bible study slows reading so meaning is not skipped; roots and usage clarify English renderings.",
       "We study academically and faithfully — seeking understanding for obedience, not for arguments.",
     ],
     example:
@@ -481,12 +481,12 @@ const BIBLE_SPECS: Array<{ title: string; focus: string; ideas: [string, string,
     example: "Shuffle letter cards Nun–Tav; name form, association, caution in under 30 seconds each.",
   },
   {
-    title: "The Name and Praise: Hallelujah Word Study",
+    title: "The Name and Praise: Hallelujah Bible Study",
     focus: "Study praise vocabulary and the call to exalt the Name.",
     ideas: [
       "Hallelujah joins praise language with the Name — a summons to praise.",
       "Praise in Scripture is often public, obedient, and wholehearted.",
-      "Word study should deepen worshipful understanding, not performance.",
+      "Bible study should deepen worshipful understanding, not performance.",
     ],
     example: "Identify praise and Name elements; list verbs of praise in a psalm and the reasons given.",
   },
@@ -621,7 +621,7 @@ const BIBLE_SPECS: Array<{ title: string; focus: string; ideas: [string, string,
     example: "Present a bad forced reading and a corrected contextual reading of the same word side by side.",
   },
   {
-    title: "From Word Study to Integrity in Work",
+    title: "From Bible Study to Integrity in Work",
     focus: "Connect Scripture study to academics, athletics, and honest work — without regional dialect framing.",
     ideas: [
       "Faithfulness in small tasks is formation; diligence vocabulary applies to homework and training.",
@@ -652,8 +652,8 @@ const BIBLE_SPECS: Array<{ title: string; focus: string; ideas: [string, string,
     example: "Timed letter quiz + write five lexicon entries with verse references.",
   },
   {
-    title: "Capstone Word Study Project",
-    focus: "Complete a guided word study and share findings respectfully.",
+    title: "Capstone Bible Study Project",
+    focus: "Complete a guided Bible study and share findings respectfully.",
     ideas: [
       "Select a word that appears multiple times; prefer verbs or covenant nouns.",
       "Use approved tools; cite sources; avoid overclaiming from pictographs alone.",
@@ -707,7 +707,7 @@ export function grade10BibleLessons(): LessonSeed[] {
         spec.ideas[2]
       ),
       mcq(
-        `Best first move in word study?`,
+        `Best first move in Bible study?`,
         "Read the passage carefully in context",
         "Invent a letter-story before reading",
         "Skip Hebrew and argue from vibes",

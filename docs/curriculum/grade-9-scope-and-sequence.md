@@ -33,7 +33,7 @@
 - Spanish I / World Language
 - Health & PE / Athletics Pathway Foundations
 - Entrepreneurship Foundations
-- Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study (specialty)
+- Bible Study: Hallelujah Scriptures & Paleo-Hebrew (specialty)
 - Fine Arts / Digital Media intro
 - Study Skills & Digital Citizenship (recommended for all online learners)
 

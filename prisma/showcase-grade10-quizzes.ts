@@ -1336,7 +1336,7 @@ const ELA_SECTION_QUIZZES: AuthoredItem[][] = [
 const BIBLE_SECTION_QUIZZES: AuthoredItem[][] = [
 [
       mcq(
-        "Why slow down for word study in Hallelujah Scriptures framing?",
+        "Why slow down for Bible study in Hallelujah Scriptures framing?",
         "So meaning is not skipped and roots/usage clarify English renderings",
         "To invent dramatic claims without the verse",
         "To replace reading with slogans",
@@ -1500,7 +1500,7 @@ const BIBLE_SECTION_QUIZZES: AuthoredItem[][] = [
     ],
 [
       mcq(
-        "“Hallelujah” word study highlights…",
+        "“Hallelujah” Bible study highlights…",
         "Praise language joined with the Name as a summons to praise",
         "A regional slogan contest",
         "Ignoring psalm contexts",
@@ -1535,7 +1535,7 @@ const BIBLE_SECTION_QUIZZES: AuthoredItem[][] = [
         "Shema-oriented reading treats hearing as…",
         "Often implying heeding—listening that leads to doing",
         "Information collection only",
-        "Optional for word study",
+        "Optional for Bible study",
         "A synonym for pictographs",
         "Hear → heed"
       ),
@@ -1876,7 +1876,7 @@ const BIBLE_SECTION_QUIZZES: AuthoredItem[][] = [
         "Discipline"
       ),
       mcq(
-        "Connecting word study to integrity in work means…",
+        "Connecting Bible study to integrity in work means…",
         "Faithfulness in small tasks—homework, training, honest dealing—without regional dialect framing",
         "Only discussing sports scores",
         "Skipping wisdom sayings",
@@ -1958,7 +1958,7 @@ const BIBLE_SECTION_QUIZZES: AuthoredItem[][] = [
         "Entry + verse"
       ),
       mcq(
-        "Capstone word study should select a word that…",
+        "Capstone Bible study should select a word that…",
         "Appears multiple times—prefer verbs or covenant nouns",
         "Never appears in the passage",
         "Is chosen only for flashy pictographs",

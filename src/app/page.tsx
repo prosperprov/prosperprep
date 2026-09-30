@@ -14,7 +14,7 @@ export default function HomePage() {
               Nonprofit · {brand.location} · Online K–12 school
             </p>
             <h1 className="text-balance text-4xl font-bold leading-tight md:text-5xl">
-              Academics. Athletic scholarships.{" "}
+              Academics. Athletics.{" "}
               <span className="text-emerald-300">Entrepreneurs who finish strong.</span>
             </h1>
             <p className="mt-4 text-lg text-emerald-50/90">{brand.description}</p>
@@ -47,7 +47,7 @@ export default function HomePage() {
             <ul className="mt-4 space-y-3 text-emerald-50">
               <li className="flex gap-3">
                 <GraduationCap className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
-                K–12 academics plus ACT/SAT, athletic pathway, entrepreneurship/finance, and Bible word study
+                K–12 academics plus ACT/SAT, athletic pathway, entrepreneurship/finance, and Bible study
               </li>
               <li className="flex gap-3">
                 <Calendar className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
@@ -59,7 +59,7 @@ export default function HomePage() {
               </li>
               <li className="flex gap-3">
                 <Trophy className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
-                Built for college athletic scholarships and financial independence after high school
+                Built for strong academics, athletics, and financial independence after high school
               </li>
               <li className="flex gap-3">
                 <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
@@ -162,7 +162,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-16 text-center">
         <BookOpen className="mx-auto h-10 w-10 text-emerald-800" />
-        <h2 className="mt-4 text-3xl font-bold text-slate-900">Ready for scholarships — and for business</h2>
+        <h2 className="mt-4 text-3xl font-bold text-slate-900">Ready for the next level — and for business</h2>
         <p className="mx-auto mt-3 max-w-2xl text-slate-600">
           Train for the next level. Learn to build income skills. Grow in faith and character. Questions? Reach us at{" "}
           <a href={`mailto:${brand.supportEmail}`} className="text-emerald-800 underline">

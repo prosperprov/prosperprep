@@ -56,7 +56,7 @@ export default function TermsPage() {
           <p className="mt-2">
             Use the portal for legitimate schoolwork. Do not cheat on assessments, harass others,
             disrupt live sessions, or attempt unauthorized access. Specialty tracks (athletic
-            pathway, entrepreneurship, Bible word study) are educational only — not legal,
+            pathway, entrepreneurship, Bible study) are educational only — not legal,
             recruiting, investment, or pastoral counseling advice.
           </p>
         </section>

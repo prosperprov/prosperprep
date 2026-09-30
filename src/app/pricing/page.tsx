@@ -12,7 +12,7 @@ export default function PricingPage() {
       <p className="mt-2 max-w-2xl text-slate-600">
         {brand.name} is a nonprofit program in {brand.location}. These monthly paths fund online
         K–12 instruction, live teacher sessions, and student support — aligned with our mission of
-        serious academics, athletic scholarship readiness, and entrepreneurship for financial
+        serious academics, athletics, and entrepreneurship for financial
         independence. Catalog depth is labeled honestly as Foundations / MVP modules while we expand
         lessons (see roadmap below).
       </p>

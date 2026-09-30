@@ -782,16 +782,16 @@ export function entrepreneurshipLessons(grade: number): LessonSeed[] {
   return pack(grade, "Entrepreneurship & Financial Independence", topics, grade <= 8 ? 35 : 45);
 }
 
-/* ========== Bible: Hallelujah Scriptures & Paleo-Hebrew ========== */
+/* ========== Bible Study: Hallelujah Scriptures & Paleo-Hebrew ========== */
 export function bibleLessons(grade: number): LessonSeed[] {
   if (grade === SHOWCASE_GRADE) return grade10BibleLessons();
   const topics: Topic[] = [
     t(
-      "Why Word Study Matters",
+      "Why Bible Study Matters",
       "Approach Scripture with reverence, careful reading, and attention to original words.",
       [
         "Hallelujah Scriptures emphasize the Name and a return to Hebraic understanding of the text.",
-        "Word study slows reading so meaning is not skipped; roots and usage clarify English renderings.",
+        "Bible study slows reading so meaning is not skipped; roots and usage clarify English renderings.",
         "We study academically and faithfully — seeking understanding for obedience, not for arguments.",
       ],
       "Method demo: take a familiar verse, isolate one verb or noun, note how Hallelujah Scriptures renders it, then ask what the underlying Hebrew root typically conveys (action, state, covenant relation, praise, etc.). Record discoveries in a dedicated journal: passage, word, gloss, context, question.",
@@ -800,7 +800,7 @@ export function bibleLessons(grade: number): LessonSeed[] {
         { q: "Why study original words?", a: "To grasp fuller meaning and avoid shallow reading" },
         { q: "What translation framing do we engage?", a: "Hallelujah Scriptures / Hebraic emphasis" },
       ],
-      "Start a Word Study Journal: date, passage, word, observations, questions."
+      "Start a Bible Study Journal: date, passage, word, observations, questions."
     ),
     t(
       "Paleo-Hebrew Letters: Form and Meaning Intro",
@@ -819,16 +819,16 @@ export function bibleLessons(grade: number): LessonSeed[] {
       "Draw 5 Paleo-Hebrew letters from a reputable class chart; for each write one association and one caution note."
     ),
     t(
-      "The Name and Praise: Hallelujah Word Study",
+      "The Name and Praise: Hallelujah Bible Study",
       "Study praise vocabulary and the call to exalt the Name.",
       [
         "\"Hallelujah\" joins praise language (related to *halal*, to praise/boast) with the Name — a summons to praise.",
         "In Scripture, praise is often public, obedient, and wholehearted; verbs of praise repay slow reading.",
-        "Word study should deepen worshipful understanding, not performance or debate.",
+        "Bible study should deepen worshipful understanding, not performance or debate.",
       ],
       "Break the components as presented in your Hallelujah Scriptures notes: identify the praise element and the Name element. Select a psalm of praise; list verbs of praise, the reasons given, and who is addressed. Write how the Hebrew framing sharpens the English sense without adding claims the text does not make.",
       [
-        { q: "What should word study on praise produce?", a: "Clearer worship and obedience, not showing off" },
+        { q: "What should Bible study on praise produce?", a: "Clearer worship and obedience, not showing off" },
         { q: "Where might you read praise themes?", a: "Psalms and many passages of Scripture" },
         { q: "How should we treat the Name?", a: "With reverence" },
       ],
@@ -846,7 +846,7 @@ export function bibleLessons(grade: number): LessonSeed[] {
       [
         { q: "What is a covenant emphasis?", a: "Committed relationship and promise" },
         { q: "Why compare passages?", a: "To see consistent themes under textual control" },
-        { q: "What tool helps word study?", a: "Lexicon / interlinear / teacher-approved study aid" },
+        { q: "What tool helps Bible study?", a: "Lexicon / interlinear / teacher-approved study aid" },
       ],
       "Write a paragraph: how covenant faithfulness should shape student character in academics, athletics, and work."
     ),
@@ -899,11 +899,11 @@ export function bibleLessons(grade: number): LessonSeed[] {
       "Mark parallelism in 6 lines of a psalm and paraphrase them."
     ),
     t(
-      "From Word Study to Life: Integrity and Work",
+      "From Bible Study to Life: Integrity and Work",
       "Connect Scripture study to athletics, schoolwork, and entrepreneurship ethics.",
       [
         "Faithfulness in small tasks is spiritual formation — roots about truth and diligence apply to homework and training.",
-        "Honest business and clean competition honor truth; word study that never changes life is incomplete.",
+        "Honest business and clean competition honor truth; Bible study that never changes life is incomplete.",
         "Choose one wisdom saying; track concrete obedience for seven days.",
       ],
       "Apply a wisdom saying about diligence/honesty to (a) film-room or practice habits, (b) homework integrity, (c) a customer interaction in a micro-business. Cite the verse and the Hebrew key word if studied.",
@@ -915,8 +915,8 @@ export function bibleLessons(grade: number): LessonSeed[] {
       "Write three concrete integrity goals for the next 7 days."
     ),
     t(
-      "Capstone Word Study Project",
-      "Complete a guided word study and share findings respectfully.",
+      "Capstone Bible Study Project",
+      "Complete a guided Bible study and share findings respectfully.",
       [
         "Select a word that appears multiple times in a passage; prefer verbs or covenant nouns.",
         "Use approved tools; cite sources; avoid overclaiming from pictographs alone.",
@@ -924,14 +924,14 @@ export function bibleLessons(grade: number): LessonSeed[] {
       ],
       "Project steps: pick passage → list occurrences → note Hebrew form (as available) → Paleo-Hebrew letter notes (labeled as aids) → lexicon glosses → context synthesis → personal application → bibliography of tools used.",
       [
-        { q: "What must you avoid in word study?", a: "Forcing meanings; ignoring context; unsourced sensational claims" },
+        { q: "What must you avoid in Bible study?", a: "Forcing meanings; ignoring context; unsourced sensational claims" },
         { q: "What belongs in a capstone?", a: "Text, word data, synthesis, application, sources" },
         { q: "How should findings be shared?", a: "Respectfully and clearly" },
       ],
-      "Deliver a one-page word study (or oral presentation outline) on your chosen word."
+      "Deliver a one-page Bible study (or oral presentation outline) on your chosen word."
     ),
   ];
-  return pack(grade, "Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study", topics, 40, {
+  return pack(grade, "Bible Study: Hallelujah Scriptures & Paleo-Hebrew", topics, 40, {
     bibleMode: true,
   });
 }
@@ -944,7 +944,7 @@ export function specialtySubjectsForGrade(grade: number): string[] {
       "SAT Prep",
       "College Athletic Pathway",
       "Entrepreneurship & Financial Independence",
-      "Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study",
+      "Bible Study: Hallelujah Scriptures & Paleo-Hebrew",
     ];
   }
   if (grade === 8) {
@@ -952,14 +952,14 @@ export function specialtySubjectsForGrade(grade: number): string[] {
       "ACT / SAT Foundations",
       "College Athletic Pathway",
       "Entrepreneurship & Financial Independence",
-      "Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study",
+      "Bible Study: Hallelujah Scriptures & Paleo-Hebrew",
     ];
   }
   if (grade >= 6) {
     return [
       "Entrepreneurship & Financial Independence",
       "College Athletic Pathway",
-      "Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study",
+      "Bible Study: Hallelujah Scriptures & Paleo-Hebrew",
     ];
   }
   return [];
