@@ -114,8 +114,8 @@ export function LessonVideo({
 
   return (
     <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-sm">
-      <div className="border-b border-slate-800 px-4 py-2 text-xs font-medium uppercase tracking-wide text-slate-300">
-        Watch · {title}
+      <div className="border-b border-slate-800 px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-emerald-200 sm:text-sm">
+        ▶ Watch video · {title}
       </div>
       <div className="relative aspect-video w-full overflow-hidden bg-black">
         {playing ? (
@@ -156,8 +156,8 @@ export function LessonVideo({
           <button
             type="button"
             onClick={() => setPlaying(true)}
-            className="group absolute inset-0 flex h-full w-full flex-col items-center justify-end pb-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:pb-10"
-            aria-label={`Play ${title}`}
+            className="group absolute inset-0 flex h-full w-full flex-col items-center justify-end gap-3 pb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:pb-10"
+            aria-label={`Watch video: ${title}`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -165,29 +165,35 @@ export function LessonVideo({
               alt=""
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-800 text-white shadow-lg ring-4 ring-white/20 transition group-hover:scale-105 group-hover:bg-emerald-700">
+            <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-800 text-white shadow-lg ring-4 ring-white/20 transition group-hover:scale-105 group-hover:bg-emerald-700 sm:h-[4.5rem] sm:w-[4.5rem]">
               <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-current" aria-hidden>
                 <path d="M8 5v14l11-7z" />
               </svg>
+            </span>
+            <span className="relative z-10 rounded-full bg-black/70 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-white shadow-md">
+              Watch video
             </span>
           </button>
         ) : (
           <button
             type="button"
             onClick={() => setPlaying(true)}
-            className="group absolute inset-0 flex h-full w-full flex-col items-center justify-end gap-3 bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-950 px-6 pb-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:pb-10"
-            aria-label={`Play ${title}`}
+            className="group absolute inset-0 flex h-full w-full flex-col items-center justify-end gap-3 bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-950 px-6 pb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:pb-10"
+            aria-label={`Watch video: ${title}`}
           >
-            <p className="absolute left-6 right-6 top-[38%] text-center text-lg font-semibold text-white sm:text-xl">
+            <p className="absolute left-4 right-4 top-[32%] text-center text-base font-semibold text-white sm:left-6 sm:right-6 sm:top-[38%] sm:text-xl">
               {title}
             </p>
-            <p className="absolute left-6 right-6 top-[48%] text-center text-xs uppercase tracking-wide text-emerald-200/80">
+            <p className="absolute left-4 right-4 top-[48%] text-center text-[10px] uppercase tracking-wide text-emerald-200/80 sm:left-6 sm:right-6 sm:text-xs">
               Prosper Preparatory Online School
             </p>
-            <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-800 text-white shadow-lg ring-4 ring-white/20 transition group-hover:scale-105 group-hover:bg-emerald-700">
+            <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-800 text-white shadow-lg ring-4 ring-white/20 transition group-hover:scale-105 group-hover:bg-emerald-700 sm:h-[4.5rem] sm:w-[4.5rem]">
               <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-current" aria-hidden>
                 <path d="M8 5v14l11-7z" />
               </svg>
+            </span>
+            <span className="relative z-10 rounded-full bg-white/15 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-white ring-1 ring-white/30">
+              Watch video
             </span>
           </button>
         )}

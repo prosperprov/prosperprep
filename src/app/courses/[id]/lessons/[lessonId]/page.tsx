@@ -324,6 +324,20 @@ export default async function LessonPage({
         </div>
       )}
 
+      {/* Grade 6: video ABOVE the article so phones see Watch/play immediately */}
+      {g6 && lesson.videoUrl ? (
+        <div
+          id="lesson-video"
+          className="scroll-mt-[calc(7.5rem+env(safe-area-inset-top,0px))]"
+        >
+          <LessonVideo
+            videoUrl={lesson.videoUrl}
+            title={lesson.title}
+            posterUrl={lessonPosterUrl(lesson.title, course.grade)}
+          />
+        </div>
+      ) : null}
+
       <article
         className={`mt-8 rounded-2xl border border-slate-200 bg-white shadow-sm ${
           g6 ? "border-2 p-6 text-base sm:p-8" : "p-6 sm:p-8"
@@ -332,8 +346,12 @@ export default async function LessonPage({
         <Markdown content={displayContent || "_Lesson content coming soon._"} />
       </article>
 
-      {lesson.videoUrl ? (
-        <div id="lesson-video">
+      {/* Non–Grade 6: keep video after the article */}
+      {!g6 && lesson.videoUrl ? (
+        <div
+          id="lesson-video"
+          className="scroll-mt-[calc(6rem+env(safe-area-inset-top,0px))]"
+        >
           <LessonVideo
             videoUrl={lesson.videoUrl}
             title={lesson.title}

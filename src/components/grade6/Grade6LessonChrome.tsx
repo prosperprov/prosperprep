@@ -92,7 +92,7 @@ export function Grade6LessonChrome({
         {hasVideo && (
           <a
             href="#lesson-video"
-            className="inline-flex min-h-[48px] items-center rounded-2xl border-2 border-sky-300 bg-sky-50 px-4 py-2 text-base font-bold text-sky-950 hover:bg-sky-100"
+            className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-2xl border-2 border-sky-400 bg-sky-600 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-sky-700 sm:flex-none"
           >
             ▶ Watch video
           </a>
