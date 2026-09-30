@@ -134,10 +134,7 @@ export async function Nav() {
         </div>
       </header>
       {isStudent && dash ? (
-        <>
-          <StudentMobileDock dashboardHref={dash} unreadCount={unreadMessages} />
-          <div className="h-16 md:hidden" aria-hidden />
-        </>
+        <StudentMobileDock dashboardHref={dash} unreadCount={unreadMessages} />
       ) : null}
     </>
   );

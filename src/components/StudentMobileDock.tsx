@@ -7,7 +7,7 @@ import { Home, MessageCircle } from "lucide-react";
 /**
  * Floating bottom dock for logged-in students (mobile only).
  * Quick access to Dashboard + Messages with unread badge.
- * Sits above lesson content via padding on body (see layout).
+ * Sits above lesson content; the global layout reserves its mobile height.
  */
 export function StudentMobileDock({
   dashboardHref,
@@ -19,7 +19,9 @@ export function StudentMobileDock({
   const pathname = usePathname() || "";
   const onDash =
     pathname === dashboardHref || pathname.startsWith(`${dashboardHref}/`);
-  const onMessages = pathname.includes("/messages");
+  const onMessages =
+    pathname === "/dashboard/student/messages" ||
+    pathname.startsWith("/dashboard/student/messages/");
 
   const badge =
     unreadCount > 0 ? (
@@ -31,7 +33,8 @@ export function StudentMobileDock({
   return (
     <nav
       aria-label="Student quick navigation"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 px-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-4px_16px_rgba(15,23,42,0.08)] backdrop-blur md:hidden"
+      data-student-mobile-dock
+      className="fixed inset-x-0 bottom-0 z-[60] border-t border-slate-200 bg-white/95 px-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-4px_16px_rgba(15,23,42,0.08)] backdrop-blur md:hidden"
     >
       <ul className="mx-auto flex max-w-md items-stretch justify-around gap-2">
         <li className="flex-1">
@@ -42,6 +45,7 @@ export function StudentMobileDock({
                 ? "bg-emerald-50 text-emerald-900"
                 : "text-slate-600 hover:bg-slate-50"
             }`}
+            aria-current={onDash && !onMessages ? "page" : undefined}
           >
             <Home className="h-5 w-5" aria-hidden />
             Dashboard
@@ -55,6 +59,7 @@ export function StudentMobileDock({
                 ? "bg-sky-50 text-sky-950"
                 : "text-slate-600 hover:bg-slate-50"
             }`}
+            aria-current={onMessages ? "page" : undefined}
           >
             <span className="relative inline-flex">
               <MessageCircle className="h-5 w-5" aria-hidden />
