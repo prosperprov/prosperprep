@@ -6,7 +6,8 @@ import { setTeacherGrades } from "@/lib/teacherGrades";
 
 const bodySchema = z.object({
   teacherId: z.string().min(1),
-  grades: z.array(z.number().int().min(0).max(12)),
+  /** Full set of grades for this teacher. More than one is valid. Replaces the previous set. */
+  grades: z.array(z.number().int().min(0).max(12)).min(0).max(13),
 });
 
 export async function GET() {

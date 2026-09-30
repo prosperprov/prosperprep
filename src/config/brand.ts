@@ -45,8 +45,8 @@ export const pricingCopy = {
 
 /** Static brand image paths under /public (reusable site-wide). */
 export const brandAssets = {
-  mark: "/assets/branding/prosper-mark.png?v=official1",
-  wordmark: "/assets/branding/prosper-wordmark.png?v=official1",
+  mark: "/assets/branding/prosper-mark.png?v=nocircle1",
+  wordmark: "/assets/branding/prosper-wordmark.png?v=nocircle1",
   lessonPosters: {
     g7AnalyzingTheme: "/lesson-posters/g7-analyzing-theme.png?v=title-clear3",
     g7ProportionalRelationships: "/lesson-posters/g7-proportional-relationships.png?v=1",
