@@ -5,6 +5,7 @@ import Link from "next/link";
 import { grade6UnitLabel, grade6UnitNumber, isRetiredSection } from "@/lib/grade6Classroom";
 import { SECTION_WEIGHT } from "@/lib/grading";
 import { unitLockMessage } from "@/lib/unitUnlock";
+import { formatLessonDurationLabel } from "@/lib/format-duration";
 
 type LessonRow = {
   id: string;
@@ -12,6 +13,7 @@ type LessonRow = {
   description: string;
   order: number;
   durationMin: number;
+  videoDurationSec?: number | null;
   sectionKey: string;
 };
 
@@ -180,7 +182,7 @@ export function Grade6UnitAccordion({
                                   <p className="mt-1 text-base text-slate-600">{lesson.description}</p>
                                 </div>
                                 <span className="shrink-0 rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-600">
-                                  {lesson.durationMin} min
+                                  {formatLessonDurationLabel({ videoDurationSec: lesson.videoDurationSec, durationMin: lesson.durationMin }) ?? `${lesson.durationMin} min`}
                                 </span>
                               </div>
                               <span className="mt-3 inline-flex min-h-[40px] items-center rounded-xl bg-sky-50 px-3 text-sm font-bold text-sky-950">
