@@ -305,6 +305,20 @@ export default async function LessonPage({
         </>
       )}
 
+      {/* Grade 6: video right after chrome/description so phones see play without scrolling the article */}
+      {g6 && lesson.videoUrl ? (
+        <div
+          id="lesson-video"
+          className="scroll-mt-[calc(7.5rem+env(safe-area-inset-top,0px))]"
+        >
+          <LessonVideo
+            videoUrl={lesson.videoUrl}
+            title={lesson.title}
+            posterUrl={lessonPosterUrl(lesson.title, course.grade)}
+          />
+        </div>
+      ) : null}
+
       {lesson.objectives && (
         <div
           className={`mt-6 rounded-xl border border-emerald-200 bg-emerald-50/60 p-4 ${
@@ -323,20 +337,6 @@ export default async function LessonPage({
           </pre>
         </div>
       )}
-
-      {/* Grade 6: video ABOVE the article so phones see Watch/play immediately */}
-      {g6 && lesson.videoUrl ? (
-        <div
-          id="lesson-video"
-          className="scroll-mt-[calc(7.5rem+env(safe-area-inset-top,0px))]"
-        >
-          <LessonVideo
-            videoUrl={lesson.videoUrl}
-            title={lesson.title}
-            posterUrl={lessonPosterUrl(lesson.title, course.grade)}
-          />
-        </div>
-      ) : null}
 
       <article
         className={`mt-8 rounded-2xl border border-slate-200 bg-white shadow-sm ${
