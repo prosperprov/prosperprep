@@ -3,15 +3,21 @@
  * Prosper Prep teaching text — no competitor attribution in student-facing bodies.
  * Run: node scripts/gen-grade6-math-year.mjs
  *
- * HARD RULE: Unit 1 (Ratios, sectionKey unit-1) is HAND-AUTHORED in
- * scripts/data/grade6-unit1-ratios.mjs. This generator merges that file for unit-1
- * and must never Mad-Lib overwrite those 10 lessons. Prefer
- * node scripts/build-unit1-ratios-rewrite.mjs for Unit 1 edits.
+ * HARD RULE: Unit 1 is HAND-AUTHORED in scripts/data/grade6-unit1-ratios.mjs.
+ * Units 2–11 teach layers are HAND-AUTHORED in scripts/data/grade6-math-hand-teach.json
+ * (built by scripts/build-math-hand-rewrites.mjs). This generator must never Mad-Lib
+ * overwrite hand units — it merges hand packs when present.
  */
-import { writeFileSync, mkdirSync } from "node:fs";
+
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { mathIndepPractice } from "./lib/grade6-math-practice.mjs";
 import { UNIT1_LESSONS, buildFullContent } from "./data/grade6-unit1-ratios.mjs";
+
+/** Hand teach packs for units 2–11 (migration 0016). */
+const HAND_TEACH = existsSync("scripts/data/grade6-math-hand-teach.json")
+  ? JSON.parse(readFileSync("scripts/data/grade6-math-hand-teach.json", "utf8"))
+  : {};
 
 const COURSE_ID = "cmuh9bwto03qledantwv3vsfd";
 
@@ -585,6 +591,43 @@ for (const unit of UNITS) {
           correctIndex,
           explanation,
           order,
+        })),
+      });
+      return;
+    }
+
+    // Units 2–11 hand teach (migration 0016) — never Mad-Lib overwrite.
+    const handKey = `${unit.n}|${title}`;
+    if (HAND_TEACH[handKey]) {
+      const pack = HAND_TEACH[handKey];
+      const items = mathIndepPractice(unit.n, title, `u${unit.n}:${title}`);
+      let indep = `## Independent practice\n\nComplete each item. Show your work.\n\n`;
+      items.forEach((it, i) => {
+        indep += `${i + 1}. ${it.q}\n`;
+      });
+      indep += `\n### Answer key (try first)\n\n`;
+      items.forEach((it, i) => {
+        indep += `${i + 1}. ${it.a}\n`;
+      });
+      const header = `# ${title}\n\n*Grade 6 Mathematics · Unit ${unit.n} of 11 · ${unit.title} · Lesson ${idx + 1}*\n\n`;
+      const content = `${header}${pack.teach_core.trim()}\n\n${indep.trim()}\n\n${pack.exit.trim()}\n`;
+      allLessons.push({
+        id,
+        unit: unit.n,
+        unitTitle: unit.title,
+        title,
+        description: pack.description || desc,
+        objectives: pack.objectives,
+        content,
+        order: globalOrder,
+        durationMin: 40,
+        sectionKey,
+        questions: (pack.questions || []).map((q, qi) => ({
+          prompt: q.prompt,
+          choices: q.choices,
+          correctIndex: q.correctIndex,
+          explanation: q.explanation,
+          order: qi + 1,
         })),
       });
       return;

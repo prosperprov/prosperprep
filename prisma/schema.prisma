@@ -33,6 +33,8 @@ model User {
   createdThreads     MessageThread[]     @relation("ThreadCreator")
   threadMemberships  ThreadParticipant[]
   messagesSent       Message[]
+  unitUnlockOverrides UnitUnlockOverride[]
+  unitUnlocksCreated  UnitUnlockOverride[] @relation("UnitUnlockCreatedBy")
 }
 
 model ParentChild {
@@ -105,6 +107,7 @@ model Course {
   gradeEntries GradeEntry[]
   writtenSubmissions WrittenSubmission[]
   messageThreads     MessageThread[]
+  unitUnlockOverrides UnitUnlockOverride[]
 }
 
 model Lesson {
@@ -342,4 +345,24 @@ model Message {
 
   @@index([threadId, createdAt])
   @@index([senderId])
+}
+
+/// Admin/teacher override: unlock Grade 6 units ahead of sequential gate for one student+course.
+/// maxUnlockedUnit = N means units 1..N are open regardless of prior-unit completion.
+model UnitUnlockOverride {
+  id               String   @id @default(cuid())
+  userId           String
+  courseId         String
+  maxUnlockedUnit  Int
+  note             String   @default("")
+  createdById      String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course    Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  createdBy User   @relation("UnitUnlockCreatedBy", fields: [createdById], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([courseId])
 }
