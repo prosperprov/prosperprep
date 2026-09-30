@@ -1,18 +1,20 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 
 /**
  * Lesson YouTube embed with Prosper Prep branded cover.
  *
- * Desktop: branded poster → tap → controls=1 embed with autoplay.
+ * Desktop: branded poster → tap → controls=1 embed with unmuted autoplay.
  *
- * Mobile (iOS Safari especially): show the same branded poster first.
- * On tap, swap to a native YouTube embed with controls=1 and playsinline=1
- * (no autoplay, no controls=0, no pointer-blocking overlays). The student's
- * next tap lands on YouTube's own play button — a real user gesture.
- * Unmuted autoplay after an async iframe mount is rejected on iOS and left
- * a dead player; controls=0 hid the only play affordance.
+ * Phone (iOS Safari especially): the same branded cover stays up until tap.
+ * That tap mounts the embed in the same gesture with
+ * autoplay=1&mute=1&playsinline=1&controls=1. iOS allows muted inline
+ * autoplay after a user gesture, so playback starts without a second tap
+ * on YouTube's button. controls=1 stays so the student can unmute.
+ * Unmuted autoplay is still not used on phones — iOS rejects it once the
+ * iframe document loads and the player looks stuck.
  */
 
 const MOBILE_PLAYER_QUERY = "(max-width: 767px), (pointer: coarse)";
@@ -59,9 +61,16 @@ function forceCaptionsOff(win: Window | null | undefined) {
   postPlayerCommand(win, "setOption", ["cc", "track", {}]);
 }
 
+/** Ask an already-mounted player to start muted. Safe to repeat. */
+function startMutedPlayback(win: Window | null | undefined) {
+  if (!win) return;
+  postPlayerCommand(win, "mute");
+  postPlayerCommand(win, "playVideo");
+}
+
 export function youtubeEmbedUrl(
   raw: string,
-  opts?: { autoplay?: boolean }
+  opts?: { autoplay?: boolean; mute?: boolean }
 ): string | null {
   const id = extractYouTubeId(raw);
   if (!id) return null;
@@ -78,8 +87,11 @@ export function youtubeEmbedUrl(
     enablejsapi: "1",
   });
   if (opts?.autoplay) {
-    // Do not set mute=0. Unmuted autoplay is rejected on iOS and leaves a dead player.
     params.set("autoplay", "1");
+  }
+  if (opts?.mute) {
+    // Muted autoplay is what iOS will start after a cover tap. Do not set mute=0.
+    params.set("mute", "1");
   }
   if (typeof window !== "undefined") {
     params.set("origin", window.location.origin);
@@ -100,8 +112,10 @@ export function LessonVideo({
 }) {
   const id = useMemo(() => extractYouTubeId(videoUrl), [videoUrl]);
   const [playing, setPlaying] = useState(false);
-  // Phones skip autoplay after the poster tap; desktop may autoplay.
+  // Phones start muted autoplay; desktop keeps unmuted autoplay.
   const [isMobile, setIsMobile] = useState(false);
+  // Frozen at the tap so a later resize does not reload the player.
+  const [mutedAutoplay, setMutedAutoplay] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useLayoutEffect(() => {
@@ -112,21 +126,46 @@ export function LessonVideo({
     return () => mq.removeEventListener("change", apply);
   }, []);
 
-  // Poster until the student taps; then mount the iframe (never auto-mount on phones).
+  // Branded cover until the student taps; then mount the iframe.
   const showIframe = playing;
-  // Autoplay only after an explicit poster click on desktop. Phones get YouTube's button.
+  // Desktop: autoplay, not muted. Phone: autoplay=1&mute=1 in the same tap.
   const embed = useMemo(
     () =>
       id && showIframe
-        ? youtubeEmbedUrl(videoUrl, { autoplay: playing && !isMobile })
+        ? youtubeEmbedUrl(videoUrl, { autoplay: playing, mute: mutedAutoplay })
         : null,
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [id, videoUrl, playing, isMobile, showIframe]
+    [id, videoUrl, playing, mutedAutoplay, showIframe]
   );
+
+  function kickPlayer() {
+    const win = iframeRef.current?.contentWindow;
+    forceCaptionsOff(win);
+    if (mutedAutoplay) startMutedPlayback(win);
+  }
+
+  // Mount the iframe before this click returns so iOS treats it as the gesture,
+  // then ask the player to play (muted on phones) in that same handler.
+  function startFromCover() {
+    const mute = isMobile;
+    flushSync(() => {
+      setMutedAutoplay(mute);
+      setPlaying(true);
+    });
+    if (mute) {
+      const win = iframeRef.current?.contentWindow;
+      forceCaptionsOff(win);
+      startMutedPlayback(win);
+    }
+  }
 
   useEffect(() => {
     if (!showIframe) return;
-    const run = () => forceCaptionsOff(iframeRef.current?.contentWindow);
+    const run = () => {
+      const win = iframeRef.current?.contentWindow;
+      forceCaptionsOff(win);
+      if (mutedAutoplay) startMutedPlayback(win);
+    };
     run();
     const t1 = window.setTimeout(run, 400);
     const t2 = window.setTimeout(run, 1200);
@@ -136,7 +175,7 @@ export function LessonVideo({
       window.clearTimeout(t2);
       window.clearTimeout(t3);
     };
-  }, [showIframe, embed]);
+  }, [showIframe, embed, mutedAutoplay]);
 
   if (!id) return null;
 
@@ -149,8 +188,9 @@ export function LessonVideo({
       </div>
       <div
         className="relative aspect-video w-full overflow-hidden bg-black"
-        data-lesson-video-mode={showIframe ? (isMobile ? "mobile-playing" : "playing") : "poster"}
+        data-lesson-video-mode={showIframe ? (mutedAutoplay ? "mobile-playing" : "playing") : "poster"}
         data-lesson-video-mobile={isMobile ? "1" : "0"}
+        data-lesson-video-autoplay={showIframe ? (mutedAutoplay ? "muted" : "sound") : "0"}
       >
         {showIframe && embed ? (
           <iframe
@@ -162,12 +202,12 @@ export function LessonVideo({
             allowFullScreen
             loading="eager"
             referrerPolicy="strict-origin-when-cross-origin"
-            onLoad={() => forceCaptionsOff(iframeRef.current?.contentWindow)}
+            onLoad={kickPlayer}
           />
         ) : poster ? (
           <button
             type="button"
-            onClick={() => setPlaying(true)}
+            onClick={startFromCover}
             className="group absolute inset-0 flex h-full w-full flex-col items-center justify-end gap-3 pb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:pb-10"
             aria-label={`Watch video: ${title}`}
           >
@@ -185,7 +225,7 @@ export function LessonVideo({
         ) : (
           <button
             type="button"
-            onClick={() => setPlaying(true)}
+            onClick={startFromCover}
             className="group absolute inset-0 flex h-full w-full flex-col items-center justify-end gap-3 bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-950 px-6 pb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:pb-10"
             aria-label={`Watch video: ${title}`}
           >
