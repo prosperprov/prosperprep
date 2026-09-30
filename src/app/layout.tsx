@@ -4,7 +4,6 @@ import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { StripeBanner } from "@/components/StripeBanner";
 import { brand } from "@/config/brand";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,7 +26,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${inter.className} flex min-h-screen flex-col antialiased`}>
         <Providers>
-          <StripeBanner />
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />

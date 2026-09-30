@@ -19,22 +19,6 @@ export const brand = {
   cultureLine: "Elite academics · Entrepreneurship · Financial independence",
 } as const;
 
-/** Honest MVP / Foundations labeling — do not claim full-year credit map yet. */
-export const mvpCatalog = {
-  label: "Foundations / MVP modules",
-  shortBlurb:
-    "Our current catalog is Foundations / MVP modules: teachable lessons you can complete today, with deeper modules expanding first in Grade 10 showcase courses.",
-  roadmapTitle: "Published roadmap",
-  roadmap: [
-    "More lessons per course (beyond the starter module set)",
-    "Deeper Grade 10 Math, ELA, and Bible / ACT showcase tracks (20–30 lessons)",
-    "Full-year / credit-bearing maps only after depth and assessment quality expand",
-    "Live seminar standards, parent deadlines, and advising workflows (next waves)",
-  ],
-  honestyNote:
-    "We are not marketing this portal as a finished full-year elite school until course depth expands. Tuition and brand are live; curriculum depth is growing in public.",
-} as const;
-
 export const pricingCopy = {
   elementary: {
     name: "Elementary Path",

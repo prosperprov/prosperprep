@@ -22,7 +22,7 @@ export function ManageBillingButton({ hasStripeCustomer, demoOnly }: Props) {
         >
           Manage billing
         </button>
-        <span className="ml-2">Unavailable in demo mode (no Stripe customer).</span>
+        <span className="ml-2">Available after a paid subscription is on file.</span>
       </p>
     );
   }
