@@ -110,16 +110,22 @@ export async function assertCanMessageUser(
   return { ok: false, error: "Not authorized to message.", status: 403 };
 }
 
-/** Find existing 2-person DM or create one. */
+/** Find existing 2-person DM or create one.
+ * Lesson asks match only a thread for that lesson, so a later question
+ * does not land in an unrelated chat and a generic DM stays lesson-free.
+ */
 export async function findOrCreateDmThread(opts: {
   actorId: string;
   otherId: string;
   subject?: string;
   /** Set only when creating a new DM (lesson questions). Existing DMs keep their course. */
   courseId?: string;
+  /** Ask your teacher. Null means a normal DM with no lesson attached. */
+  lessonId?: string | null;
 }) {
+  const lessonId = opts.lessonId ?? null;
   const mine = await prisma.threadParticipant.findMany({
-    where: { userId: opts.actorId, thread: { type: "DM" } },
+    where: { userId: opts.actorId, thread: { type: "DM", lessonId } },
     select: { threadId: true },
   });
   const threadIds = mine.map((p) => p.threadId);
@@ -128,7 +134,7 @@ export async function findOrCreateDmThread(opts: {
       where: {
         userId: opts.otherId,
         threadId: { in: threadIds },
-        thread: { type: "DM" },
+        thread: { type: "DM", lessonId },
       },
       include: {
         thread: {
@@ -157,6 +163,7 @@ export async function findOrCreateDmThread(opts: {
       type: "DM",
       createdById: opts.actorId,
       courseId: opts.courseId,
+      lessonId,
       participants: {
         create: [{ userId: opts.actorId }, { userId: opts.otherId }],
       },

@@ -13,6 +13,7 @@ export function ComposeDmForm({
   initialBody = "",
   lockRecipient = false,
   courseId,
+  lessonId,
   heading = "New direct message",
   hint,
 }: {
@@ -25,6 +26,8 @@ export function ComposeDmForm({
   /** Hide the recipient picker. Used by Ask your teacher. */
   lockRecipient?: boolean;
   courseId?: string;
+  /** Stored on the thread. Never copied into the message body. */
+  lessonId?: string;
   heading?: string;
   hint?: string;
 }) {
@@ -72,6 +75,7 @@ export function ComposeDmForm({
         body: body.trim(),
         subject: subject.trim() || undefined,
         courseId: courseId || undefined,
+        lessonId: lessonId || undefined,
       }),
     });
     const data = await res.json();
@@ -136,6 +140,7 @@ export function ComposeDmForm({
           maxLength={8000}
           required
           autoFocus={lockRecipient}
+          placeholder={lockRecipient ? "Type your question…" : undefined}
         />
       </label>
       {error && <p className="text-sm text-red-700">{error}</p>}

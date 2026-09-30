@@ -4,7 +4,11 @@ In-app only. Lesson questions and alerts never send email.
 
 ## Ask your teacher
 
-Each lesson action row (Grade 6 chrome and the same Watch video / Take quiz / Next row on other grades, phone and desktop) includes **Ask your teacher** for students. It opens the existing direct-message compose, already addressed to that student's teacher, with the lesson title as the subject. Send uses `POST /api/messages/dm` (the same DM / classroom-thread path as Messages). A new DM is tagged with the course id. Replies stay on that thread.
+Each lesson action row (Grade 6 chrome and the same Watch video / Take quiz / Next row on other grades, phone and desktop) includes **Ask your teacher** for students. It opens the existing direct-message compose, already addressed to that student's teacher. The subject/title carries the course and lesson. The message body is only what the student types — no automatic "I'm on …" line and no debug ping.
+
+Send uses `POST /api/messages/dm`. A lesson question is its own DM (same two people, tagged with that lesson), so a later question about a different lesson does not mix into this thread and a normal Messages DM stays untagged. Replies stay on that thread.
+
+On the teacher thread, a panel beside the conversation shows the course, unit, and lesson, whether the student completed the lesson, the latest lesson-quiz percent if they submitted one, and that time-on-lesson is not tracked. **Open lesson** goes to the staff preview of that lesson. None of that is posted as a student message.
 
 Prosper Prep does not store a separate homeroom teacher or a per-course owner. Teachers are assigned by grade (`TeacherGrade`). A student can only message a teacher assigned to their active enrollment grade, so the button never picks someone the DM rules would reject, and it never invents an email address.
 
