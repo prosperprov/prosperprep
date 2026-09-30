@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { isGrade6Classroom } from "@/lib/grade6Classroom";
+import { usesSequentialUnitUnlock } from "@/lib/grade6Classroom";
 import {
   maxUnlockedUnitNumber,
   parseUnitKeys,
@@ -20,7 +20,7 @@ export async function resolveMaxUnlockedUnit(opts: {
   quizzes: { id: string; sectionKey: string | null }[];
   completedLessonIds: Set<string>;
 }): Promise<number> {
-  if (!isGrade6Classroom(opts.courseGrade)) return 99;
+  if (!usesSequentialUnitUnlock(opts.courseGrade)) return 99;
   if (opts.role === "ADMIN" || opts.role === "TEACHER") return 99;
 
   const unitKeys = parseUnitKeys(opts.lessons);

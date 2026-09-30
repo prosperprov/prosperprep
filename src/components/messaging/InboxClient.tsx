@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ComposeDmForm } from "./ComposeDmForm";
 import { BlastForm } from "./BlastForm";
 import { GroupThreadForm } from "./GroupThreadForm";
@@ -66,8 +66,31 @@ export function MessagingInbox({
 }) {
   const [box, setBox] = useState<"inbox" | "sent">("inbox");
   const [compose, setCompose] = useState<"dm" | "blast" | "group" | null>(null);
+  const [dmRecipientId, setDmRecipientId] = useState("");
   const threads = box === "sent" ? sentThreads : inboxThreads;
   void currentUserId;
+
+  useEffect(() => {
+    try {
+      const q = new URLSearchParams(window.location.search);
+      const to = q.get("to") || "";
+      if (q.get("compose") === "1" && to) {
+        setDmRecipientId(to);
+        setCompose("dm");
+      }
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const dmHeading = useMemo(() => {
+    if (!dmRecipientId) return "New Direct Message";
+    const hit =
+      directory.students.find((s) => s.id === dmRecipientId) ||
+      directory.teachers.find((t) => t.id === dmRecipientId) ||
+      directory.classmates.find((c) => c.id === dmRecipientId);
+    return hit ? `Message ${hit.name}` : "New Direct Message";
+  }, [dmRecipientId, directory]);
 
   return (
     <div className="space-y-6">
@@ -126,6 +149,9 @@ export function MessagingInbox({
           directory={directory}
           onDone={() => setCompose(null)}
           threadBase={basePath}
+          initialRecipientId={dmRecipientId}
+          lockRecipient={Boolean(dmRecipientId)}
+          heading={dmHeading}
         />
       )}
       {compose === "blast" && (role === "TEACHER" || role === "ADMIN") && (

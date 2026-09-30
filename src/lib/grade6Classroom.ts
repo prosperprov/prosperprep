@@ -1,11 +1,17 @@
 /**
- * Grade 6 immersive classroom — subject islands, accents, and feature flag.
- * Feature-flag by enrollment.grade === 6 or course.grade === 6.
+ * Immersive classroom chrome (units accordion, lesson dock, subject islands).
+ * Enabled for every grade — same Grade-6-style UI across the school.
  */
 
 export const GRADE_6 = 6 as const;
 
-export function isGrade6Classroom(grade: number | null | undefined): boolean {
+/** True for immersive classroom UI (all grades). */
+export function isGrade6Classroom(_grade?: number | null): boolean {
+  return true;
+}
+
+/** Sequential year-path unit unlock remains Grade 6 only. */
+export function usesSequentialUnitUnlock(grade: number | null | undefined): boolean {
   return grade === GRADE_6;
 }
 
@@ -113,7 +119,7 @@ export function subjectIslandStyle(subject: string): SubjectIslandStyle {
 }
 
 export function grade6Encouragement(done: number, total: number): string {
-  if (total === 0) return "Your Grade 6 classroom is ready — pick a subject to begin.";
+  if (total === 0) return "Your classroom is ready — pick a subject to begin.";
   if (done === 0) return "You're doing great — finish your first lesson next.";
   if (done >= total) return "Amazing work — you're caught up on lessons!";
   const pct = Math.round((done / total) * 100);

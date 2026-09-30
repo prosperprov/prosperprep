@@ -3,6 +3,7 @@ import { z } from "zod";
 import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { canAccessCourseContent } from "@/lib/curriculumAccess";
+import { MAX_QUIZ_ATTEMPTS, isAttemptLocked } from "@/lib/quizAttempts";
 
 const bodySchema = z.object({
   lessonId: z.string().optional(),
@@ -59,6 +60,20 @@ export async function POST(req: Request) {
     }
     if (lesson.questions.length === 0) {
       return NextResponse.json({ error: "No questions on this lesson" }, { status: 400 });
+    }
+
+    const priorLessonAttempts = await prisma.attempt.count({
+      where: { userId, lessonId },
+    });
+    if (isAttemptLocked(priorLessonAttempts)) {
+      return NextResponse.json(
+        {
+          error: `Attempt limit reached (${MAX_QUIZ_ATTEMPTS}). Further tries are locked.`,
+          attemptsUsed: priorLessonAttempts,
+          maxAttempts: MAX_QUIZ_ATTEMPTS,
+        },
+        { status: 403 }
+      );
     }
 
     let score = 0;
@@ -145,6 +160,8 @@ export async function POST(req: Request) {
       percent,
       results,
       policy: "latest",
+      attemptsUsed: priorLessonAttempts + 1,
+      maxAttempts: MAX_QUIZ_ATTEMPTS,
     });
   }
 
@@ -166,6 +183,20 @@ export async function POST(req: Request) {
     if (!access.ok) {
       return NextResponse.json({ error: access.reason }, { status: 403 });
     }
+  }
+
+  const priorQuizAttempts = await prisma.attempt.count({
+    where: { userId, quizId: quiz.id },
+  });
+  if (isAttemptLocked(priorQuizAttempts)) {
+    return NextResponse.json(
+      {
+        error: `Attempt limit reached (${MAX_QUIZ_ATTEMPTS}). Further tries are locked.`,
+        attemptsUsed: priorQuizAttempts,
+        maxAttempts: MAX_QUIZ_ATTEMPTS,
+      },
+      { status: 403 }
+    );
   }
 
   if (quiz.sectionKey) {
@@ -262,5 +293,7 @@ export async function POST(req: Request) {
     percent,
     results,
     policy: "latest",
+    attemptsUsed: priorQuizAttempts + 1,
+    maxAttempts: MAX_QUIZ_ATTEMPTS,
   });
 }

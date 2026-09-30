@@ -40,6 +40,7 @@ export function Grade6ClassroomHub({
   courses,
   liveSessions,
   todayNotes,
+  gradeLabelText = "Grade 6",
 }: {
   studentName: string;
   done: number;
@@ -50,6 +51,8 @@ export function Grade6ClassroomHub({
   courses: Grade6CourseCard[];
   liveSessions: Grade6LiveSession[];
   todayNotes: string[];
+  /** e.g. "Grade 7" — shown in the classroom hero. */
+  gradeLabelText?: string;
 }) {
   const firstName = studentName.split(" ")[0] || studentName;
   const encouragement = grade6Encouragement(done, total);
@@ -62,7 +65,7 @@ export function Grade6ClassroomHub({
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="min-w-0 flex-1">
             <p className="text-sm font-semibold uppercase tracking-wide text-emerald-800">
-              {brand.shortName} · Grade 6 classroom
+              {brand.shortName} · {gradeLabelText} Classroom
             </p>
             <h2 className="mt-1 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               👋 Hi, {firstName}!
