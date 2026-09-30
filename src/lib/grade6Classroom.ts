@@ -6,7 +6,8 @@
 export const GRADE_6 = 6 as const;
 
 /** True for immersive classroom UI (all grades). */
-export function isGrade6Classroom(_grade?: number | null): boolean {
+export function isGrade6Classroom(grade?: number | null): boolean {
+  void grade; // immersive chrome is enabled for every grade
   return true;
 }
 
