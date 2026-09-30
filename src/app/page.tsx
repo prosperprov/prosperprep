@@ -114,7 +114,7 @@ export default function HomePage() {
           </Link>{" "}
           or{" "}
           <Link href="/courses" className="text-emerald-800 underline">
-            course catalog
+            Course Catalog
           </Link>
           .
         </p>
