@@ -13,18 +13,19 @@ export function AskYourTeacher({
   resolution,
   courseId,
   courseTitle,
+  lessonId,
   lessonOrder,
   lessonTitle,
 }: {
   resolution: LessonTeacherResolution;
   courseId: string;
   courseTitle: string;
+  lessonId: string;
   lessonOrder: number;
   lessonTitle: string;
 }) {
   const [open, setOpen] = useState(false);
-  const subject = `Lesson ${lessonOrder}: ${lessonTitle}`.slice(0, 200);
-  const starter = `I'm on ${courseTitle}, Lesson ${lessonOrder}: ${lessonTitle}.\n\n`;
+  const subject = `${courseTitle} · Lesson ${lessonOrder}: ${lessonTitle}`.slice(0, 200);
 
   return (
     <>
@@ -68,8 +69,8 @@ export function AskYourTeacher({
                 initialRecipientId={resolution.teacher.id}
                 lockRecipient
                 initialSubject={subject}
-                initialBody={starter}
                 courseId={courseId}
+                lessonId={lessonId}
                 threadBase="/dashboard/student/messages"
                 onDone={() => setOpen(false)}
               />

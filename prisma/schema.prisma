@@ -131,6 +131,7 @@ model Lesson {
   questions Question[]
   attempts  Attempt[]
   writtenSubmissions WrittenSubmission[]
+  messageThreads MessageThread[]
 }
 
 model LiveSession {
@@ -305,18 +306,22 @@ model MessageThread {
   type        String
   createdById String
   courseId    String?
+  /// Set when the thread was opened from Ask your teacher. Not a message body.
+  lessonId    String?
   grade       Int?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
   createdBy    User                @relation("ThreadCreator", fields: [createdById], references: [id], onDelete: Cascade)
   course       Course?             @relation(fields: [courseId], references: [id], onDelete: SetNull)
+  lesson       Lesson?             @relation(fields: [lessonId], references: [id], onDelete: SetNull)
   participants ThreadParticipant[]
   messages     Message[]
 
   @@index([createdById])
   @@index([type, grade])
   @@index([courseId])
+  @@index([lessonId])
 }
 
 model ThreadParticipant {

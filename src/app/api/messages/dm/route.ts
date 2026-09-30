@@ -9,6 +9,8 @@ import {
   markThreadRead,
   notifyMessageRecipients,
 } from "@/lib/messaging";
+import { canAccessCourseContent } from "@/lib/curriculumAccess";
+import { studentMessageBody } from "@/lib/studentMessageBody";
 
 export const dynamic = "force-dynamic";
 
@@ -17,6 +19,7 @@ const schema = z.object({
   body: z.string().trim().min(1).max(8000),
   subject: z.string().trim().min(1).max(200).optional(),
   courseId: z.string().trim().min(1).max(64).optional(),
+  lessonId: z.string().trim().min(1).max(64).optional(),
 });
 
 /** Start or continue a DM (teacher↔student or student↔student same grade). */
@@ -32,13 +35,49 @@ export async function POST(req: Request) {
 
   try {
     const data = schema.parse(await req.json());
+    const body = studentMessageBody(data.body);
+    if (!body) {
+      return NextResponse.json(
+        { error: "Write your question. Lesson location is not sent as a message." },
+        { status: 400 }
+      );
+    }
     const gate = await assertCanMessageUser(session.user.id, role, data.recipientId);
     if (!gate.ok) {
       return NextResponse.json({ error: gate.error }, { status: gate.status });
     }
 
     let courseId: string | undefined;
-    if (data.courseId) {
+    let lessonId: string | undefined;
+    let subject = data.subject;
+    if (data.lessonId) {
+      const lesson = await prisma.lesson.findUnique({
+        where: { id: data.lessonId },
+        select: {
+          id: true,
+          title: true,
+          order: true,
+          courseId: true,
+          course: { select: { id: true, title: true, grade: true } },
+        },
+      });
+      if (!lesson) {
+        return NextResponse.json({ error: "Lesson not found" }, { status: 400 });
+      }
+      const access = await canAccessCourseContent({
+        userId: session.user.id,
+        role,
+        courseGrade: lesson.course.grade,
+      });
+      if (!access.ok) {
+        return NextResponse.json({ error: access.reason }, { status: 403 });
+      }
+      courseId = lesson.courseId;
+      lessonId = lesson.id;
+      subject =
+        data.subject ||
+        `${lesson.course.title} · Lesson ${lesson.order}: ${lesson.title}`.slice(0, 200);
+    } else if (data.courseId) {
       const course = await prisma.course.findUnique({
         where: { id: data.courseId },
         select: { id: true },
@@ -49,15 +88,16 @@ export async function POST(req: Request) {
     const thread = await findOrCreateDmThread({
       actorId: session.user.id,
       otherId: data.recipientId,
-      subject: data.subject,
+      subject,
       courseId,
+      lessonId,
     });
 
     const message = await prisma.message.create({
       data: {
         threadId: thread.id,
         senderId: session.user.id,
-        body: data.body,
+        body,
       },
     });
 
@@ -72,7 +112,7 @@ export async function POST(req: Request) {
       senderName: session.user.name,
       subject: thread.subject,
       threadId: thread.id,
-      preview: data.body,
+      preview: body,
     });
 
     return NextResponse.json({

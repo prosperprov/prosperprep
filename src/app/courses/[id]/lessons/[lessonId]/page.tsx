@@ -95,6 +95,7 @@ export default async function LessonPage({
       resolution={teacherResolution}
       courseId={course.id}
       courseTitle={course.title}
+      lessonId={lesson.id}
       lessonOrder={lesson.order}
       lessonTitle={lesson.title}
     />

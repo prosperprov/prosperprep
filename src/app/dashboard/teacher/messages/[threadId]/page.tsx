@@ -4,7 +4,9 @@ import { prisma } from "@/lib/prisma";
 import { DashboardShell } from "@/components/DashboardShell";
 import { teacherDashNav } from "@/lib/dashboardNav";
 import { ThreadViewClient } from "@/components/messaging/ThreadViewClient";
+import { LessonAskPanel } from "@/components/messaging/LessonAskPanel";
 import { markThreadRead, userIsParticipant } from "@/lib/messaging";
+import { loadLessonAskContextForThread } from "@/lib/lessonAskContext";
 import { brand } from "@/config/brand";
 
 export const dynamic = "force-dynamic";
@@ -38,6 +40,7 @@ export default async function TeacherThreadPage({
   if (!thread) notFound();
 
   await markThreadRead(params.threadId, session.user.id);
+  const lessonContext = await loadLessonAskContextForThread(params.threadId);
 
   return (
     <DashboardShell
@@ -45,6 +48,7 @@ export default async function TeacherThreadPage({
       subtitle={brand.shortName}
       nav={teacherDashNav()}
     >
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_18rem]">
       <ThreadViewClient
         threadId={thread.id}
         subject={thread.subject}
@@ -58,6 +62,8 @@ export default async function TeacherThreadPage({
           sender: m.sender,
         }))}
       />
+      {lessonContext ? <LessonAskPanel context={lessonContext} /> : null}
+      </div>
     </DashboardShell>
   );
 }
