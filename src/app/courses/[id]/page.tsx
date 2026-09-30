@@ -204,6 +204,20 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
         </Link>
       )}
 
+      {g6 && staffBypass && (
+        <div
+          role="status"
+          className="mb-4 rounded-2xl border-2 border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950"
+        >
+          <p className="font-semibold">Staff preview — units unlocked for you</p>
+          <p className="mt-1 text-amber-900">
+            Admins and teachers can open every unit while browsing. Students still follow sequential
+            unlock (finish Unit N lessons or pass the Unit Check at 60%+). Use Super Admin → Unit
+            unlock to open units ahead for a specific student.
+          </p>
+        </div>
+      )}
+
       <h2 className={`font-semibold text-slate-900 ${g6 ? "text-xl" : "text-lg"}`}>
         {g6 ? "Year path · Units" : "Lesson plan"}
       </h2>
