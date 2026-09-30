@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
+import { formatLessonDurationLabel } from "@/lib/format-duration";
 
 /**
  * Lesson YouTube embed with Prosper Prep branded cover.
@@ -99,24 +100,22 @@ export function youtubeEmbedUrl(
   return `https://www.youtube.com/embed/${id}?${params.toString()}`;
 }
 
-function formatDurationLabel(minutes: number | null | undefined): string | null {
-  if (minutes == null || !Number.isFinite(minutes) || minutes <= 0) return null;
-  const m = Math.round(minutes);
-  return m === 1 ? "1 min" : `${m} min`;
-}
 
 export function LessonVideo({
   videoUrl,
   title = "Lesson video",
   posterUrl,
   durationMin,
+  videoDurationSec,
 }: {
   videoUrl: string;
   title?: string;
   /** Branded poster; when set, YouTube/Khan thumbnails are never shown */
   posterUrl?: string | null;
-  /** Lesson/video length in minutes (from Lesson.durationMin). */
+  /** Rounded minutes fallback when exact seconds are unknown. */
   durationMin?: number | null;
+  /** Exact YouTube length in seconds — preferred for M:SS badge. */
+  videoDurationSec?: number | null;
 }) {
   const id = useMemo(() => extractYouTubeId(videoUrl), [videoUrl]);
   const [playing, setPlaying] = useState(false);
@@ -181,7 +180,7 @@ export function LessonVideo({
   if (!id) return null;
 
   const poster = posterUrl?.trim() || null;
-  const durationLabel = formatDurationLabel(durationMin);
+  const durationLabel = formatLessonDurationLabel({ videoDurationSec, durationMin });
 
   return (
     <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-sm">

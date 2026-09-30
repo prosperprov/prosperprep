@@ -7,6 +7,7 @@ import { Markdown } from "@/components/Markdown";
 import { MarkCompleteButton } from "@/components/MarkCompleteButton";
 import { LessonQuiz } from "@/components/LessonQuiz";
 import { LessonVideo } from "@/components/LessonVideo";
+import { formatLessonDurationLabel } from "@/lib/format-duration";
 import { WrittenResponseForm } from "@/components/WrittenResponseForm";
 import { parseWrittenPrompts } from "@/lib/writtenPrompts";
 import { LESSON_WEIGHT, SECTION_WEIGHT } from "@/lib/grading";
@@ -308,7 +309,7 @@ export default async function LessonPage({
           </div>
 
           <p className="mt-4 text-sm font-medium text-emerald-800">
-            {course.subject} · {gradeLabel(course.grade)} · {lesson.durationMin} min ·{" "}
+            {course.subject} · {gradeLabel(course.grade)} · {formatLessonDurationLabel({ videoDurationSec: lesson.videoDurationSec, durationMin: lesson.durationMin }) ?? `${lesson.durationMin} min`} ·{" "}
             {grade6UnitLabel(lesson.sectionKey, g6UnitTotal, course.subject)}
           </p>
           <h1 className="mt-1 text-3xl font-bold text-slate-900">{lesson.title}</h1>
@@ -352,7 +353,7 @@ export default async function LessonPage({
         <>
           <p className="text-base text-slate-700">{lesson.description}</p>
           <p className="mt-2 text-sm font-medium text-slate-500">
-            {lesson.durationMin} min · {grade6UnitLabel(lesson.sectionKey, g6UnitTotal, course.subject)}
+            {formatLessonDurationLabel({ videoDurationSec: lesson.videoDurationSec, durationMin: lesson.durationMin }) ?? `${lesson.durationMin} min`} · {grade6UnitLabel(lesson.sectionKey, g6UnitTotal, course.subject)}
           </p>
         </>
       )}
@@ -368,6 +369,7 @@ export default async function LessonPage({
             title={lesson.title}
             posterUrl={lessonPosterUrl(lesson.title, course.grade)}
             durationMin={lesson.durationMin}
+            videoDurationSec={lesson.videoDurationSec}
           />
         </div>
       ) : null}
@@ -410,6 +412,7 @@ export default async function LessonPage({
             title={lesson.title}
             posterUrl={lessonPosterUrl(lesson.title, course.grade)}
             durationMin={lesson.durationMin}
+            videoDurationSec={lesson.videoDurationSec}
           />
         </div>
       ) : null}

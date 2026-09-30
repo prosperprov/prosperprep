@@ -121,6 +121,8 @@ model Lesson {
   objectives  String @default("")
   order       Int    @default(0)
   durationMin Int    @default(30)
+  /// Exact YouTube (or equivalent) video length in seconds when known; drives M:SS labels
+  videoDurationSec Int?
   /// Section grouping key, e.g. "section-1" (lessons 1–3)
   sectionKey  String @default("section-1")
   /// Optional YouTube (or equivalent) lesson video URL for iframe embed

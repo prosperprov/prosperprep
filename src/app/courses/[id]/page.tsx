@@ -11,6 +11,7 @@ import { Grade6UnitAccordion } from "@/components/grade6/Grade6UnitAccordion";
 import { isRetiredSection } from "@/lib/grade6Classroom";
 import { UNIT_UNLOCK_RULE_SUMMARY } from "@/lib/unitUnlock";
 import { resolveMaxUnlockedUnit } from "@/lib/resolveUnitUnlock";
+import { formatLessonDurationLabel } from "@/lib/format-duration";
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +28,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
           description: true,
           order: true,
           durationMin: true,
+          videoDurationSec: true,
           sectionKey: true,
         },
       },
@@ -232,6 +234,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
             description: l.description,
             order: l.order,
             durationMin: l.durationMin,
+            videoDurationSec: l.videoDurationSec,
             sectionKey: l.sectionKey,
           }))}
           quizzes={course.quizzes
@@ -295,7 +298,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
                             g6 ? "px-3 py-1 text-sm font-semibold" : ""
                           }`}
                         >
-                          {lesson.durationMin} min
+                          {formatLessonDurationLabel({ videoDurationSec: lesson.videoDurationSec, durationMin: lesson.durationMin }) ?? `${lesson.durationMin} min`}
                         </span>
                       </div>
                       {g6 && (
