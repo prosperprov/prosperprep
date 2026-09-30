@@ -3,14 +3,16 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 /**
- * Lesson YouTube embed.
+ * Lesson YouTube embed with Prosper Prep branded cover.
  *
- * Mobile (iOS Safari especially) will not start playback when:
- * - controls=0 hides the only play button, and
- * - autoplay=1&mute=0 is blocked because the iframe is created after the tap, and
- * - pointer-events overlays cover the player so a second tap never reaches YouTube.
- * On phones we mount the iframe immediately with controls=1 and playsinline=1
- * so the student's tap lands on YouTube's own play button (a real user gesture).
+ * Desktop: branded poster → tap → controls=1 embed with autoplay.
+ *
+ * Mobile (iOS Safari especially): show the same branded poster first.
+ * On tap, swap to a native YouTube embed with controls=1 and playsinline=1
+ * (no autoplay, no controls=0, no pointer-blocking overlays). The student's
+ * next tap lands on YouTube's own play button — a real user gesture.
+ * Unmuted autoplay after an async iframe mount is rejected on iOS and left
+ * a dead player; controls=0 hid the only play affordance.
  */
 
 const MOBILE_PLAYER_QUERY = "(max-width: 767px), (pointer: coarse)";
@@ -98,28 +100,28 @@ export function LessonVideo({
 }) {
   const id = useMemo(() => extractYouTubeId(videoUrl), [videoUrl]);
   const [playing, setPlaying] = useState(false);
-  // null until mounted so SSR and hydration both show the poster, then phones
-  // switch to the native player before the user can tap a dead poster.
-  const [nativePlayer, setNativePlayer] = useState(false);
+  // Phones skip autoplay after the poster tap; desktop may autoplay.
+  const [isMobile, setIsMobile] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useLayoutEffect(() => {
     const mq = window.matchMedia(MOBILE_PLAYER_QUERY);
-    const apply = () => setNativePlayer(mq.matches);
+    const apply = () => setIsMobile(mq.matches);
     apply();
     mq.addEventListener("change", apply);
     return () => mq.removeEventListener("change", apply);
   }, []);
 
-  const showIframe = nativePlayer || playing;
-  // Autoplay only after an explicit poster click on desktop. Phones use YouTube's button.
+  // Poster until the student taps; then mount the iframe (never auto-mount on phones).
+  const showIframe = playing;
+  // Autoplay only after an explicit poster click on desktop. Phones get YouTube's button.
   const embed = useMemo(
     () =>
       id && showIframe
-        ? youtubeEmbedUrl(videoUrl, { autoplay: playing && !nativePlayer })
+        ? youtubeEmbedUrl(videoUrl, { autoplay: playing && !isMobile })
         : null,
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [id, videoUrl, playing, nativePlayer, showIframe]
+    [id, videoUrl, playing, isMobile, showIframe]
   );
 
   useEffect(() => {
@@ -147,7 +149,8 @@ export function LessonVideo({
       </div>
       <div
         className="relative aspect-video w-full overflow-hidden bg-black"
-        data-lesson-video-mode={nativePlayer ? "native" : showIframe ? "playing" : "poster"}
+        data-lesson-video-mode={showIframe ? (isMobile ? "mobile-playing" : "playing") : "poster"}
+        data-lesson-video-mobile={isMobile ? "1" : "0"}
       >
         {showIframe && embed ? (
           <iframe
