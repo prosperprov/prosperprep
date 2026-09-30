@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { brand, pricingCopy } from "@/config/brand";
 import { BookOpen, Calendar, Users, ShieldCheck, Trophy, GraduationCap } from "lucide-react";
-import { MvpBanner } from "@/components/MvpBanner";
-import { mvpCatalog } from "@/config/brand";
 
 export default function HomePage() {
   return (
@@ -24,8 +22,7 @@ export default function HomePage() {
               <a href={brand.marketingSite} className="underline hover:text-white" target="_blank" rel="noreferrer">
                 prosperprep.org
               </a>
-              . Catalog status: <strong className="text-white">{mvpCatalog.label}</strong> — not yet a
-              full-year credit map.
+              .
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -77,9 +74,6 @@ export default function HomePage() {
             Center, Tutoring, or Community Engagement on our main site?{" "}
             <strong className="text-slate-900">This app is the missing school login and online classroom.</strong>
           </p>
-          <div className="mx-auto mt-6 max-w-3xl">
-            <MvpBanner />
-          </div>
         </div>
       </section>
 
@@ -88,8 +82,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-slate-900">Monthly online school paths</h2>
           <p className="mt-2 text-slate-600">
             Serious academics, athletic pathway prep, and entrepreneurship — clear nonprofit pricing
-            ($99 / $129 / $159). Curriculum ships as Foundations / MVP modules while we deepen Grade 10
-            showcase courses.
+            ($99 / $129 / $159).
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">

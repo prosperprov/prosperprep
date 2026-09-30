@@ -1,7 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import type { Metadata } from "next";
 import { brand } from "@/config/brand";
-import { MvpBanner } from "@/components/MvpBanner";
 import { CourseCatalog } from "@/components/CourseCatalog";
 import { getSession } from "@/lib/auth";
 import { catalogGradeFilter } from "@/lib/curriculumAccess";
@@ -45,10 +44,8 @@ export default async function CoursesPage() {
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="text-3xl font-bold text-slate-900">Course catalog</h1>
       <p className="mt-2 max-w-2xl text-slate-600">
-        {brand.name} Foundations / MVP modules: core K–12 subjects plus ACT/SAT, athletics,
-        entrepreneurship & financial independence, and Bible study (Hallelujah Scriptures &
-        Paleo-Hebrew). Grade 10 showcase courses are expanding toward deeper modules; most courses
-        still ship as starter modules — not yet a full-year credit map.
+        {brand.name}: core K–12 subjects plus ACT/SAT, athletics, entrepreneurship & financial
+        independence, and Bible study (Hallelujah Scriptures & Paleo-Hebrew).
       </p>
       {session?.user?.role === "STUDENT" && gradeFilter.mode === "grades" && (
         <p className="mt-3 text-sm text-emerald-900">
@@ -65,9 +62,6 @@ export default async function CoursesPage() {
           for your grade to unlock courses.
         </div>
       )}
-      <div className="mt-6">
-        <MvpBanner />
-      </div>
       <CourseCatalog courses={catalog} />
     </div>
   );

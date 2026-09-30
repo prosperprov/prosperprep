@@ -1,4 +1,4 @@
-import { brand, mvpCatalog, pricingCopy } from "@/config/brand";
+import { brand, pricingCopy } from "@/config/brand";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -24,13 +24,11 @@ export default function TermsPage() {
           </p>
         </section>
         <section>
-          <h2 className="text-xl font-semibold text-slate-900">Educational service / MVP catalog</h2>
+          <h2 className="text-xl font-semibold text-slate-900">Educational service</h2>
           <p className="mt-2">
-            The catalog is currently labeled <strong>{mvpCatalog.label}</strong>. Modules are
-            teachable and graded for demonstration and soft-launch use; they are{" "}
-            <strong>not yet a complete full-year credit map</strong>. We expand depth over time per
-            our published roadmap. Do not treat starter modules as accreditation or NCAA eligibility
-            certification.
+            {brand.name} provides online K–12 lessons, assessments, and live sessions through this
+            portal. Coursework here is school instruction. It does not by itself confer accreditation
+            or NCAA eligibility.
           </p>
         </section>
         <section>
@@ -45,10 +43,9 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-slate-900">Tuition</h2>
           <p className="mt-2">
             Published monthly paths: Elementary ${pricingCopy.elementary.price}, Middle $
-            {pricingCopy.middle.price}, High ${pricingCopy.high.price}. When Stripe is not
-            configured, demo enrollment activates access without charge for testing. Real billing
-            requires Stripe Checkout; refunds and cancellations follow the processor and school
-            policies communicated at purchase.
+            {pricingCopy.middle.price}, High ${pricingCopy.high.price}. Tuition is billed through
+            secure checkout. Refunds and cancellations follow the processor and school policies
+            communicated at purchase.
           </p>
         </section>
         <section>

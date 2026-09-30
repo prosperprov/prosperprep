@@ -69,7 +69,6 @@ export default async function ParentDashboard() {
                   {" · "}
                   Enrollment:{" "}
                   <strong>{active ? `Active (${active.plan.name})` : "None active"}</strong>
-                  {active?.demoMode ? " · demo mode" : ""}
                 </p>
                 <p className="mt-1 text-sm text-slate-500">
                   Progress markers: {child.progress.filter((p) => p.completed).length} lessons
@@ -87,7 +86,7 @@ export default async function ParentDashboard() {
           })}
           {links.length === 0 && (
             <p className="text-sm text-slate-500">
-              No linked students yet. Demo parent is linked to the demo student after seed.
+              No linked students yet.
             </p>
           )}
         </div>

@@ -16,7 +16,7 @@ export async function POST() {
 
   if (!stripeConfigured()) {
     return NextResponse.json(
-      { error: "Stripe is not configured (demo mode)" },
+      { error: "Billing portal is not available." },
       { status: 501 }
     );
   }

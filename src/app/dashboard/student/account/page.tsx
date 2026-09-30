@@ -40,7 +40,6 @@ export default async function StudentAccountPage() {
         {active && (
           <p className="text-sm text-slate-600">
             Active plan: <strong className="text-slate-900">{active.plan.name}</strong>
-            {active.demoMode ? " (demo mode)" : ""}
             {active.scholarship ? " · scholarship" : ""}.
           </p>
         )}

@@ -319,12 +319,6 @@ export default async function StudentDashboard() {
         </div>
       )}
 
-      {active?.demoMode && (
-        <div className="mb-6 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
-          Enrollment is <strong>active in demo mode</strong> (no Stripe charge). Plan:{" "}
-          {active.plan.name}.
-        </div>
-      )}
 
       {grade6 ? (
         <Grade6ClassroomHub

@@ -4,8 +4,7 @@ import { FormEvent, useEffect, useState } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { brand, pricingCopy, mvpCatalog } from "@/config/brand";
-import { MvpBanner } from "@/components/MvpBanner";
+import { brand, pricingCopy } from "@/config/brand";
 
 const grades = [
   { value: 0, label: "Kindergarten", band: "elementary" as const },
@@ -104,13 +103,8 @@ export default function EnrollPage() {
     <div className="mx-auto max-w-3xl px-4 py-12">
       <h1 className="text-3xl font-bold text-slate-900">Enroll at {brand.name}</h1>
       <p className="mt-2 text-slate-600">
-        Pick a grade, create your school account, and start a monthly online path. Current catalog:{" "}
-        <strong>{mvpCatalog.label}</strong> — teachable starter modules with a published roadmap for
-        deeper lessons (not yet a full-year credit map). Tuition: $99 / $129 / $159.
+        Pick a grade, create your school account, and start a monthly online path. Tuition: $99 / $129 / $159.
       </p>
-      <div className="mt-4">
-        <MvpBanner compact />
-      </div>
       {message && (
         <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
           {message}
