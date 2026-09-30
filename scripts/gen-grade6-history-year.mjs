@@ -3,9 +3,17 @@
  * Original Prosper Prep prose; age-trimmed world + Texas spine; open-curriculum map = sequencing only.
  * Family/faith-compatible: academically neutral; no LGBTQ/transgender themes in examples or framing.
  * Run: node scripts/gen-grade6-history-year.mjs
+ *
+ * HARD RULE: Teach layers are HAND-AUTHORED in scripts/data/grade6-history-hand-teach.json
+ * (built by scripts/build-esh-hand-rewrites.mjs). Merge hand packs; never Mad-Lib overwrite.
  */
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
+
+/** Hand teach packs (migration 0019). Never Mad-Lib overwrite when present. */
+const HAND_TEACH = existsSync("scripts/data/grade6-history-hand-teach.json")
+  ? JSON.parse(readFileSync("scripts/data/grade6-history-hand-teach.json", "utf8"))
+  : {};
 
 const COURSE_ID = "cmuh9bwwo041bedan1gymikl1";
 const UNIT_TOTAL = 9;
@@ -562,6 +570,41 @@ for (const unit of UNITS) {
     globalOrder += 1;
     const sectionKey = `unit-${unit.n}`;
     const id = stableId(`u${String(unit.n).padStart(2, "0")}-l${String(idx + 1).padStart(2, "0")}-${title}`);
+    const handKey = `${unit.n}|${title}`;
+    if (HAND_TEACH[handKey]) {
+      const pack = HAND_TEACH[handKey];
+      const items = pack.independent || [];
+      let indep = `## Independent practice\n\nComplete each item. Show your thinking.\n\n`;
+      items.forEach((it, i) => {
+        indep += `${i + 1}. ${it.q}\n`;
+      });
+      indep += `\n### Answer key (try first)\n\n`;
+      items.forEach((it, i) => {
+        indep += `${i + 1}. ${it.a}\n`;
+      });
+      const header = `# ${title}\n\n*Grade 6 World History · Unit ${unit.n} of 9 · ${unit.title} · Lesson ${idx + 1}*\n\n`;
+      const content = `${header}${pack.teach_core.trim()}\n\n${indep.trim()}\n\n${pack.exit.trim()}\n`;
+      allLessons.push({
+        id,
+        unit: unit.n,
+        unitTitle: unit.title,
+        title,
+        description: pack.description || desc,
+        objectives: pack.objectives,
+        content,
+        order: globalOrder,
+        durationMin: 40,
+        sectionKey,
+        questions: (pack.questions || []).map((q, qi) => ({
+          prompt: q.prompt,
+          choices: q.choices,
+          correctIndex: q.correctIndex,
+          explanation: q.explanation,
+          order: qi + 1,
+        })),
+      });
+      return;
+    }
     const content = buildLessonBody(unit, title, desc, idx + 1);
     const objectives = [
       `• ${desc}`,

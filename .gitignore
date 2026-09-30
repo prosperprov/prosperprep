@@ -50,3 +50,4 @@ demo-shots/
 
 # Generated SQL fragments (assembled into migrations/0007+)
 scripts/generated/
+scripts/data/hand-author/__pycache__/

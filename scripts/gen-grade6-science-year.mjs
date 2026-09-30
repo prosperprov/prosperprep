@@ -2,9 +2,17 @@
  * Generate Grade 6 Science full-year content (10 TEKS units) + D1 migration SQL.
  * Original Prosper Prep prose; NASA/USGS PD + CKSci-aligned scope; Khan TX map = sequencing only.
  * Run: node scripts/gen-grade6-science-year.mjs
+ *
+ * HARD RULE: Teach layers are HAND-AUTHORED in scripts/data/grade6-science-hand-teach.json
+ * (built by scripts/build-esh-hand-rewrites.mjs). Merge hand packs; never Mad-Lib overwrite.
  */
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
+
+/** Hand teach packs (migration 0018). Never Mad-Lib overwrite when present. */
+const HAND_TEACH = existsSync("scripts/data/grade6-science-hand-teach.json")
+  ? JSON.parse(readFileSync("scripts/data/grade6-science-hand-teach.json", "utf8"))
+  : {};
 
 const COURSE_ID = "cmuh9bwv803vyedanwfbbyd4j";
 const UNIT_TOTAL = 10;
@@ -576,6 +584,41 @@ for (const unit of UNITS) {
     globalOrder += 1;
     const sectionKey = `unit-${unit.n}`;
     const id = stableId(`u${String(unit.n).padStart(2, "0")}-l${String(idx + 1).padStart(2, "0")}-${title}`);
+    const handKey = `${unit.n}|${title}`;
+    if (HAND_TEACH[handKey]) {
+      const pack = HAND_TEACH[handKey];
+      const items = pack.independent || [];
+      let indep = `## Independent practice\n\nComplete each item. Show your thinking.\n\n`;
+      items.forEach((it, i) => {
+        indep += `${i + 1}. ${it.q}\n`;
+      });
+      indep += `\n### Answer key (try first)\n\n`;
+      items.forEach((it, i) => {
+        indep += `${i + 1}. ${it.a}\n`;
+      });
+      const header = `# ${title}\n\n*Grade 6 Science · Unit ${unit.n} of 10 · ${unit.title} · Lesson ${idx + 1}*\n\n`;
+      const content = `${header}${pack.teach_core.trim()}\n\n${indep.trim()}\n\n${pack.exit.trim()}\n`;
+      allLessons.push({
+        id,
+        unit: unit.n,
+        unitTitle: unit.title,
+        title,
+        description: pack.description || desc,
+        objectives: pack.objectives,
+        content,
+        order: globalOrder,
+        durationMin: 40,
+        sectionKey,
+        questions: (pack.questions || []).map((q, qi) => ({
+          prompt: q.prompt,
+          choices: q.choices,
+          correctIndex: q.correctIndex,
+          explanation: q.explanation,
+          order: qi + 1,
+        })),
+      });
+      return;
+    }
     const content = buildLessonBody(unit, title, desc, idx + 1);
     const objectives = [
       `• ${desc}`,

@@ -1,0 +1,845 @@
+{
+  "unit-1": [
+    {
+      "id": "ppg6h3cbf4a597039eeb2b5de",
+      "title": "Reading Maps: Keys and Directions",
+      "description": "Use map keys, compass directions, and scale to locate places accurately.",
+      "order": 1,
+      "questionIds": [
+        "ppg6h6b46c375a0412dcdebc3",
+        "ppg6h362bf8a722a1c14c3e8f",
+        "ppg6h8ec34e54e266ef1dfbe9"
+      ]
+    },
+    {
+      "id": "ppg6h5f2d2a3a429b36f92100",
+      "title": "Latitude, Longitude, and Globes",
+      "description": "Explain how latitude and longitude form a grid for locating places on Earth.",
+      "order": 2,
+      "questionIds": [
+        "ppg6h40a032cbff88563ab885",
+        "ppg6h56bed5a0c273da59e227",
+        "ppg6hbc1b411079ed4150e6ea"
+      ]
+    },
+    {
+      "id": "ppg6hdc2b679b7d93fd6fda78",
+      "title": "Physical vs Political Maps",
+      "description": "Compare what physical and political maps emphasize and when to choose each.",
+      "order": 3,
+      "questionIds": [
+        "ppg6h9362387452c6e52b9cc9",
+        "ppg6h1e7ac27eb7b4665ba8f9",
+        "ppg6hcdcface6dcd7a7d50bee"
+      ]
+    },
+    {
+      "id": "ppg6h668d6b5319dc149332e4",
+      "title": "Regions and Human Geography",
+      "description": "Define regions by physical and human characteristics with clear examples.",
+      "order": 4,
+      "questionIds": [
+        "ppg6h96580f5c6e1d590ffc63",
+        "ppg6h5e59b133fcfac22aa76b",
+        "ppg6hb12ef2d2755917b213e7"
+      ]
+    },
+    {
+      "id": "ppg6h27a34b2e5453545ae67a",
+      "title": "Climate, Landforms, and Settlement",
+      "description": "Connect climate and landforms to where communities historically settle.",
+      "order": 5,
+      "questionIds": [
+        "ppg6hc118e5a91ce88c341de5",
+        "ppg6hf99a8aeb50dd30ad9927",
+        "ppg6h79e0aef20df13c62e4c9"
+      ]
+    },
+    {
+      "id": "ppg6h1ac1904d016510303be9",
+      "title": "Trade Routes on a Map",
+      "description": "Trace a historic trade route and explain why geography shaped its path.",
+      "order": 6,
+      "questionIds": [
+        "ppg6ha361cc573fd48eb92a69",
+        "ppg6h8426e729fa2283443a95",
+        "ppg6h55ba36ef203ff7049fb5"
+      ]
+    },
+    {
+      "id": "ppg6h73daac8488d99bed8661",
+      "title": "Primary Sources: Maps as Evidence",
+      "description": "Treat historic maps as sources: what they show, omit, and why that matters.",
+      "order": 7,
+      "questionIds": [
+        "ppg6he9b647f4f5eed0ac7711",
+        "ppg6h46712b3a373f065a0be8",
+        "ppg6hd84784b77fcf4d86cacd"
+      ]
+    },
+    {
+      "id": "ppg6h078ece05774b6ac2fa73",
+      "title": "Texas on the Map",
+      "description": "Locate Texas relative to continents, oceans, and neighboring regions.",
+      "order": 8,
+      "questionIds": [
+        "ppg6hb0d629453067274c4e85",
+        "ppg6h3e6a09df09412e35f05d",
+        "ppg6h64e5f3353b6db7032c68"
+      ]
+    },
+    {
+      "id": "ppg6h100c5136c728dcde1f57",
+      "title": "Geography Unit Synthesis",
+      "description": "Explain one historical pattern using maps, regions, and geographic vocabulary.",
+      "order": 9,
+      "questionIds": [
+        "ppg6ha726f5db9405690b0d96",
+        "ppg6h680ce1ce19f490141378",
+        "ppg6h6ae6b9351d8139dba9f0"
+      ]
+    }
+  ],
+  "unit-2": [
+    {
+      "id": "ppg6hfb0a5c53f7d3c5e9611d",
+      "title": "What Historians Can Know About Deep Time",
+      "description": "Distinguish evidence-based claims from guesses about early human history.",
+      "order": 10,
+      "questionIds": [
+        "ppg6h7cdf72cc1e1f1f3c8c85",
+        "ppg6h0dbe8ae2aaca09b31b44",
+        "ppg6h1cf9c539988083119f09"
+      ]
+    },
+    {
+      "id": "ppg6h733657ec49b181ce30e8",
+      "title": "Foraging Lifeways",
+      "description": "Describe foraging communities and the skills they needed to survive.",
+      "order": 11,
+      "questionIds": [
+        "ppg6ha30b37cc9467b07f791b",
+        "ppg6hf04b09863b8f6bc88419",
+        "ppg6h187a4d31b594365e0f20"
+      ]
+    },
+    {
+      "id": "ppg6heed534fdb297ea263059",
+      "title": "The Agricultural Revolution",
+      "description": "Explain how farming changed food supply, settlement, and daily work.",
+      "order": 12,
+      "questionIds": [
+        "ppg6h472e0182c028778a79e8",
+        "ppg6had7a7f741cccf272132a",
+        "ppg6hb4d2942de00894b0b29d"
+      ]
+    },
+    {
+      "id": "ppg6h9798a98ac86864ec6130",
+      "title": "Domestication of Plants and Animals",
+      "description": "Define domestication and give examples that reshaped human societies.",
+      "order": 13,
+      "questionIds": [
+        "ppg6h5ecfc2e123f382c0b095",
+        "ppg6h6a6546aca0ae759f972b",
+        "ppg6h772eefd96dbd3a2ced7e"
+      ]
+    },
+    {
+      "id": "ppg6hbaffa6e71f60ea42eb33",
+      "title": "From Camps to Villages",
+      "description": "Trace how surplus food supported larger, more permanent settlements.",
+      "order": 14,
+      "questionIds": [
+        "ppg6h50296f0e464b63dac464",
+        "ppg6h439b86f2d266ffb95096",
+        "ppg6h13f465f0fc9af68858af"
+      ]
+    },
+    {
+      "id": "ppg6h291e25febb844af77701",
+      "title": "Specialization and New Jobs",
+      "description": "Connect farming surplus to specialized roles (craft, trade, leadership).",
+      "order": 15,
+      "questionIds": [
+        "ppg6h03c697962ca55818a795",
+        "ppg6hafeee1874fb9c77198f6",
+        "ppg6ha3421f984a4901f3ce89"
+      ]
+    },
+    {
+      "id": "ppg6h3b14206be575c3576502",
+      "title": "Technology and Tools Over Time",
+      "description": "Interpret simple tool changes as evidence of problem-solving, not \u201csmarter vs less smart.\u201d",
+      "order": 16,
+      "questionIds": [
+        "ppg6hfdff1717e5235831a838",
+        "ppg6hdd7fdf2f42a0c7bdefca",
+        "ppg6h7953f3a705902de840ca"
+      ]
+    },
+    {
+      "id": "ppg6h049b765a9dcfee68a092",
+      "title": "Early Humans Unit Review",
+      "description": "Argue with evidence how farming transformed human communities.",
+      "order": 17,
+      "questionIds": [
+        "ppg6h72e6cb542ff2608d726b",
+        "ppg6h78f007fddb836e9c70dc",
+        "ppg6hb23c2d0ca1998ed42592"
+      ]
+    }
+  ],
+  "unit-3": [
+    {
+      "id": "ppg6h727fb40f7bcdda7ba272",
+      "title": "Why Rivers Matter",
+      "description": "Explain why major early civilizations clustered along fertile river valleys.",
+      "order": 18,
+      "questionIds": [
+        "ppg6h4e9bc1bf4ce178322d7d",
+        "ppg6hddb308a35343e8031b99",
+        "ppg6hcfe6d471b0a5e3e335d0"
+      ]
+    },
+    {
+      "id": "ppg6h5dd7fee6932d411ccd10",
+      "title": "Mesopotamia: Cities and Writing",
+      "description": "Describe city life, irrigation, and early writing in Mesopotamia.",
+      "order": 19,
+      "questionIds": [
+        "ppg6h1a554f6b4f9da4a1a1c7",
+        "ppg6h2515816d14468c03b209",
+        "ppg6h691134dd1a22f7f053dd"
+      ]
+    },
+    {
+      "id": "ppg6hf9d4a9a1daa1a2887c45",
+      "title": "Ancient Egypt Along the Nile",
+      "description": "Connect Nile flooding, farming, and centralized authority in Egypt.",
+      "order": 20,
+      "questionIds": [
+        "ppg6ha43f1d02eca8ad245a7e",
+        "ppg6h23bf0223b9c9ffd01595",
+        "ppg6h30570b1355dbd37fce78"
+      ]
+    },
+    {
+      "id": "ppg6h18acade4458d4586802a",
+      "title": "Indus Valley Patterns",
+      "description": "Use archaeological evidence carefully to describe Indus Valley cities.",
+      "order": 21,
+      "questionIds": [
+        "ppg6h746e56a634ecbb494fc5",
+        "ppg6ha854e905c94b1ace9933",
+        "ppg6hfeaf7ca4fb5cfd3aa7a2"
+      ]
+    },
+    {
+      "id": "ppg6h52417a2492f8e8888b5e",
+      "title": "Ancient China: Rivers and Dynasties Intro",
+      "description": "Introduce early Chinese river civilizations and continuity themes.",
+      "order": 22,
+      "questionIds": [
+        "ppg6h4d1cc23c001374676afc",
+        "ppg6had12d19d21d750023924",
+        "ppg6h29999ff3dee7b877c708"
+      ]
+    },
+    {
+      "id": "ppg6hdcf79b6a919431e4e418",
+      "title": "Laws, Leaders, and Order",
+      "description": "Compare how early states used laws and leaders to organize large populations.",
+      "order": 23,
+      "questionIds": [
+        "ppg6haf8e23d34c05f60397e4",
+        "ppg6hda60d371c85b79b18b58",
+        "ppg6h2e2ad2e234a9a183583c"
+      ]
+    },
+    {
+      "id": "ppg6h4267dab47b57408937de",
+      "title": "Trade and Cultural Exchange",
+      "description": "Show how goods and ideas moved between early civilizations.",
+      "order": 24,
+      "questionIds": [
+        "ppg6h766ac3f044dc73e74dbf",
+        "ppg6h62a56e09e2860d123ffe",
+        "ppg6h5710df3cb79b259cebba"
+      ]
+    },
+    {
+      "id": "ppg6hf04b4bab07bf89c10f17",
+      "title": "Achievements and Daily Life",
+      "description": "Balance famous monuments with ordinary people\u2019s work and family life.",
+      "order": 25,
+      "questionIds": [
+        "ppg6hcdecf31cdbc24ce997a6",
+        "ppg6hf8b0bb9bc707c4cfc7e9",
+        "ppg6h981c2d9b174d4a493385"
+      ]
+    },
+    {
+      "id": "ppg6ha6fcd1eeaf1eb24e820f",
+      "title": "River Civilizations Synthesis",
+      "description": "Compare two river civilizations on geography, governance, and culture.",
+      "order": 26,
+      "questionIds": [
+        "ppg6hb6292c02174acf21d195",
+        "ppg6h0359f89393b03ef7c05f",
+        "ppg6h9f7149d7b576ae0a4c62"
+      ]
+    }
+  ],
+  "unit-4": [
+    {
+      "id": "ppg6hd5e37fc921c9db65d224",
+      "title": "What Makes an Empire?",
+      "description": "Define empire and list challenges of ruling diverse lands.",
+      "order": 27,
+      "questionIds": [
+        "ppg6hc903267366091e8c7ada",
+        "ppg6he4ad89a80a3d3b9eff1d",
+        "ppg6h888d6e2ca9fbbde6f31c"
+      ]
+    },
+    {
+      "id": "ppg6hde2acd4cc65b624f1406",
+      "title": "Classical Mediterranean Snapshot",
+      "description": "Outline key features of classical Mediterranean political life at Grade 6 depth.",
+      "order": 28,
+      "questionIds": [
+        "ppg6h802d28d82d4815d0ad9b",
+        "ppg6hc431f0a2c665725f8eae",
+        "ppg6h312a3d8f272e74129046"
+      ]
+    },
+    {
+      "id": "ppg6h210528acae8155b0e165",
+      "title": "Classical Asia Snapshot",
+      "description": "Outline key features of classical Asian empires students should recognize.",
+      "order": 29,
+      "questionIds": [
+        "ppg6h60a15cbe344d4e6fb27b",
+        "ppg6h381159df4827fb3546dc",
+        "ppg6hb5761a4126763379e888"
+      ]
+    },
+    {
+      "id": "ppg6hf888b8c6762f57cf02b7",
+      "title": "Belief Systems: Judaism",
+      "description": "Summarize core beliefs and historical significance of Judaism respectfully.",
+      "order": 30,
+      "questionIds": [
+        "ppg6hcabb138ef0263cc6986a",
+        "ppg6hb89839675b0289b907ce",
+        "ppg6h7fc53e319ac0145086a1"
+      ]
+    },
+    {
+      "id": "ppg6h452379da6e30e9fc2780",
+      "title": "Belief Systems: Christianity",
+      "description": "Summarize origins and spread of Christianity in historical context.",
+      "order": 31,
+      "questionIds": [
+        "ppg6h57a2ae0795cdc841bc5e",
+        "ppg6h1097aa08401167738cf6",
+        "ppg6h9b2cb7a3a93e86fd3f4c"
+      ]
+    },
+    {
+      "id": "ppg6h427fbdec2b155112be46",
+      "title": "Belief Systems: Islam",
+      "description": "Summarize origins and early spread of Islam in historical context.",
+      "order": 32,
+      "questionIds": [
+        "ppg6h8517548b80d50c5ea1d5",
+        "ppg6h3d88defcdf6b2dcbad52",
+        "ppg6h36a2bb23b09bf2365529"
+      ]
+    },
+    {
+      "id": "ppg6hcd0fe58cef3220745495",
+      "title": "Belief Systems: Hinduism and Buddhism Intro",
+      "description": "Introduce core ideas of Hinduism and Buddhism as historical belief systems.",
+      "order": 33,
+      "questionIds": [
+        "ppg6h942b231a05022504e59b",
+        "ppg6h5a7c604e7e3b294ac484",
+        "ppg6h78fdc058563675d90df5"
+      ]
+    },
+    {
+      "id": "ppg6hb655fa478c33f4569854",
+      "title": "How Beliefs Travel",
+      "description": "Explain how trade, conquest, and teaching carried belief systems across regions.",
+      "order": 34,
+      "questionIds": [
+        "ppg6h40c1c6342ed72d72448f",
+        "ppg6h9353e90106dc2f9b3aed",
+        "ppg6h3b8d1d7ded54a1da6f51"
+      ]
+    },
+    {
+      "id": "ppg6h23e1ef16be4b9077c89c",
+      "title": "Empires and Beliefs Synthesis",
+      "description": "Connect one empire\u2019s governance to how belief communities lived within it.",
+      "order": 35,
+      "questionIds": [
+        "ppg6hd60668849d0687402dc8",
+        "ppg6h92b4761abcc833fc3c4c",
+        "ppg6h109bd4d248789f27d6fa"
+      ]
+    }
+  ],
+  "unit-5": [
+    {
+      "id": "ppg6h2cc66d703d6c48d7d22b",
+      "title": "After Classical Empires",
+      "description": "Describe continuity and change after major classical empires restructured.",
+      "order": 36,
+      "questionIds": [
+        "ppg6hf88d4fe5b238ae8ff78d",
+        "ppg6h19433403258b3534f31e",
+        "ppg6hdf357eba834f111c59a9"
+      ]
+    },
+    {
+      "id": "ppg6h8bc8fa635f22af6ed7ae",
+      "title": "Medieval Europe Snapshot",
+      "description": "Outline feudal relationships, manors, and church influence at intro level.",
+      "order": 37,
+      "questionIds": [
+        "ppg6h6f3701b3479113272a7b",
+        "ppg6h76455d7d0134d04adffc",
+        "ppg6ha01de2dbadbcf0300ef6"
+      ]
+    },
+    {
+      "id": "ppg6h4e01625812711d12f987",
+      "title": "Islamic Golden Age Contributions",
+      "description": "Identify scholarship, trade, and preservation of knowledge in Islamic societies.",
+      "order": 38,
+      "questionIds": [
+        "ppg6hcfab53be2033319d9d9a",
+        "ppg6h4c756b7b25aec799be7d",
+        "ppg6hd07c73f183eb6a4bafcf"
+      ]
+    },
+    {
+      "id": "ppg6h801c9312d7439b8522c4",
+      "title": "African Kingdoms and Trade",
+      "description": "Explain how African kingdoms participated in long-distance trade networks.",
+      "order": 39,
+      "questionIds": [
+        "ppg6h1f0e5de373411b5fa21d",
+        "ppg6h29226a2c8d8a6c1342b7",
+        "ppg6h9d05525d0d221dbddc92"
+      ]
+    },
+    {
+      "id": "ppg6hb549e51004b366fbf746",
+      "title": "Asian Networks and Exchange",
+      "description": "Trace goods and ideas along Asian trade routes in the medieval era.",
+      "order": 40,
+      "questionIds": [
+        "ppg6h9f2b7ae48f05fa253e94",
+        "ppg6h4b08e7de3c67272acd78",
+        "ppg6h9fb7b5274b9343d39aa6"
+      ]
+    },
+    {
+      "id": "ppg6ha29d2eeb8559424ebcda",
+      "title": "The Silk Roads Idea",
+      "description": "Explain the Silk Roads as a web of routes, not a single highway.",
+      "order": 41,
+      "questionIds": [
+        "ppg6h2d46cb0cfb822b1c2300",
+        "ppg6h466cb8acf2c694f87086",
+        "ppg6hd6352389d9b686736f5b"
+      ]
+    },
+    {
+      "id": "ppg6hcb832b916a8d1d7315b6",
+      "title": "Cities as Crossroads",
+      "description": "Show how medieval cities concentrated trade, crafts, and learning.",
+      "order": 42,
+      "questionIds": [
+        "ppg6h044995b2f650c1ae970b",
+        "ppg6hac59a9c9dbcf66abdaf2",
+        "ppg6h620341ee831dec27e5ee"
+      ]
+    },
+    {
+      "id": "ppg6h33a622b104056fecb952",
+      "title": "Medieval Networks Unit Review",
+      "description": "Argue how networks (trade + belief + cities) reshaped regions.",
+      "order": 43,
+      "questionIds": [
+        "ppg6h786519a4242b1e35b843",
+        "ppg6h2951ae5d01cbe2e91cfd",
+        "ppg6hc2cf6b6a8b8a84fe1b0a"
+      ]
+    }
+  ],
+  "unit-6": [
+    {
+      "id": "ppg6h9611df14058c43d3079e",
+      "title": "Motivations to Explore",
+      "description": "Explain God, gold, and glory-style motives without reducing history to slogans.",
+      "order": 44,
+      "questionIds": [
+        "ppg6h3a506acbff7bb2cd2145",
+        "ppg6haeba02bb08a4aac705b1",
+        "ppg6h5aa3eb33083438dcbf37"
+      ]
+    },
+    {
+      "id": "ppg6hd4107051193b11279918",
+      "title": "Navigation Tools and Knowledge",
+      "description": "Connect maps, ships, and navigational knowledge to longer voyages.",
+      "order": 45,
+      "questionIds": [
+        "ppg6h7dc94f23dcd349959e6b",
+        "ppg6h345c27a91277e1ff5e9e",
+        "ppg6h3ba609a52227bde942c9"
+      ]
+    },
+    {
+      "id": "ppg6hdeca1cb56d243d6290a7",
+      "title": "Contact in the Americas",
+      "description": "Describe early contact between Europeans and Indigenous peoples with care and evidence.",
+      "order": 46,
+      "questionIds": [
+        "ppg6hd3053fc66c3d355c744d",
+        "ppg6h73a58c15e46e3803dfb6",
+        "ppg6h7384ff30e8db88b66a94"
+      ]
+    },
+    {
+      "id": "ppg6hc67cccdc94e075d5fbd8",
+      "title": "The Columbian Exchange",
+      "description": "Trace plants, animals, and diseases moving between hemispheres and their effects.",
+      "order": 47,
+      "questionIds": [
+        "ppg6h3f6c30405f26be8a88c7",
+        "ppg6h38ac3cf2d499808eddaf",
+        "ppg6h023e7c28a4bdbd474e32"
+      ]
+    },
+    {
+      "id": "ppg6h54ffe3b4afed0f1c86b9",
+      "title": "Empires Expand",
+      "description": "Explain how maritime empires projected power across oceans.",
+      "order": 48,
+      "questionIds": [
+        "ppg6he362b35f6dc63a1ff846",
+        "ppg6h256461bd9b7fb8c9e088",
+        "ppg6hc122d816ae3a15a09176"
+      ]
+    },
+    {
+      "id": "ppg6h98dbd411f9d0e0ad15eb",
+      "title": "Labor Systems and Human Cost",
+      "description": "Describe forced labor and enslavement as historical realities with seriousness.",
+      "order": 49,
+      "questionIds": [
+        "ppg6h01b496abeadf823f06ad",
+        "ppg6h6fdb09a1b0826edc2da2",
+        "ppg6hd5ee654ec5f9bef3881a"
+      ]
+    },
+    {
+      "id": "ppg6h153e225664d8a4f4ae51",
+      "title": "Global Trade Goods",
+      "description": "Follow one commodity (sugar, silver, or spices) through a global network.",
+      "order": 50,
+      "questionIds": [
+        "ppg6h0ac222908a6c792aa596",
+        "ppg6h223fe970d70412c9da7a",
+        "ppg6hbecdb59ee4fe37b3d971"
+      ]
+    },
+    {
+      "id": "ppg6hfcfc8dda4a7f9f67c224",
+      "title": "First Global Age Synthesis",
+      "description": "Weigh benefits and harms of early global exchange using evidence.",
+      "order": 51,
+      "questionIds": [
+        "ppg6h0c868de444d653bbd1b0",
+        "ppg6h22806e53aff7584010d7",
+        "ppg6ha16c91e0da31879178ea"
+      ]
+    }
+  ],
+  "unit-7": [
+    {
+      "id": "ppg6h21c28ce728941143c003",
+      "title": "Ideas That Challenged Kings",
+      "description": "Identify Enlightenment-era ideas about rights and government at intro level.",
+      "order": 52,
+      "questionIds": [
+        "ppg6h265bb382213ae4aff310",
+        "ppg6h7c01379e4119e290e923",
+        "ppg6hb9390184f01020801681"
+      ]
+    },
+    {
+      "id": "ppg6h5cd015956ab77a21efc7",
+      "title": "Atlantic Revolutions Snapshot",
+      "description": "Compare causes of major Atlantic-world revolutions in broad strokes.",
+      "order": 53,
+      "questionIds": [
+        "ppg6h201352a91d19304dc4e2",
+        "ppg6h629f25b17afe3efb1725",
+        "ppg6hd316154193b63a445b6c"
+      ]
+    },
+    {
+      "id": "ppg6hbcbd8e1c6740edccf977",
+      "title": "New Governments, New Questions",
+      "description": "Explain that writing a constitution does not automatically create a just society.",
+      "order": 54,
+      "questionIds": [
+        "ppg6h922706251ab858fbabee",
+        "ppg6h0f4200f8df914bf3e01b",
+        "ppg6h7e6bd269d4bd9f553f33"
+      ]
+    },
+    {
+      "id": "ppg6h456f858d90cf0eee4f0c",
+      "title": "Industrial Revolution Begins",
+      "description": "Describe how new machines and energy sources changed work and cities.",
+      "order": 55,
+      "questionIds": [
+        "ppg6h62dedb334af181d3fd1f",
+        "ppg6hb6ada443ca85bd1b4df9",
+        "ppg6h7fea1417efcbed993ab0"
+      ]
+    },
+    {
+      "id": "ppg6h50b52a37161c3a85e703",
+      "title": "Factory Life and Families",
+      "description": "Examine how industrial work changed family schedules and child labor debates.",
+      "order": 56,
+      "questionIds": [
+        "ppg6h2c8b3b17728d63313a44",
+        "ppg6h1ef0b490603b336d94ef",
+        "ppg6h0d3b980b6b33d515a283"
+      ]
+    },
+    {
+      "id": "ppg6h497fd238da6706539e2b",
+      "title": "Reform and Response",
+      "description": "Identify reform movements that responded to industrial problems.",
+      "order": 57,
+      "questionIds": [
+        "ppg6hfa79625978c2e5c780fd",
+        "ppg6haf9bf7ab02c4af4a16cf",
+        "ppg6h060b7004608697a59dac"
+      ]
+    },
+    {
+      "id": "ppg6h2c58792472572a73c522",
+      "title": "Nation, Empire, and Power",
+      "description": "Connect industrial power to imperialism in a Grade 6-appropriate survey.",
+      "order": 58,
+      "questionIds": [
+        "ppg6h7d481641fd893cb64e1e",
+        "ppg6hdf48eb587dbda7a265b5",
+        "ppg6h4a569525a3ec0963fe2f"
+      ]
+    },
+    {
+      "id": "ppg6h87afa1544222cd59159b",
+      "title": "Revolutions & Industry Review",
+      "description": "Link political revolutions and industrial change in one evidence paragraph.",
+      "order": 59,
+      "questionIds": [
+        "ppg6hfb9431fad86b2eea5346",
+        "ppg6hf19ce0d1d617f3b29086",
+        "ppg6h3919aa75b68a515624a5"
+      ]
+    }
+  ],
+  "unit-8": [
+    {
+      "id": "ppg6hc11e5c9e21c3726aa4d5",
+      "title": "Texas Before Statehood",
+      "description": "Outline major peoples and powers in Texas before U.S. statehood.",
+      "order": 60,
+      "questionIds": [
+        "ppg6hb1c1741b99636463554a",
+        "ppg6h5513d1f94f2a47ddb1df",
+        "ppg6h10a279ae5e5e7cb623ba"
+      ]
+    },
+    {
+      "id": "ppg6h3a187f5c0b6d9e6039f0",
+      "title": "Revolution and Republic in Texas",
+      "description": "Explain key events leading to the Texas Republic with a timeline habit.",
+      "order": 61,
+      "questionIds": [
+        "ppg6h8ecf54ae8f689e1bd06d",
+        "ppg6hd9f8159ebdc59e59e5b6",
+        "ppg6h5c5c450206b6392307e2"
+      ]
+    },
+    {
+      "id": "ppg6h7beb84944dbb92f4283e",
+      "title": "Statehood and the Civil War Era",
+      "description": "Place Texas within U.S. Civil War and Reconstruction themes carefully.",
+      "order": 62,
+      "questionIds": [
+        "ppg6he5acc294449a8e60702d",
+        "ppg6hbe931202757a35ede3b8",
+        "ppg6h092ca459164a6d489e91"
+      ]
+    },
+    {
+      "id": "ppg6h230640461608f07280df",
+      "title": "Cattle, Cotton, and Railroads",
+      "description": "Connect Texas economic changes to national markets in the late 1800s.",
+      "order": 63,
+      "questionIds": [
+        "ppg6hab500e782217ce859f9e",
+        "ppg6hd4c52b563ac733be1397",
+        "ppg6hdcd7ce1221df52a8ab02"
+      ]
+    },
+    {
+      "id": "ppg6h9935a5c35e1e6ba91ce4",
+      "title": "Constitutional Promises",
+      "description": "Explain equal protection and voting rights as constitutional claims people fought to realize.",
+      "order": 64,
+      "questionIds": [
+        "ppg6ha81e007415d3206d0f38",
+        "ppg6hae0d20a45e29088fb662",
+        "ppg6h778f831a6adef8b69e15"
+      ]
+    },
+    {
+      "id": "ppg6h57c1171c19eba9a79b31",
+      "title": "Civil Rights Milestones",
+      "description": "Identify major U.S. civil rights milestones (abolition to mid-20th-century legal victories) with causes and effects.",
+      "order": 65,
+      "questionIds": [
+        "ppg6hb194e24f71a5287c8d45",
+        "ppg6hbf36cd670fa69ae93326",
+        "ppg6hb179cd17537fb0bdf8d9"
+      ]
+    },
+    {
+      "id": "ppg6h4b1d0ca315d78482ab2f",
+      "title": "Leaders and Ordinary Courage",
+      "description": "Show how both famous leaders and ordinary families advanced justice under law.",
+      "order": 66,
+      "questionIds": [
+        "ppg6hc75997e8a6860d481c09",
+        "ppg6h048f7f74748fc6261b23",
+        "ppg6h6228b459c12792be8188"
+      ]
+    },
+    {
+      "id": "ppg6h3716af72d8ed49d94911",
+      "title": "Texas & Turning Points Synthesis",
+      "description": "Write a CER on one Texas or U.S. turning point using two pieces of evidence.",
+      "order": 67,
+      "questionIds": [
+        "ppg6h52dd58e3b95c0dca42d0",
+        "ppg6hc465ec3e3f32d420af61",
+        "ppg6h8f11cd01bf75a46835c9"
+      ]
+    }
+  ],
+  "unit-9": [
+    {
+      "id": "ppg6h3a6a4d686949f058e0f7",
+      "title": "The 20th Century in Broad Strokes",
+      "description": "Outline world wars and major 20th-century conflicts as global turning points.",
+      "order": 68,
+      "questionIds": [
+        "ppg6h7f8ac82b737d7e975d02",
+        "ppg6h5bc87b30e0d413ab4715",
+        "ppg6h3b167cbfbbb23a29aa6e"
+      ]
+    },
+    {
+      "id": "ppg6hd770f81443068a10581e",
+      "title": "Cold War Ideas (Intro)",
+      "description": "Explain the Cold War as a rivalry of alliances and ideas without caricature.",
+      "order": 69,
+      "questionIds": [
+        "ppg6h5f278c47b8da40275594",
+        "ppg6h94de1da42db2342fd631",
+        "ppg6h5a8c89bf21242f998445"
+      ]
+    },
+    {
+      "id": "ppg6he1a34e568844c7492ce1",
+      "title": "Decolonization Snapshot",
+      "description": "Describe how many nations gained independence in the mid-20th century.",
+      "order": 70,
+      "questionIds": [
+        "ppg6ha412ea8092d7ef821443",
+        "ppg6hbd4b654ceb622da3f1d6",
+        "ppg6h3e494546768d1a5c3b1b"
+      ]
+    },
+    {
+      "id": "ppg6h815f7d588159e5f4e376",
+      "title": "Globalization: Goods and Information",
+      "description": "Define globalization through trade, travel, and communication examples.",
+      "order": 71,
+      "questionIds": [
+        "ppg6h4ac6bf98395c96e2fdbb",
+        "ppg6ha5ae3fe1472bf4a22085",
+        "ppg6h41977aa1339295f16227"
+      ]
+    },
+    {
+      "id": "ppg6hd2d96c847c5cb065061a",
+      "title": "Human Rights Language",
+      "description": "Explain human rights as claims about dignity and justice grounded in documents and law.",
+      "order": 72,
+      "questionIds": [
+        "ppg6h8a3238220296f426481d",
+        "ppg6hccb5c76cdf27ccac669a",
+        "ppg6h35116a786ea8de2e852c"
+      ]
+    },
+    {
+      "id": "ppg6hb72629c0e5b55185459a",
+      "title": "Texas in a Global Economy",
+      "description": "Connect East Texas families and industries to wider markets and stewardship.",
+      "order": 73,
+      "questionIds": [
+        "ppg6h4a925b86ff34beaf491e",
+        "ppg6ha213ba6a6c021124a9dc",
+        "ppg6h20512a25fb59028c7588"
+      ]
+    },
+    {
+      "id": "ppg6h79e697111ae101dbca22",
+      "title": "Media Literacy for Citizens",
+      "description": "Evaluate a news claim with sourcing questions appropriate for Grade 6.",
+      "order": 74,
+      "questionIds": [
+        "ppg6h001dd80be2e94db7cdd9",
+        "ppg6h96f929635771ad641930",
+        "ppg6h3b35c5f1ed5120ff9c91"
+      ]
+    },
+    {
+      "id": "ppg6hda892a8e03ce8f6d636e",
+      "title": "Year Capstone: Continuity and Change",
+      "description": "Argue what changed and what endured from early farming to today\u2019s connected world.",
+      "order": 75,
+      "questionIds": [
+        "ppg6h439f82978d3d98918619",
+        "ppg6hd2cd485b683b7ce57ae4",
+        "ppg6hbb3813985fe0b53163bb"
+      ]
+    }
+  ]
+}

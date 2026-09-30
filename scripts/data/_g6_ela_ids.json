@@ -1,0 +1,1145 @@
+{
+  "unit-1": [
+    {
+      "id": "ppg6efae18a1c16daea5dd307",
+      "title": "What Context Clues Do",
+      "description": "Use surrounding words to infer meaning of unfamiliar vocabulary.",
+      "order": 1,
+      "questionIds": [
+        "ppg6e1e961f66a48460b48604",
+        "ppg6e37703f22f23a28d47678",
+        "ppg6ec405742ed222c25a8bdc"
+      ]
+    },
+    {
+      "id": "ppg6ed33df4ed27d6b5592cf5",
+      "title": "Definition and Restatement Clues",
+      "description": "Spot definition, restatement, and synonym clues in sentences.",
+      "order": 2,
+      "questionIds": [
+        "ppg6e5a20d5b087074b86b511",
+        "ppg6e0bec67dd49eab5d90fc9",
+        "ppg6e640b31399769c917d37d"
+      ]
+    },
+    {
+      "id": "ppg6efda449cca346a5fdadee",
+      "title": "Contrast and Antonym Clues",
+      "description": "Use however, unlike, and antonym signals to unlock meaning.",
+      "order": 3,
+      "questionIds": [
+        "ppg6e75e8ef6078e1093d5c33",
+        "ppg6e251a17385ad971ab4011",
+        "ppg6e9d8c3b0a886ae1ec0da1"
+      ]
+    },
+    {
+      "id": "ppg6e1331e9464d630653b53d",
+      "title": "Example Clues and Lists",
+      "description": "Infer word meaning from examples and illustrative lists.",
+      "order": 4,
+      "questionIds": [
+        "ppg6ea745ee2c95b305aa9c22",
+        "ppg6e7fc702631dbd30126529",
+        "ppg6eedf0b5ba772822870e77"
+      ]
+    },
+    {
+      "id": "ppg6eed22f42c47268ae93247",
+      "title": "Greek and Latin Roots I",
+      "description": "Decode words with common roots (spect, port, dict, scrib/script).",
+      "order": 5,
+      "questionIds": [
+        "ppg6ed55a8566f4a194ba7712",
+        "ppg6e43134d069d011ea4ad6d",
+        "ppg6e4908bad4b7d61dd1f377"
+      ]
+    },
+    {
+      "id": "ppg6e660ebd03a9b0f44def7c",
+      "title": "Prefixes That Flip Meaning",
+      "description": "Apply un-, re-, pre-, dis-, mis- to build and unpack words.",
+      "order": 6,
+      "questionIds": [
+        "ppg6eba2f076e3701d9c4c6b5",
+        "ppg6e0482d8d13f254e31039c",
+        "ppg6e205bacb02db976deb3dd"
+      ]
+    },
+    {
+      "id": "ppg6e38ce4c2d4001dd1e53a0",
+      "title": "Suffixes and Part of Speech",
+      "description": "Use -tion, -able, -ous, -ly to recognize how words function.",
+      "order": 7,
+      "questionIds": [
+        "ppg6e5521fc6065766bd084ed",
+        "ppg6e03790118389ea23b6757",
+        "ppg6e6de7992417d63a7f7659"
+      ]
+    }
+  ],
+  "unit-2": [
+    {
+      "id": "ppg6e7a6b8d29a0f007bf37b4",
+      "title": "Topic vs Main Idea",
+      "description": "Distinguish a topic label from a complete main-idea statement.",
+      "order": 8,
+      "questionIds": [
+        "ppg6e018a5fac8a53006f8342",
+        "ppg6e0441820d12d8fc15ce2e",
+        "ppg6e387ab95ac490aa6781f5"
+      ]
+    },
+    {
+      "id": "ppg6e4c9acfee91da035b56ea",
+      "title": "Supporting Details That Matter",
+      "description": "Select details that actually support the main idea.",
+      "order": 9,
+      "questionIds": [
+        "ppg6eb56c2ab981efa2d1b5e3",
+        "ppg6ea6b4323e4c32bc93401b",
+        "ppg6eb493678135141d980e55"
+      ]
+    },
+    {
+      "id": "ppg6ef34b2bd752a3af489ea7",
+      "title": "Summarizing Without Spoiling",
+      "description": "Write objective summaries that keep order and drop trivia.",
+      "order": 10,
+      "questionIds": [
+        "ppg6eb5249e64452cf0956e8f",
+        "ppg6ea7fee3962274a20bcfd4",
+        "ppg6ebf5b043a5bdb4942bb5b"
+      ]
+    },
+    {
+      "id": "ppg6e858683802b541c2b9591",
+      "title": "Inferring Character Motivation",
+      "description": "Use dialogue and action to infer why a character acts.",
+      "order": 11,
+      "questionIds": [
+        "ppg6eae656c2429d975c1121b",
+        "ppg6ed563b87f0bbf6935fec2",
+        "ppg6e1e8694c1ef0c0f9d655c"
+      ]
+    },
+    {
+      "id": "ppg6e002b649ecd1c8118b815",
+      "title": "Finding Explicit Evidence",
+      "description": "Quote or paraphrase the exact lines that answer a question.",
+      "order": 12,
+      "questionIds": [
+        "ppg6e5a9018da7dc3f35c7b54",
+        "ppg6eb42c13d8c6ef1e4f2078",
+        "ppg6e56b33b56986d88727fe3"
+      ]
+    },
+    {
+      "id": "ppg6ec820d65b7cf1cf4b5a4c",
+      "title": "Central Idea in Informational Text",
+      "description": "State the central idea of a short nonfiction piece.",
+      "order": 13,
+      "questionIds": [
+        "ppg6e33f1f7738640bf213783",
+        "ppg6eab51906c25e1971d5c2b",
+        "ppg6e5ff1516c868f578fde9f"
+      ]
+    },
+    {
+      "id": "ppg6e0d560028a4e6cbc26679",
+      "title": "Key Ideas Unit Synthesis",
+      "description": "Combine main idea, details, and evidence in one response.",
+      "order": 14,
+      "questionIds": [
+        "ppg6ee0f3d4b16143534cdd22",
+        "ppg6e60a1c4422d5a84992775",
+        "ppg6ef5fb59770b7fea5c1fda"
+      ]
+    }
+  ],
+  "unit-3": [
+    {
+      "id": "ppg6ec1830c6386e89aba2102",
+      "title": "Stamina Strategies for Long Text",
+      "description": "Chunk, annotate, and track main ideas across paragraphs.",
+      "order": 15,
+      "questionIds": [
+        "ppg6ea7405d9bbe6d9449e794",
+        "ppg6e56865b119499c2783ee2",
+        "ppg6e5de39a212f0b1a517471"
+      ]
+    },
+    {
+      "id": "ppg6e9eb35bfd2c5b9f5ee8e7",
+      "title": "Tracking Multiple Characters",
+      "description": "Keep who-did-what straight across a longer narrative.",
+      "order": 16,
+      "questionIds": [
+        "ppg6e730eb95f89795539eeac",
+        "ppg6efe89b5ef4bf7b51c8b48",
+        "ppg6e03c72a5f69e4899c599c"
+      ]
+    },
+    {
+      "id": "ppg6e597d5c7935ac8f30eb0b",
+      "title": "Informational Article: East Texas Trail",
+      "description": "Extract central idea and key details from a longer article.",
+      "order": 17,
+      "questionIds": [
+        "ppg6e5296d9d88623ae9d51ec",
+        "ppg6e7aa558e96d44f587c39e",
+        "ppg6e225dc1367dee896175e9"
+      ]
+    },
+    {
+      "id": "ppg6eb72e8269d2dfeb2c7223",
+      "title": "Fiction Passage: The Scholarship Letter",
+      "description": "Trace conflict and key turning points in a longer story.",
+      "order": 18,
+      "questionIds": [
+        "ppg6e4752bdfaa69b8d5928fb",
+        "ppg6e33c49ab13d692a20ef50",
+        "ppg6e698c8d38bb4b1adc8f5e"
+      ]
+    },
+    {
+      "id": "ppg6e47405ce73854446c994d",
+      "title": "Comparing Two Short Sections",
+      "description": "Compare how two sections of one text develop the same idea.",
+      "order": 19,
+      "questionIds": [
+        "ppg6e450cc69984d2378405b1",
+        "ppg6e602ccffba20139987d5c",
+        "ppg6e0135fd67aef43ceacdff"
+      ]
+    },
+    {
+      "id": "ppg6e9c602e1d99ac69b558e0",
+      "title": "Long-Passage Key Ideas Check",
+      "description": "Apply annotation + evidence habits to a culminating passage.",
+      "order": 20,
+      "questionIds": [
+        "ppg6e98153b34db1d328c2350",
+        "ppg6e1d5e7d3b3acb5f984321",
+        "ppg6e5b2f9b51182cb8d49016"
+      ]
+    }
+  ],
+  "unit-4": [
+    {
+      "id": "ppg6e3623a7b3dc1a82a708f9",
+      "title": "Common and Proper Nouns",
+      "description": "Capitalize proper nouns; keep common nouns clear and specific.",
+      "order": 21,
+      "questionIds": [
+        "ppg6e25f6cacb0c714d168a4f",
+        "ppg6e7151e216f3012b694dff",
+        "ppg6edb85701004ff3bd2c468"
+      ]
+    },
+    {
+      "id": "ppg6e6cf84e217ca8dbf2dd4c",
+      "title": "Concrete and Abstract Nouns",
+      "description": "Recognize ideas and qualities as nouns you can still name.",
+      "order": 22,
+      "questionIds": [
+        "ppg6eb6bd7aa7d9e6e5e0a270",
+        "ppg6eeb49a2a017323aa5d84d",
+        "ppg6ec338039281daebae856e"
+      ]
+    },
+    {
+      "id": "ppg6ee675d1d8b761d380dd30",
+      "title": "Singular, Plural, and Irregular Plurals",
+      "description": "Form regular and irregular plurals accurately.",
+      "order": 23,
+      "questionIds": [
+        "ppg6e559a21f646bed83c487a",
+        "ppg6ed0953cb086034ff56a6a",
+        "ppg6ecb28cae907d8b9067fe1"
+      ]
+    },
+    {
+      "id": "ppg6e46f1cebfe60df55bdd18",
+      "title": "Possessive Nouns",
+      "description": "Use apostrophes correctly for singular and plural possession.",
+      "order": 24,
+      "questionIds": [
+        "ppg6e2a62d3e8f00746dec8c4",
+        "ppg6e5b5fb8c82802d4f2bd85",
+        "ppg6e475f2d465acecb280cc8"
+      ]
+    },
+    {
+      "id": "ppg6eda8ee172948083172457",
+      "title": "Collective Nouns and Agreement",
+      "description": "Match verbs to collective nouns with student-friendly rules.",
+      "order": 25,
+      "questionIds": [
+        "ppg6e03ca846bf0ef037be8e4",
+        "ppg6e7c5aa6a901b1370dcd9f",
+        "ppg6ecbd9a3266f204512fe0e"
+      ]
+    },
+    {
+      "id": "ppg6ef6e52b2af9957611f330",
+      "title": "Nouns in Strong Sentences",
+      "description": "Replace vague nouns with precise ones for clearer writing.",
+      "order": 26,
+      "questionIds": [
+        "ppg6ef01061482b7e280f0754",
+        "ppg6e6e60c467501b7474c13c",
+        "ppg6ec4a04423a2b325afb9be"
+      ]
+    }
+  ],
+  "unit-5": [
+    {
+      "id": "ppg6e726abc646430035975f7",
+      "title": "Subject and Object Pronouns",
+      "description": "Choose I/me, we/us, he/him correctly in sentences.",
+      "order": 27,
+      "questionIds": [
+        "ppg6e1fae3a9ba89a11aeb792",
+        "ppg6e6921c61c8fd7932b2636",
+        "ppg6e7a5cf08e3d6265fdacd6"
+      ]
+    },
+    {
+      "id": "ppg6eea5d35928da5f6d1fb0c",
+      "title": "Possessive Pronouns vs Contractions",
+      "description": "Keep its/it's, your/you're, their/they're straight.",
+      "order": 28,
+      "questionIds": [
+        "ppg6e52b04445d278be283d7a",
+        "ppg6eb1a733d4a855a221ba71",
+        "ppg6e08e1ce0e99a63182bc0d"
+      ]
+    },
+    {
+      "id": "ppg6e6ef188e49bc6ebd4500a",
+      "title": "Pronoun-Antecedent Agreement",
+      "description": "Match pronouns to antecedents in number and clarity.",
+      "order": 29,
+      "questionIds": [
+        "ppg6e9829bf88dd8c1cd98ae0",
+        "ppg6e20eb6946889cdf90c742",
+        "ppg6e879e5295677fe6fe034a"
+      ]
+    },
+    {
+      "id": "ppg6ee2476d353dafb1a27bfa",
+      "title": "Vague Pronouns and Fixes",
+      "description": "Replace unclear this/that/it with precise nouns or clauses.",
+      "order": 30,
+      "questionIds": [
+        "ppg6e15e58609d23938ad78d2",
+        "ppg6e6d6389355b21f2d1c451",
+        "ppg6e823f0a44cee101035966"
+      ]
+    },
+    {
+      "id": "ppg6ec3297deee4ffad1391e5",
+      "title": "Intensive and Reflexive Pronouns",
+      "description": "Use myself/yourself correctly \u2014 not as fake formal subjects.",
+      "order": 31,
+      "questionIds": [
+        "ppg6ecb77816bf7d6f65a2537",
+        "ppg6ed13ff750a5472f1c412b",
+        "ppg6ef223043484a024456985"
+      ]
+    },
+    {
+      "id": "ppg6e387818d589f77b5e925f",
+      "title": "Pronoun Clarity in Paragraphs",
+      "description": "Revise a paragraph so every pronoun points clearly.",
+      "order": 32,
+      "questionIds": [
+        "ppg6e31de0f75bb55bf45cd63",
+        "ppg6ec1d6e75d7c40fd098003",
+        "ppg6e68a568d444c5e398cea5"
+      ]
+    }
+  ],
+  "unit-6": [
+    {
+      "id": "ppg6edf33b410a6192dc8424f",
+      "title": "Action vs Linking Verbs",
+      "description": "Identify what the verb is doing \u2014 action or linking.",
+      "order": 33,
+      "questionIds": [
+        "ppg6ed49742ea7747a8873779",
+        "ppg6e9303a34c3c334ee24852",
+        "ppg6e8a944b087f5dbe060401"
+      ]
+    },
+    {
+      "id": "ppg6e140437d162978e1553c6",
+      "title": "Simple Verb Tenses",
+      "description": "Use past, present, and future tense consistently.",
+      "order": 34,
+      "questionIds": [
+        "ppg6e5bf802770cfc408e65be",
+        "ppg6ee9462c8cefa2b9eb745d",
+        "ppg6e9b2aec7d6d3820cd6626"
+      ]
+    },
+    {
+      "id": "ppg6e23b2f03b4c2911202e41",
+      "title": "Subject-Verb Agreement",
+      "description": "Make verbs agree with subjects, including tricky cases.",
+      "order": 35,
+      "questionIds": [
+        "ppg6e61c679bf6e1d6419cde2",
+        "ppg6e26c2d638e57b6afc1092",
+        "ppg6ecdcc327d9b786161ceaf"
+      ]
+    },
+    {
+      "id": "ppg6ea9e01a12b7555377c74d",
+      "title": "Helping Verbs and Verb Phrases",
+      "description": "Recognize helping verbs inside complete verb phrases.",
+      "order": 36,
+      "questionIds": [
+        "ppg6ebf80dfecb8e4f9fc2633",
+        "ppg6e58772c32cf74ec8b16fa",
+        "ppg6e5d275d6ccbb4aef41419"
+      ]
+    },
+    {
+      "id": "ppg6ec288faea48fc57072f5e",
+      "title": "Consistent Tense in Narratives",
+      "description": "Keep tense steady unless a time shift is intentional.",
+      "order": 37,
+      "questionIds": [
+        "ppg6e0f076a9821cb20c7724e",
+        "ppg6e5c2421e216a46bde1391",
+        "ppg6edd7617b0b03fbca372b2"
+      ]
+    },
+    {
+      "id": "ppg6ebad2ab5ede736fe5679a",
+      "title": "Active Voice Preference",
+      "description": "Prefer clear active voice; know when passive is useful.",
+      "order": 38,
+      "questionIds": [
+        "ppg6e93b9f92c6a10130bc3a8",
+        "ppg6e5e8ac6a89fddd4457909",
+        "ppg6e7e8fd1ff5d0db0ad381b"
+      ]
+    },
+    {
+      "id": "ppg6e4efd43ea9b36836ef570",
+      "title": "Verbs Unit Review",
+      "description": "Mixed practice on tense, agreement, and precision.",
+      "order": 39,
+      "questionIds": [
+        "ppg6e2c69cf7f11038c0725e7",
+        "ppg6e552c2df719b44471f2a3",
+        "ppg6e9ac6f3c6205a2d7247d0"
+      ]
+    }
+  ],
+  "unit-7": [
+    {
+      "id": "ppg6e5d165ccc209abb03e3a1",
+      "title": "Word Choice and Connotation",
+      "description": "Explain how a word's feeling changes a sentence's tone.",
+      "order": 40,
+      "questionIds": [
+        "ppg6e87b9744e5e31a50a16dc",
+        "ppg6e989063acee9281e15856",
+        "ppg6ecf9c370ef086d5ae525a"
+      ]
+    },
+    {
+      "id": "ppg6e9426833b96c55218a446",
+      "title": "Figurative Language That Works",
+      "description": "Interpret simile, metaphor, and personification in context.",
+      "order": 41,
+      "questionIds": [
+        "ppg6ef05c092ddf5d402a4eb8",
+        "ppg6e463182068a5fcc802b95",
+        "ppg6e1cbb1a83fbccdac1e1d2"
+      ]
+    },
+    {
+      "id": "ppg6efc34274a9fc158ee3316",
+      "title": "Text Structure Signals",
+      "description": "Identify cause/effect, compare/contrast, and problem/solution.",
+      "order": 42,
+      "questionIds": [
+        "ppg6e4b2aa0949b2c1f26a72c",
+        "ppg6e949e67cfc9349c14fa25",
+        "ppg6ec19ba7ef983dc0b4b8b0"
+      ]
+    },
+    {
+      "id": "ppg6e29b9c8ee10dfef852fed",
+      "title": "Point of View Basics",
+      "description": "Distinguish first- and third-person narration and effects.",
+      "order": 43,
+      "questionIds": [
+        "ppg6e5e5b71a7406283a27a8f",
+        "ppg6edf4c8f3fbd7c0bc3c554",
+        "ppg6e49e64540346e66b3f2e9"
+      ]
+    },
+    {
+      "id": "ppg6ee4545e35f513a3ecf10d",
+      "title": "How Structure Builds Meaning",
+      "description": "Explain why an author sequences sections a certain way.",
+      "order": 44,
+      "questionIds": [
+        "ppg6e642b4814324132b81873",
+        "ppg6e5913f404d8236257336f",
+        "ppg6e39ca098f2be5b5b385bc"
+      ]
+    },
+    {
+      "id": "ppg6e13c4733642a97373f69c",
+      "title": "Tone vs Mood",
+      "description": "Separate the author's attitude from the reader's feeling.",
+      "order": 45,
+      "questionIds": [
+        "ppg6eafda8e47fa2c446d551d",
+        "ppg6ea2d7c303ab535a9acd9e",
+        "ppg6e071ac4f2c1bbda65e12f"
+      ]
+    },
+    {
+      "id": "ppg6e922615c10e90e8d547a3",
+      "title": "Craft Moves Mini-Analysis",
+      "description": "Annotate craft moves and explain their effect in CER form.",
+      "order": 46,
+      "questionIds": [
+        "ppg6ecd1e09922e37be14e643",
+        "ppg6eba0904de3061d047827a",
+        "ppg6e624ad47b6b1af2a71abb"
+      ]
+    }
+  ],
+  "unit-8": [
+    {
+      "id": "ppg6ed7150a34efe9b3f7b97b",
+      "title": "Annotating Craft Across Pages",
+      "description": "Track diction, structure, and POV through a longer text.",
+      "order": 47,
+      "questionIds": [
+        "ppg6e3c33d4ae7efca1378de2",
+        "ppg6e673c47408ac90ab4c166",
+        "ppg6e3d51e66b1412108fdc11"
+      ]
+    },
+    {
+      "id": "ppg6e9af8e9dbc7f9d9a8f82c",
+      "title": "Poetry Craft Close Read",
+      "description": "Analyze imagery and sound devices in an original short poem.",
+      "order": 48,
+      "questionIds": [
+        "ppg6e7ebb7b7e04e006a47c56",
+        "ppg6e24d5bd4a556fbc9f167e",
+        "ppg6e16f0af8c4f909db5318d"
+      ]
+    },
+    {
+      "id": "ppg6e14950fa82c1250c354e1",
+      "title": "Speech Excerpt: Purpose and Tone",
+      "description": "Explain how craft supports purpose in a speech-like text.",
+      "order": 49,
+      "questionIds": [
+        "ppg6ed8b74e74b24f98ab243a",
+        "ppg6e961a1cb647e307dfbf78",
+        "ppg6eae2827471f4a0599a80c"
+      ]
+    },
+    {
+      "id": "ppg6efe1a658f04288681cd86",
+      "title": "Narrative Craft Case Study",
+      "description": "Trace how flashback or foreshadowing shapes meaning.",
+      "order": 50,
+      "questionIds": [
+        "ppg6eb51454b2cabb6ae7370d",
+        "ppg6e015b359cfafc8c38696e",
+        "ppg6e514d5340092c6bd689f0"
+      ]
+    },
+    {
+      "id": "ppg6e70c53506121193b33f1d",
+      "title": "Structure Map of a Feature Article",
+      "description": "Map sections and justify the author's organization.",
+      "order": 51,
+      "questionIds": [
+        "ppg6eb625b2cc63c16e2b8fe8",
+        "ppg6e14ff2970ba3f4af91385",
+        "ppg6e37416d12c38d9ab3d7b0"
+      ]
+    },
+    {
+      "id": "ppg6e99b6bef949d92c6cdbc5",
+      "title": "Long-Passage Craft Synthesis",
+      "description": "Write a craft-focused CER on a culminating long passage.",
+      "order": 52,
+      "questionIds": [
+        "ppg6e0c983ac68d2ea361835f",
+        "ppg6e4a6df07e9b410a9dfc65",
+        "ppg6e050ffd71c61aac5e5dc1"
+      ]
+    }
+  ],
+  "unit-9": [
+    {
+      "id": "ppg6e2ad3137b3fe2eb0c595c",
+      "title": "What Adjectives Modify",
+      "description": "Place adjectives clearly to describe nouns and pronouns.",
+      "order": 53,
+      "questionIds": [
+        "ppg6ecb561395ebeec92dd419",
+        "ppg6ea7bf02c83facd1b9ec66",
+        "ppg6e6bf9b5d01f3b8cc745ee"
+      ]
+    },
+    {
+      "id": "ppg6e2b69e77ebe72d5cd26c8",
+      "title": "What Adverbs Modify",
+      "description": "Use adverbs for verbs, adjectives, and other adverbs.",
+      "order": 54,
+      "questionIds": [
+        "ppg6e83c13b2351164eb9e2fa",
+        "ppg6ee98ed56ee9540bb5c85c",
+        "ppg6e55298c81f67305262263"
+      ]
+    },
+    {
+      "id": "ppg6ed3edfadfb5288bd5ebc6",
+      "title": "Comparative and Superlative Forms",
+      "description": "Form -er/-est and more/most comparisons correctly.",
+      "order": 55,
+      "questionIds": [
+        "ppg6ebb1cb8caaaadaee4d445",
+        "ppg6e8226867bfc2eadeebcd4",
+        "ppg6ebf15f2841042eea896ef"
+      ]
+    },
+    {
+      "id": "ppg6ed8415f23724202886395",
+      "title": "Avoiding Double Negatives",
+      "description": "Revise double negatives and unclear modifier placement.",
+      "order": 56,
+      "questionIds": [
+        "ppg6eb431fb11c69ff8166386",
+        "ppg6e9f0e3238d5196ad4b211",
+        "ppg6e5c676f25b72705fcfc77"
+      ]
+    },
+    {
+      "id": "ppg6ef2389350d4fb68f5c535",
+      "title": "Adjective vs Adverb Choices",
+      "description": "Choose good/well, bad/badly, and similar pairs carefully.",
+      "order": 57,
+      "questionIds": [
+        "ppg6ece517981e36b577a276d",
+        "ppg6e4bae729de0cee93f2f07",
+        "ppg6ea8a7a63f5a3d1a575d27"
+      ]
+    },
+    {
+      "id": "ppg6e95b49c7676172e47c5cc",
+      "title": "Modifiers for Stronger Writing",
+      "description": "Add precise modifiers without stuffing sentences.",
+      "order": 58,
+      "questionIds": [
+        "ppg6e2ef8cae6d9c0af4d3190",
+        "ppg6ed9535e51ea6d1125bd40",
+        "ppg6e118d08eb1cbf3a06cd6a"
+      ]
+    }
+  ],
+  "unit-10": [
+    {
+      "id": "ppg6e25ddfded204973af8861",
+      "title": "Prepositions and Their Objects",
+      "description": "Identify prepositions and the objects they connect.",
+      "order": 59,
+      "questionIds": [
+        "ppg6e28eaf54f5586bcb115d7",
+        "ppg6e0b308114192d90c9ddc0",
+        "ppg6e1b02802255590595ca9d"
+      ]
+    },
+    {
+      "id": "ppg6e76cadba022469b08b070",
+      "title": "Prepositional Phrases as Modifiers",
+      "description": "See how phrases act like adjectives or adverbs.",
+      "order": 60,
+      "questionIds": [
+        "ppg6efc5e859584b4e96757b8",
+        "ppg6e078882ad52551addacc2",
+        "ppg6e1ec0f92c97e3b1941794"
+      ]
+    },
+    {
+      "id": "ppg6edffa38987ebd3e27f6d7",
+      "title": "Ending with a Preposition (Myths)",
+      "description": "Revise awkward endings without fake 'rules' panic.",
+      "order": 61,
+      "questionIds": [
+        "ppg6e0689e63e651cc3333cdb",
+        "ppg6ebb5b79de0ce355c42544",
+        "ppg6e335cae0a59d545909704"
+      ]
+    },
+    {
+      "id": "ppg6ea2ddb3e232a17482da91",
+      "title": "Interjections and Tone",
+      "description": "Use interjections sparingly and punctuate them well.",
+      "order": 62,
+      "questionIds": [
+        "ppg6e5acdcd2459344ea09fa8",
+        "ppg6eb21d958563a8cfd47fd4",
+        "ppg6e1df5d7dcd9255f8f9830"
+      ]
+    },
+    {
+      "id": "ppg6ebdf9f3541760fb0301fe",
+      "title": "Phrase Clarity Revision",
+      "description": "Rewrite sentences so prepositional phrases attach cleanly.",
+      "order": 63,
+      "questionIds": [
+        "ppg6efe58786183a01b3746ba",
+        "ppg6e52aeacae95edca7fc4ac",
+        "ppg6e0d122b1efe335554456c"
+      ]
+    }
+  ],
+  "unit-11": [
+    {
+      "id": "ppg6e79bafa98e7dcc30e213e",
+      "title": "Subjects and Predicates",
+      "description": "Find complete subjects and predicates in sentences.",
+      "order": 64,
+      "questionIds": [
+        "ppg6efeab7b06a298e57cc276",
+        "ppg6e371a20335d03e374da3e",
+        "ppg6e4f676833d0d39731c7d2"
+      ]
+    },
+    {
+      "id": "ppg6ee82612253b1d5def035b",
+      "title": "Independent vs Dependent Clauses",
+      "description": "Label clauses and explain what each can do alone.",
+      "order": 65,
+      "questionIds": [
+        "ppg6e775283f6c106e4720ef2",
+        "ppg6ec9cb53bcfd65f221ba93",
+        "ppg6e10ae9e2e2d8e16722950"
+      ]
+    },
+    {
+      "id": "ppg6eefcd27a92d9bbd33a139",
+      "title": "Fixing Fragments",
+      "description": "Repair fragments by completing the thought.",
+      "order": 66,
+      "questionIds": [
+        "ppg6ed1134ef7415bf2ec8894",
+        "ppg6e719c0b23fb7b2100d433",
+        "ppg6e5e74f934d9e546be5eaa"
+      ]
+    },
+    {
+      "id": "ppg6e5bf829068c238e27aa44",
+      "title": "Fixing Run-Ons and Comma Splices",
+      "description": "Separate or join clauses with correct punctuation.",
+      "order": 67,
+      "questionIds": [
+        "ppg6ea2b9af4c168d91687b79",
+        "ppg6e8ae1cf4912fa5428f4e1",
+        "ppg6ef0778dfd55fa5e9e6bbe"
+      ]
+    },
+    {
+      "id": "ppg6e0929399b0ebbce4e2821",
+      "title": "Simple, Compound, and Complex",
+      "description": "Build varied sentence types on purpose.",
+      "order": 68,
+      "questionIds": [
+        "ppg6e4613873521eff2e96f96",
+        "ppg6e2a5a88bfcd04dc7be4ba",
+        "ppg6e2e54de4a805b7a89acf5"
+      ]
+    },
+    {
+      "id": "ppg6e809d246aba2c7777f570",
+      "title": "Combining Sentences for Flow",
+      "description": "Combine choppy sentences without creating monsters.",
+      "order": 69,
+      "questionIds": [
+        "ppg6e271b551de4fdfdeb98d1",
+        "ppg6ec06ab4502861dd9a9613",
+        "ppg6ef3da67cd3f2bedbccbd0"
+      ]
+    },
+    {
+      "id": "ppg6eb7d951ade3eac875dae1",
+      "title": "Sentence Craft Unit Review",
+      "description": "Mixed clause and sentence-type revision practice.",
+      "order": 70,
+      "questionIds": [
+        "ppg6e2f0df23d9696f52ea931",
+        "ppg6ee94d54a1e4efca987ce8",
+        "ppg6ec61eba3583bef9100d40"
+      ]
+    }
+  ],
+  "unit-12": [
+    {
+      "id": "ppg6e6fd1be4ad82baf95155e",
+      "title": "Claim, Evidence, Reasoning (CER)",
+      "description": "Build CER paragraphs that link evidence to a precise claim.",
+      "order": 71,
+      "questionIds": [
+        "ppg6eeaaf0441e2a97262dfd9",
+        "ppg6e1d413386e0e9ddd0a00c",
+        "ppg6e4c457e342dbe6081c0eb"
+      ]
+    },
+    {
+      "id": "ppg6e42afb40731f1d332dd3b",
+      "title": "Comparing Two Texts on One Topic",
+      "description": "Compare claims, evidence, and organization across texts.",
+      "order": 72,
+      "questionIds": [
+        "ppg6ec8ae4ac28958e3cba551",
+        "ppg6e075445b604a26ae005c6",
+        "ppg6e5f6e9bb4302fc932f5f1"
+      ]
+    },
+    {
+      "id": "ppg6e5022b4a7e99240c59ef5",
+      "title": "Evaluating an Argument",
+      "description": "Judge whether reasons and evidence are sufficient and fair.",
+      "order": 73,
+      "questionIds": [
+        "ppg6eecf001250b22ba1303e4",
+        "ppg6edd1f2f6c283650227af5",
+        "ppg6eb7ea6ac6b7fcd3d2ddd9"
+      ]
+    },
+    {
+      "id": "ppg6e37c85b3762478bdb7929",
+      "title": "Fact, Opinion, and Loaded Language",
+      "description": "Separate checkable facts from judgment words.",
+      "order": 74,
+      "questionIds": [
+        "ppg6ed76e7002dae597566971",
+        "ppg6e7a754be9589378f17da0",
+        "ppg6e60b8c441123db017efbf"
+      ]
+    },
+    {
+      "id": "ppg6ec60160e81599e566c653",
+      "title": "Visuals That Support a Text",
+      "description": "Explain how a chart, map, or image adds to meaning.",
+      "order": 75,
+      "questionIds": [
+        "ppg6e62ce58185eaee1d3f7df",
+        "ppg6ed051e7bc2e9e33717de7",
+        "ppg6ecce3185527dfe58e5957"
+      ]
+    },
+    {
+      "id": "ppg6eb29abb271d135e78833c",
+      "title": "Synthesizing Across Sources",
+      "description": "Write a synthesis that notes agreement and tension.",
+      "order": 76,
+      "questionIds": [
+        "ppg6ea96727ea7c573b1ec55d",
+        "ppg6e5abe0bbd46f660bc5e9f",
+        "ppg6e977b56ab3c23501b180e"
+      ]
+    },
+    {
+      "id": "ppg6e8dcf78f940ab78c69679",
+      "title": "Integration Habits Review",
+      "description": "Apply CER + comparison moves in a short performance task.",
+      "order": 77,
+      "questionIds": [
+        "ppg6e54cd37b6270aa1232bdb",
+        "ppg6efb445a5c40ee52c5c148",
+        "ppg6e2e021fdc83c93ef1f4f5"
+      ]
+    }
+  ],
+  "unit-13": [
+    {
+      "id": "ppg6e6d760f610843272a67f6",
+      "title": "Paired Passages: Sleep and Schedules",
+      "description": "Compare two longer texts on the same issue.",
+      "order": 78,
+      "questionIds": [
+        "ppg6e29479658fb44d45d5448",
+        "ppg6e436866dac80bdf0f3310",
+        "ppg6ef23ccc179aad3a9fd929"
+      ]
+    },
+    {
+      "id": "ppg6e3ad018e191c39795ce61",
+      "title": "Argument + Counterargument Practice",
+      "description": "Track a claim and the opposing view across pages.",
+      "order": 79,
+      "questionIds": [
+        "ppg6e18b78f510381e8f5040e",
+        "ppg6e3adcf563f1d3317625e0",
+        "ppg6edfd69c2fbd7c1c3ed71a"
+      ]
+    },
+    {
+      "id": "ppg6e86cad969844995868743",
+      "title": "Media + Text Pairing",
+      "description": "Integrate a news-style text with a data table (original).",
+      "order": 80,
+      "questionIds": [
+        "ppg6e5fcb7ae82a8a8920a550",
+        "ppg6ea7aec32ec342c299055b",
+        "ppg6e135315d6a6cb1d525fee"
+      ]
+    },
+    {
+      "id": "ppg6e5187bc8f86adc13a56c8",
+      "title": "Literature and Informational Pair",
+      "description": "Connect a story theme to a related nonfiction idea.",
+      "order": 81,
+      "questionIds": [
+        "ppg6e2f53e18d8b8504b755a1",
+        "ppg6e37e898c4290dfefd89b2",
+        "ppg6e7df6417db5456746d4d4"
+      ]
+    },
+    {
+      "id": "ppg6e24844d9d1b8a55b0ff31",
+      "title": "Building a Mini DBQ-Lite",
+      "description": "Use two sources to answer one compelling question.",
+      "order": 82,
+      "questionIds": [
+        "ppg6e061ebf7db5811be93c18",
+        "ppg6e4c1037817d1ea5dd1ff7",
+        "ppg6e9b32773849fa753ac8f7"
+      ]
+    },
+    {
+      "id": "ppg6ec1d099d0f987c85689ee",
+      "title": "Integration Capstone Response",
+      "description": "Write a multi-paragraph integration CER with citations.",
+      "order": 83,
+      "questionIds": [
+        "ppg6efe3e2e557650bb154050",
+        "ppg6ec8a6968738de84e5dfb1",
+        "ppg6e67343d09712297a3f08d"
+      ]
+    }
+  ],
+  "unit-14": [
+    {
+      "id": "ppg6eaab3c31080ea0736b2b3",
+      "title": "Capitalization That Signals Importance",
+      "description": "Capitalize proper nouns, titles, and sentence starts.",
+      "order": 84,
+      "questionIds": [
+        "ppg6e72b582d9d4462e8ec94c",
+        "ppg6eeea02a11ea4db78fb5d2",
+        "ppg6e17a98cc18032c1df00b4"
+      ]
+    },
+    {
+      "id": "ppg6edc79de69654b8a75eb13",
+      "title": "Commas in a Series and Introductory Elements",
+      "description": "Place commas for lists and openers.",
+      "order": 85,
+      "questionIds": [
+        "ppg6e603262f8d42d68078ea0",
+        "ppg6e6e7c7d4f9033ce5d7f86",
+        "ppg6ec7ac3fd3ea8dc3038e97"
+      ]
+    },
+    {
+      "id": "ppg6e25b36a0d352ccf30b40c",
+      "title": "Commas with Coordinating Conjunctions",
+      "description": "Join independent clauses with comma + FANBOYS.",
+      "order": 86,
+      "questionIds": [
+        "ppg6e276ecf356f7fbe5f7ddc",
+        "ppg6e7803be0409a85775e3f0",
+        "ppg6e983627a283e889825a77"
+      ]
+    },
+    {
+      "id": "ppg6e1e5bb139d0bd2d8bb0b8",
+      "title": "Apostrophes for Possession and Contractions",
+      "description": "Use apostrophes without confusing plurals.",
+      "order": 87,
+      "questionIds": [
+        "ppg6ec5154654582331f39066",
+        "ppg6e82036d604eef661d10b9",
+        "ppg6e6c45f4eb649cd68154aa"
+      ]
+    },
+    {
+      "id": "ppg6e324ee83d23716f22d22e",
+      "title": "Quotation Marks in Dialogue",
+      "description": "Punctuate dialogue and quoted evidence cleanly.",
+      "order": 88,
+      "questionIds": [
+        "ppg6e1e3eb21e95991d232756",
+        "ppg6eb4b83ca46baadefe270b",
+        "ppg6e7c77cee9f3499e246433"
+      ]
+    },
+    {
+      "id": "ppg6ec19f6a3870a266bc11dc",
+      "title": "Punctuation Polish Workshop",
+      "description": "Edit a paragraph for capitalization and punctuation.",
+      "order": 89,
+      "questionIds": [
+        "ppg6e4f97883b1d44816bdf09",
+        "ppg6e4c2edad0ae319bb643fa",
+        "ppg6ebf715c49c9ed17f2ce52"
+      ]
+    }
+  ],
+  "unit-15": [
+    {
+      "id": "ppg6e0d91a344b39b92e3c6c1",
+      "title": "Homophones That Trick Writers",
+      "description": "Master there/their/they're, to/too/two, and kin.",
+      "order": 90,
+      "questionIds": [
+        "ppg6e3babeb828943e70d1f8b",
+        "ppg6e4f28d6b9b4880f62b27f",
+        "ppg6e4e12a85575deb8eb96bf"
+      ]
+    },
+    {
+      "id": "ppg6ebec8f547a744f5942dfb",
+      "title": "Affect vs Effect and Similar Pairs",
+      "description": "Choose among commonly confused academic words.",
+      "order": 91,
+      "questionIds": [
+        "ppg6e81b33a3d2f2d0095b873",
+        "ppg6e3008c239936cbcd62f47",
+        "ppg6e991101c775fd5cfd740d"
+      ]
+    },
+    {
+      "id": "ppg6e88df412c5eb07c6c9e48",
+      "title": "Formal vs Informal Word Choice",
+      "description": "Match register to school writing tasks.",
+      "order": 92,
+      "questionIds": [
+        "ppg6e56ad290adf6d40ec4265",
+        "ppg6e7c933c61699e0c130d25",
+        "ppg6ea09ae538836f29d635c6"
+      ]
+    },
+    {
+      "id": "ppg6ea57187ce1473bfa7e706",
+      "title": "Precise Verbs Beat Vague Ones",
+      "description": "Replace got/did/things with sharper vocabulary.",
+      "order": 93,
+      "questionIds": [
+        "ppg6e1c4deb33161f7f44a384",
+        "ppg6e6de92b91e74b5f7847d8",
+        "ppg6ee837eab91107a80fddab"
+      ]
+    },
+    {
+      "id": "ppg6ed60fca7821386995e8ab",
+      "title": "Morphology Review Lab",
+      "description": "Combine roots, prefixes, and suffixes to unlock meaning.",
+      "order": 94,
+      "questionIds": [
+        "ppg6eaee0f7da92bd00b622ac",
+        "ppg6e160fef580db7578a6dad",
+        "ppg6ea3029572f95221263514"
+      ]
+    },
+    {
+      "id": "ppg6ea635fde7cdb4cd49195c",
+      "title": "Word Study Editing Pass",
+      "description": "Edit a student paragraph for word-choice accuracy.",
+      "order": 95,
+      "questionIds": [
+        "ppg6e339ecb6c41e408dfc195",
+        "ppg6e70ab3b931ea88f966c72",
+        "ppg6ed1aee21e9a66b632396a"
+      ]
+    }
+  ],
+  "unit-16": [
+    {
+      "id": "ppg6e1b469e92bee002737d68",
+      "title": "What Style Means in Writing",
+      "description": "Notice sentence length, diction, and patterning choices.",
+      "order": 96,
+      "questionIds": [
+        "ppg6ec5aa59ab741796914287",
+        "ppg6e1211ba36e864e503a06d",
+        "ppg6ea6996ec221f3c815313a"
+      ]
+    },
+    {
+      "id": "ppg6e1d93a4963fe418a4ef08",
+      "title": "Keeping Tone Consistent",
+      "description": "Revise shifts that accidentally sound sarcastic or stiff.",
+      "order": 97,
+      "questionIds": [
+        "ppg6ecc59e6ff326e0e44476e",
+        "ppg6e7c9202bf850ee95b9186",
+        "ppg6edfd0c245245c4b37472a"
+      ]
+    },
+    {
+      "id": "ppg6e0925fcf7e70087dc1a1f",
+      "title": "Avoiding Wordiness",
+      "description": "Cut empty phrases while keeping meaning.",
+      "order": 98,
+      "questionIds": [
+        "ppg6e88eb6878f605d8f09b9a",
+        "ppg6ef8c2a92db7be3a93ed69",
+        "ppg6e07cc98ed1cd45f021434"
+      ]
+    },
+    {
+      "id": "ppg6eef480617a5af39c193e4",
+      "title": "Parallel Structure Basics",
+      "description": "Balance lists and paired ideas for smoother rhythm.",
+      "order": 99,
+      "questionIds": [
+        "ppg6e00159ceadb944ca4e448",
+        "ppg6e3870da9df9f51f18236f",
+        "ppg6ee931fe07c75e6c7d1c3e"
+      ]
+    },
+    {
+      "id": "ppg6e926119999f0f1ba9dfc9",
+      "title": "Voice That Fits the Audience",
+      "description": "Adjust style for teacher, peer, or public audiences.",
+      "order": 100,
+      "questionIds": [
+        "ppg6e028228d67e6cfcccf8c2",
+        "ppg6ec67d853ebdc3fea4321d",
+        "ppg6ea62b5381e7e401653ec9"
+      ]
+    },
+    {
+      "id": "ppg6e35ba62b458313d7b4d29",
+      "title": "Style & Tone Portfolio Polish",
+      "description": "Revise one paragraph for clarity, tone, and craft.",
+      "order": 101,
+      "questionIds": [
+        "ppg6ec6f549e2984a504cc320",
+        "ppg6edc1c798ee6093aa1578c",
+        "ppg6edac57d40c9c7355250cf"
+      ]
+    }
+  ]
+}
