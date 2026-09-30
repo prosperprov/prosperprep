@@ -70,7 +70,7 @@ const ISLAND_BY_SUBJECT: Record<string, SubjectIslandStyle> = {
     badge: "bg-rose-100 text-rose-950",
     cta: "bg-rose-700 hover:bg-rose-800 text-white",
   },
-  "Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study": {
+  "Bible Study: Hallelujah Scriptures & Paleo-Hebrew": {
     shortLabel: "Bible",
     emoji: "✝",
     accent: "border-indigo-300 bg-indigo-50 hover:border-indigo-400",
@@ -107,7 +107,7 @@ export function subjectIslandStyle(subject: string): SubjectIslandStyle {
     return ISLAND_BY_SUBJECT["College Athletic Pathway"];
   }
   if (lower.includes("bible") || lower.includes("scripture")) {
-    return ISLAND_BY_SUBJECT["Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study"];
+    return ISLAND_BY_SUBJECT["Bible Study: Hallelujah Scriptures & Paleo-Hebrew"];
   }
   return FALLBACK;
 }

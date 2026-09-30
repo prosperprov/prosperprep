@@ -26,7 +26,7 @@ async function main() {
   }, null, 2));
 
   for (const sub of [
-    "Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study",
+    "Bible Study: Hallelujah Scriptures & Paleo-Hebrew",
     "ACT Prep",
     "SAT Prep",
     "College Athletic Pathway",

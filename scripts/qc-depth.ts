@@ -20,7 +20,7 @@ async function main() {
     ["sat-g10", { subject: "SAT Prep", grade: 10 }],
     ["athletic-g10", { subject: "College Athletic Pathway", grade: 10 }],
     ["ent-g10", { subject: "Entrepreneurship & Financial Independence", grade: 10 }],
-    ["bible-g10", { subject: "Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study", grade: 10 }],
+    ["bible-g10", { subject: "Bible Study: Hallelujah Scriptures & Paleo-Hebrew", grade: 10 }],
     ["foundations-g8", { subject: "ACT / SAT Foundations", grade: 8 }],
   ] as const) {
     const c = await p.course.findFirst({ where: where as any });

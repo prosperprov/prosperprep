@@ -11,12 +11,12 @@ export const brand = {
   location: "East Texas, USA",
   nonprofit: true,
   description:
-    "Prosper Preparatory is a nonprofit East Texas school uniting elite academics, athletic development aimed at college scholarships, and entrepreneurship training for financial independence — whether students go to college or build from day one after high school.",
+    "Prosper Preparatory is a nonprofit East Texas school uniting elite academics, athletics, and entrepreneurship training for financial independence — whether students go to college or build from day one after high school.",
   /** This app fills the gap the marketing site doesn't cover yet. */
   productFocus:
     "School login, enrollment, monthly online K–12 schooling, student and teacher dashboards, and live learning sessions.",
   marketingSite: "https://prosperprep.org",
-  cultureLine: "College athletic scholarships · Entrepreneurship · Financial independence",
+  cultureLine: "Elite academics · Entrepreneurship · Financial independence",
 } as const;
 
 /** Honest MVP / Foundations labeling — do not claim full-year credit map yet. */
@@ -48,14 +48,14 @@ export const pricingCopy = {
     grades: "Grades 6–8",
     price: 129,
     blurb:
-      "Core academics plus early entrepreneurship, athlete-scholar habits, and Bible word study — building independence for high school and beyond.",
+      "Core academics plus early entrepreneurship, athlete-scholar habits, and Bible study — building independence for high school and beyond.",
   },
   high: {
     name: "High School Path",
     grades: "Grades 9–12",
     price: 159,
     blurb:
-      "College-prep academics, ACT/SAT prep, athletic recruiting literacy, entrepreneurship & finance, and Bible (Hallelujah Scriptures) — built for scholarships and real-world independence.",
+      "College-prep academics, ACT/SAT prep, athletics, entrepreneurship & finance, and Bible study (Hallelujah Scriptures) — built for real-world independence.",
   },
 } as const;
 

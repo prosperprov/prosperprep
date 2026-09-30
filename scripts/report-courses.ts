@@ -22,7 +22,7 @@ async function main() {
     "SAT Prep",
     "College Athletic Pathway",
     "Entrepreneurship & Financial Independence",
-    "Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study",
+    "Bible Study: Hallelujah Scriptures & Paleo-Hebrew",
     "Mathematics",
   ];
   console.log("\nEXAMPLE_URLS (grade 10 preferred)");

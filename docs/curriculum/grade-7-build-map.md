@@ -29,7 +29,7 @@ These are product observations from the schools' and standard setter's own descr
 | World History | Sources, chronology, and geography | Comparative societies and trade | Governance, belief systems, and exchange | Historical argument and primary-source project | Source analysis, maps, supported explanations |
 | Entrepreneurship & Financial Independence | Customer problems, costs, honest offer testing | Budgeting, saving, and financial decisions | Design, operations, and customer service | Small supervised venture simulation and pitch | Evidence log, unit economics, tested offer, portfolio |
 | College Athletic Pathway | Academic habits and eligibility literacy | Training, recovery, and time management | Recruiting communication and media literacy | Personal academic and athletic plan | Study calendar, reflection, ethical outreach draft |
-| Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study | Text context and responsible word study | Narrative and poetry | Hebrew roots and translation comparisons | Research presentation and interpretation | Contextual word studies and cited interpretations |
+| Bible Study: Hallelujah Scriptures & Paleo-Hebrew | Text context and responsible Bible study | Narrative and poetry | Hebrew roots and translation comparisons | Research presentation and interpretation | Contextual Bible studies and cited interpretations |
 
 ## Unit standard for every course
 
