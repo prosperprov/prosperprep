@@ -13,12 +13,10 @@ body {
   min-height: 100vh;
 }
 
-/* Keep the fixed student dock from covering the last lesson controls on phones.
-   :has() scopes the extra space to authenticated student pages only. */
-@media (max-width: 1023px) {
-  body:has([data-student-mobile-dock]) main {
-    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
-  }
+/* Keep the fixed student dock from covering the last lesson controls.
+   Applies whenever the dock is mounted (all viewports for STUDENT). */
+body:has([data-student-mobile-dock]) main {
+  padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
 }
 
 @layer utilities {
