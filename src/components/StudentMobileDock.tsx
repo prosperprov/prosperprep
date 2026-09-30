@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 import { Home, MessageCircle } from "lucide-react";
+import { MESSAGE_PULSE_EVENT } from "@/components/messaging/liveConstants";
 
 /**
  * Floating bottom dock for logged-in students on ALL viewports.
@@ -13,37 +15,55 @@ import { Home, MessageCircle } from "lucide-react";
  */
 export function StudentMobileDock({
   dashboardHref,
+  messagesHref = "/dashboard/student/messages",
   unreadCount = 0,
+  audience = "student",
+  homeLabel = "Dashboard",
 }: {
   dashboardHref: string;
+  messagesHref?: string;
   unreadCount?: number;
+  audience?: "student" | "staff";
+  homeLabel?: string;
 }) {
   const { data: session, status } = useSession();
   const role = session?.user?.role;
   const pathname = usePathname() || "";
-  // Server only mounts this for a student. After hydration, unmount if the
-  // client session is missing or not STUDENT (logged-out, signed-out, or a
-  // stale cached payload). While status is "loading", keep the server HTML
-  // so we don't hydration-mismatch.
-  if (status !== "loading" && role !== "STUDENT") return null;
+  const [liveUnread, setLiveUnread] = useState(unreadCount);
+  useEffect(() => setLiveUnread(unreadCount), [unreadCount]);
+  useEffect(() => {
+    const fn = (event: Event) => {
+      const detail = (event as CustomEvent<{ unreadCount?: number }>).detail;
+      if (typeof detail?.unreadCount === "number") setLiveUnread(detail.unreadCount);
+    };
+    window.addEventListener(MESSAGE_PULSE_EVENT, fn);
+    return () => window.removeEventListener(MESSAGE_PULSE_EVENT, fn);
+  }, []);
+  // Server only mounts this for the matching role. After hydration, unmount if
+  // the client session does not match. While status is "loading", keep the
+  // server HTML so we don't hydration-mismatch.
+  if (status !== "loading") {
+    if (audience === "student" && role !== "STUDENT") return null;
+    if (audience === "staff" && role !== "TEACHER" && role !== "ADMIN") return null;
+  }
 
   const onDash =
     pathname === dashboardHref || pathname.startsWith(`${dashboardHref}/`);
   const onMessages =
-    pathname === "/dashboard/student/messages" ||
-    pathname.startsWith("/dashboard/student/messages/");
+    pathname === messagesHref || pathname.startsWith(`${messagesHref}/`);
 
   const badge =
-    unreadCount > 0 ? (
+    liveUnread > 0 ? (
       <span className="absolute -right-1 -top-1 inline-flex min-w-[1.15rem] items-center justify-center rounded-full bg-rose-500 px-1 text-[10px] font-bold leading-4 text-white">
-        {unreadCount > 9 ? "9+" : unreadCount}
+        {liveUnread > 9 ? "9+" : liveUnread}
       </span>
     ) : null;
 
   return (
     <nav
-      aria-label="Student quick navigation"
+      aria-label={audience === "staff" ? "Teacher quick navigation" : "Student quick navigation"}
       data-student-mobile-dock
+      data-app-dock
       className="fixed inset-x-0 bottom-0 z-[100] flex border-t border-slate-200 bg-white px-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-4px_16px_rgba(15,23,42,0.12)]"
       style={{ display: "flex" }}
     >
@@ -59,12 +79,12 @@ export function StudentMobileDock({
             aria-current={onDash && !onMessages ? "page" : undefined}
           >
             <Home className="h-5 w-5" aria-hidden />
-            Dashboard
+            {homeLabel}
           </Link>
         </li>
         <li className="flex-1">
           <Link
-            href="/dashboard/student/messages"
+            href={messagesHref}
             className={`relative flex min-h-[48px] flex-col items-center justify-center gap-0.5 rounded-xl px-2 text-xs font-semibold ${
               onMessages
                 ? "bg-sky-50 text-sky-950"

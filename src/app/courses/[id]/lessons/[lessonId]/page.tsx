@@ -16,6 +16,8 @@ import { GuidedPractice } from "@/components/GuidedPractice";
 import { guidedPracticeForLesson } from "@/lib/guidedPractice";
 import { isGrade6Classroom } from "@/lib/grade6Classroom";
 import { Grade6LessonChrome } from "@/components/grade6/Grade6LessonChrome";
+import { AskYourTeacher } from "@/components/AskYourTeacher";
+import { resolveLessonTeacher } from "@/lib/resolveLessonTeacher";
 import { grade6UnitLabel, isRetiredSection } from "@/lib/grade6Classroom";
 import { unitLockMessage } from "@/lib/unitUnlock";
 import { resolveMaxUnlockedUnit, isUnitUnlocked } from "@/lib/resolveUnitUnlock";
@@ -79,6 +81,24 @@ export default async function LessonPage({
     include: { questions: { orderBy: { order: "asc" } } },
   });
   if (!lesson || lesson.courseId !== course.id) notFound();
+
+  const teacherResolution =
+    session.user.role === "STUDENT"
+      ? await resolveLessonTeacher({
+          studentId: session.user.id,
+          courseId: course.id,
+          courseGrade: course.grade,
+        })
+      : null;
+  const askTeacher = teacherResolution ? (
+    <AskYourTeacher
+      resolution={teacherResolution}
+      courseId={course.id}
+      courseTitle={course.title}
+      lessonOrder={lesson.order}
+      lessonTitle={lesson.title}
+    />
+  ) : null;
 
   const pathLessons = course.lessons.filter((l) => !isRetiredSection(l.sectionKey));
   const idx = pathLessons.findIndex((l) => l.id === lesson.id);
@@ -226,6 +246,7 @@ export default async function LessonPage({
           >
             View year map
           </Link>
+          {askTeacher ? <div className="mt-4 flex justify-center">{askTeacher}</div> : null}
         </div>
       </div>
     );
@@ -265,6 +286,7 @@ export default async function LessonPage({
           }
           sectionQuizUnlocked={sectionQuizUnlocked}
           unitLabel={grade6UnitLabel(lesson.sectionKey, g6UnitTotal, course.subject)}
+          askTeacher={askTeacher}
         />
       ) : (
         <>
@@ -286,6 +308,31 @@ export default async function LessonPage({
           </p>
           <h1 className="mt-1 text-3xl font-bold text-slate-900">{lesson.title}</h1>
           <p className="mt-2 text-slate-600">{lesson.description}</p>
+          <nav className="mt-4 flex flex-wrap gap-2" aria-label="Lesson actions">
+            {lesson.videoUrl ? (
+              <a
+                href="#lesson-video"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-2xl border-2 border-sky-400 bg-sky-600 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-sky-700"
+              >
+                ▶ Watch video
+              </a>
+            ) : null}
+            <a
+              href="#lesson-check"
+              className="inline-flex min-h-[48px] items-center rounded-2xl border-2 border-amber-300 bg-amber-50 px-4 py-2 text-base font-bold text-amber-950 hover:bg-amber-100"
+            >
+              {questions.length > 0 ? "Take quiz" : "Mark complete"}
+            </a>
+            {askTeacher}
+            {next ? (
+              <Link
+                href={`/courses/${course.id}/lessons/${next.id}`}
+                className="inline-flex min-h-[48px] items-center rounded-2xl bg-emerald-700 px-4 py-2 text-base font-bold text-white hover:bg-emerald-800"
+              >
+                Next: {next.title.length > 28 ? `${next.title.slice(0, 28)}…` : next.title} →
+              </Link>
+            ) : null}
+          </nav>
         </>
       )}
 

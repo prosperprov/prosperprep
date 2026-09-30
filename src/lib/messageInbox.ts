@@ -175,13 +175,31 @@ export async function loadDirectoryForUser(
   return { students: [], teachers: [], classmates: [] };
 }
 
-/** Lightweight unread thread count for nav badges (same rules as loadInboxForUser). */
-export async function countUnreadForUser(userId: string): Promise<number> {
+export type MessagePulseLatest = {
+  messageId: string;
+  threadId: string;
+  senderName: string;
+  subject: string;
+  preview: string;
+  createdAt: string;
+};
+
+export type MessagePulse = {
+  unreadCount: number;
+  latest: MessagePulseLatest | null;
+};
+
+/**
+ * Unread threads plus the newest incoming message.
+ * Same rules as the inbox badge: last message is from someone else and is
+ * newer than this user's lastReadAt.
+ */
+export async function loadMessagePulse(userId: string): Promise<MessagePulse> {
   const memberships = await prisma.threadParticipant.findMany({
     where: { userId },
     select: { threadId: true, lastReadAt: true },
   });
-  if (memberships.length === 0) return 0;
+  if (memberships.length === 0) return { unreadCount: 0, latest: null };
 
   const lastReadMap = new Map(
     memberships.map((m) => [m.threadId, m.lastReadAt?.getTime() ?? 0])
@@ -192,21 +210,48 @@ export async function countUnreadForUser(userId: string): Promise<number> {
     where: { id: { in: threadIds } },
     select: {
       id: true,
+      subject: true,
       messages: {
         orderBy: { createdAt: "desc" },
         take: 1,
-        select: { senderId: true, createdAt: true },
+        select: {
+          id: true,
+          body: true,
+          senderId: true,
+          createdAt: true,
+          sender: { select: { name: true } },
+        },
       },
     },
   });
 
   let unread = 0;
+  let latest: MessagePulseLatest | null = null;
   for (const t of threads) {
     const last = t.messages[0];
     if (!last) continue;
     if (last.senderId === userId) continue;
     const lastRead = lastReadMap.get(t.id) ?? 0;
-    if (last.createdAt.getTime() > lastRead) unread += 1;
+    if (last.createdAt.getTime() <= lastRead) continue;
+    unread += 1;
+    if (!latest || last.createdAt.getTime() > Date.parse(latest.createdAt)) {
+      const preview = last.body.length > 140 ? last.body.slice(0, 137) + "…" : last.body;
+      latest = {
+        messageId: last.id,
+        threadId: t.id,
+        senderName: last.sender.name,
+        subject: t.subject,
+        preview,
+        createdAt: last.createdAt.toISOString(),
+      };
+    }
   }
-  return unread;
+  return { unreadCount: unread, latest };
 }
+
+/** Lightweight unread thread count for nav badges (same rules as loadInboxForUser). */
+export async function countUnreadForUser(userId: string): Promise<number> {
+  const pulse = await loadMessagePulse(userId);
+  return pulse.unreadCount;
+}
+

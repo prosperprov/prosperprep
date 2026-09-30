@@ -1,8 +1,9 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { MESSAGE_POLL_MS } from "@/components/messaging/liveConstants";
 
 export type ThreadMessage = {
   id: string;
@@ -52,6 +53,34 @@ export function ThreadViewClient({
     setBody("");
     router.refresh();
   }
+
+  useEffect(() => {
+    let cancelled = false;
+    async function pull() {
+      try {
+        const res = await fetch(`/api/messages/threads/${threadId}`, { cache: "no-store" });
+        if (!res.ok || cancelled) return;
+        const data = (await res.json()) as { thread?: { messages?: ThreadMessage[] } };
+        const incoming = data.thread?.messages;
+        if (!incoming) return;
+        setMessages((prev) => {
+          const map = new Map<string, ThreadMessage>();
+          for (const m of incoming) map.set(m.id, m);
+          for (const m of prev) if (!map.has(m.id)) map.set(m.id, m);
+          return Array.from(map.values()).sort((a, b) => a.createdAt.localeCompare(b.createdAt));
+        });
+      } catch {
+        // keep the thread on screen; the next poll retries
+      }
+    }
+    const id = window.setInterval(() => {
+      if (document.visibilityState === "visible") void pull();
+    }, MESSAGE_POLL_MS);
+    return () => {
+      cancelled = true;
+      window.clearInterval(id);
+    };
+  }, [threadId]);
 
   const typeLabel =
     type === "BLAST" ? "Announcement" : type === "GROUP" ? "Group" : "Direct message";

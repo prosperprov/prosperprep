@@ -8,15 +8,30 @@ export function ComposeDmForm({
   directory,
   onDone,
   threadBase,
+  initialRecipientId = "",
+  initialSubject = "",
+  initialBody = "",
+  lockRecipient = false,
+  courseId,
+  heading = "New direct message",
+  hint,
 }: {
   directory: DirectoryPayload;
   onDone: () => void;
   threadBase: string;
+  initialRecipientId?: string;
+  initialSubject?: string;
+  initialBody?: string;
+  /** Hide the recipient picker. Used by Ask your teacher. */
+  lockRecipient?: boolean;
+  courseId?: string;
+  heading?: string;
+  hint?: string;
 }) {
   const router = useRouter();
-  const [recipientId, setRecipientId] = useState("");
-  const [body, setBody] = useState("");
-  const [subject, setSubject] = useState("");
+  const [recipientId, setRecipientId] = useState(initialRecipientId);
+  const [body, setBody] = useState(initialBody);
+  const [subject, setSubject] = useState(initialSubject);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -33,6 +48,9 @@ export function ComposeDmForm({
     }
     return rows;
   }, [directory]);
+
+  const lockedLabel =
+    options.find((o) => o.id === recipientId)?.label ?? "Your teacher";
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -53,6 +71,7 @@ export function ComposeDmForm({
         recipientId,
         body: body.trim(),
         subject: subject.trim() || undefined,
+        courseId: courseId || undefined,
       }),
     });
     const data = await res.json();
@@ -71,22 +90,34 @@ export function ComposeDmForm({
       onSubmit={onSubmit}
       className="space-y-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
     >
-      <h3 className="text-base font-semibold text-slate-900">New direct message</h3>
-      <label className="block text-sm">
-        <span className="font-medium text-slate-700">To</span>
-        <select
-          className="mt-1 min-h-[44px] w-full rounded-lg border border-slate-300 px-3"
-          value={recipientId}
-          onChange={(e) => setRecipientId(e.target.value)}
-        >
-          <option value="">Select…</option>
-          {options.map((o) => (
-            <option key={o.id} value={o.id}>
-              {o.label}
-            </option>
-          ))}
-        </select>
-      </label>
+      <h3 id="ask-teacher-title" className="text-base font-semibold text-slate-900">
+        {heading}
+      </h3>
+      {hint ? <p className="text-sm text-slate-600">{hint}</p> : null}
+      {lockRecipient ? (
+        <p className="block text-sm">
+          <span className="font-medium text-slate-700">To</span>
+          <span className="mt-1 flex min-h-[44px] items-center rounded-lg border border-slate-200 bg-slate-50 px-3 font-semibold text-slate-900">
+            {lockedLabel}
+          </span>
+        </p>
+      ) : (
+        <label className="block text-sm">
+          <span className="font-medium text-slate-700">To</span>
+          <select
+            className="mt-1 min-h-[44px] w-full rounded-lg border border-slate-300 px-3"
+            value={recipientId}
+            onChange={(e) => setRecipientId(e.target.value)}
+          >
+            <option value="">Select…</option>
+            {options.map((o) => (
+              <option key={o.id} value={o.id}>
+                {o.label}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
       <label className="block text-sm">
         <span className="font-medium text-slate-700">Subject (optional)</span>
         <input
@@ -104,6 +135,7 @@ export function ComposeDmForm({
           onChange={(e) => setBody(e.target.value)}
           maxLength={8000}
           required
+          autoFocus={lockRecipient}
         />
       </label>
       {error && <p className="text-sm text-red-700">{error}</p>}
