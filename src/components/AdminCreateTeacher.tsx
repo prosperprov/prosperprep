@@ -53,7 +53,7 @@ export function AdminCreateTeacher() {
     <form onSubmit={onSubmit} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
       <h3 className="text-base font-semibold text-slate-900">Create teacher</h3>
       <p className="mt-1 text-sm text-slate-500">
-        New teacher account with grades they are cleared to teach.
+        New teacher account. Assign every grade they teach — more than one is allowed.
       </p>
       {error && <p className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
       {message && (
@@ -92,7 +92,7 @@ export function AdminCreateTeacher() {
         </label>
         <div>
           <p className="text-sm font-medium text-slate-700">Teaching grades</p>
-          <p className="text-xs text-slate-500">Select at least one so the teacher has a classroom.</p>
+          <p className="text-xs text-slate-500">Select all that apply. One teacher can cover several grades.</p>
           <div className="mt-2 flex flex-wrap gap-2">
             {ALL.map((g) => {
               const on = grades.includes(g);
@@ -100,6 +100,7 @@ export function AdminCreateTeacher() {
                 <button
                   key={g}
                   type="button"
+                  aria-pressed={on}
                   onClick={() => toggle(g)}
                   className={`rounded-full border px-3 py-1 text-xs font-medium ${
                     on

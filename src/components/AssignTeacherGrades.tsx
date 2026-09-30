@@ -21,7 +21,7 @@ export function AssignTeacherGrades({
 
   const q = query.trim().toLowerCase();
   const filtered = useMemo(() => {
-    if (!q) return [];
+    if (!q) return teachers;
     return teachers.filter(
       (t) =>
         t.name.toLowerCase().includes(q) || t.email.toLowerCase().includes(q)
@@ -74,9 +74,10 @@ export function AssignTeacherGrades({
       {message && (
         <p className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-900">{message}</p>
       )}
-      {!q ? (
-        <p className="text-sm text-slate-500">Type to search teachers by name or email.</p>
-      ) : filtered.length === 0 ? (
+      <p className="text-sm text-slate-600">
+        A teacher can be assigned to more than one grade. Turn on every grade they teach, then save.
+      </p>
+      {filtered.length === 0 ? (
         <p className="text-sm text-slate-500">No teachers match “{query.trim()}”.</p>
       ) : (
         <div className="space-y-6">
@@ -103,6 +104,7 @@ export function AssignTeacherGrades({
                     <button
                       key={g}
                       type="button"
+                      aria-pressed={on}
                       onClick={() => toggle(t.id, g)}
                       className={`rounded-full border px-3 py-1 text-xs font-medium ${
                         on
@@ -116,10 +118,10 @@ export function AssignTeacherGrades({
                 })}
               </div>
               <p className="mt-2 text-xs text-slate-500">
-                Assigned:{" "}
+                {(local[t.id] || []).length} grade{(local[t.id] || []).length === 1 ? "" : "s"} assigned
                 {(local[t.id] || []).length
-                  ? (local[t.id] || []).map(gradeLabel).join(", ")
-                  : "none — teacher sees an empty classroom until grades are assigned"}
+                  ? `: ${(local[t.id] || []).map(gradeLabel).join(", ")}`
+                  : " — classroom stays empty until you save at least one"}
               </p>
             </div>
           ))}

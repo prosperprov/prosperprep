@@ -11,7 +11,7 @@ export function Footer() {
             <img
               src={brandAssets.mark}
               alt=""
-              className="h-10 w-10 rounded-full object-contain bg-black"
+              className="h-10 w-10 bg-transparent object-contain"
             />
             <p className="font-semibold text-slate-900">{brand.name}</p>
           </div>

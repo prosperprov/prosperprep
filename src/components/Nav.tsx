@@ -114,7 +114,7 @@ export async function Nav() {
             <img
               src={brandAssets.mark}
               alt=""
-              className="h-9 w-9 rounded-full object-contain bg-black"
+              className="h-9 w-9 bg-transparent object-contain"
             />
             <span className="leading-tight">
               {brand.shortName}

@@ -129,8 +129,8 @@ export default async function AdminDashboard() {
 <section className="mt-10" id="teachers">
         <h2 className="text-lg font-semibold">Teachers</h2>
         <p className="mt-1 text-sm text-slate-500">
-          Assign which grades each teacher can see on roster, catalog, and scheduling.
-          Search filters the teacher list by name or email as you type.
+          Assign one or many grades per teacher (roster, catalog, scheduling, and Ask your teacher).
+          Search filters the list by name or email.
         </p>
         <div className="mt-4">
           <AssignTeacherGrades teachers={teacherRows} />
