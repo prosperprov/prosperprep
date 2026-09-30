@@ -4,13 +4,13 @@
 
 export type DashNavItem = { href: string; label: string };
 
-/** Student dashboard pills. Pass overviewLabel "Classroom" for Grade 6 immersive hub. */
+/** Student dashboard pills. Pass overviewLabel "Classroom" for immersive hub. */
 export function studentDashNav(overviewLabel: string = "Overview"): DashNavItem[] {
   return [
     { href: "/dashboard/student", label: overviewLabel },
     { href: "/dashboard/student/messages", label: "Messages" },
     { href: "/dashboard/student/grades", label: "Grades" },
-    { href: "/dashboard/student/report-cards", label: "Report cards" },
+    { href: "/dashboard/student/report-cards", label: "Report Cards" },
     { href: "/courses", label: "Catalog" },
     { href: "/enroll", label: "Enrollment" },
     { href: "/dashboard/student/account", label: "Account" },
@@ -23,7 +23,7 @@ export function studentDashNavCompact(overviewLabel: string = "Overview"): DashN
     { href: "/dashboard/student", label: overviewLabel },
     { href: "/dashboard/student/messages", label: "Messages" },
     { href: "/dashboard/student/grades", label: "Grades" },
-    { href: "/dashboard/student/report-cards", label: "Report cards" },
+    { href: "/dashboard/student/report-cards", label: "Report Cards" },
     { href: "/courses", label: "Catalog" },
     { href: "/dashboard/student/account", label: "Account" },
   ];

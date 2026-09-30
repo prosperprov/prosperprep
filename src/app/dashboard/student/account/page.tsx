@@ -5,7 +5,6 @@ import { DashboardShell } from "@/components/DashboardShell";
 import { ChangePasswordForm } from "@/components/ChangePasswordForm";
 import { ManageBillingButton } from "@/components/ManageBillingButton";
 import { brand } from "@/config/brand";
-import { isGrade6Classroom } from "@/lib/grade6Classroom";
 import { studentDashNav } from "@/lib/dashboardNav";
 
 export const dynamic = "force-dynamic";
@@ -24,7 +23,7 @@ export default async function StudentAccountPage() {
   });
   const active = enrollments.find((e) => e.status === "ACTIVE");
   const grade = active?.grade ?? null;
-  const overviewLabel = isGrade6Classroom(grade) ? "Classroom" : "Overview";
+  const overviewLabel = "Classroom";
 
   return (
     <DashboardShell

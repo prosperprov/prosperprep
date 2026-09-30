@@ -34,7 +34,7 @@ export function Grade6CourseHeader({
         href="/dashboard/student"
         className="text-sm font-semibold text-slate-800 underline-offset-2 hover:underline"
       >
-        ← Back to Grade 6 classroom
+        ← Back to Classroom
       </Link>
       <div className="mt-4 flex flex-wrap items-start gap-4">
         <span
@@ -56,7 +56,7 @@ export function Grade6CourseHeader({
 
       <div className="mt-6 grid gap-3 sm:grid-cols-3">
         <div className="rounded-2xl bg-white/80 p-4 shadow-sm">
-          <p className="text-sm font-medium text-slate-600">Lessons done</p>
+          <p className="text-sm font-medium text-slate-600">Lessons Done</p>
           <p className="mt-1 text-2xl font-bold text-slate-900">
             {done}/{total}
           </p>
@@ -65,7 +65,7 @@ export function Grade6CourseHeader({
           </div>
         </div>
         <div className="rounded-2xl bg-white/80 p-4 shadow-sm">
-          <p className="text-sm font-medium text-slate-600">Your average</p>
+          <p className="text-sm font-medium text-slate-600">Your Average</p>
           <p className="mt-1 text-2xl font-bold text-slate-900">
             {coursePct != null ? `${coursePct}%` : "—"}
             {courseLetter ? ` (${courseLetter})` : ""}
@@ -77,7 +77,7 @@ export function Grade6CourseHeader({
               href={askTeacherHref}
               className="inline-flex min-h-[48px] items-center justify-center rounded-2xl bg-sky-700 px-4 py-2 text-base font-bold text-white hover:bg-sky-800"
             >
-              Ask my teacher
+              Ask My Teacher
             </Link>
           ) : (
             <Link
@@ -91,7 +91,7 @@ export function Grade6CourseHeader({
             href="/dashboard/student"
             className="inline-flex min-h-[44px] items-center justify-center rounded-2xl border-2 border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:border-emerald-300"
           >
-            Classroom home
+            Classroom Home
           </Link>
         </div>
       </div>

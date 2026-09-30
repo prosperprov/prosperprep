@@ -99,15 +99,24 @@ export function youtubeEmbedUrl(
   return `https://www.youtube.com/embed/${id}?${params.toString()}`;
 }
 
+function formatDurationLabel(minutes: number | null | undefined): string | null {
+  if (minutes == null || !Number.isFinite(minutes) || minutes <= 0) return null;
+  const m = Math.round(minutes);
+  return m === 1 ? "1 min" : `${m} min`;
+}
+
 export function LessonVideo({
   videoUrl,
   title = "Lesson video",
   posterUrl,
+  durationMin,
 }: {
   videoUrl: string;
   title?: string;
   /** Branded poster; when set, YouTube/Khan thumbnails are never shown */
   posterUrl?: string | null;
+  /** Lesson/video length in minutes (from Lesson.durationMin). */
+  durationMin?: number | null;
 }) {
   const id = useMemo(() => extractYouTubeId(videoUrl), [videoUrl]);
   const [playing, setPlaying] = useState(false);
@@ -172,11 +181,17 @@ export function LessonVideo({
   if (!id) return null;
 
   const poster = posterUrl?.trim() || null;
+  const durationLabel = formatDurationLabel(durationMin);
 
   return (
     <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-sm">
-      <div className="border-b border-slate-800 px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-emerald-200 sm:text-sm">
-        ▶ Watch video · {title}
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-emerald-200 sm:text-sm">
+        <span>▶ Watch Video · {title}</span>
+        {durationLabel ? (
+          <span className="rounded-full bg-emerald-900/80 px-2.5 py-0.5 text-[11px] font-bold normal-case tracking-normal text-emerald-100 ring-1 ring-emerald-500/40">
+            {durationLabel}
+          </span>
+        ) : null}
       </div>
       <div
         className="relative aspect-video w-full overflow-hidden bg-black"
@@ -210,8 +225,15 @@ export function LessonVideo({
                 <path d="M8 5v14l11-7z" />
               </svg>
             </span>
-            <span className="relative z-10 rounded-full bg-black/70 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-white shadow-md">
-              Watch video
+            <span className="relative z-10 flex flex-wrap items-center justify-center gap-2">
+              <span className="rounded-full bg-black/70 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-white shadow-md">
+                Watch Video
+              </span>
+              {durationLabel ? (
+                <span className="rounded-full bg-emerald-700/90 px-3 py-1.5 text-sm font-bold text-white shadow-md">
+                  {durationLabel}
+                </span>
+              ) : null}
             </span>
           </button>
         ) : (
@@ -232,8 +254,15 @@ export function LessonVideo({
                 <path d="M8 5v14l11-7z" />
               </svg>
             </span>
-            <span className="relative z-10 rounded-full bg-white/15 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-white ring-1 ring-white/30">
-              Watch video
+            <span className="relative z-10 flex flex-wrap items-center justify-center gap-2">
+              <span className="rounded-full bg-white/15 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-white ring-1 ring-white/30">
+                Watch Video
+              </span>
+              {durationLabel ? (
+                <span className="rounded-full bg-emerald-600/90 px-3 py-1.5 text-sm font-bold text-white ring-1 ring-white/30">
+                  {durationLabel}
+                </span>
+              ) : null}
             </span>
           </button>
         )}

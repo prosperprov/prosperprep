@@ -193,13 +193,13 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
         >
           <div>
             <p className="text-sm font-bold uppercase tracking-wide text-emerald-100">
-              Continue learning
+              Continue Learning
             </p>
             <p className="mt-1 text-xl font-bold">{nextIncomplete.title}</p>
             <p className="text-sm text-emerald-100">Lesson {nextIncomplete.order}</p>
           </div>
           <span className="mt-3 inline-flex min-h-[48px] items-center justify-center rounded-2xl bg-white px-5 py-2 text-base font-bold text-emerald-900 sm:mt-0">
-            Start lesson →
+            Start Lesson →
           </span>
         </Link>
       )}
@@ -219,7 +219,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
       )}
 
       <h2 className={`font-semibold text-slate-900 ${g6 ? "text-xl" : "text-lg"}`}>
-        {g6 ? "Year path · Units" : "Lesson plan"}
+        {g6 ? "Year Path · Units" : "Lesson Plan"}
       </h2>
       {g6 ? (
         <>

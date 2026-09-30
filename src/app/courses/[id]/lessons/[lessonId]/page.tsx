@@ -134,6 +134,7 @@ export default async function LessonPage({
 
   let completed = false;
   let priorPercent: number | null = null;
+  let attemptsUsed = 0;
   if (canGrade && session?.user?.id) {
     const progress = await prisma.progress.findUnique({
       where: {
@@ -146,6 +147,9 @@ export default async function LessonPage({
       orderBy: { submittedAt: "desc" },
     });
     priorPercent = last?.percent ?? null;
+    attemptsUsed = await prisma.attempt.count({
+      where: { userId: session.user.id, lessonId: lesson.id },
+    });
   }
 
   const { displayContent, prompts: writtenPrompts } = parseWrittenPrompts(lesson.content || "");
@@ -363,6 +367,7 @@ export default async function LessonPage({
             videoUrl={lesson.videoUrl}
             title={lesson.title}
             posterUrl={lessonPosterUrl(lesson.title, course.grade)}
+            durationMin={lesson.durationMin}
           />
         </div>
       ) : null}
@@ -404,6 +409,7 @@ export default async function LessonPage({
             videoUrl={lesson.videoUrl}
             title={lesson.title}
             posterUrl={lessonPosterUrl(lesson.title, course.grade)}
+            durationMin={lesson.durationMin}
           />
         </div>
       ) : null}
@@ -431,6 +437,7 @@ export default async function LessonPage({
               lessonId={lesson.id}
               questions={questions}
               priorPercent={priorPercent}
+              attemptsUsed={attemptsUsed}
             />
           ) : (
             <MarkCompleteButton

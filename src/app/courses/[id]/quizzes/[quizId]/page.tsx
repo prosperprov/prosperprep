@@ -65,6 +65,9 @@ export default async function SectionQuizPage({
     where: { userId: session.user.id, quizId: quiz.id },
     orderBy: { submittedAt: "desc" },
   });
+  const attemptsUsed = await prisma.attempt.count({
+    where: { userId: session.user.id, quizId: quiz.id },
+  });
 
   const questions = quiz.questions.map((q) => ({
     id: q.id,
@@ -87,8 +90,8 @@ export default async function SectionQuizPage({
       <h1 className="mt-4 text-3xl font-bold text-slate-900">{quiz.title}</h1>
       <p className="mt-2 text-slate-600">{quiz.description}</p>
       <p className="mt-2 text-xs text-slate-500">
-        Section quizzes are {Math.round(SECTION_WEIGHT * 100)}% of the course grade. Latest attempt
-        counts. {questions.length} questions.
+        Section Quizzes are {Math.round(SECTION_WEIGHT * 100)}% of the course grade. Latest attempt
+        counts ({attemptsUsed} used). {questions.length} questions.
       </p>
 
       {!unlocked ? (
@@ -110,7 +113,7 @@ export default async function SectionQuizPage({
         </div>
       ) : (
         <div className="mt-8">
-          <LessonQuiz quizId={quiz.id} questions={questions} priorPercent={prior?.percent ?? null} />
+          <LessonQuiz quizId={quiz.id} questions={questions} priorPercent={prior?.percent ?? null} attemptsUsed={attemptsUsed} />
         </div>
       )}
     </div>

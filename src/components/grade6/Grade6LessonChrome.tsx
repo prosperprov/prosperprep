@@ -98,7 +98,7 @@ export function Grade6LessonChrome({
             href="#lesson-video"
             className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-2xl border-2 border-sky-400 bg-sky-600 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-sky-700 sm:flex-none"
           >
-            ▶ Watch video
+            ▶ Watch Video
           </a>
         )}
         {hasQuizQuestions ? (
@@ -106,14 +106,14 @@ export function Grade6LessonChrome({
             href="#lesson-check"
             className="inline-flex min-h-[48px] items-center rounded-2xl border-2 border-amber-300 bg-amber-50 px-4 py-2 text-base font-bold text-amber-950 hover:bg-amber-100"
           >
-            Take quiz
+            Take Quiz
           </a>
         ) : (
           <a
             href="#lesson-check"
             className="inline-flex min-h-[48px] items-center rounded-2xl border-2 border-emerald-300 bg-emerald-50 px-4 py-2 text-base font-bold text-emerald-950 hover:bg-emerald-100"
           >
-            Mark complete
+            Mark Complete
           </a>
         )}
         {sectionQuizHref && sectionQuizUnlocked && (
@@ -121,7 +121,7 @@ export function Grade6LessonChrome({
             href={sectionQuizHref}
             className="inline-flex min-h-[48px] items-center rounded-2xl border-2 border-violet-300 bg-violet-50 px-4 py-2 text-base font-bold text-violet-950 hover:bg-violet-100"
           >
-            Unit check
+            Unit Check
           </Link>
         )}
         {askTeacher}

@@ -212,13 +212,11 @@ async function loadStudentDashboardData(user: SessionUser) {
   const grade6 = isGrade6Classroom(grade);
 
   let unreadMessages = 0;
-  if (grade6) {
-    try {
-      const { inboxThreads } = await loadInboxForUser(user.id);
-      unreadMessages = inboxThreads.filter((t) => t.unread).length;
-    } catch {
-      unreadMessages = 0;
-    }
+  try {
+    const { inboxThreads } = await loadInboxForUser(user.id);
+    unreadMessages = inboxThreads.filter((t) => t.unread).length;
+  } catch {
+    unreadMessages = 0;
   }
 
   const todayNotes = notifications
@@ -295,16 +293,14 @@ export default async function StudentDashboard() {
     completedSet,
   } = data;
 
-  const nav = studentDashNav(grade6 ? "Classroom" : "Overview");
+  const nav = studentDashNav("Classroom");
+  const classroomTitle =
+    grade != null ? `${gradeLabel(grade)} Classroom` : "Classroom";
 
   return (
     <DashboardShell
-      title={grade6 ? `Grade 6 classroom` : `Welcome, ${session.user.name}`}
-      subtitle={
-        grade6
-          ? `${brand.shortName} · immersive middle-school home base`
-          : `${brand.shortName} student dashboard`
-      }
+      title={classroomTitle}
+      subtitle={`${brand.shortName} · Immersive Home Base`}
       nav={nav}
     >
       <StudentNotifications items={notifications} />
@@ -326,6 +322,7 @@ export default async function StudentDashboard() {
           done={done}
           total={totalLessons}
           unreadMessages={unreadMessages}
+          gradeLabelText={grade != null ? gradeLabel(grade) : "Classroom"}
           nextItem={upNext[0] ?? null}
           upNext={upNext.map((t) => ({
             kind: t.kind,

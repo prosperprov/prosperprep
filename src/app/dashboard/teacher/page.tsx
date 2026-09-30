@@ -9,8 +9,8 @@ import { brand } from "@/config/brand";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
 import { teacherDashNav } from "@/lib/dashboardNav";
 import { GradeWrittenPanel } from "@/components/GradeWrittenPanel";
-import { isGrade6Classroom } from "@/lib/grade6Classroom";
 import { Grade6TeacherGlance } from "@/components/grade6/Grade6TeacherGlance";
+import { TeacherLiveProgress } from "@/components/TeacherLiveProgress";
 
 export const dynamic = "force-dynamic";
 
@@ -91,7 +91,7 @@ export default async function TeacherDashboard() {
 
   return (
     <DashboardShell
-      title="Teacher dashboard"
+      title="Teacher Dashboard"
       subtitle={`${brand.shortName} · ${gradeSummary}`}
       nav={teacherDashNav()}
     >
@@ -102,24 +102,24 @@ export default async function TeacherDashboard() {
         </div>
       )}
 
-      {assignedGrades.includes(6) && (
+      {assignedGrades.length > 0 && (
         <Grade6TeacherGlance
-          students={enrollments
-            .filter((e) => isGrade6Classroom(e.grade))
-            .map((e) => ({
-              id: e.user.id,
-              name: e.user.name,
-              email: e.user.email,
-              planName: e.plan.name,
-            }))}
-          liveCount={mySessions.filter((s) => s.grade === 6).length}
-          writtenPending={writtenToGrade.filter((w) => w.course.grade === 6).length}
+          students={enrollments.map((e) => ({
+            id: e.user.id,
+            name: e.user.name,
+            email: e.user.email,
+            planName: e.plan.name,
+            grade: e.grade,
+          }))}
+          liveCount={mySessions.length}
+          writtenPending={writtenToGrade.length}
+          grades={assignedGrades}
         />
       )}
 
       <div className="grid gap-8 lg:grid-cols-2">
         <section>
-          <h2 className="text-lg font-semibold text-slate-900">Active class roster</h2>
+          <h2 className="text-lg font-semibold text-slate-900">Active Class Roster</h2>
           <p className="mt-1 text-sm text-slate-500">
             Students with active enrollment in your assigned grades
             {assignedGrades.length ? ` (${gradeSummary})` : ""}.
@@ -147,7 +147,7 @@ export default async function TeacherDashboard() {
       </div>
 
       <section className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Your live sessions</h2>
+        <h2 className="text-lg font-semibold text-slate-900">Your Live Sessions</h2>
         <ul className="mt-4 space-y-3">
           {mySessions.map((s) => (
             <li
@@ -187,8 +187,10 @@ export default async function TeacherDashboard() {
         </ul>
       </section>
 
+      <TeacherLiveProgress />
+
       <section id="grades" className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Student grades</h2>
+        <h2 className="text-lg font-semibold text-slate-900">Student Grades</h2>
         <p className="mt-1 text-sm text-slate-500">
           Open a student course from the catalog after they submit lesson checks. Course averages use
           lesson checks (40%) and section quizzes (60%); written work blends ~10% when graded.
@@ -197,7 +199,7 @@ export default async function TeacherDashboard() {
       </section>
 
       <section id="written" className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Written work to grade</h2>
+        <h2 className="text-lg font-semibold text-slate-900">Written Work To Grade</h2>
         <p className="mt-1 text-sm text-slate-500">
           Essays, fix-and-justify, math reasoning, and science write-ups submitted by students in your
           assigned grades. Saving a score creates a WRITTEN gradebook entry.
