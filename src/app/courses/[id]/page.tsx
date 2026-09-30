@@ -155,7 +155,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
       ) : (
         <>
           <Link href="/courses" className="text-sm text-emerald-800 hover:underline">
-            ← Course catalog
+            ← Course Catalog
           </Link>
           <p className="mt-4 text-sm font-medium text-emerald-800">
             {course.subject} · {gradeLabel(course.grade)}

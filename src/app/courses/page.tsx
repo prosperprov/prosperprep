@@ -6,7 +6,7 @@ import { getSession } from "@/lib/auth";
 import { catalogGradeFilter } from "@/lib/curriculumAccess";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "Course catalog" };
+export const metadata: Metadata = { title: "Course Catalog" };
 
 export const dynamic = "force-dynamic";
 
@@ -42,7 +42,7 @@ export default async function CoursesPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
-      <h1 className="text-3xl font-bold text-slate-900">Course catalog</h1>
+      <h1 className="text-3xl font-bold text-slate-900">Course Catalog</h1>
       <p className="mt-2 max-w-2xl text-slate-600">
         {brand.name}: core K–12 subjects plus ACT/SAT, athletics, entrepreneurship & financial
         independence, and Bible study (Hallelujah Scriptures & Paleo-Hebrew).
