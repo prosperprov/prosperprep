@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSession } from "next-auth/react";
 import { Home, MessageCircle } from "lucide-react";
 
 /**
@@ -17,7 +18,15 @@ export function StudentMobileDock({
   dashboardHref: string;
   unreadCount?: number;
 }) {
+  const { data: session, status } = useSession();
+  const role = session?.user?.role;
   const pathname = usePathname() || "";
+  // Server only mounts this for a student. After hydration, unmount if the
+  // client session is missing or not STUDENT (logged-out, signed-out, or a
+  // stale cached payload). While status is "loading", keep the server HTML
+  // so we don't hydration-mismatch.
+  if (status !== "loading" && role !== "STUDENT") return null;
+
   const onDash =
     pathname === dashboardHref || pathname.startsWith(`${dashboardHref}/`);
   const onMessages =

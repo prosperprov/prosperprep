@@ -21,3 +21,9 @@ The production migration creates 3 plans, 82 courses, 792 lessons, 266 quizzes, 
 ## Checks available without a Cloudflare account
 
 `npm run build` checks the Next.js app. `npm run build:cloudflare` packages it for Workers. `npx wrangler deploy --dry-run` checks Worker bundling. D1 migrations can be applied with `--local` before touching the remote database.
+
+## Sign-in session
+
+Students stay signed in for **30 days** (`session.maxAge` / `jwt.maxAge` in `src/lib/auth.ts`), including across browser restarts. The cookie is refreshed when it is older than 24 hours (`updateAge`), so ordinary use does not expire on a short idle. Sign out still clears it.
+
+Production cookies are Secure (`__Secure-next-auth.session-token`) because the site is HTTPS. `NEXTAUTH_URL` in the Worker secrets must be `https://school.prosperprep.org`. If that secret is missing or still `http://localhost:3000`, production code pins the public HTTPS origin so cookies are not issued as non-Secure and sign-out is not redirected to localhost.

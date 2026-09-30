@@ -9,6 +9,11 @@ import { brand } from "@/config/brand";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Nav reads the session. Never cache the root shell across users — a cached
+// student render would show the Dashboard/Messages dock to guests.
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: {
     default: `${brand.name} · Online K–12 School`,
