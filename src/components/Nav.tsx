@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cookies } from "next/headers";
 import { brand, brandAssets } from "@/config/brand";
 import { getSession } from "@/lib/auth";
 import { countUnreadForUser } from "@/lib/messageInbox";
@@ -7,6 +8,8 @@ import { MobileNav } from "./MobileNav";
 import { StudentMobileDock } from "./StudentMobileDock";
 
 export async function Nav() {
+  // Read cookies so this header is never a shared static payload.
+  cookies();
   const session = await getSession();
   const role = session?.user?.role;
   const dash =
@@ -133,8 +136,8 @@ export async function Nav() {
           <MobileNav links={mobileLinks} authSlot={authMobile} />
         </div>
       </header>
-      {isStudent && dash ? (
-        <StudentMobileDock dashboardHref={dash} unreadCount={unreadMessages} />
+      {session?.user && role === "STUDENT" ? (
+        <StudentMobileDock dashboardHref="/dashboard/student" unreadCount={unreadMessages} />
       ) : null}
     </>
   );

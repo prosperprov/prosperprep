@@ -1,19 +1,19 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 /**
- * Privacy-enhanced YouTube embed with minimal chrome.
- * - youtube-nocookie + stripped player chrome
- * - Optional branded poster (never use Khan/YouTube thumbnails when provided)
- * - Captions forced off (cc_load_policy=0 + IFrame API unloadModule)
- * - Full-width opaque top/bottom overlay bars hide YouTube/Khan chrome;
- *   Prosper mark sits on the bottom bar (non-clickable). No scale/crop.
- * Burned-in open captions that are part of the video frames cannot be stripped.
+ * Lesson YouTube embed.
+ *
+ * Mobile (iOS Safari especially) will not start playback when:
+ * - controls=0 hides the only play button, and
+ * - autoplay=1&mute=0 is blocked because the iframe is created after the tap, and
+ * - pointer-events overlays cover the player so a second tap never reaches YouTube.
+ * On phones we mount the iframe immediately with controls=1 and playsinline=1
+ * so the student's tap lands on YouTube's own play button (a real user gesture).
  */
 
-const CHROME_PARAMS =
-  "rel=0&modestbranding=1&controls=0&cc_load_policy=0&iv_load_policy=3&showinfo=0&fs=0&disablekb=1&playsinline=1&enablejsapi=1";
+const MOBILE_PLAYER_QUERY = "(max-width: 767px), (pointer: coarse)";
 
 function extractYouTubeId(raw: string): string | null {
   try {
@@ -45,32 +45,45 @@ function extractYouTubeId(raw: string): string | null {
   return null;
 }
 
-function postPlayerCommand(
-  win: Window,
-  func: string,
-  args: unknown[] = []
-) {
+function postPlayerCommand(win: Window, func: string, args: unknown[] = []) {
   win.postMessage(JSON.stringify({ event: "command", func, args }), "*");
 }
 
 function forceCaptionsOff(win: Window | null | undefined) {
   if (!win) return;
-  // Listen handshake then unload captions module / clear track
   win.postMessage(JSON.stringify({ event: "listening", id: 1 }), "*");
   postPlayerCommand(win, "unloadModule", ["captions"]);
   postPlayerCommand(win, "setOption", ["captions", "track", {}]);
   postPlayerCommand(win, "setOption", ["cc", "track", {}]);
 }
 
-export function youtubeEmbedUrl(raw: string, opts?: { autoplay?: boolean }): string | null {
+export function youtubeEmbedUrl(
+  raw: string,
+  opts?: { autoplay?: boolean }
+): string | null {
   const id = extractYouTubeId(raw);
   if (!id) return null;
-  const autoplay = opts?.autoplay ? "&autoplay=1&mute=0" : "";
-  const origin =
-    typeof window !== "undefined"
-      ? `&origin=${encodeURIComponent(window.location.origin)}`
-      : "";
-  return `https://www.youtube-nocookie.com/embed/${id}?${CHROME_PARAMS}${autoplay}${origin}`;
+  const params = new URLSearchParams({
+    rel: "0",
+    modestbranding: "1",
+    // controls=0 prevents mobile playback: iOS has no play control and ignores
+    // a parent-page tap as the user gesture once the iframe loads asynchronously.
+    controls: "1",
+    cc_load_policy: "0",
+    iv_load_policy: "3",
+    playsinline: "1",
+    fs: "1",
+    enablejsapi: "1",
+  });
+  if (opts?.autoplay) {
+    // Do not set mute=0. Unmuted autoplay is rejected on iOS and leaves a dead player.
+    params.set("autoplay", "1");
+  }
+  if (typeof window !== "undefined") {
+    params.set("origin", window.location.origin);
+  }
+  // www.youtube.com (not nocookie) so iOS sends a first-party-style embed referrer.
+  return `https://www.youtube.com/embed/${id}?${params.toString()}`;
 }
 
 export function LessonVideo({
@@ -85,17 +98,32 @@ export function LessonVideo({
 }) {
   const id = useMemo(() => extractYouTubeId(videoUrl), [videoUrl]);
   const [playing, setPlaying] = useState(false);
+  // null until mounted so SSR and hydration both show the poster, then phones
+  // switch to the native player before the user can tap a dead poster.
+  const [nativePlayer, setNativePlayer] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
+  useLayoutEffect(() => {
+    const mq = window.matchMedia(MOBILE_PLAYER_QUERY);
+    const apply = () => setNativePlayer(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  const showIframe = nativePlayer || playing;
+  // Autoplay only after an explicit poster click on desktop. Phones use YouTube's button.
   const embed = useMemo(
-    () => (id ? youtubeEmbedUrl(videoUrl, { autoplay: playing }) : null),
-    // rebuild when playing flips so autoplay + origin land correctly
+    () =>
+      id && showIframe
+        ? youtubeEmbedUrl(videoUrl, { autoplay: playing && !nativePlayer })
+        : null,
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [id, videoUrl, playing]
+    [id, videoUrl, playing, nativePlayer, showIframe]
   );
 
   useEffect(() => {
-    if (!playing) return;
+    if (!showIframe) return;
     const run = () => forceCaptionsOff(iframeRef.current?.contentWindow);
     run();
     const t1 = window.setTimeout(run, 400);
@@ -106,9 +134,9 @@ export function LessonVideo({
       window.clearTimeout(t2);
       window.clearTimeout(t3);
     };
-  }, [playing, embed]);
+  }, [showIframe, embed]);
 
-  if (!id || !embed) return null;
+  if (!id) return null;
 
   const poster = posterUrl?.trim() || null;
 
@@ -117,41 +145,22 @@ export function LessonVideo({
       <div className="border-b border-slate-800 px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-emerald-200 sm:text-sm">
         ▶ Watch video · {title}
       </div>
-      <div className="relative aspect-video w-full overflow-hidden bg-black">
-        {playing ? (
-          <>
-            <iframe
-              ref={iframeRef}
-              className="absolute inset-0 h-full w-full border-0"
-              src={embed}
-              title={title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              loading="eager"
-              referrerPolicy="strict-origin-when-cross-origin"
-              onLoad={() => forceCaptionsOff(iframeRef.current?.contentWindow)}
-            />
-            {/* Full-width top bar — covers Khan/YouTube title chrome edge to edge */}
-            <div
-              aria-hidden
-              className="pointer-events-auto absolute inset-x-0 top-0 z-10 h-11 bg-black sm:h-12"
-            />
-            {/* Full-width bottom bar — tall enough to cover YouTube link, icon, more-videos, copy-link */}
-            <div
-              aria-hidden
-              className="pointer-events-auto absolute inset-x-0 bottom-0 z-10 flex h-14 items-center bg-black pl-2 sm:h-16 sm:pl-2.5"
-            >
-              {/* Prosper mark on bottom-left; blocks clicks, not a link */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/assets/branding/prosper-mark.png?v=official1"
-                alt=""
-                width={36}
-                height={36}
-                draggable={false}
-                className="pointer-events-none h-8 w-8 select-none rounded-full object-contain sm:h-9 sm:w-9"
-              />
-            </div>
-          </>
+      <div
+        className="relative aspect-video w-full overflow-hidden bg-black"
+        data-lesson-video-mode={nativePlayer ? "native" : showIframe ? "playing" : "poster"}
+      >
+        {showIframe && embed ? (
+          <iframe
+            ref={iframeRef}
+            className="absolute inset-0 h-full w-full border-0"
+            src={embed}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share"
+            allowFullScreen
+            loading="eager"
+            referrerPolicy="strict-origin-when-cross-origin"
+            onLoad={() => forceCaptionsOff(iframeRef.current?.contentWindow)}
+          />
         ) : poster ? (
           <button
             type="button"
@@ -160,11 +169,7 @@ export function LessonVideo({
             aria-label={`Watch video: ${title}`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={poster}
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <img src={poster} alt="" className="absolute inset-0 h-full w-full object-cover" />
             <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-800 text-white shadow-lg ring-4 ring-white/20 transition group-hover:scale-105 group-hover:bg-emerald-700 sm:h-[4.5rem] sm:w-[4.5rem]">
               <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-current" aria-hidden>
                 <path d="M8 5v14l11-7z" />

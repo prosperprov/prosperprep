@@ -28,8 +28,57 @@ declare module "next-auth/jwt" {
   }
 }
 
+/**
+ * Session lifetime: 30 days, sliding.
+ * The JWT cookie Max-Age / Expires is 30 days. NextAuth rewrites it when the
+ * token is older than updateAge (24 hours), so normal use does not expire on
+ * a short idle and the cookie survives browser restarts. Sign-out still
+ * clears it. Idle for a full 30 days ends the session.
+ *
+ * Duration chosen: 30 days (NextAuth's own default, now explicit).
+ *
+ * Cloudflare Worker: NEXTAUTH_URL has been http://localhost:3000 in production.
+ * NextAuth then issues non-Secure cookies (iOS drops those across restarts)
+ * and redirects sign-out to localhost. If the configured URL is not https in
+ * production, pin the public school origin and use Secure cookies.
+ */
+export const SESSION_MAX_AGE_SECONDS = 30 * 24 * 60 * 60;
+const SESSION_UPDATE_AGE_SECONDS = 24 * 60 * 60;
+const PUBLIC_ORIGIN = "https://school.prosperprep.org";
+
+if (
+  process.env.NODE_ENV === "production" &&
+  !(process.env.NEXTAUTH_URL || "").startsWith("https://")
+) {
+  process.env.NEXTAUTH_URL = PUBLIC_ORIGIN;
+}
+
+const useSecureCookies = (process.env.NEXTAUTH_URL || "").startsWith("https://");
+
 export const authOptions: NextAuthOptions = {
-  session: { strategy: "jwt" },
+  useSecureCookies,
+  session: {
+    strategy: "jwt",
+    maxAge: SESSION_MAX_AGE_SECONDS,
+    updateAge: SESSION_UPDATE_AGE_SECONDS,
+  },
+  jwt: {
+    maxAge: SESSION_MAX_AGE_SECONDS,
+  },
+  cookies: {
+    sessionToken: {
+      name: useSecureCookies
+        ? "__Secure-next-auth.session-token"
+        : "next-auth.session-token",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: useSecureCookies,
+        maxAge: SESSION_MAX_AGE_SECONDS,
+      },
+    },
+  },
   pages: {
     signIn: "/login",
   },
