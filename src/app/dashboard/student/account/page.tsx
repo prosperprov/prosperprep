@@ -22,7 +22,6 @@ export default async function StudentAccountPage() {
     orderBy: { createdAt: "desc" },
   });
   const active = enrollments.find((e) => e.status === "ACTIVE");
-  const grade = active?.grade ?? null;
   const overviewLabel = "Classroom";
 
   return (
