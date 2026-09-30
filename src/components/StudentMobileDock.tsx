@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Home, MessageCircle } from "lucide-react";
 
 /**
- * Floating bottom dock for logged-in students (mobile only).
+ * Floating bottom dock for logged-in students (phone + tablet; hidden at lg+).
  * Quick access to Dashboard + Messages with unread badge.
  * Sits above lesson content; the global layout reserves its mobile height.
  */
@@ -34,7 +34,7 @@ export function StudentMobileDock({
     <nav
       aria-label="Student quick navigation"
       data-student-mobile-dock
-      className="fixed inset-x-0 bottom-0 z-[60] border-t border-slate-200 bg-white/95 px-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-4px_16px_rgba(15,23,42,0.08)] backdrop-blur md:hidden"
+      className="fixed inset-x-0 bottom-0 z-[60] border-t border-slate-200 bg-white/95 px-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-4px_16px_rgba(15,23,42,0.08)] backdrop-blur lg:hidden"
     >
       <ul className="mx-auto flex max-w-md items-stretch justify-around gap-2">
         <li className="flex-1">

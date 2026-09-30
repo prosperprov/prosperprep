@@ -62,6 +62,12 @@ export function Grade6UnitAccordion({
   const [open, setOpen] = useState<Record<string, boolean>>(() => {
     const init: Record<string, boolean> = {};
     for (const k of units) {
+      const n = grade6UnitNumber(k);
+      const unitLocked = n != null && n > ceiling;
+      if (unitLocked) {
+        init[k] = false;
+        continue;
+      }
       init[k] = defaultOpenUnit ? k === defaultOpenUnit : k === units[0];
     }
     return init;
@@ -96,12 +102,16 @@ export function Grade6UnitAccordion({
               type="button"
               className={
                 locked
-                  ? "flex w-full items-center justify-between gap-3 bg-slate-200/80 px-5 py-4 text-left"
+                  ? "flex w-full cursor-not-allowed items-center justify-between gap-3 bg-slate-200/80 px-5 py-4 text-left"
                   : "flex w-full items-center justify-between gap-3 bg-slate-50 px-5 py-4 text-left hover:bg-sky-50"
               }
-              aria-expanded={isOpen}
+              aria-expanded={locked ? false : isOpen}
               aria-disabled={locked}
-              onClick={() => setOpen((s) => ({ ...s, [sectionKey]: !isOpen }))}
+              disabled={locked}
+              onClick={() => {
+                if (locked) return;
+                setOpen((s) => ({ ...s, [sectionKey]: !isOpen }));
+              }}
             >
               <div className="min-w-0">
                 <p
@@ -146,15 +156,8 @@ export function Grade6UnitAccordion({
               </span>
             </button>
 
-            {isOpen && (
+            {!locked && isOpen && (
               <div className="border-t border-slate-200 px-4 py-4 sm:px-5">
-                {locked ? (
-                  <p className="rounded-2xl border border-slate-300 bg-slate-50 p-4 text-sm text-slate-700">
-                    This unit is locked. {lockMsg}. Lessons stay visible on the year map so you can
-                    see what is coming next.
-                  </p>
-                ) : (
-                  <>
                     <ol className="space-y-3">
                       {unitLessons.map((lesson) => {
                         const finished = done.has(lesson.id);
@@ -219,8 +222,6 @@ export function Grade6UnitAccordion({
                         </div>
                       );
                     })}
-                  </>
-                )}
               </div>
             )}
           </div>
