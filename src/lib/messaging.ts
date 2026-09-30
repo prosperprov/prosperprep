@@ -115,6 +115,8 @@ export async function findOrCreateDmThread(opts: {
   actorId: string;
   otherId: string;
   subject?: string;
+  /** Set only when creating a new DM (lesson questions). Existing DMs keep their course. */
+  courseId?: string;
 }) {
   const mine = await prisma.threadParticipant.findMany({
     where: { userId: opts.actorId, thread: { type: "DM" } },
@@ -154,6 +156,7 @@ export async function findOrCreateDmThread(opts: {
       subject,
       type: "DM",
       createdById: opts.actorId,
+      courseId: opts.courseId,
       participants: {
         create: [{ userId: opts.actorId }, { userId: opts.otherId }],
       },

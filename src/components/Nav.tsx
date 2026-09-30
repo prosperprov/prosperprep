@@ -2,10 +2,11 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { brand, brandAssets } from "@/config/brand";
 import { getSession } from "@/lib/auth";
-import { countUnreadForUser } from "@/lib/messageInbox";
+import { loadMessagePulse } from "@/lib/messageInbox";
 import { SignOutButton } from "./SignOutButton";
 import { MobileNav } from "./MobileNav";
 import { StudentMobileDock } from "./StudentMobileDock";
+import { LiveUnreadBadge, MessageLiveAlerts } from "./MessageLiveAlerts";
 
 export async function Nav() {
   // Read cookies so this header is never a shared static payload.
@@ -24,12 +25,23 @@ export async function Nav() {
             : null;
 
   const isStudent = role === "STUDENT";
+  const isStaff = role === "TEACHER" || role === "ADMIN";
+  const messagesHref = isStudent
+    ? "/dashboard/student/messages"
+    : isStaff
+      ? "/dashboard/teacher/messages"
+      : null;
+
   let unreadMessages = 0;
-  if (isStudent && session?.user?.id) {
+  let latestMessageId: string | null = null;
+  if (messagesHref && session?.user?.id) {
     try {
-      unreadMessages = await countUnreadForUser(session.user.id);
+      const pulse = await loadMessagePulse(session.user.id);
+      unreadMessages = pulse.unreadCount;
+      latestMessageId = pulse.latest?.messageId ?? null;
     } catch {
       unreadMessages = 0;
+      latestMessageId = null;
     }
   }
 
@@ -37,17 +49,8 @@ export async function Nav() {
     { href: "/courses", label: "Courses" },
     { href: "/pricing", label: "Pricing" },
     ...(dash ? [{ href: dash, label: "Dashboard" }] : []),
-    ...(isStudent
-      ? [{ href: "/dashboard/student/messages", label: "Messages" }]
-      : []),
+    ...(messagesHref ? [{ href: messagesHref, label: "Messages" }] : []),
   ];
-
-  const messagesBadge =
-    isStudent && unreadMessages > 0 ? (
-      <span className="ml-1 inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[10px] font-bold leading-none text-white">
-        {unreadMessages > 9 ? "9+" : unreadMessages}
-      </span>
-    ) : null;
 
   const authDesktop = session ? (
     <>
@@ -128,7 +131,7 @@ export async function Nav() {
                 className="inline-flex items-center hover:text-emerald-800"
               >
                 {l.label}
-                {l.label === "Messages" ? messagesBadge : null}
+                {l.label === "Messages" ? <LiveUnreadBadge initial={unreadMessages} /> : null}
               </Link>
             ))}
           </nav>
@@ -136,8 +139,29 @@ export async function Nav() {
           <MobileNav links={mobileLinks} authSlot={authMobile} />
         </div>
       </header>
-      {session?.user && role === "STUDENT" ? (
-        <StudentMobileDock dashboardHref="/dashboard/student" unreadCount={unreadMessages} />
+      {messagesHref ? (
+        <MessageLiveAlerts
+          initialUnread={unreadMessages}
+          initialLatestId={latestMessageId}
+          messagesHref={messagesHref}
+        />
+      ) : null}
+      {session?.user && isStudent ? (
+        <StudentMobileDock
+          dashboardHref="/dashboard/student"
+          messagesHref="/dashboard/student/messages"
+          unreadCount={unreadMessages}
+          audience="student"
+        />
+      ) : null}
+      {session?.user && isStaff && dash ? (
+        <StudentMobileDock
+          dashboardHref={dash}
+          messagesHref="/dashboard/teacher/messages"
+          unreadCount={unreadMessages}
+          audience="staff"
+          homeLabel={role === "TEACHER" ? "Classroom" : "Dashboard"}
+        />
       ) : null}
     </>
   );

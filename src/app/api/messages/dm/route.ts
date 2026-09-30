@@ -16,6 +16,7 @@ const schema = z.object({
   recipientId: z.string().min(1),
   body: z.string().trim().min(1).max(8000),
   subject: z.string().trim().min(1).max(200).optional(),
+  courseId: z.string().trim().min(1).max(64).optional(),
 });
 
 /** Start or continue a DM (teacher↔student or student↔student same grade). */
@@ -36,10 +37,20 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: gate.error }, { status: gate.status });
     }
 
+    let courseId: string | undefined;
+    if (data.courseId) {
+      const course = await prisma.course.findUnique({
+        where: { id: data.courseId },
+        select: { id: true },
+      });
+      if (course) courseId = course.id;
+    }
+
     const thread = await findOrCreateDmThread({
       actorId: session.user.id,
       otherId: data.recipientId,
       subject: data.subject,
+      courseId,
     });
 
     const message = await prisma.message.create({

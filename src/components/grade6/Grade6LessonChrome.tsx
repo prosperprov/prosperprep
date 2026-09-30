@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { subjectIslandStyle } from "@/lib/grade6Classroom";
 
 /**
@@ -20,6 +21,7 @@ export function Grade6LessonChrome({
   sectionQuizHref,
   sectionQuizUnlocked,
   unitLabel,
+  askTeacher,
 }: {
   courseId: string;
   courseTitle: string;
@@ -36,6 +38,8 @@ export function Grade6LessonChrome({
   sectionQuizHref: string | null;
   sectionQuizUnlocked: boolean;
   unitLabel?: string | null;
+  /** In-app "Ask your teacher" control. Students only. */
+  askTeacher?: ReactNode;
 }) {
   const style = subjectIslandStyle(subject);
   const pct =
@@ -120,6 +124,7 @@ export function Grade6LessonChrome({
             Unit check
           </Link>
         )}
+        {askTeacher}
         {nextHref && nextLabel && (
           <Link
             href={nextHref}
