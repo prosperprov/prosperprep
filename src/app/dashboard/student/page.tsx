@@ -357,17 +357,17 @@ export default async function StudentDashboard() {
       ) : (
         <>
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="rounded-2xl border border-emerald-800/20 bg-white p-5 shadow-sm">
               <p className="text-sm text-slate-500">Grade</p>
               <p className="mt-1 text-2xl font-bold text-slate-900">
                 {grade != null ? gradeLabel(grade) : "—"}
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="rounded-2xl border border-emerald-800/20 bg-white p-5 shadow-sm">
               <p className="text-sm text-slate-500">Courses</p>
               <p className="mt-1 text-2xl font-bold text-slate-900">{courses.length}</p>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="rounded-2xl border border-emerald-800/20 bg-white p-5 shadow-sm">
               <p className="text-sm text-slate-500">Lessons completed</p>
               <p className="mt-1 text-2xl font-bold text-slate-900">
                 {done}/{totalLessons || 0} lessons
@@ -376,8 +376,8 @@ export default async function StudentDashboard() {
           </div>
 
           <section className="mt-10">
-            <h2 className="text-lg font-semibold text-slate-900">Up next</h2>
-            <p className="mt-1 text-sm text-slate-500">
+            <h2 className="text-lg font-semibold text-white">Up next</h2>
+            <p className="mt-1 text-sm text-emerald-100/80">
               Incomplete lessons and unlocked section quizzes — your to-do list.
             </p>
             <ul className="mt-4 space-y-2">
@@ -404,7 +404,7 @@ export default async function StudentDashboard() {
                 </li>
               ))}
               {upNext.length === 0 && (
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-emerald-100/80">
                   {grade != null
                     ? "You’re caught up — no incomplete lessons or unlocked quizzes waiting."
                     : "Enroll to see your to-do list here."}
@@ -412,14 +412,14 @@ export default async function StudentDashboard() {
               )}
             </ul>
             {todosCount > upNext.length && (
-              <p className="mt-3 text-xs text-slate-500">
+              <p className="mt-3 text-xs text-emerald-200/70">
                 Showing {upNext.length} of {todosCount} open items.
               </p>
             )}
           </section>
 
           <section className="mt-10">
-            <h2 className="text-lg font-semibold text-slate-900">Your courses</h2>
+            <h2 className="text-lg font-semibold text-white">Your courses</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {courses.map((course) => {
                 const doneCount = course.lessons.filter((l) => completedSet.has(l.id)).length;
@@ -438,13 +438,13 @@ export default async function StudentDashboard() {
                 );
               })}
               {courses.length === 0 && (
-                <p className="text-sm text-slate-500">Enroll to see grade-level courses here.</p>
+                <p className="text-sm text-emerald-100/80">Enroll to see grade-level courses here.</p>
               )}
             </div>
           </section>
 
           <section className="mt-10">
-            <h2 className="text-lg font-semibold text-slate-900">Upcoming live sessions</h2>
+            <h2 className="text-lg font-semibold text-white">Upcoming live sessions</h2>
             <ul className="mt-4 space-y-3">
               {liveSessions.map((s) => (
                 <li
@@ -472,7 +472,7 @@ export default async function StudentDashboard() {
                 </li>
               ))}
               {liveSessions.length === 0 && (
-                <p className="text-sm text-slate-500">No upcoming sessions scheduled yet.</p>
+                <p className="text-sm text-emerald-100/80">No upcoming sessions scheduled yet.</p>
               )}
             </ul>
           </section>

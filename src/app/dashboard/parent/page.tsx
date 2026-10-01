@@ -55,7 +55,7 @@ export default async function ParentDashboard() {
       </div>
 
       <section>
-        <h2 className="text-lg font-semibold text-slate-900">Linked students</h2>
+        <h2 className="text-lg font-semibold text-white">Linked students</h2>
         <div className="mt-4 space-y-4">
           {links.map(({ child }) => {
             const active = child.enrollments.find((e) => e.status === "ACTIVE");
@@ -85,7 +85,7 @@ export default async function ParentDashboard() {
             );
           })}
           {links.length === 0 && (
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-emerald-100/80">
               No linked students yet.
             </p>
           )}
@@ -93,7 +93,7 @@ export default async function ParentDashboard() {
       </section>
 
       <section className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Upcoming live sessions</h2>
+        <h2 className="text-lg font-semibold text-white">Upcoming live sessions</h2>
         <ul className="mt-4 space-y-3">
           {sessions.map((s) => (
             <li key={s.id} className="rounded-xl border border-slate-200 bg-white p-4 text-sm">
@@ -112,9 +112,9 @@ export default async function ParentDashboard() {
         </ul>
       </section>
 
-      <p className="mt-8 text-sm text-slate-500">
+      <p className="mt-8 text-sm text-emerald-100/80">
         Need help?{" "}
-        <a href={`mailto:${brand.supportEmail}`} className="text-emerald-800 underline">
+        <a href={`mailto:${brand.supportEmail}`} className="font-medium text-emerald-300 underline hover:text-white">
           {brand.supportEmail}
         </a>
       </p>

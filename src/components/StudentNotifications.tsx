@@ -31,7 +31,7 @@ export function StudentNotifications({
 
   return (
     <section className="mb-6 space-y-3">
-      <h2 className="text-lg font-semibold text-slate-900">Notifications</h2>
+      <h2 className="text-lg font-semibold text-white">Notifications</h2>
       <ul className="space-y-2">
         {items.map((n) => (
           <li

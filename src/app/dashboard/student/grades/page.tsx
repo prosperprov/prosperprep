@@ -90,7 +90,7 @@ export default async function StudentGradesPage({
       subtitle={subtitle}
       nav={studentDashNavCompact()}
     >
-      <p className="mb-6 text-sm text-slate-600">
+      <p className="mb-6 text-sm text-emerald-100/85">
         Weights: lesson checks {Math.round(LESSON_WEIGHT * 100)}% · section quizzes{" "}
         {Math.round(SECTION_WEIGHT * 100)}%. Policy: <strong>latest attempt</strong> counts (retries
         allowed).
@@ -136,7 +136,7 @@ export default async function StudentGradesPage({
         </table>
       </div>
 
-      <h2 className="mt-10 text-lg font-semibold text-slate-900">Recent attempts</h2>
+      <h2 className="mt-10 text-lg font-semibold text-white">Recent attempts</h2>
       <ul className="mt-3 space-y-2">
         {attempts.map((a) => (
           <li key={a.id} className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm">
@@ -150,7 +150,7 @@ export default async function StudentGradesPage({
           </li>
         ))}
         {attempts.length === 0 && (
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-emerald-100/80">
             No graded attempts yet. Open a lesson and submit the check.
           </p>
         )}

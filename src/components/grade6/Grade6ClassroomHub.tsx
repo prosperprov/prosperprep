@@ -61,21 +61,21 @@ export function Grade6ClassroomHub({
   return (
     <div className="space-y-8">
       {/* Hero */}
-      <section className="overflow-hidden rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-sky-50 p-6 shadow-sm sm:p-8">
+      <section className="overflow-hidden rounded-3xl border border-emerald-400/35 bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-950 p-6 text-white shadow-lg shadow-black/30 sm:p-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-800">
+            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-300">
               {brand.shortName} · {gradeLabelText} Classroom
             </p>
-            <h2 className="mt-1 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              👋 Hi, {firstName}!
+            <h2 className="mt-1 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Hi, {firstName}
             </h2>
-            <p className="mt-2 max-w-xl text-base text-slate-700">{encouragement}</p>
+            <p className="mt-2 max-w-xl text-base text-emerald-50/90">{encouragement}</p>
 
             <div className="mt-5 flex flex-wrap gap-2">
               <Link
                 href="/dashboard/student/messages"
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-2xl border-2 border-sky-300 bg-white px-4 py-2 text-base font-semibold text-sky-950 shadow-sm hover:bg-sky-50"
+                className="inline-flex min-h-[48px] items-center gap-2 rounded-2xl border border-white/40 bg-white/10 px-4 py-2 text-base font-semibold text-white shadow-sm backdrop-blur-sm hover:bg-white/15"
               >
                 Messages
                 {unreadMessages > 0 && (
@@ -86,7 +86,7 @@ export function Grade6ClassroomHub({
               </Link>
               <Link
                 href="/dashboard/student/grades"
-                className="inline-flex min-h-[48px] items-center rounded-2xl border-2 border-slate-200 bg-white px-4 py-2 text-base font-semibold text-slate-800 shadow-sm hover:border-emerald-300"
+                className="inline-flex min-h-[48px] items-center rounded-2xl bg-white px-4 py-2 text-base font-semibold text-emerald-950 shadow-sm hover:bg-emerald-50"
               >
                 My grades
               </Link>
@@ -95,14 +95,14 @@ export function Grade6ClassroomHub({
                   href={nextLive.meetingUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-[48px] items-center rounded-2xl bg-emerald-700 px-4 py-2 text-base font-semibold text-white shadow-sm hover:bg-emerald-800"
+                  className="inline-flex min-h-[48px] items-center rounded-2xl bg-emerald-500 px-4 py-2 text-base font-semibold text-emerald-950 shadow-sm hover:bg-emerald-400"
                 >
                   Join live class
                 </a>
               ) : (
                 <a
                   href="#live-sessions"
-                  className="inline-flex min-h-[48px] items-center rounded-2xl border-2 border-emerald-300 bg-emerald-50 px-4 py-2 text-base font-semibold text-emerald-950 shadow-sm hover:bg-emerald-100"
+                  className="inline-flex min-h-[48px] items-center rounded-2xl border border-emerald-300/60 bg-emerald-950/40 px-4 py-2 text-base font-semibold text-emerald-100 shadow-sm hover:bg-emerald-900/60"
                 >
                   Live class
                 </a>
@@ -110,7 +110,7 @@ export function Grade6ClassroomHub({
             </div>
           </div>
 
-          <div className="flex shrink-0 flex-col items-center gap-2 rounded-3xl border border-white/80 bg-white/70 p-4 shadow-sm">
+          <div className="flex shrink-0 flex-col items-center gap-2 rounded-3xl border border-white/90 bg-white p-4 shadow-md">
             <ProgressRing done={done} total={total} />
             <p className="text-sm font-medium text-slate-700">
               {done}/{total || 0} lessons
@@ -121,7 +121,7 @@ export function Grade6ClassroomHub({
 
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Today strip */}
-        <aside className="rounded-3xl border-2 border-slate-200 bg-white p-5 shadow-sm lg:col-span-1">
+        <aside className="rounded-3xl border-2 border-emerald-800/15 bg-white p-5 shadow-sm lg:col-span-1">
           <h3 className="text-lg font-bold text-slate-900">Today</h3>
           <ul className="mt-3 space-y-3">
             {nextLive && (
@@ -176,8 +176,8 @@ export function Grade6ClassroomHub({
 
         {/* Up next — big cards */}
         <section className="lg:col-span-2">
-          <h3 className="text-lg font-bold text-slate-900">Do this next</h3>
-          <p className="mt-1 text-sm text-slate-600">One clear step at a time.</p>
+          <h3 className="text-lg font-bold text-white">Do this next</h3>
+          <p className="mt-1 text-sm text-emerald-100/80">One clear step at a time.</p>
 
           {nextItem ? (
             <Link
@@ -235,8 +235,8 @@ export function Grade6ClassroomHub({
 
       {/* Subject islands */}
       <section>
-        <h3 className="text-lg font-bold text-slate-900">Subject islands</h3>
-        <p className="mt-1 text-sm text-slate-600">
+        <h3 className="text-lg font-bold text-white">Subject islands</h3>
+        <p className="mt-1 text-sm text-emerald-100/80">
           Tap a subject to open lessons, video, practice, and quizzes.
         </p>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -251,14 +251,14 @@ export function Grade6ClassroomHub({
             />
           ))}
           {courses.length === 0 && (
-            <p className="text-sm text-slate-500">Enroll to unlock Grade 6 subjects.</p>
+            <p className="text-sm text-emerald-100/80">Enroll to unlock Grade 6 subjects.</p>
           )}
         </div>
       </section>
 
       {/* Live sessions */}
       <section id="live-sessions">
-        <h3 className="text-lg font-bold text-slate-900">Upcoming live sessions</h3>
+        <h3 className="text-lg font-bold text-white">Upcoming live sessions</h3>
         <ul className="mt-4 space-y-3">
           {liveSessions.map((s) => (
             <li
@@ -285,7 +285,7 @@ export function Grade6ClassroomHub({
             </li>
           ))}
           {liveSessions.length === 0 && (
-            <p className="text-sm text-slate-600">No upcoming sessions scheduled yet.</p>
+            <p className="text-sm text-emerald-100/80">No upcoming sessions scheduled yet.</p>
           )}
         </ul>
       </section>

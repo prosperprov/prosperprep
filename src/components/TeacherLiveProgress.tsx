@@ -86,11 +86,11 @@ export function TeacherLiveProgress() {
     <section className="mt-10">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">Live Student Progression</h2>
+          <h2 className="text-lg font-semibold text-white">Live Student Progression</h2>
         </div>
         <div className="flex items-center gap-2">
           {updatedLabel ? (
-            <span className="text-xs text-slate-500">Updated {updatedLabel}</span>
+            <span className="text-xs text-emerald-200/80">Updated {updatedLabel}</span>
           ) : null}
           <button
             type="button"
@@ -109,11 +109,11 @@ export function TeacherLiveProgress() {
       )}
 
       {!data && !error && (
-        <p className="mt-4 text-sm text-slate-500">Loading live progression…</p>
+        <p className="mt-4 text-sm text-emerald-100/80">Loading live progression…</p>
       )}
 
       {data && data.students.length === 0 && (
-        <p className="mt-4 text-sm text-slate-500">No active students in your grades yet.</p>
+        <p className="mt-4 text-sm text-emerald-100/80">No active students in your grades yet.</p>
       )}
 
       {data && data.students.length > 0 && (
