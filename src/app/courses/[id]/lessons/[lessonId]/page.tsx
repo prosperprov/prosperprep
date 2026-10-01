@@ -220,6 +220,8 @@ export default async function LessonPage({
   }));
 
   const g6 = isGrade6Classroom(course.grade);
+  /** Grade 6 + Grade 10 cores: video above teach body so students see Watch Video immediately. */
+  const showVideoFirst = g6 || course.grade === 10;
   const g6UnitKeys = Array.from(
     new Set(
       course.lessons
@@ -359,7 +361,7 @@ export default async function LessonPage({
       )}
 
       {/* Grade 6: video right after chrome/description so phones see play without scrolling the article */}
-      {g6 && lesson.videoUrl ? (
+      {showVideoFirst && lesson.videoUrl ? (
         <div
           id="lesson-video"
           className="scroll-mt-[calc(7.5rem+env(safe-area-inset-top,0px))]"
@@ -402,7 +404,7 @@ export default async function LessonPage({
       </article>
 
       {/* Non–Grade 6: keep video after the article */}
-      {!g6 && lesson.videoUrl ? (
+      {!showVideoFirst && lesson.videoUrl ? (
         <div
           id="lesson-video"
           className="scroll-mt-[calc(6rem+env(safe-area-inset-top,0px))]"

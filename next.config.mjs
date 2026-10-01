@@ -5,6 +5,17 @@ const nextConfig = {
     // are not stripped / stubbed after schema changes.
     serverComponentsExternalPackages: ["@prisma/client", ".prisma/client", "prisma"],
   },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          // YouTube embeds require a Referer; same-origin strips it → Error 153.
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
