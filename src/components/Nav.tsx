@@ -46,7 +46,7 @@ export async function Nav() {
   }
 
   const links = [
-    { href: "/prek", label: "Pre-K Learn" },
+    { href: "/prek", label: "Pre-K" },
     { href: "/courses", label: "Courses" },
     // Teachers do not need tuition pricing while working the classroom.
     ...(role !== "TEACHER" ? [{ href: "/pricing", label: "Pricing" }] : []),
