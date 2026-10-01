@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 type Props = {
-  /** When false, button is hidden or shown disabled with a demo note. */
+  /** When false, button is hidden or shown disabled until a paid subscription exists. */
   hasStripeCustomer: boolean;
   demoOnly?: boolean;
 };

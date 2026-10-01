@@ -84,7 +84,7 @@ export default function LoginPage() {
         </button>
       </form>
       {process.env.NODE_ENV !== "production" && <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600">
-        <p className="font-semibold text-slate-800">Demo accounts (password: demo1234)</p>
+        <p className="font-semibold text-slate-800">Test accounts (password: demo1234)</p>
         <ul className="mt-2 space-y-1 font-mono">
           <li>student@prosperprep.org</li>
           <li>parent@prosperprep.org</li>
