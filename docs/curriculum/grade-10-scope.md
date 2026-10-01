@@ -40,3 +40,9 @@ node scripts/gen-grade10-history-year.mjs
 3. Open Algebra & Beyond / English Literature / Biology & Chemistry / U.S. & World History.
 4. Confirm Unit 1 open, later units locked until Unit 1 cleared (lessons complete or Unit Check ≥ 60%).
 5. Open a lesson: teach body, practice, lesson check, optional video when mapped.
+
+## 2026-10-01 follow-up (Algebra Unit 1 + videos)
+
+- Migration `0031_grade10_algebra_unit1_teach_rewrite.sql` — hand-authored Algebra Unit 1 Teach/Practice/Exit + skill-aligned lesson checks (fixes template-empty feel on Unit 1 Lesson 1).
+- Migration `0032_grade10_lesson_videos_expand.sql` — oEmbed-verified YouTube map for all 320 active G10 core lessons; clears broken IDs from `0030`.
+- Source JSON: `scripts/data/grade10-math-unit1-hand-teach.json`, `scripts/data/grade10-lesson-videos.json`, `content/grade10/`.

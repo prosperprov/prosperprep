@@ -1,0 +1,2882 @@
+[
+  {
+    "lessonId": "ppg10mebb94672c802a9fb7e31",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Function Notation & Linear Forms",
+    "order": 1,
+    "videoId": "EmTvdKkAUtE",
+    "videoTitle": "Evaluating with function notation | Functions and their graphs | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mf62371bb3e984bccbf8c",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Slope as Rate of Change",
+    "order": 2,
+    "videoId": "R948Tsyq4vA",
+    "videoTitle": "Finding the slope of a line from its graph | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m406e6666389aef59c152",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Writing Equations of Lines",
+    "order": 3,
+    "videoId": "IL3UCuXrUzE",
+    "videoTitle": "Slope-intercept form | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m61e2fdb33d8d6359795c",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Graphing Linear Inequalities",
+    "order": 4,
+    "videoId": "unSBFwK881s",
+    "videoTitle": "Introduction to graphing inequalities | Two-variable linear inequalities | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m75a64306c503610aa3fc",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Systems by Graphing & Tables",
+    "order": 5,
+    "videoId": "5a6zpfl50go",
+    "videoTitle": "Solving linear systems by graphing | Systems of equations | 8th grade | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m95b71a331fffa96fa38f",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Systems by Substitution",
+    "order": 6,
+    "videoId": "V7H1oUHXPkg",
+    "videoTitle": "Solving linear systems by substitution | Algebra Basics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m059cda1f94c454de63e8",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Systems by Elimination",
+    "order": 7,
+    "videoId": "vA-55wZtLeE",
+    "videoTitle": "Solving systems of equations by elimination | Algebra Basics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m55feea6366e7888027d0",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Systems Applications",
+    "order": 8,
+    "videoId": "z1hz8-Kri1E",
+    "videoTitle": "Systems of equations word problems example 1 | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10maa5b3c997ec34d61c4e1",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Quadratic Forms & Graphs",
+    "order": 9,
+    "videoId": "BGz3pkoGPag",
+    "videoTitle": "Visual introduction to parabolas",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10meb3b10bdea632d74664a",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Transformations of Parabolas",
+    "order": 10,
+    "videoId": "99v51U3HSCU",
+    "videoTitle": "Shifting and scaling parabolas | Quadratic equations | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mdfacbb81cfa94e92b577",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Factoring Quadratics",
+    "order": 11,
+    "videoId": "u1SAo2GiX8A",
+    "videoTitle": "Example 2: Factoring quadratics by grouping | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m8aa54de9043d80f7d521",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Solving by Factoring",
+    "order": 12,
+    "videoId": "2ZzuZvz33X0",
+    "videoTitle": "Solving a quadratic equation by factoring | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m626be81fe67722d6a658",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Completing the Square",
+    "order": 13,
+    "videoId": "bNQY0z76M5A",
+    "videoTitle": "Solving quadratic equations by completing the square | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m68d8440517e49966ac74",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Quadratic Formula & Discriminant",
+    "order": 14,
+    "videoId": "i7idZfS8t8w",
+    "videoTitle": "How to use the quadratic formula | Polynomial and rational functions | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m6d321e77187fbd599ba3",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Quadratic Inequalities",
+    "order": 15,
+    "videoId": "ZNtzWpU80-0",
+    "videoTitle": "Quadratic inequalities | Polynomial and rational functions | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m1cae2601e0caa46947e9",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Quadratic Modeling",
+    "order": 16,
+    "videoId": "OZtqz_xw0SQ",
+    "videoTitle": "Example 4: Applying the quadratic formula | Quadratic equations | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m91621ecae9c3d0a47635",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Polynomial Vocabulary & Degree",
+    "order": 17,
+    "videoId": "Vm7H0VTlIco",
+    "videoTitle": "Polynomials intro | Mathematics II | High School Math | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m630f40e8667fefeb5990",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Add, Subtract, Multiply Polynomials",
+    "order": 18,
+    "videoId": "fGThIRpWEE4",
+    "videoTitle": "Multiplying binomials and polynomials | Algebra Basics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mf6636e28f80aaaa677e2",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Special Products",
+    "order": 19,
+    "videoId": "bFtjG45-Udk",
+    "videoTitle": "Introduction to special products of binomials | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m0508309e8bff80b68d3e",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Factoring Strategies",
+    "order": 20,
+    "videoId": "FoTD41xzF5Q",
+    "videoTitle": "Factoring completely with a common factor | Algebra 1 | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ma3181d1764a2a1b4f16a",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Polynomial Division",
+    "order": 21,
+    "videoId": "FXgV9ySNusc",
+    "videoTitle": "Polynomial division | Polynomial and rational functions | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m94f9983aa18714389244",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Remainder & Factor Theorems",
+    "order": 22,
+    "videoId": "MwG6QD352yc",
+    "videoTitle": "Polynomial remainder theorem | Polynomial and rational functions | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mc1cc69b54562dd94ac40",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Zeros & Multiplicity Intro",
+    "order": 23,
+    "videoId": "jrFLb9ZoZH0",
+    "videoTitle": "Multiplicity of zeros of polynomials | Polynomial graphs | Algebra 2 | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10md7cd7d9e6a23bf623dd1",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Polynomial Unit Synthesis",
+    "order": 24,
+    "videoId": "1kfq0aR3ASs",
+    "videoTitle": "Factoring quadratics as (x+a)(x+b) (example 2) | Mathematics II | High School Math | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mcd0291a77267a8950599",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Domain of Rational Expressions",
+    "order": 25,
+    "videoId": "7Uos1ED3KHI",
+    "videoTitle": "Simplifying rational expressions introduction | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m755750d491640f88b30d",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Simplify Rational Expressions",
+    "order": 26,
+    "videoId": "7Uos1ED3KHI",
+    "videoTitle": "Simplifying rational expressions introduction | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m176aa5e03b27f362d71f",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Multiply & Divide Rationals",
+    "order": 27,
+    "videoId": "3GL69IA2q4s",
+    "videoTitle": "Multiplying and dividing rational expressions 1 | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m0507d1901be41f265cc0",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Add & Subtract Rationals",
+    "order": 28,
+    "videoId": "y_DweTAEYWk",
+    "videoTitle": "Adding and subtracting rational expressions | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mcbf6483b2da6566468c3",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Complex Fractions",
+    "order": 29,
+    "videoId": "ALO87_KDoTs",
+    "videoTitle": "Complicated Rational Expressions",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m65da3514f133901b9c48",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Rational Equations",
+    "order": 30,
+    "videoId": "6eqgIZyXgK8",
+    "videoTitle": "Solving Rational Equations",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mfc94ad3943691982436f",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Applications of Rationals",
+    "order": 31,
+    "videoId": "gD7A1LA4jO8",
+    "videoTitle": "Applying rational equations 1 | Polynomial and rational functions | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m1d932f515f8a9ef397d6",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Rational Unit Review",
+    "order": 32,
+    "videoId": "xLZsp9EutGg",
+    "videoTitle": "Math is so easy",
+    "author": "Khan Academy Math"
+  },
+  {
+    "lessonId": "ppg10m763d91416f9e2306141c",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Nth Roots & Principal Roots",
+    "order": 33,
+    "videoId": "mbc3_e5lWw0",
+    "videoTitle": "Introduction to square roots | Numbers and operations | 8th grade | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ma5a348eb65f8abd963f5",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Simplify Radical Expressions",
+    "order": 34,
+    "videoId": "cw3mp8oNASk",
+    "videoTitle": "Simplifying square roots | Exponents, radicals, and scientific notation | Pre-Algebra | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m2e6118906228380ceceb",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Add & Multiply Radicals",
+    "order": 35,
+    "videoId": "sBvRJUwXJPo",
+    "videoTitle": "Multiply and simplify a radical expression 2 | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mf6ec896bdc372b5079a0",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Rational Exponents",
+    "order": 36,
+    "videoId": "rco7DMcy-oE",
+    "videoTitle": "More rational exponents and exponent laws | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m4c7fc437886f9f7c1484",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Radical Equations",
+    "order": 37,
+    "videoId": "pFFoAGIEyJc",
+    "videoTitle": "Solving radical equations | Exponent expressions and equations | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10me4f4e7263be94e82d723",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Rationalize Denominators",
+    "order": 38,
+    "videoId": "gY5TvlHg4Vk",
+    "videoTitle": "How to rationalize a denominator | Exponent expressions and equations | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mc2912dadc968ec92ed15",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Radical Word Problems",
+    "order": 39,
+    "videoId": "pFFoAGIEyJc",
+    "videoTitle": "Solving radical equations | Exponent expressions and equations | Algebra I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m157ca2242fa5fbb37d0b",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Radicals Unit Synthesis",
+    "order": 40,
+    "videoId": "VWlFMfPVmkU",
+    "videoTitle": "Adding and simplifying radicals | Pre-Algebra | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m65e298ff12500658a6bf",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Exponential Growth & Decay",
+    "order": 41,
+    "videoId": "m5Tf6vgoJtQ",
+    "videoTitle": "Exponential growth and decay word problems | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m2e7e7d06c67c4c490828",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Graphs of Exponential Functions",
+    "order": 42,
+    "videoId": "9SOSfRNCQZQ",
+    "videoTitle": "Graphing exponential functions | Exponential and logarithmic functions | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m247783e3cb9aa1ecf1c5",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Intro to Logarithms",
+    "order": 43,
+    "videoId": "mQTWzLpCcW0",
+    "videoTitle": "Introduction to Logarithms",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m54e9af5be8a77bb144f5",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Log Laws",
+    "order": 44,
+    "videoId": "PupNgv49_WY",
+    "videoTitle": "Introduction to logarithm properties | Logarithms | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10maa062021d6889189e958",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Solving Exponential Equations",
+    "order": 45,
+    "videoId": "7Ig6kVZaWoU",
+    "videoTitle": "Solving exponential equation | Exponential and logarithmic functions | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m36b42e1f08512b7847b2",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Solving Logarithmic Equations",
+    "order": 46,
+    "videoId": "Kv2iHde7Xgw",
+    "videoTitle": "Solving logarithmic equations | Exponential and logarithmic functions | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m7d376584666de0960dd4",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Change of Base & Applications",
+    "order": 47,
+    "videoId": "OkFdDqW9xxM",
+    "videoTitle": "Change of base formula | Logarithms | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mefff2748ec96457d8a50",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Exp/Log Unit Capstone",
+    "order": 48,
+    "videoId": "6WMZ7J0wwMI",
+    "videoTitle": "Exponential growth functions | Exponential and logarithmic functions | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m1d8341f252e36e58d16a",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Patterns & Recursive Definitions",
+    "order": 49,
+    "videoId": "KRFiAlo7t1E",
+    "videoTitle": "Explicit and recursive definitions of sequences | Precalculus | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m98a5aeabbce2764efe0a",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Arithmetic Sequences",
+    "order": 50,
+    "videoId": "_cooC3yG_p0",
+    "videoTitle": "Introduction to arithmetic sequences | Sequences, series and induction | Precalculus | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m838b1ed6ec193e189e67",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Arithmetic Series",
+    "order": 51,
+    "videoId": "AuX7nPBqDts",
+    "videoTitle": "Basic addition | Addition and subtraction | Arithmetic | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m0aeed14fc0a4611cb06e",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Geometric Sequences",
+    "order": 52,
+    "videoId": "pXo0bG4iAyg",
+    "videoTitle": "Introduction to geometric sequences | Sequences, series and induction | Precalculus | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m91df183e7f37469f1fe8",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Geometric Series",
+    "order": 53,
+    "videoId": "pXo0bG4iAyg",
+    "videoTitle": "Introduction to geometric sequences | Sequences, series and induction | Precalculus | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m3b22541a25b9687ae072",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Sigma Notation",
+    "order": 54,
+    "videoId": "5jwXThH6fg4",
+    "videoTitle": "Sigma notation for sums | Sequences, series and induction | Precalculus | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m39346685b3cd825ef340",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Applications of Sequences",
+    "order": 55,
+    "videoId": "W6HDsxbHfO0",
+    "videoTitle": "\ud83d\udea8 NEW COURSE ALERT: AP Precalculus just joined Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10md56168bd51b857943007",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Sequences Unit Review",
+    "order": 56,
+    "videoId": "_cooC3yG_p0",
+    "videoTitle": "Introduction to arithmetic sequences | Sequences, series and induction | Precalculus | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m3eb5dac62925b2c203e5",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Similar Right Triangles",
+    "order": 57,
+    "videoId": "BI-rtfZVXy0",
+    "videoTitle": "Similar triangles | Similarity | Geometry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ma2aabac1e94b5ccf0e26",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Sine, Cosine, Tangent",
+    "order": 58,
+    "videoId": "Jsiy4TxgIME",
+    "videoTitle": "Basic trigonometry | Basic trigonometry | Trigonometry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m4eaa8116ec727834f258",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Solving Right Triangles",
+    "order": 59,
+    "videoId": "l5VbdqRjTXc",
+    "videoTitle": "Example: Trig to solve the sides and angles of a right triangle | Trigonometry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m08dbc0cb0e814f11249b",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Angles of Elevation & Depression",
+    "order": 60,
+    "videoId": "TgQs7k5p2Ag",
+    "videoTitle": "Intro to heights and distances | Applications of trigonometry | Class 10 | Maths | Khan Academy",
+    "author": "Khan Academy India - English"
+  },
+  {
+    "lessonId": "ppg10mf43bf66d254b5eca032e",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Unit Circle Intro",
+    "order": 61,
+    "videoId": "1m9p9iubMLU",
+    "videoTitle": "Introduction to the unit circle | Trigonometry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m836b74de41dc0a3323e2",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Reference Angles",
+    "order": 62,
+    "videoId": "DUNQsJAJZOU",
+    "videoTitle": "Identifying reference angles of positive angles in standard position | Precalculus | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10maddd3321fb03f72802ff",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Basic Trig Equations",
+    "order": 63,
+    "videoId": "Jsiy4TxgIME",
+    "videoTitle": "Basic trigonometry | Basic trigonometry | Trigonometry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m7ed0788d48134e481bc6",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Trig Unit Synthesis",
+    "order": 64,
+    "videoId": "ES15mSuqHM8",
+    "videoTitle": "Sine equation algebraic solution set | Trigonometry | Precalculus | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m59262b2d26cfb0430340",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Counting & Sample Spaces",
+    "order": 65,
+    "videoId": "uzkc-qNVoOk",
+    "videoTitle": "Probability explained | Independent and dependent events | Probability and Statistics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mb276a4a67cf1e6a7dcc4",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Basic Probability Rules",
+    "order": 66,
+    "videoId": "uzkc-qNVoOk",
+    "videoTitle": "Probability explained | Independent and dependent events | Probability and Statistics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m65b0a7f7f6ede1a90413",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Compound Events",
+    "order": 67,
+    "videoId": "PR-A3UAO7_0",
+    "videoTitle": "Compound sample spaces | Statistics and probability | 7th grade | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mdc315de7254d64c2e228",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Conditional Probability Intro",
+    "order": 68,
+    "videoId": "6xPkG2pA-TU",
+    "videoTitle": "Calculating conditional probability | Probability and Statistics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10md09fe476d0189f56bb64",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Measures of Center & Spread",
+    "order": 69,
+    "videoId": "k3aKKasOmIw",
+    "videoTitle": "Finding mean, median, and mode | Descriptive statistics | Probability and Statistics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10md25c83ca98a2731a3059",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Data Displays",
+    "order": 70,
+    "videoId": "2oJldeE4JcU",
+    "videoTitle": "Thinking about shapes of distributions | Data and statistics | 6th grade | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m272dc88e61e3fe8340c1",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Intro to Normal Curves",
+    "order": 71,
+    "videoId": "5S-Zfa-vOXs",
+    "videoTitle": "Z-score introduction | Modeling data distributions | AP Statistics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mdd6ba9dcfe25d64939ca",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Stats Unit Capstone",
+    "order": 72,
+    "videoId": "PZHoWgH6LzY",
+    "videoTitle": "2024 College Admissions Stats",
+    "author": "Khan's Tutorial"
+  },
+  {
+    "lessonId": "ppg10ma196f11330a06a815805",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Function Families Overview",
+    "order": 73,
+    "videoId": "y2b1j3bEX3o",
+    "videoTitle": "Functions and their graphs #math #khanlearningacademy",
+    "author": "Khan Learning Academy"
+  },
+  {
+    "lessonId": "ppg10m8515484b20ef4eae23c8",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Domain, Range & Inverses",
+    "order": 74,
+    "videoId": "W84lObmOp8M",
+    "videoTitle": "Introduction to function inverses | Functions and their graphs | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10mb2c885d3a46671267a5b",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Piecewise Functions",
+    "order": 75,
+    "videoId": "tedzsRH0Jas",
+    "videoTitle": "Piecewise function formula from graph | Functions and their graphs | Algebra II | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m02757d43a723e2b1ed00",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Transformations Mastery",
+    "order": 76,
+    "videoId": "XiAoUDfrar0",
+    "videoTitle": "Introduction to transformations | Transformations | Geometry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10me96d06831ff7089f1c5d",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Choosing a Model",
+    "order": 77,
+    "videoId": "xLZsp9EutGg",
+    "videoTitle": "Math is so easy",
+    "author": "Khan Academy Math"
+  },
+  {
+    "lessonId": "ppg10m2a410822885a86ab867c",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Regression Literacy",
+    "order": 78,
+    "videoId": "yMgFHbjbAW8",
+    "videoTitle": "Introduction to residuals and least squares regression",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10m870e6bb26af6373dbd23",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Error Analysis Clinic",
+    "order": 79,
+    "videoId": "xLZsp9EutGg",
+    "videoTitle": "Math is so easy",
+    "author": "Khan Academy Math"
+  },
+  {
+    "lessonId": "ppg10m5bcab43feae61f9ae20f",
+    "course": "Algebra & Beyond \u00b7 Grade 10",
+    "title": "Year Capstone: Multi-Family Modeling",
+    "order": 80,
+    "videoId": "Vm7H0VTlIco",
+    "videoTitle": "Polynomials intro | Mathematics II | High School Math | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s9408b2497d930fc9a058",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Experimental Design & Variables",
+    "order": 1,
+    "videoId": "N6IAzlugWw0",
+    "videoTitle": "The scientific method",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sab622218feba34c22e11",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Data Tables, Graphs & Uncertainty",
+    "order": 2,
+    "videoId": "2oJldeE4JcU",
+    "videoTitle": "Thinking about shapes of distributions | Data and statistics | 6th grade | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s935cee16c1d4b88dab96",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Atoms to Molecules for Life",
+    "order": 3,
+    "videoId": "IFKnq9QM6_A",
+    "videoTitle": "Elements and atoms | Atoms, compounds, and ions | Chemistry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sbc79944a532e4c7dbcd4",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Water and Carbon Skeletons",
+    "order": 4,
+    "videoId": "fxlMABxU7zU",
+    "videoTitle": "Importance of water for life | Chemistry of life | AP Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sd1dcb0b9693617b5ccec",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Carbohydrates & Lipids",
+    "order": 5,
+    "videoId": "HGg_WiaSr4U",
+    "videoTitle": "Introduction to lipids | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s4503e2f800ef62ad4f0b",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Proteins & Nucleic Acids",
+    "order": 6,
+    "videoId": "hI4v7v8AdfI",
+    "videoTitle": "Introduction to nucleic acids and nucleotides | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s20c788961d23038325b0",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Enzymes as Biological Catalysts",
+    "order": 7,
+    "videoId": "A90HKrgUOg0",
+    "videoTitle": "Enzymes | Energy and enzymes | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sbb0b33f2ac877c6ec466",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Biochemistry Unit Synthesis",
+    "order": 8,
+    "videoId": "JQIwwJqF5D0",
+    "videoTitle": "Transcription and mRNA processing | Biomolecules | MCAT | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10se4799d4bb2b4d1d94f73",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Cell Theory and Scale",
+    "order": 9,
+    "videoId": "zk3vlhz1b6k",
+    "videoTitle": "Cell theory | The cellular basis of life | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s88662c3e27c40106eac1",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Prokaryotic vs Eukaryotic Cells",
+    "order": 10,
+    "videoId": "xTnNv7YplSo",
+    "videoTitle": "Prokaryotic and eukaryotic cells | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s1aad6d78dbf157c892d1",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Organelles and Compartments",
+    "order": 11,
+    "videoId": "Hmwvj9X4GNY",
+    "videoTitle": "Parts of a cell",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10se01b2468437bdba7533f",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Membrane Structure & Transport",
+    "order": 12,
+    "videoId": "aubZU0iWtgI",
+    "videoTitle": "Diffusion and osmosis | Membranes and transport | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s1aa53995942f595df2ef",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Cell Cycle and Mitosis",
+    "order": 13,
+    "videoId": "-wMfWTCs17w",
+    "videoTitle": "Cell Cycle - Mitosis | Reproduction | Class 10 | Biology | Telangana | Khan Academy",
+    "author": "Khan Academy India - English"
+  },
+  {
+    "lessonId": "ppg10s829edf8d042652a5fcbf",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Stem Cells and Differentiation Intro",
+    "order": 14,
+    "videoId": "jOBRupYkyaw",
+    "videoTitle": "Stem cells and differentiation | From cells to organisms | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sadefe3d04521e54ac697",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Microscopy Habits",
+    "order": 15,
+    "videoId": "YE2peDF4Zqg",
+    "videoTitle": "Organization in the human body | Cells and organisms | Middle school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s5a17e3be115759b8eafe",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Cells Unit Review",
+    "order": 16,
+    "videoId": "Hmwvj9X4GNY",
+    "videoTitle": "Parts of a cell",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s90024b54fc377420f75e",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "ATP and Energy Currency",
+    "order": 17,
+    "videoId": "PK6HmIe2EAg",
+    "videoTitle": "ATP: Adenosine triphosphate | Energy and enzymes | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sb49fe5d09113c5cb05ee",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Photosynthesis Overview",
+    "order": 18,
+    "videoId": "-rsYk4eCKnA",
+    "videoTitle": "Photosynthesis",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s0886acfc1227d9407c56",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Chloroplasts and Leaf Context",
+    "order": 19,
+    "videoId": "eu5Azn23khc",
+    "videoTitle": "Mitochondria and plastids | The fundamental unit of life | Biology | Khan Academy",
+    "author": "Khan Academy India - English"
+  },
+  {
+    "lessonId": "ppg10se45feaea3138c8b634f2",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Cellular Respiration Overview",
+    "order": 20,
+    "videoId": "2f7YwCtHcgk",
+    "videoTitle": "Introduction to cellular respiration | Cellular respiration | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sa17631a50efce956821d",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Aerobic vs Anaerobic Paths",
+    "order": 21,
+    "videoId": "_q2RHIrgaXE",
+    "videoTitle": "Aerobic & anaerobic respiration  | Life processes | Biology | Khan Academy",
+    "author": "Khan Academy India - English"
+  },
+  {
+    "lessonId": "ppg10s793b5a1bdcfdd1172eb7",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Energy Flow Through Ecosystems Preview",
+    "order": 22,
+    "videoId": "TitrRpMUt0I",
+    "videoTitle": "Flow of energy and matter through ecosystems | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s2e7cc10312bb02305250",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Enzyme Conditions Lab Thinking",
+    "order": 23,
+    "videoId": "LtGCHzKAf8w",
+    "videoTitle": "Enzyme reaction velocity and pH | Cellular energetics | AP Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s9ae136b8790b99e96573",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Energy Unit CER Task",
+    "order": 24,
+    "videoId": "-KE7jTXwNYs",
+    "videoTitle": "ATP hydrolysis mechanism | Energy and enzymes | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sd1b30a177dbbc7b01c8f",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "DNA Structure and Information",
+    "order": 25,
+    "videoId": "_-vZ_g7K6P0",
+    "videoTitle": "DNA",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sa059abcb8338b43d44a2",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Replication Fidelity Intro",
+    "order": 26,
+    "videoId": "gLqHzIA4t7M",
+    "videoTitle": "DNA Replication | Molecular Basis of Inheritance | Biology | Khan Academy",
+    "author": "Khan Academy India - English"
+  },
+  {
+    "lessonId": "ppg10s60a20a7f8eec1d8b42f3",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Transcription & Translation Overview",
+    "order": 27,
+    "videoId": "6gUY5NoX1Lk",
+    "videoTitle": "DNA replication and RNA transcription and translation | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s8d78ea98940aa73741fe",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Mitosis vs Meiosis Purpose",
+    "order": 28,
+    "videoId": "IQJ4DBkCnco",
+    "videoTitle": "Comparing mitosis and meiosis | Cells | MCAT | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s0f7464cdd4af0f782a77",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Mendelian Inheritance",
+    "order": 29,
+    "videoId": "OhYOfTczCk4",
+    "videoTitle": "Mendelian inheritance and Punnett squares | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s375b56abafe11c5261de",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Non-Mendelian Patterns Intro",
+    "order": 30,
+    "videoId": "eEUvRrhmcxM",
+    "videoTitle": "Introduction to Heredity",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sb769d942eef67ccc642e",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Pedigrees and Probability",
+    "order": 31,
+    "videoId": "11s5Biyi9q4",
+    "videoTitle": "Pedigrees | Classical genetics | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sb70d82409f4d7927f5ab",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Genetics Unit Synthesis",
+    "order": 32,
+    "videoId": "JQIwwJqF5D0",
+    "videoTitle": "Transcription and mRNA processing | Biomolecules | MCAT | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sdb46b233a14c97ff0aa5",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Variation and Heritability",
+    "order": 33,
+    "videoId": "D0XYWKm_LoM",
+    "videoTitle": "Sources of genetic variation | Inheritance and variation | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s13ced4e456d82e10f06f",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Natural Selection Mechanism",
+    "order": 34,
+    "videoId": "ifyEocJ2Rog",
+    "videoTitle": "Natural selection and evolution | Mechanisms of evolution | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s720b9652a130e0113ad4",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Evidence for Evolution",
+    "order": 35,
+    "videoId": "Q-aGAX27SIo",
+    "videoTitle": "Evidence for evolution | Common ancestry and phylogeny | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s9c71f724d35b387fe71c",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Speciation Intro",
+    "order": 36,
+    "videoId": "gnku5AksWvU",
+    "videoTitle": "Allopatric and sympatric speciation | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sb5bdfd6aa834a83a8602",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Phylogenetic Thinking",
+    "order": 37,
+    "videoId": "6_XMKmFQ_w8",
+    "videoTitle": "Understanding and building phylogenetic trees | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s276f6e6b1de8be800496",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Antibiotic Resistance Case",
+    "order": 38,
+    "videoId": "TzszIMs4xdU",
+    "videoTitle": "Antimicrobial Resistance | Classification of Microbes | Middle School | Science | Khan Academy",
+    "author": "Khan Academy India - English"
+  },
+  {
+    "lessonId": "ppg10sb5b2642aa42c4ad3a957",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Human Evolution Literacy (Careful)",
+    "order": 39,
+    "videoId": "i3sdIHaa4jQ",
+    "videoTitle": "Evolution | Middle school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s21be19df9295f08fafcd",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Evolution Unit Review",
+    "order": 40,
+    "videoId": "i3sdIHaa4jQ",
+    "videoTitle": "Evolution | Middle school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s84387480a1d67db2d5a9",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Populations and Carrying Capacity",
+    "order": 41,
+    "videoId": "KyAKEisg2PQ",
+    "videoTitle": "Exponential and logistic growth in populations | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sb8c47256f057e59b33e1",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Community Interactions",
+    "order": 42,
+    "videoId": "OfV3VNgjpvw",
+    "videoTitle": "Ecology introduction | Ecology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s458d26a870310c03bd82",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Energy Pyramids and Matter Cycles",
+    "order": 43,
+    "videoId": "TitrRpMUt0I",
+    "videoTitle": "Flow of energy and matter through ecosystems | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s94a5455fd88bc000585a",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Biomes and Climate Patterns",
+    "order": 44,
+    "videoId": "A495e31cDdE",
+    "videoTitle": "Ecosystems and biomes | Ecology and natural systems | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sc85a8b3ae4363cbc73c4",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Biodiversity and Stability",
+    "order": 45,
+    "videoId": "TZ-S9sc6HYM",
+    "videoTitle": "Biodiversity | Biodiversity and human impacts | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10scfa18bebebdd93554957",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Human Impact Evidence",
+    "order": 46,
+    "videoId": "K10qnzCYH54",
+    "videoTitle": "Human impacts on ecosystems | Biodiversity and human impacts | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sbd002d30914103366e0d",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Stewardship Tradeoffs",
+    "order": 47,
+    "videoId": "TitrRpMUt0I",
+    "videoTitle": "Flow of energy and matter through ecosystems | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sf75359981e51914d2ee6",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Ecology Unit Capstone",
+    "order": 48,
+    "videoId": "OfV3VNgjpvw",
+    "videoTitle": "Ecology introduction | Ecology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s2715d6f806ce387a77b8",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Atomic Structure Review",
+    "order": 49,
+    "videoId": "lz_gMkQr7YE",
+    "videoTitle": "Protons, neutrons, and electrons in atoms | Chemistry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sa52d943b585457e6344a",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Periodic Table Patterns",
+    "order": 50,
+    "videoId": "t_f8bB1kf6M",
+    "videoTitle": "The periodic table | Atoms, elements, and the periodic table | High school chemistry | Khan Academy",
+    "author": "Khan Academy Organic Chemistry"
+  },
+  {
+    "lessonId": "ppg10sf09c8276112d28b1b2e1",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Ionic and Covalent Bonding",
+    "order": 51,
+    "videoId": "FaeAurHnQJs",
+    "videoTitle": "Ionic bonds | AP Chemistry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s7f59c70471fdf1c2b1eb",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Naming and Formulas Intro",
+    "order": 52,
+    "videoId": "ptAw20kem90",
+    "videoTitle": "Naming ions and ionic compounds | Chemistry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s145b956d6f2aa16472be",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Mole Concept Intro",
+    "order": 53,
+    "videoId": "cvi4IJMZ13Q",
+    "videoTitle": "The mole and Avogadro's number | Atomic structure and properties | AP Chemistry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s1bc7defbe6aea308522c",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Conservation of Mass",
+    "order": 54,
+    "videoId": "rnpy_SHsMNg",
+    "videoTitle": "Law of conservation of mass | Atoms and Molecules | Chemistry | Khan Academy",
+    "author": "Khan Academy India - English"
+  },
+  {
+    "lessonId": "ppg10s5cb0f5f0fe124303b017",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Chemical vs Physical Change",
+    "order": 55,
+    "videoId": "n5cZ5CWuUJA",
+    "videoTitle": "Physical and chemical changes | Chemistry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s7ef382f8cc1c80279a4f",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Chemistry Foundations Review",
+    "order": 56,
+    "videoId": "oda2K4IFBaE",
+    "videoTitle": "Introduction to pH | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s239fa5cf225f50cf12f7",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Writing and Balancing Equations",
+    "order": 57,
+    "videoId": "TUuABq95BBM",
+    "videoTitle": "Balancing chemical equations | Chemistry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sfaa5272a5099777078b2",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Types of Reactions",
+    "order": 58,
+    "videoId": "TStjgUmL1RQ",
+    "videoTitle": "Chemical reactions introduction | Chemistry of life | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s8c07cad22a59c0bdce51",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Stoichiometry Intro",
+    "order": 59,
+    "videoId": "EKZSwjVR594",
+    "videoTitle": "Stoichiometry of a Reaction in Solution",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s6468c3e45470c73959ff",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Limiting Reactant Thinking",
+    "order": 60,
+    "videoId": "5O083FL_9u8",
+    "videoTitle": "Stoichiometry: mass-to-mass and limiting reagent | Chemistry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s836cf3434f03c4e7cdda",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Concentration and Solutions Intro",
+    "order": 61,
+    "videoId": "CNP-dCQ-Cmg",
+    "videoTitle": "Concentration gradients | Membranes and transport | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s1b9641bb8fbbe971401d",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Acids, Bases & pH Intro",
+    "order": 62,
+    "videoId": "oda2K4IFBaE",
+    "videoTitle": "Introduction to pH | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s6817e356c2ff70575dcc",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Reaction Rates Factors",
+    "order": 63,
+    "videoId": "CoNHV7786Hg",
+    "videoTitle": "Factors affecting reaction rates | AP Chemistry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s1dae89f0d30f3f921a6a",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Reactions Unit Lab CER",
+    "order": 64,
+    "videoId": "n5cZ5CWuUJA",
+    "videoTitle": "Physical and chemical changes | Chemistry | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s1c355057b75446162c7d",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Hierarchy: Cells to Systems",
+    "order": 65,
+    "videoId": "YE2peDF4Zqg",
+    "videoTitle": "Organization in the human body | Cells and organisms | Middle school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sfe7cb623928b609063f9",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Digestive & Nutrient Absorption",
+    "order": 66,
+    "videoId": "2uL4b1yMhm8",
+    "videoTitle": "Human Digestive System| Middle School Science | Khan Academy",
+    "author": "Khan Academy India - English"
+  },
+  {
+    "lessonId": "ppg10sf5f3d38f7b6b7922bb68",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Circulatory & Respiratory Partnership",
+    "order": 67,
+    "videoId": "QhiVnFvshZg",
+    "videoTitle": "Circulatory system and the heart | Human anatomy and physiology | Health & Medicine | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s51db99deeda0c168ea20",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Nervous & Endocrine Signals",
+    "order": 68,
+    "videoId": "RClEbcPD9q0",
+    "videoTitle": "Nervous system (central & peripheral) | Control & Coordination | Biology | Khan Academy",
+    "author": "Khan Academy India - English"
+  },
+  {
+    "lessonId": "ppg10sf284a35b1dd8473efe3c",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Immune Defenses Overview",
+    "order": 69,
+    "videoId": "rp7T4IItbtM",
+    "videoTitle": "Types of immune responses: Innate and adaptive, humoral vs. cell-mediated | NCLEX-RN | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s06d9ef022bb5ffd7f39f",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Homeostasis Feedback Loops",
+    "order": 70,
+    "videoId": "6llFB_yr1WI",
+    "videoTitle": "Hormone feedback mechanism  | Control & Coordination | Biology | Khan Academy",
+    "author": "Khan Academy India - English"
+  },
+  {
+    "lessonId": "ppg10sf811516eaab7d6992761",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Health Claims Literacy",
+    "order": 71,
+    "videoId": "TBNCqRCsSvY",
+    "videoTitle": "Introduction to vitamins and minerals | Biology foundations | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s8f08c7224b9deb11ba75",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Body Systems Unit Synthesis",
+    "order": 72,
+    "videoId": "YE2peDF4Zqg",
+    "videoTitle": "Organization in the human body | Cells and organisms | Middle school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sa07846f94825c004b9ce",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Systems Thinking Across Bio/Chem",
+    "order": 73,
+    "videoId": "Pk4d9lY48GI",
+    "videoTitle": "Introduction to amino acids | Macromolecules | Biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sbbc45f7f8254e1554de3",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "From Atoms to Ecosystems Story",
+    "order": 74,
+    "videoId": "TitrRpMUt0I",
+    "videoTitle": "Flow of energy and matter through ecosystems | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s91001040c369aaf65189",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Quantitative Reasoning Clinic",
+    "order": 75,
+    "videoId": "HjA-SvvL2BQ",
+    "videoTitle": "Welcome to high school biology | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sc79a49a4e14f1e74b407",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Lab Integrity and Notebook Habits",
+    "order": 76,
+    "videoId": "YE2peDF4Zqg",
+    "videoTitle": "Organization in the human body | Cells and organisms | Middle school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s8ce1ecbd12bdc8e0906d",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Science in the News Audit",
+    "order": 77,
+    "videoId": "cc8sUv2SuaY",
+    "videoTitle": "The kidney and nephron | Renal system physiology | NCLEX-RN | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10sa8474c33ec1534c0abcb",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Design an Investigation",
+    "order": 78,
+    "videoId": "ceWyayKg3QY",
+    "videoTitle": "Introduction to experimental design | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s110a4ebe38f537d20978",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Capstone CER Portfolio",
+    "order": 79,
+    "videoId": "6_XMKmFQ_w8",
+    "videoTitle": "Understanding and building phylogenetic trees | High school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10s9ba08b305db267ea9b72",
+    "course": "Biology & Chemistry \u00b7 Grade 10",
+    "title": "Year Defense: Model + Evidence",
+    "order": 80,
+    "videoId": "3444TjgJ8ro",
+    "videoTitle": "Evidence of evolution: embryology | Evolution | Middle school biology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e6e444f695b1788f314c6",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Annotation Systems That Scale",
+    "order": 1,
+    "videoId": "as7xe8UQEr4",
+    "videoTitle": "Summarizing informational text | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e52be7b99279ac632e2bb",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Reading for Claim vs Summary",
+    "order": 2,
+    "videoId": "as7xe8UQEr4",
+    "videoTitle": "Summarizing informational text | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10edeadd267fcc2ba8d0852",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Diction and Connotation Tracking",
+    "order": 3,
+    "videoId": "XRt1N0sJJQo",
+    "videoTitle": "Connotation | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e2fd4ea8b072d03d5b5b8",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Syntax as Meaning",
+    "order": 4,
+    "videoId": "O-6q-siuMik",
+    "videoTitle": "Introduction to Grammar | Grammar | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e28ddc262a1f0bfee9e36",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Narrative Point of View Effects",
+    "order": 5,
+    "videoId": "GGS3NcmAZnw",
+    "videoTitle": "A story's point of view | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e9d71fdd3b06f04d6aabd",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Irony Signals in Prose",
+    "order": 6,
+    "videoId": "LY5EBvlRCP4",
+    "videoTitle": "Irony | Style | Grammar",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e1a29d67542b2686d612d",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "From Annotation to Paragraph",
+    "order": 7,
+    "videoId": "R_bgo8j6jxc",
+    "videoTitle": "Analyzing an author's purpose | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e81565b0b6b41fdd291d5",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Close Reading Unit Synthesis",
+    "order": 8,
+    "videoId": "gUW2jit3uvo",
+    "videoTitle": "Making inferences in informational texts | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e108c65c74da355a4adfb",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Plot vs Structure",
+    "order": 9,
+    "videoId": "Zr1xLtSMMLo",
+    "videoTitle": "The elements of a story | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e2d22155a2e05c592d654",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Character Motivation Evidence",
+    "order": 10,
+    "videoId": "tW9TG22U3Go",
+    "videoTitle": "Character actions in stories | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e140571e857ffe1c5cc73",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Setting as Pressure",
+    "order": 11,
+    "videoId": "LsaUT-suCBg",
+    "videoTitle": "Blood pressure changes over time",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e72c1fefa12157c0664df",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Conflict Types That Matter",
+    "order": 12,
+    "videoId": "NXO3KT8bne4",
+    "videoTitle": "What is an argument? | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e749aafe5bf5f26406a46",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Motif and Symbol Tracking",
+    "order": 13,
+    "videoId": "MAu3e5GZo4k",
+    "videoTitle": "Understanding theme | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e0fdd480f630354aee5cc",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Theme Statements That Work",
+    "order": 14,
+    "videoId": "D2FFijvA00I",
+    "videoTitle": "Developing themes | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e332ce4bfb2aea93a740b",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Comparing Two Short Stories",
+    "order": 15,
+    "videoId": "kyLZcez4uTw",
+    "videoTitle": "Comparing audio, visual, and written stories | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e940b6aafbd9e19602031",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Short Fiction Mini-Essay",
+    "order": 16,
+    "videoId": "SmnR4AZ-XM8",
+    "videoTitle": "Summarizing stories | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e63d04b933b73c0c9f070",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Imagery That Earns Its Keep",
+    "order": 17,
+    "videoId": "lzKj-bLvrYQ",
+    "videoTitle": "Figurative language | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e661c23247244ea4d0b4c",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Sound Devices and Meaning",
+    "order": 18,
+    "videoId": "6dACXPirT3s",
+    "videoTitle": "Alliteration, Assonance, and Onomatopoeia | Style | Grammar",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e405823f6aa497ce05d7f",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Line Breaks and Stanza Logic",
+    "order": 19,
+    "videoId": "Ox_JaA6nX_Q",
+    "videoTitle": "Finding connections between ideas within a passage | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e4106ee64e55f5478b909",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Speaker vs Poet",
+    "order": 20,
+    "videoId": "LO21tYrTD8Y",
+    "videoTitle": "The elements of a poem | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e775b8d2e0d39715eb5fc",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Figurative Language Precision",
+    "order": 21,
+    "videoId": "lzKj-bLvrYQ",
+    "videoTitle": "Figurative language | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10eedd8f2fd8f0fc194457c",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Form Awareness (Sonnet & Free Verse)",
+    "order": 22,
+    "videoId": "LO21tYrTD8Y",
+    "videoTitle": "The elements of a poem | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e3a2c695a586162935e84",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Poetry Comparison Lens",
+    "order": 23,
+    "videoId": "LO21tYrTD8Y",
+    "videoTitle": "The elements of a poem | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ed21fdac311c70ef65009",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Poetry Unit Performance Task",
+    "order": 24,
+    "videoId": "LO21tYrTD8Y",
+    "videoTitle": "The elements of a poem | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10edd469ff3d262114db580",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Reading Stage Directions as Evidence",
+    "order": 25,
+    "videoId": "v4HhzvSgUpU",
+    "videoTitle": "Evaluating a source\u2019s reasoning and evidence | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e779cb7b9c42749a95036",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Subtext in Dialogue",
+    "order": 26,
+    "videoId": "hpmO0UEfiWo",
+    "videoTitle": "Identifying Dialogue in a Story | Reading Comprehension | Khan Academy Kids",
+    "author": "Khan Academy Kids"
+  },
+  {
+    "lessonId": "ppg10e4628c7d9959b9413caee",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Dramatic Irony and Audience Knowledge",
+    "order": 27,
+    "videoId": "lRoFaux2V_g",
+    "videoTitle": "Changes in POV and dramatic irony | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e4b554e8a54979606ce25",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Character Foils in Scenes",
+    "order": 28,
+    "videoId": "tW9TG22U3Go",
+    "videoTitle": "Character actions in stories | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10eb6673498b2ae8f978089",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Monologue Analysis",
+    "order": 29,
+    "videoId": "Tq_BoPJsv-4",
+    "videoTitle": "Citing evidence in literary analysis | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e2bd56e4f8994bad628ce",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Blocking and Meaning (Table Work)",
+    "order": 30,
+    "videoId": "NXO3KT8bne4",
+    "videoTitle": "What is an argument? | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e3308fa19cee748d6ed47",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Drama to Essay Move",
+    "order": 31,
+    "videoId": "Oa0u7ZsRhOw",
+    "videoTitle": "Drama elements | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10eb37c02e478c66c06a15d",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Drama Unit Synthesis",
+    "order": 32,
+    "videoId": "imlwmNO9xlY",
+    "videoTitle": "The elements of a drama | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e3019057471081242f5db",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Claim, Evidence, Warrant",
+    "order": 33,
+    "videoId": "v4HhzvSgUpU",
+    "videoTitle": "Evaluating a source\u2019s reasoning and evidence | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ee8a9760b5d7379c5b3b7",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Thesis Precision Under Pressure",
+    "order": 34,
+    "videoId": "gUW2jit3uvo",
+    "videoTitle": "Making inferences in informational texts | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10eb58936778ed4bd13f103",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Rhetorical Appeals in Speeches",
+    "order": 35,
+    "videoId": "t4ODg51XNYk",
+    "videoTitle": "Rhetorical devices and appeals | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ec0d42e43209234f0f106",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Counterclaim and Rebuttal",
+    "order": 36,
+    "videoId": "JC24Qcpyn9E",
+    "videoTitle": "Choosing the best text evidence | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e47274d43f1c058970dfc",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Logical Fallacies to Avoid",
+    "order": 37,
+    "videoId": "NXO3KT8bne4",
+    "videoTitle": "What is an argument? | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ecc166978640cf68bd25f",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Audience and Purpose Shifts",
+    "order": 38,
+    "videoId": "R_bgo8j6jxc",
+    "videoTitle": "Analyzing an author's purpose | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ea542591154ba9dafc3ab",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Op-Ed Structure Workshop",
+    "order": 39,
+    "videoId": "gUW2jit3uvo",
+    "videoTitle": "Making inferences in informational texts | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ec149e18ba13b7088829e",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Argument Unit Timed Write",
+    "order": 40,
+    "videoId": "NXO3KT8bne4",
+    "videoTitle": "What is an argument? | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ebbafcda75290609eb7f0",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Question to Working Thesis",
+    "order": 41,
+    "videoId": "W4JfDtfwOug",
+    "videoTitle": "Writing a thesis sentence",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e14f0e716312cd4a38fb7",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Source Types and Credibility",
+    "order": 42,
+    "videoId": "v4HhzvSgUpU",
+    "videoTitle": "Evaluating a source\u2019s reasoning and evidence | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e16a03876698212cfa777",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Note-Taking Without Plagiarism",
+    "order": 43,
+    "videoId": "Ox_JaA6nX_Q",
+    "videoTitle": "Finding connections between ideas within a passage | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e242c2521e1ae6a2e14e1",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Quote Sandwiches and Synthesis",
+    "order": 44,
+    "videoId": "g9qWsEJakbQ",
+    "videoTitle": "How do writers use examples to get their points across? | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e0d3aaa1b754e21843081",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "MLA Habits for Integrity",
+    "order": 45,
+    "videoId": "Ox_JaA6nX_Q",
+    "videoTitle": "Finding connections between ideas within a passage | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e638f7591431d5a7a0842",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Bias and Framing in Media",
+    "order": 46,
+    "videoId": "R_bgo8j6jxc",
+    "videoTitle": "Analyzing an author's purpose | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e48ad6457e666c8a69ffc",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Annotated Bibliography Sprint",
+    "order": 47,
+    "videoId": "l3yWmXbC36s",
+    "videoTitle": "Analyzing tone through word choice | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ec090248845510daf7b2a",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Research Brief",
+    "order": 48,
+    "videoId": "gUW2jit3uvo",
+    "videoTitle": "Making inferences in informational texts | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e285f6194dad3c0242994",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Choosing a Throughline",
+    "order": 49,
+    "videoId": "R_bgo8j6jxc",
+    "videoTitle": "Analyzing an author's purpose | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e6b22c56467c228cc662c",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Chapter/Act Mapping",
+    "order": 50,
+    "videoId": "Zr1xLtSMMLo",
+    "videoTitle": "The elements of a story | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e51dba6c7ed2fdd630d32",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Character Arc Evidence Log",
+    "order": 51,
+    "videoId": "tW9TG22U3Go",
+    "videoTitle": "Character actions in stories | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e2e42ae4bff38774e4e2a",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Author Craft Across Distance",
+    "order": 52,
+    "videoId": "g9qWsEJakbQ",
+    "videoTitle": "How do writers use examples to get their points across? | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e21ba10cb3ba1887909e2",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Historical Context \u2014 Cautious Use",
+    "order": 53,
+    "videoId": "xUbgRHeCOyY",
+    "videoTitle": "The value of historical context | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e99b454235b61f23ead83",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Scholarly Conversation Intro",
+    "order": 54,
+    "videoId": "l3yWmXbC36s",
+    "videoTitle": "Analyzing tone through word choice | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e93d8f66b2ecd7f690d0f",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Literary Analysis Essay Draft",
+    "order": 55,
+    "videoId": "Tq_BoPJsv-4",
+    "videoTitle": "Citing evidence in literary analysis | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e91e20f9ec0d9ac4706a7",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Extended Study Revision Lab",
+    "order": 56,
+    "videoId": "WFvv5BffVsE",
+    "videoTitle": "how students prefer while they don't take time for revision",
+    "author": "Chris Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ed725f851f11681b91ae9",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Clauses for Clarity",
+    "order": 57,
+    "videoId": "49EsnvxVQec",
+    "videoTitle": "Phrases and clauses | Syntax | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e6820bce8df9c604ee3ce",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Modifier Placement",
+    "order": 58,
+    "videoId": "tZQVLF_sWVw",
+    "videoTitle": "Modifier Placement | Praxis Core Writing | Khan Academy",
+    "author": "Khan Academy Praxis"
+  },
+  {
+    "lessonId": "ppg10e69f2a78eaf1c3374ed8a",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Pronoun Precision",
+    "order": 59,
+    "videoId": "j9kIACViG60",
+    "videoTitle": "Pronoun-antecedent agreement | Syntax | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e880bc232f39dca00a2e8",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Parallel Structure",
+    "order": 60,
+    "videoId": "2l2FgUrln1A",
+    "videoTitle": "Parallel structure | Syntax | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e901d0dc85d0aa9afa261",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Punctuation as Rhetoric",
+    "order": 61,
+    "videoId": "09-t-giMcNk",
+    "videoTitle": "Commas in tag questions, direct address, & yes/no statements | Punctuation | Grammar | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e0032f7b6066bb69c65e1",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Advanced Syntax and Style",
+    "order": 62,
+    "videoId": "Id9wv7rutuY",
+    "videoTitle": "\ud83d\udcdd Khan Academy Writing Coach is now FREE \u2728",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e23bcff4f12af16591586",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Concision Edits",
+    "order": 63,
+    "videoId": "g9qWsEJakbQ",
+    "videoTitle": "How do writers use examples to get their points across? | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e2f26f1aa115bf126fd54",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Style Unit Editing Pass",
+    "order": 64,
+    "videoId": "Fh45mhVsZrU",
+    "videoTitle": "Run-ons and comma splices | Syntax | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e6940071e58c321e754aa",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Satire and Irony Across Media",
+    "order": 65,
+    "videoId": "LY5EBvlRCP4",
+    "videoTitle": "Irony | Style | Grammar",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ea7017d1d3abac8f04e3a",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Evaluating Multimodal Messages",
+    "order": 66,
+    "videoId": "v4HhzvSgUpU",
+    "videoTitle": "Evaluating a source\u2019s reasoning and evidence | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e51a10971f97fabc029cb",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Comparing Two Texts on One Issue",
+    "order": 67,
+    "videoId": "JdGA0Fexab8",
+    "videoTitle": "Comparing two accounts of the same topic | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e892b326264c7d77df0f4",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Synthesizing Three+ Sources",
+    "order": 68,
+    "videoId": "Ox_JaA6nX_Q",
+    "videoTitle": "Finding connections between ideas within a passage | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ec2915adabeba9a709d5e",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Credibility Under Pressure",
+    "order": 69,
+    "videoId": "v4HhzvSgUpU",
+    "videoTitle": "Evaluating a source\u2019s reasoning and evidence | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e398cda593e032c8e14fa",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Synthesis Essay Structure",
+    "order": 70,
+    "videoId": "D0YUpfLofgQ",
+    "videoTitle": "The structures of informational texts | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ee0aca47d2575cd003838",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Oral Presentation of a Close Reading",
+    "order": 71,
+    "videoId": "Ox_JaA6nX_Q",
+    "videoTitle": "Finding connections between ideas within a passage | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e5b3531214dbdad4734bf",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Media Unit Capstone Brief",
+    "order": 72,
+    "videoId": "Ox_JaA6nX_Q",
+    "videoTitle": "Finding connections between ideas within a passage | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e696361ca25c49f02689a",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Timed Writing Strategies",
+    "order": 73,
+    "videoId": "gUW2jit3uvo",
+    "videoTitle": "Making inferences in informational texts | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e803f021770865e1697f7",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "ACT/SAT Reading Habits (School Practice)",
+    "order": 74,
+    "videoId": "I36gc0OuLMw",
+    "videoTitle": "SAT Reading Tips #shorts",
+    "author": "Gohar Khan"
+  },
+  {
+    "lessonId": "ppg10e4fbaaa083a702a6a2f9a",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "ACT/SAT Writing Craft Habits",
+    "order": 75,
+    "videoId": "I36gc0OuLMw",
+    "videoTitle": "SAT Reading Tips #shorts",
+    "author": "Gohar Khan"
+  },
+  {
+    "lessonId": "ppg10e2f85ca512f24ea88a9ad",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Peer Review Protocols",
+    "order": 76,
+    "videoId": "g9qWsEJakbQ",
+    "videoTitle": "How do writers use examples to get their points across? | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e42f74c7e3efe6c21539d",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Global Then Local Revision",
+    "order": 77,
+    "videoId": "Ox_JaA6nX_Q",
+    "videoTitle": "Finding connections between ideas within a passage | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e092f2a5c216351d1772f",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Portfolio Curation",
+    "order": 78,
+    "videoId": "Ox_JaA6nX_Q",
+    "videoTitle": "Finding connections between ideas within a passage | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ed08dcea917b9e594a326",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "Reflective Cover Letter",
+    "order": 79,
+    "videoId": "LO21tYrTD8Y",
+    "videoTitle": "The elements of a poem | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10e90c03260c16cf4184613",
+    "course": "English Literature \u00b7 Grade 10",
+    "title": "ELA Year Capstone Defense",
+    "order": 80,
+    "videoId": "R_bgo8j6jxc",
+    "videoTitle": "Analyzing an author's purpose | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hac3a2a1de1eb124e59ef",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Sourcing Documents",
+    "order": 1,
+    "videoId": "vIdMgO-tfyE",
+    "videoTitle": "Thinking like a historian | The historian's toolkit | US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h34c90b451c0c54e64ab2",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Contextualization",
+    "order": 2,
+    "videoId": "xUbgRHeCOyY",
+    "videoTitle": "The value of historical context | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h51611e4efd41536e013f",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Corroboration Across Sources",
+    "order": 3,
+    "videoId": "vIdMgO-tfyE",
+    "videoTitle": "Thinking like a historian | The historian's toolkit | US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hb35e76719f758b9601b2",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Continuity and Change",
+    "order": 4,
+    "videoId": "wc3cDimF4a4",
+    "videoTitle": "Continuity and change in American society, 1754-1800 | AP US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hf835ead0e896a000e8c9",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Cause, Effect & Contingency",
+    "order": 5,
+    "videoId": "vIdMgO-tfyE",
+    "videoTitle": "Thinking like a historian | The historian's toolkit | US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h7531dde0a599543d13c3",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Maps as Arguments",
+    "order": 6,
+    "videoId": "vIdMgO-tfyE",
+    "videoTitle": "Thinking like a historian | The historian's toolkit | US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h882d6bb7f78279268407",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Timeline Construction",
+    "order": 7,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h63945477392b987a2ef6",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Historical Thinking Synthesis",
+    "order": 8,
+    "videoId": "vIdMgO-tfyE",
+    "videoTitle": "Thinking like a historian | The historian's toolkit | US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h9ee31e2e488395cc9e64",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Atlantic World Connections",
+    "order": 9,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h38d120c644a2e2ea0d70",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Enlightenment Ideas in Politics",
+    "order": 10,
+    "videoId": "0t4MF9ZoppM",
+    "videoTitle": "French Revolution (part 2) | World history | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hbf29267069083670847e",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "American Revolution in Global Context",
+    "order": 11,
+    "videoId": "UAhbwYBAoe0",
+    "videoTitle": "The Seven Years' War part 1",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10he2b9d8e2f7b3834f64ec",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Founding Documents Deep Dive",
+    "order": 12,
+    "videoId": "ZOL6uPr6vtg",
+    "videoTitle": "#InternationalWomensDay & The 19th Amendment - The story of Febb Burn",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hbe76d2606a557d361ee8",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "French Revolution Turning Points",
+    "order": 13,
+    "videoId": "BDWqwcTtZa0",
+    "videoTitle": "French Revolution (part 1) | World history | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hd217b09b85e1aad5f53e",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Latin American Independence Movements",
+    "order": 14,
+    "videoId": "y6lIgVSvizk",
+    "videoTitle": "Latin American Independence movements | 1450 - Present | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hfff6854abfdd6ff31c63",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Revolutions Compared",
+    "order": 15,
+    "videoId": "VJuBX1p0Gys",
+    "videoTitle": "Overview of the Bolshevik Revolution",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h9e8c3b745a925089ffe9",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Revolutions Unit Essay Prep",
+    "order": 16,
+    "videoId": "BDWqwcTtZa0",
+    "videoTitle": "French Revolution (part 1) | World history | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h2abb08653c50176f566b",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Industrial Revolution Causes",
+    "order": 17,
+    "videoId": "fUDwPz9VmL0",
+    "videoTitle": "Industrialization and imperialism | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h67dbb46f2b0b026b79d3",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Factories, Cities, and Labor",
+    "order": 18,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hde53d72d63b02b7bf226",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Ideas About Markets and Reform",
+    "order": 19,
+    "videoId": "PEG9OQCo2Ls",
+    "videoTitle": "Markets and property rights | AP\u24c7 Microeconomics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h8a5569a806b5587fbcd7",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Nationalism in the 1800s",
+    "order": 20,
+    "videoId": "Woh4gwIFpic",
+    "videoTitle": "The Monroe Doctrine",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h6c5f34832f6bcd5c3ab4",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "New Imperialism Motives",
+    "order": 21,
+    "videoId": "fUDwPz9VmL0",
+    "videoTitle": "Industrialization and imperialism | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h81cb75698edb3bfcc616",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Imperial Rule and Resistance",
+    "order": 22,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hdb57c98c998bc0eb50a4",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Case Study: Partition Maps",
+    "order": 23,
+    "videoId": "7vL4-Ophj5s",
+    "videoTitle": "The Scientific Revolution and the Age of Enlightenment | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hfba7356f500afc813e16",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Industrial & Imperial Synthesis",
+    "order": 24,
+    "videoId": "fUDwPz9VmL0",
+    "videoTitle": "Industrialization and imperialism | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h02230c5234e0b70e7e5a",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Road to World War I",
+    "order": 25,
+    "videoId": "IyoUWRAharQ",
+    "videoTitle": "Empires before World War I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h4e5a63d7e6bae77f2fa8",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Total War Home Fronts",
+    "order": 26,
+    "videoId": "WaWuLLuBaVo",
+    "videoTitle": "World War I: Homefront | Period 7: 1890-1945 | AP US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h077c765a3e8e37bfecaa",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Treaty Settlements and Unfinished Business",
+    "order": 27,
+    "videoId": "Woh4gwIFpic",
+    "videoTitle": "The Monroe Doctrine",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hbdadeda86fcba53c2324",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Interwar Crisis",
+    "order": 28,
+    "videoId": "BlFjNf4f0mE",
+    "videoTitle": "Origins of the Cold War",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h7eb0dca6c5d3a4d98808",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "World War II Causes and Theaters",
+    "order": 29,
+    "videoId": "-kKCjwNvNkQ",
+    "videoTitle": "Beginning of World War II | The 20th century | World history | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h45e9306209159e8b6e48",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Documenting Mass Atrocity",
+    "order": 30,
+    "videoId": "BlFjNf4f0mE",
+    "videoTitle": "Origins of the Cold War",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h936a6e6e4c52fd9bc038",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "War's End and New Power Balance",
+    "order": 31,
+    "videoId": "IyoUWRAharQ",
+    "videoTitle": "Empires before World War I | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hf008d82110b61655e9c2",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "World Wars Unit Document Seminar",
+    "order": 32,
+    "videoId": "KMMAL3v0lA0",
+    "videoTitle": "Alliances leading to World War I | The 20th century | World history | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h23943aa8199a30d47151",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Origins of the Cold War",
+    "order": 33,
+    "videoId": "BlFjNf4f0mE",
+    "videoTitle": "Origins of the Cold War",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h943a7871d4c7e310545e",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Alliances, Proxies, and Nuclear Fear",
+    "order": 34,
+    "videoId": "KMMAL3v0lA0",
+    "videoTitle": "Alliances leading to World War I | The 20th century | World history | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h0bfec790246af32fc86b",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Decolonization Waves",
+    "order": 35,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hf0fa6225f986329e7a6b",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Non-Aligned Choices",
+    "order": 36,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hd4a223673ad46ed41c52",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Cold War Crises Case Studies",
+    "order": 37,
+    "videoId": "aNkrawaaiZQ",
+    "videoTitle": "Pattern of US Cold War interventions | The 20th century | World history | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h3aafc5c2c53407267765",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Domestic Effects of Global Rivalry",
+    "order": 38,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h5baa5ca1b480d8408f5b",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "End of the Cold War",
+    "order": 39,
+    "videoId": "BlFjNf4f0mE",
+    "videoTitle": "Origins of the Cold War",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hb569385fb5cc66337631",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Cold War Unit Synthesis",
+    "order": 40,
+    "videoId": "BlFjNf4f0mE",
+    "videoTitle": "Origins of the Cold War",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hee6570a4d4f5a9e5c824",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Reconstruction Legacies (Bridge)",
+    "order": 41,
+    "videoId": "FqPozblg-MY",
+    "videoTitle": "Failure of Reconstruction | AP US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hc3cc7193c0e2f9a8637b",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Industrial America and Progressivism",
+    "order": 42,
+    "videoId": "zGhsN9NmJh8",
+    "videoTitle": "The Progressives | Period 7: 1890-1945 | AP US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h51f72bf0edee6fd22f1c",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "World Wars and the American Home Front",
+    "order": 43,
+    "videoId": "WaWuLLuBaVo",
+    "videoTitle": "World War I: Homefront | Period 7: 1890-1945 | AP US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h0f194f8f9e272515a8b0",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Civil Rights Movements",
+    "order": 44,
+    "videoId": "Z08N7pqr_cw",
+    "videoTitle": "Uncle Tom's Cabin part 1",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h264d7d811b80698ed910",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Late-20th-Century Economy and Society",
+    "order": 45,
+    "videoId": "J33nVRyTeyU",
+    "videoTitle": "20th Century Capitalism and Regulation in the United States",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h2c6d48e9f147c6db8c98",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "U.S. Foreign Policy After 1945",
+    "order": 46,
+    "videoId": "BlFjNf4f0mE",
+    "videoTitle": "Origins of the Cold War",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h12fd8906b15aae8d91f8",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Constitutional Literacy in Conflict",
+    "order": 47,
+    "videoId": "M0UTy_s01pw",
+    "videoTitle": "The Constitutional Convention | Period 3: 1754-1800 | AP US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hb8ba177d18891c22a608",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "U.S. Unit DBQ Skills",
+    "order": 48,
+    "videoId": "4rs8IC7TGpU",
+    "videoTitle": "AP US history DBQ example 1 | The historian's toolkit | US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hd2690a23194e2a8246ce",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Globalization Networks",
+    "order": 49,
+    "videoId": "ghgPq2wjQUQ",
+    "videoTitle": "US History Overview 1: Jamestown to the Civil War",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hf5ee65bf0a161521d653",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Technology and Daily Life",
+    "order": 50,
+    "videoId": "mAdUjImDx58",
+    "videoTitle": "Organism life history and fecundity  | Ecology | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10he981f050c02c59cbf35b",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Human Rights Frameworks",
+    "order": 51,
+    "videoId": "5CZ0oZ_lXSY",
+    "videoTitle": "International Human Rights | 1450 - Present | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h05933eaa2c71e1f8e075",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Environmental History Intro",
+    "order": 52,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h6a1dabd4800b5107bfc8",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Conflict and Peacebuilding After 1990",
+    "order": 53,
+    "videoId": "BlFjNf4f0mE",
+    "videoTitle": "Origins of the Cold War",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ha199c96e50158f8fd36d",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Media Literacy for Current Events",
+    "order": 54,
+    "videoId": "vyIMg4F5axw",
+    "videoTitle": "Impact of media evolution on politics | US government and civics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h81b5756005d5715173ad",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Comparative Government Snapshots",
+    "order": 55,
+    "videoId": "fI1t0dY5zoc",
+    "videoTitle": "The social contract | Foundations of American democracy | US government and civics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h7c3c2baf12ad4b281df1",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Contemporary Issues Brief",
+    "order": 56,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h36a2d8a014895480328b",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Rule of Law and Due Process",
+    "order": 57,
+    "videoId": "B45S0K_tQKA",
+    "videoTitle": "How a bill becomes a law | US government and civics | US government and civics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h926510d607d16228ab93",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Rights and Responsibilities",
+    "order": 58,
+    "videoId": "M0UTy_s01pw",
+    "videoTitle": "The Constitutional Convention | Period 3: 1754-1800 | AP US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hb8bd36702261b93fa71e",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Federalism and Separation of Powers",
+    "order": 59,
+    "videoId": "APcKEHAPYEg",
+    "videoTitle": "Separation of Powers and Checks and Balances",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hc02aaca0561d4fc605b7",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "How a Bill Becomes Reality Checks",
+    "order": 60,
+    "videoId": "B45S0K_tQKA",
+    "videoTitle": "How a bill becomes a law | US government and civics | US government and civics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h5c3958712ef89c405aa9",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Courts and Landmark Reasoning",
+    "order": 61,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h1716405a43f559de4afb",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Local Government and Civic Action",
+    "order": 62,
+    "videoId": "pjia3mqX3sA",
+    "videoTitle": "State and local government | US government and civics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10ha9ec9adf11b42c977b91",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Contracts and Everyday Law Literacy",
+    "order": 63,
+    "videoId": "NfFRNgyQebE",
+    "videoTitle": "The Articles of Confederation | Period 3: 1754-1800 | AP US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h24378e34b5b2fa614796",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Civics Unit Performance Task",
+    "order": 64,
+    "videoId": "b6_YVsuyUEM",
+    "videoTitle": "Civil society | Citizenship | High school civics | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h31c47e8217c211f15301",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Texas Geography as One Factor",
+    "order": 65,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h873542eb5880fc87dbc0",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Borderlands and Cultural Exchange",
+    "order": 66,
+    "videoId": "pLijVYVDKlc",
+    "videoTitle": "The Columbian Exchange",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hd169b53b6c5fabb2786f",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Texas in National Turning Points",
+    "order": 67,
+    "videoId": "QKRYLUlGlWc",
+    "videoTitle": "The Mexican-American War | AP US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h18761924677b19c26a55",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Energy, Land, and Economy",
+    "order": 68,
+    "videoId": "OVODBZUJAYE",
+    "videoTitle": "Solar Energy| Energy Resources and Consumption| AP Environmental science| Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hb3904ec7e53691ae8721",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Migration Stories",
+    "order": 69,
+    "videoId": "aAB75bP7rdk",
+    "videoTitle": "Human migration: sub-Saharan Africa and the Pacific | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h6c5190363725d3a06761",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "State Institutions Overview",
+    "order": 70,
+    "videoId": "pBUmd_U3o60",
+    "videoTitle": "The #USConstitution and founding of the presidency",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h30ec617ad86e479808fb",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Regional Case Study Mini-Research",
+    "order": 71,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h9cbcb699ee0537ba7b17",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Texas Unit Synthesis",
+    "order": 72,
+    "videoId": "Woh4gwIFpic",
+    "videoTitle": "The Monroe Doctrine",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h485807e92fb1a4f75507",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Choosing a Researchable Question",
+    "order": 73,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hc8b454ac31e274ba0eb3",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Archive Habits (Digital & Print)",
+    "order": 74,
+    "videoId": "Q4kxgMH46mY",
+    "videoTitle": "How to read a document | The historian's toolkit | US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h0dd1a615dee6d719bba3",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Note Cards to Outline",
+    "order": 75,
+    "videoId": "ghgPq2wjQUQ",
+    "videoTitle": "US History Overview 1: Jamestown to the Civil War",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10hccfc32a557903be45c17",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Writing with Documents",
+    "order": 76,
+    "videoId": "Zr1xLtSMMLo",
+    "videoTitle": "The elements of a story | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h7383a90fc7f563446006",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Counterevidence and Revision",
+    "order": 77,
+    "videoId": "ObGarwy5Jss",
+    "videoTitle": "History and prehistory | The Origin of Humans and Human Societies | World History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h24f9c779fb84e5b1e2ef",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Citation Integrity",
+    "order": 78,
+    "videoId": "Tq_BoPJsv-4",
+    "videoTitle": "Citing evidence in literary analysis | Reading | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h0592a2fe0b831a0cbda0",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Capstone Essay Draft",
+    "order": 79,
+    "videoId": "4rs8IC7TGpU",
+    "videoTitle": "AP US history DBQ example 1 | The historian's toolkit | US History | Khan Academy",
+    "author": "Khan Academy"
+  },
+  {
+    "lessonId": "ppg10h91a7cdf7be282c68ec92",
+    "course": "U.S. & World History \u00b7 Grade 10",
+    "title": "Year Defense: Thesis + Documents",
+    "order": 80,
+    "videoId": "Q4kxgMH46mY",
+    "videoTitle": "How to read a document | The historian's toolkit | US History | Khan Academy",
+    "author": "Khan Academy"
+  }
+]
