@@ -35,7 +35,7 @@ export default function HomePage() {
                 href="/prek"
                 className="rounded-xl border border-amber-300/80 bg-amber-300/20 px-5 py-3 font-semibold text-amber-50 hover:bg-amber-300/30"
               >
-                Free Pre-K Play
+                Free Pre-K Learn
               </Link>
               <Link
                 href="/login"
@@ -88,18 +88,18 @@ export default function HomePage() {
           <div className="flex-1">
             <p className="text-sm font-bold uppercase tracking-wider text-emerald-800">Free for families</p>
             <h2 className="mt-1 text-2xl font-extrabold text-slate-900 md:text-3xl">
-              Pre-K Play Hub — bright games, no login
+              Pre-K Learn Hub — bright activities, no login
             </h2>
             <p className="mt-2 text-slate-700">
-              Letters, numbers, colors, shapes, and puzzles in a kid-bright Prosper Prep play space.
-              Open and play free while you explore our K–12 school.
+              Letters, numbers, colors, shapes, and puzzles in a kid-bright Prosper Prep learn space.
+              Open and learn free while you explore our K–12 school.
             </p>
           </div>
           <Link
             href="/prek"
             className="inline-flex min-h-[48px] shrink-0 items-center justify-center rounded-2xl bg-emerald-800 px-6 py-3 font-bold text-white shadow-md hover:bg-emerald-900"
           >
-            Enter Pre-K Play
+            Enter Pre-K Learn
           </Link>
         </div>
       </section>

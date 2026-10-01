@@ -21,7 +21,7 @@ export function EmbedFrame({ src, title, attribution }: Props) {
         />
       </div>
       <p className="text-center text-sm text-slate-600">
-        Play{" "}
+        Learn{" "}
         <a href={attribution.href} className="font-semibold text-emerald-800 underline" target="_blank" rel="noreferrer">
           {attribution.label}
         </a>{" "}

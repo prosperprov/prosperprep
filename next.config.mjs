@@ -16,6 +16,15 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/prek/play/:slug",
+        destination: "/prek/learn/:slug",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

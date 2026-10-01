@@ -1,5 +1,5 @@
 /**
- * Free public Pre-K play catalog — Prosper Prep branded activities.
+ * Free public Pre-K learn catalog — Prosper Prep branded activities.
  * First-party HTML5 games are Prosper Prep originals.
  * External embeds require clear iframe / embed rights (never PBS Kids IP).
  */
@@ -85,17 +85,10 @@ export const prekActivities: PrekActivity[] = [
     title: "Color Flood Puzzle",
     blurb: "Flood the board with one color before turns run out — a classroom-safe logic puzzle.",
     skill: "puzzles",
-    kind: "embed",
+    kind: "first-party",
     accent: "from-violet-400 to-purple-600",
     emoji: "🧩",
     minutes: 4,
-    embedSrc: "https://pixelgameshub.com/games/color-flood-grid/embed",
-    attribution: {
-      label: "Color Flood Grid",
-      href: "https://pixelgameshub.com/games/color-flood-grid",
-      provider: "PixelGamesHub",
-      providerHref: "https://pixelgameshub.com/",
-    },
   },
 ];
 

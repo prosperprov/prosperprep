@@ -18,7 +18,7 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function PrekPlayPage({ params }: Props) {
+export default function PrekLearnPage({ params }: Props) {
   const activity = getPrekActivity(params.slug);
   if (!activity) notFound();
   return <PrekActivityPlayer activity={activity} />;

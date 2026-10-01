@@ -4,9 +4,9 @@ import { brand } from "@/config/brand";
 import { prekActivities, skillLabels } from "@/lib/prekActivities";
 
 export const metadata: Metadata = {
-  title: "Free Pre-K Play Hub",
+  title: "Free Pre-K Learn Hub",
   description:
-    "Free Prosper Prep Pre-K games and puzzles — letters, numbers, colors, shapes, and memory. No login required.",
+    "Free Prosper Prep Pre-K activities — letters, numbers, colors, shapes, and memory. No login required.",
 };
 
 export default function PrekHubPage() {
@@ -26,18 +26,18 @@ export default function PrekHubPage() {
             Free · No login · Ages 3–5
           </p>
           <h1 className="max-w-3xl text-balance text-4xl font-extrabold leading-tight md:text-5xl">
-            Prosper Prep Pre-K Play Hub
+            Prosper Prep Pre-K Learn Hub
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-emerald-50">
-            Bright games and puzzles for letters, numbers, colors, shapes, and memory — built for little
-            learners and families. Jump in and play free, anytime.
+            Bright activities for letters, numbers, colors, shapes, and memory — built for little
+            learners and families. Jump in and learn free, anytime.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#activities"
               className="rounded-2xl bg-white px-5 py-3 text-base font-bold text-emerald-900 shadow-lg hover:bg-amber-50"
             >
-              Start playing
+              Start learning
             </a>
             <Link
               href="/enroll"
@@ -52,7 +52,7 @@ export default function PrekHubPage() {
       <section className="border-b border-amber-100 bg-amber-50">
         <div className="mx-auto grid max-w-6xl gap-4 px-4 py-8 sm:grid-cols-3">
           {[
-            { title: "Tap & play", body: "Big buttons, short rounds, and cheerful feedback for Pre-K attention spans." },
+            { title: "Tap & learn", body: "Big buttons, short rounds, and cheerful feedback for Pre-K attention spans." },
             { title: "Skill mix", body: "Letters, numbers, colors, shapes, memory, and a logic puzzle — all in one hub." },
             { title: "Family friendly", body: "Public and free. No account wall between your child and the next activity." },
           ].map((item) => (
@@ -67,16 +67,16 @@ export default function PrekHubPage() {
       <section id="activities" className="bg-gradient-to-b from-white via-sky-50 to-emerald-50">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <div className="mb-8 text-center">
-            <h2 className="text-3xl font-extrabold text-slate-900">Play now</h2>
+            <h2 className="text-3xl font-extrabold text-slate-900">Learn now</h2>
             <p className="mt-2 text-slate-600">
-              Pick an activity. Each opens instantly — Prosper Prep originals plus one open embed with credit.
+              Pick an activity. Each opens instantly — Prosper Prep originals, no login required.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {prekActivities.map((activity) => (
               <Link
                 key={activity.slug}
-                href={`/prek/play/${activity.slug}`}
+                href={`/prek/learn/${activity.slug}`}
                 className="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-md ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className={`bg-gradient-to-br ${activity.accent} px-5 py-8 text-center text-white`}>
@@ -93,7 +93,7 @@ export default function PrekHubPage() {
                   </h3>
                   <p className="mt-2 flex-1 text-sm text-slate-600">{activity.blurb}</p>
                   <span className="mt-4 inline-flex min-h-[44px] items-center justify-center rounded-xl bg-emerald-800 px-4 py-2 text-sm font-bold text-white group-hover:bg-emerald-900">
-                    Play {activity.title}
+                    Learn {activity.title}
                   </span>
                 </div>
               </Link>
