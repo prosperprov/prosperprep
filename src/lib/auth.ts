@@ -56,6 +56,8 @@ if (
 const useSecureCookies = (process.env.NEXTAUTH_URL || "").startsWith("https://");
 
 export const authOptions: NextAuthOptions = {
+  // Required behind Cloudflare / Workers so cookies stick on school.prosperprep.org
+  trustHost: true,
   useSecureCookies,
   session: {
     strategy: "jwt",

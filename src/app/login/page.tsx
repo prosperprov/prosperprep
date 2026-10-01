@@ -39,14 +39,22 @@ export default function LoginPage() {
       <p className="mt-2 text-sm text-slate-600">
         Sign in to {brand.name} — dashboards, courses, and live sessions.
       </p>
-      <form onSubmit={onSubmit} className="mt-8 space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <form
+        method="post"
+        autoComplete="on"
+        onSubmit={onSubmit}
+        className="mt-8 space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+      >
         {error && (
           <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>
         )}
         <label className="block text-sm">
           <span className="font-medium text-slate-700">Email</span>
           <input
+            id="email"
+            name="email"
             type="email"
+            autoComplete="username"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -57,7 +65,10 @@ export default function LoginPage() {
         <label className="block text-sm">
           <span className="font-medium text-slate-700">Password</span>
           <input
+            id="password"
+            name="password"
             type="password"
+            autoComplete="current-password"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
