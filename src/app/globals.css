@@ -25,3 +25,20 @@ body:has([data-app-dock]) main {
     text-wrap: balance;
   }
 }
+
+/*
+ * School dashboard (data-school-dash): elevate light cards on the dark green shell
+ * so forms/grades stay readable without washing the brand background.
+ */
+[data-school-dash] .school-dash-body .bg-white,
+[data-school-dash] .school-dash-body .bg-white\/70,
+[data-school-dash] .school-dash-body .bg-slate-50 {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+[data-school-dash] .school-dash-body input,
+[data-school-dash] .school-dash-body textarea,
+[data-school-dash] .school-dash-body select {
+  color: #0f172a;
+  background-color: #fff;
+}

@@ -119,8 +119,8 @@ export default async function TeacherDashboard() {
 
       <div className="grid gap-8 lg:grid-cols-2">
         <section>
-          <h2 className="text-lg font-semibold text-slate-900">Active Class Roster</h2>
-          <p className="mt-1 text-sm text-slate-500">
+          <h2 className="text-lg font-semibold text-white">Active Class Roster</h2>
+          <p className="mt-1 text-sm text-emerald-100/80">
             Active enrollments{assignedGrades.length ? ` · ${gradeSummary}` : ""}.
           </p>
           <ul className="mt-4 max-h-96 space-y-2 overflow-y-auto">
@@ -133,7 +133,7 @@ export default async function TeacherDashboard() {
               </li>
             ))}
             {enrollments.length === 0 && (
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-emerald-100/80">
                 {assignedGrades.length === 0
                   ? "No grades assigned yet."
                   : "No active enrollments in your grades yet."}
@@ -146,7 +146,7 @@ export default async function TeacherDashboard() {
       </div>
 
       <section className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Your Live Sessions</h2>
+        <h2 className="text-lg font-semibold text-white">Your Live Sessions</h2>
         <ul className="mt-4 space-y-3">
           {mySessions.map((s) => (
             <li
@@ -181,7 +181,7 @@ export default async function TeacherDashboard() {
             </li>
           ))}
           {mySessions.length === 0 && (
-            <p className="text-sm text-slate-500">Schedule your first session above.</p>
+            <p className="text-sm text-emerald-100/80">Schedule your first session above.</p>
           )}
         </ul>
       </section>
@@ -189,9 +189,9 @@ export default async function TeacherDashboard() {
       <TeacherLiveProgress />
 
       <section id="grades" className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Student Grades</h2>
+        <h2 className="text-lg font-semibold text-white">Student Grades</h2>
         <div id="written" className="mt-6">
-          <h3 className="text-base font-semibold text-slate-900">Written Work To Grade</h3>
+          <h3 className="text-base font-semibold text-emerald-50">Written Work To Grade</h3>
           <GradeWrittenPanel
             initial={writtenToGrade.map((w) => ({
               id: w.id,

@@ -30,20 +30,20 @@ export function Grade6TeacherGlance({
   const gradeList = grades.map(gradeLabel).join(", ");
 
   return (
-    <section className="mb-8 overflow-hidden rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-sky-50 p-6 shadow-sm">
+    <section className="mb-8 overflow-hidden rounded-3xl border border-emerald-400/35 bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-950 p-6 text-white shadow-lg shadow-black/30">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="text-sm font-bold uppercase tracking-wide text-emerald-800">
+          <p className="text-sm font-bold uppercase tracking-wider text-emerald-300">
             Classroom Glance
           </p>
-          <h2 className="mt-1 text-2xl font-bold text-slate-900">{rosterTitle}</h2>
+          <h2 className="mt-1 text-2xl font-bold text-white">{rosterTitle}</h2>
           {grades.length > 0 ? (
-            <p className="mt-1 text-sm text-slate-600">{gradeList}</p>
+            <p className="mt-1 text-sm text-emerald-100/85">{gradeList}</p>
           ) : null}
         </div>
         <Link
           href="/dashboard/teacher/messages"
-          className="inline-flex min-h-[48px] items-center rounded-2xl bg-sky-700 px-4 py-2 text-base font-bold text-white hover:bg-sky-800"
+          className="inline-flex min-h-[48px] items-center rounded-2xl bg-white px-4 py-2 text-base font-bold text-emerald-950 hover:bg-emerald-50"
         >
           Message Class
         </Link>
@@ -81,7 +81,7 @@ export function Grade6TeacherGlance({
         </ul>
       )}
       {students.length > 9 && (
-        <p className="mt-2 text-xs text-slate-500">
+        <p className="mt-2 text-xs text-emerald-200/75">
           Showing 9 of {students.length} students — full roster below.
         </p>
       )}

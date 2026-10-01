@@ -31,21 +31,21 @@ export default async function StudentAccountPage() {
       nav={studentDashNav(overviewLabel)}
     >
       <div className="mb-8 max-w-xl space-y-2">
-        <p className="text-sm text-slate-600">
-          Signed in as <strong className="text-slate-900">{session.user.name}</strong> (
+        <p className="text-sm text-emerald-100/85">
+          Signed in as <strong className="text-white">{session.user.name}</strong> (
           {session.user.email}).
         </p>
         {active && (
-          <p className="text-sm text-slate-600">
-            Active plan: <strong className="text-slate-900">{active.plan.name}</strong>
+          <p className="text-sm text-emerald-100/85">
+            Active plan: <strong className="text-white">{active.plan.name}</strong>
             {active.scholarship ? " · scholarship" : ""}.
           </p>
         )}
       </div>
 
       <section className="mb-10">
-        <h2 className="text-lg font-semibold text-slate-900">Billing</h2>
-        <p className="mt-1 mb-4 text-sm text-slate-500">
+        <h2 className="text-lg font-semibold text-white">Billing</h2>
+        <p className="mt-1 mb-4 text-sm text-emerald-100/80">
           Open the Stripe customer portal to update payment methods or cancel (when available).
         </p>
         <ManageBillingButton
@@ -57,8 +57,8 @@ export default async function StudentAccountPage() {
       </section>
 
       <section>
-        <h2 className="text-lg font-semibold text-slate-900">Change password</h2>
-        <p className="mt-1 mb-4 text-sm text-slate-500">
+        <h2 className="text-lg font-semibold text-white">Change password</h2>
+        <p className="mt-1 mb-4 text-sm text-emerald-100/80">
           Change the password you use to sign in to Prosper Prep.
         </p>
         <ChangePasswordForm />

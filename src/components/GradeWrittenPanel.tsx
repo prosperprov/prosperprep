@@ -57,7 +57,7 @@ export function GradeWrittenPanel({ initial }: { initial: WrittenRow[] }) {
 
   if (rows.length === 0) {
     return (
-      <p className="mt-3 text-sm text-slate-500">No written work to grade.</p>
+      <p className="mt-3 text-sm text-emerald-100/80">No written work to grade.</p>
     );
   }
 

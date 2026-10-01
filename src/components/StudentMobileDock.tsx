@@ -64,7 +64,7 @@ export function StudentMobileDock({
       aria-label={audience === "staff" ? "Teacher quick navigation" : "Student quick navigation"}
       data-student-mobile-dock
       data-app-dock
-      className="fixed inset-x-0 bottom-0 z-[100] flex border-t border-slate-200 bg-white px-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-4px_16px_rgba(15,23,42,0.12)]"
+      className="fixed inset-x-0 bottom-0 z-[100] flex border-t border-emerald-900/10 bg-white px-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-8px_24px_rgba(2,44,34,0.22)]"
       style={{ display: "flex" }}
     >
       <ul className="mx-auto flex max-w-md items-stretch justify-around gap-2">
@@ -73,8 +73,8 @@ export function StudentMobileDock({
             href={dashboardHref}
             className={`flex min-h-[48px] flex-col items-center justify-center gap-0.5 rounded-xl px-2 text-xs font-semibold ${
               onDash && !onMessages
-                ? "bg-emerald-50 text-emerald-900"
-                : "text-slate-600 hover:bg-slate-50"
+                ? "bg-emerald-100 text-emerald-950"
+                : "text-slate-600 hover:bg-emerald-50"
             }`}
             aria-current={onDash && !onMessages ? "page" : undefined}
           >
@@ -87,8 +87,8 @@ export function StudentMobileDock({
             href={messagesHref}
             className={`relative flex min-h-[48px] flex-col items-center justify-center gap-0.5 rounded-xl px-2 text-xs font-semibold ${
               onMessages
-                ? "bg-sky-50 text-sky-950"
-                : "text-slate-600 hover:bg-slate-50"
+                ? "bg-emerald-100 text-emerald-950"
+                : "text-slate-600 hover:bg-emerald-50"
             }`}
             aria-current={onMessages ? "page" : undefined}
           >
