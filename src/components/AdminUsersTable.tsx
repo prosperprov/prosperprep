@@ -15,7 +15,7 @@ const ENROLLMENT_STATUSES = [
 ] as const;
 
 const fieldClass =
-  "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-500";
+  "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-600";
 
 export type AdminUserRow = {
   id: string;
@@ -137,7 +137,7 @@ export function AdminUsersTable({ users }: { users: AdminUserRow[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search students by name or email…"
-          className="w-full max-w-md rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-500"
+          className="w-full max-w-md rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-600"
         />
       </label>
 

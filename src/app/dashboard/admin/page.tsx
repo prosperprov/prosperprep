@@ -112,14 +112,14 @@ export default async function AdminDashboard() {
         ))}
       </div>
 
-      <p className="mt-4 text-sm text-emerald-100/85">
+      <p className="mt-4 text-sm text-emerald-100">
         Stripe:{" "}
         <strong>{stripeConfigured() ? "configured" : "not configured (demo enrollments OK)"}</strong>
       </p>
 
       <section className="mt-10" id="create-accounts">
         <h2 className="text-lg font-semibold text-white">Create accounts</h2>
-        <p className="mt-1 text-sm text-emerald-100/80">
+        <p className="mt-1 text-sm text-emerald-100">
           Provision teachers with grade assignments, or students with optional scholarship access.
         </p>
         <div className="mt-4 grid gap-6 lg:grid-cols-2">
@@ -133,7 +133,7 @@ export default async function AdminDashboard() {
       
       <section className="mt-10" id="unit-unlock">
         <h2 className="text-lg font-semibold text-white">Grade 6 unit unlock</h2>
-        <p className="mt-1 text-sm text-emerald-100/80">
+        <p className="mt-1 text-sm text-emerald-100">
           Override sequential unit gates for a student (Math course ID prefilled).
         </p>
         <div className="mt-4">
@@ -143,7 +143,7 @@ export default async function AdminDashboard() {
 
 <section className="mt-10" id="teachers">
         <h2 className="text-lg font-semibold text-white">Teachers</h2>
-        <p className="mt-1 text-sm text-emerald-100/80">
+        <p className="mt-1 text-sm text-emerald-100">
           Assign one or many grades per teacher (roster, catalog, scheduling, and Ask your teacher).
           Search filters the list by name or email.
         </p>
@@ -154,7 +154,7 @@ export default async function AdminDashboard() {
 
       <section className="mt-10" id="students">
         <h2 className="text-lg font-semibold text-white">Students</h2>
-        <p className="mt-1 mb-3 text-sm text-emerald-100/80">
+        <p className="mt-1 mb-3 text-sm text-emerald-100">
           Student accounts only (teachers are under Teachers). Search, then edit info or delete a student.
         </p>
         <AdminUsersTable users={studentRows} />
@@ -162,7 +162,7 @@ export default async function AdminDashboard() {
 
       <section className="mt-10" id="enrollments">
         <h2 className="text-lg font-semibold text-white">Enrollments</h2>
-        <p className="mt-1 mb-3 text-sm text-emerald-100/80">
+        <p className="mt-1 mb-3 text-sm text-emerald-100">
           Mode: scholarship (waived), demo (comp), or stripe. Grant scholarship or cancel from Actions.
           Search by student name or email as you type.
         </p>
@@ -184,7 +184,7 @@ export default async function AdminDashboard() {
       <section className="mt-10">
         <h2 className="text-lg font-semibold text-white">Plans</h2>
         <div className="mt-3 overflow-x-auto rounded-xl border border-slate-200 bg-white">
-          <table className="min-w-full text-left text-sm">
+          <table className="min-w-full text-left text-sm text-slate-900">
             <thead className="bg-slate-50 text-slate-600">
               <tr>
                 <th className="px-4 py-2">Name</th>

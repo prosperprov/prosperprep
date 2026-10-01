@@ -56,7 +56,7 @@ export function AssignTeacherGrades({
   }
 
   if (teachers.length === 0) {
-    return <p className="text-sm text-slate-500">No teacher accounts yet.</p>;
+    return <p className="text-sm text-emerald-100">No teacher accounts yet.</p>;
   }
 
   return (
@@ -68,17 +68,17 @@ export function AssignTeacherGrades({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search teachers by name or email…"
-          className="w-full max-w-md rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-500"
+          className="w-full max-w-md rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-600"
         />
       </label>
       {message && (
         <p className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-900">{message}</p>
       )}
-      <p className="text-sm text-slate-600">
+      <p className="text-sm text-emerald-100">
         A teacher can be assigned to more than one grade. Turn on every grade they teach, then save.
       </p>
       {filtered.length === 0 ? (
-        <p className="text-sm text-slate-500">No teachers match “{query.trim()}”.</p>
+        <p className="text-sm text-emerald-100">No teachers match “{query.trim()}”.</p>
       ) : (
         <div className="space-y-6">
           {filtered.map((t) => (
