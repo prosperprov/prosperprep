@@ -39,6 +39,9 @@ export async function Footer() {
           </p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
+          <Link href="/prek" className="hover:text-emerald-800">
+            Pre-K Play
+          </Link>
           <Link href="/courses" className="hover:text-emerald-800">
             Courses
           </Link>
