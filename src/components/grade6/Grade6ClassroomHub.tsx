@@ -119,9 +119,9 @@ export function Grade6ClassroomHub({
         </div>
       </section>
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid min-w-0 gap-6 lg:grid-cols-3">
         {/* Today strip */}
-        <aside className="rounded-3xl border-2 border-emerald-800/15 bg-white p-5 shadow-sm lg:col-span-1">
+        <aside className="min-w-0 rounded-3xl border-2 border-emerald-800/15 bg-white p-5 shadow-sm lg:col-span-1">
           <h3 className="text-lg font-bold text-slate-900">Today</h3>
           <ul className="mt-3 space-y-3">
             {nextLive && (
@@ -175,23 +175,23 @@ export function Grade6ClassroomHub({
         </aside>
 
         {/* Up next — big cards */}
-        <section className="lg:col-span-2">
+        <section className="min-w-0 lg:col-span-2">
           <h3 className="text-lg font-bold text-white">Do this next</h3>
           <p className="mt-1 text-sm text-emerald-100/80">One clear step at a time.</p>
 
           {nextItem ? (
             <Link
               href={nextItem.href}
-              className="mt-4 flex min-h-[96px] flex-col justify-center rounded-3xl border-2 border-emerald-400 bg-emerald-600 p-6 text-white shadow-md transition hover:bg-emerald-700 sm:flex-row sm:items-center sm:justify-between"
+              className="mt-4 flex min-h-[96px] min-w-0 w-full flex-col justify-center rounded-3xl border-2 border-emerald-400 bg-emerald-600 p-6 text-white shadow-md transition hover:bg-emerald-700 sm:flex-row sm:items-center sm:justify-between"
             >
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm font-bold uppercase tracking-wide text-emerald-100">
                   Continue learning
                 </p>
-                <p className="mt-1 text-2xl font-bold leading-snug">{nextItem.label}</p>
+                <p className="mt-1 text-2xl font-bold leading-snug break-words">{nextItem.label}</p>
                 <p className="mt-1 text-sm text-emerald-100">{nextItem.meta}</p>
               </div>
-              <span className="mt-4 inline-flex min-h-[48px] items-center justify-center rounded-2xl bg-white px-5 py-2 text-base font-bold text-emerald-900 sm:mt-0">
+              <span className="mt-4 inline-flex min-h-[48px] shrink-0 items-center justify-center rounded-2xl bg-white px-5 py-2 text-base font-bold text-emerald-900 sm:mt-0">
                 {nextItem.kind === "quiz" ? "Take quiz →" : "Start lesson →"}
               </span>
             </Link>
@@ -202,29 +202,31 @@ export function Grade6ClassroomHub({
           )}
 
           {upNext.length > 1 && (
-            <ol className="mt-4 space-y-2">
+            <ol className="mt-4 min-w-0 space-y-2">
               {upNext.slice(1, 4).map((item, i) => (
-                <li key={`${item.kind}-${item.href}`}>
+                <li key={`${item.kind}-${item.href}`} className="min-w-0">
                   <Link
                     href={item.href}
-                    className="flex min-h-[56px] items-center gap-3 rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 hover:border-emerald-300"
+                    className="flex min-h-[56px] min-w-0 w-full items-center gap-3 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 hover:border-emerald-300"
                   >
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700">
                       {i + 2}
                     </span>
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate font-semibold text-slate-900">{item.label}</p>
-                      <p className="text-xs text-slate-500">{item.meta}</p>
+                    <div className="flex min-w-0 flex-1 flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                      <div className="min-w-0">
+                        <p className="truncate font-semibold text-slate-900">{item.label}</p>
+                        <p className="truncate text-xs text-slate-500">{item.meta}</p>
+                      </div>
+                      <span
+                        className={`inline-flex w-fit shrink-0 rounded-full px-2.5 py-1 text-xs font-bold ${
+                          item.kind === "quiz"
+                            ? "bg-amber-100 text-amber-900"
+                            : "bg-emerald-100 text-emerald-900"
+                        }`}
+                      >
+                        {item.kind === "quiz" ? "Quiz" : "Lesson"}
+                      </span>
                     </div>
-                    <span
-                      className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-bold ${
-                        item.kind === "quiz"
-                          ? "bg-amber-100 text-amber-900"
-                          : "bg-emerald-100 text-emerald-900"
-                      }`}
-                    >
-                      {item.kind === "quiz" ? "Quiz" : "Lesson"}
-                    </span>
                   </Link>
                 </li>
               ))}
