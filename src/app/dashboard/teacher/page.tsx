@@ -5,6 +5,7 @@ import { DashboardShell } from "@/components/DashboardShell";
 import { CreateSessionForm } from "@/components/CreateSessionForm";
 import { RescheduleSessionForm } from "@/components/RescheduleSessionForm";
 import { gradeLabel } from "@/lib/grades";
+import { gradeSections } from "@/lib/groupByGrade";
 import { brand } from "@/config/brand";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
 import { teacherDashNav } from "@/lib/dashboardNav";
@@ -114,76 +115,136 @@ export default async function TeacherDashboard() {
           liveCount={mySessions.length}
           writtenPending={writtenToGrade.length}
           grades={assignedGrades}
+          liveByGrade={Object.fromEntries(
+            assignedGrades.map((g) => [
+              g,
+              mySessions.filter((s) => s.grade === g).length,
+            ])
+          )}
+          writtenByGrade={Object.fromEntries(
+            assignedGrades.map((g) => [
+              g,
+              writtenToGrade.filter((w) => w.course.grade === g).length,
+            ])
+          )}
         />
       )}
 
-      <div className="grid gap-8 lg:grid-cols-2">
-        <section>
+      <div className="grid min-w-0 gap-8 lg:grid-cols-2">
+        <section className="min-w-0 overflow-x-hidden">
           <h2 className="text-lg font-semibold text-white">Active Class Roster</h2>
           <p className="mt-1 text-sm text-emerald-100/80">
-            Active enrollments{assignedGrades.length ? ` · ${gradeSummary}` : ""}.
+            Active enrollments by grade
+            {assignedGrades.length ? ` · ${gradeSummary}` : ""}.
           </p>
-          <ul className="mt-4 max-h-96 space-y-2 overflow-y-auto">
-            {enrollments.map((e) => (
-              <li key={e.id} className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm">
-                <p className="font-medium text-slate-900">{e.user.name}</p>
-                <p className="text-slate-500">
-                  {e.user.email} · {gradeLabel(e.grade)} · {e.plan.name}
-                </p>
-              </li>
-            ))}
-            {enrollments.length === 0 && (
-              <p className="text-sm text-emerald-100/80">
-                {assignedGrades.length === 0
-                  ? "No grades assigned yet."
-                  : "No active enrollments in your grades yet."}
-              </p>
-            )}
-          </ul>
+          {assignedGrades.length === 0 ? (
+            <p className="mt-4 text-sm text-emerald-100/80">No grades assigned yet.</p>
+          ) : (
+            <div className="mt-4 max-h-96 space-y-4 overflow-y-auto overflow-x-hidden pr-1">
+              {gradeSections(assignedGrades, enrollments, (e) => e.grade).map((section) => (
+                <div key={section.grade} className="min-w-0">
+                  <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
+                    <h3 className="text-sm font-semibold text-emerald-50">{section.label}</h3>
+                    <span className="text-xs font-semibold uppercase tracking-wide text-emerald-200/75">
+                      {section.items.length} enrolled
+                    </span>
+                  </div>
+                  {section.items.length === 0 ? (
+                    <p className="text-sm text-emerald-100/75">
+                      No active enrollments in {section.label} yet.
+                    </p>
+                  ) : (
+                    <ul className="space-y-2">
+                      {section.items.map((e) => (
+                        <li
+                          key={e.id}
+                          className="min-w-0 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm"
+                        >
+                          <p className="truncate font-medium text-slate-900">{e.user.name}</p>
+                          <p className="truncate text-slate-500">
+                            {e.user.email} · {e.plan.name}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </section>
 
         <CreateSessionForm courses={courses} allowedGrades={assignedGrades} />
       </div>
 
-      <section className="mt-10">
+      <section className="mt-10 min-w-0 overflow-x-hidden">
         <h2 className="text-lg font-semibold text-white">Your Live Sessions</h2>
-        <ul className="mt-4 space-y-3">
-          {mySessions.map((s) => (
-            <li
-              key={s.id}
-              className="flex flex-col gap-2 rounded-xl border border-slate-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between"
-            >
-              <div>
-                <p className="font-medium text-slate-900">{s.title}</p>
-                <p className="text-sm text-slate-600">
-                  {s.scheduledAt.toLocaleString("en-US", { timeZone: "America/Chicago" })} CT
-                  {s.grade != null ? ` · ${gradeLabel(s.grade)}` : ""}
-                  {s.course ? ` · ${s.course.title}` : ""}
-                </p>
-                <p className="mt-1 text-xs text-slate-500">{s.description}</p>
-              </div>
-              <div className="flex flex-col gap-2 sm:items-end">
-                {s.meetingUrl && (
-                  <a
-                    href={s.meetingUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-lg bg-emerald-800 px-3 py-2 text-center text-sm font-medium text-white hover:bg-emerald-900"
-                  >
-                    Start / join room
-                  </a>
+        {assignedGrades.length === 0 ? (
+          <p className="mt-4 text-sm text-emerald-100/80">Schedule unlocks after grades are assigned.</p>
+        ) : mySessions.length === 0 ? (
+          <p className="mt-4 text-sm text-emerald-100/80">Schedule your first session above.</p>
+        ) : (
+          <div className="mt-4 space-y-6">
+            {gradeSections(
+              assignedGrades,
+              mySessions.filter((s) => s.grade != null),
+              (s) => s.grade
+            ).map((section) => (
+              <div key={section.grade} className="min-w-0">
+                <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-sm font-semibold text-emerald-50">{section.label}</h3>
+                  <span className="text-xs font-semibold uppercase tracking-wide text-emerald-200/75">
+                    {section.items.length} session{section.items.length === 1 ? "" : "s"}
+                  </span>
+                </div>
+                {section.items.length === 0 ? (
+                  <p className="text-sm text-emerald-100/75">
+                    No live sessions scheduled for {section.label}.
+                  </p>
+                ) : (
+                  <ul className="space-y-3">
+                    {section.items.map((s) => (
+                      <li
+                        key={s.id}
+                        className="flex min-w-0 flex-col gap-2 rounded-xl border border-slate-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div className="min-w-0">
+                          <p className="truncate font-medium text-slate-900">{s.title}</p>
+                          <p className="break-words text-sm text-slate-600">
+                            {s.scheduledAt.toLocaleString("en-US", {
+                              timeZone: "America/Chicago",
+                            })}{" "}
+                            CT
+                            {s.course ? ` · ${s.course.title}` : ""}
+                          </p>
+                          <p className="mt-1 break-words text-xs text-slate-500">
+                            {s.description}
+                          </p>
+                        </div>
+                        <div className="flex shrink-0 flex-col gap-2 sm:items-end">
+                          {s.meetingUrl && (
+                            <a
+                              href={s.meetingUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="rounded-lg bg-emerald-800 px-3 py-2 text-center text-sm font-medium text-white hover:bg-emerald-900"
+                            >
+                              Start / join room
+                            </a>
+                          )}
+                          <RescheduleSessionForm
+                            sessionId={s.id}
+                            initialLocal={toDatetimeLocalValue(s.scheduledAt)}
+                          />
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
                 )}
-                <RescheduleSessionForm
-                  sessionId={s.id}
-                  initialLocal={toDatetimeLocalValue(s.scheduledAt)}
-                />
               </div>
-            </li>
-          ))}
-          {mySessions.length === 0 && (
-            <p className="text-sm text-emerald-100/80">Schedule your first session above.</p>
-          )}
-        </ul>
+            ))}
+          </div>
+        )}
       </section>
 
       <TeacherLiveProgress />
@@ -193,6 +254,7 @@ export default async function TeacherDashboard() {
         <div id="written" className="mt-6">
           <h3 className="text-base font-semibold text-emerald-50">Written Work To Grade</h3>
           <GradeWrittenPanel
+            assignedGrades={assignedGrades}
             initial={writtenToGrade.map((w) => ({
               id: w.id,
               title: w.title,
