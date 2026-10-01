@@ -55,9 +55,12 @@ if (
 
 const useSecureCookies = (process.env.NEXTAUTH_URL || "").startsWith("https://");
 
+// NextAuth v4 reads AUTH_TRUST_HOST; set it so cookies stick behind Cloudflare.
+if (process.env.NODE_ENV === "production") {
+  process.env.AUTH_TRUST_HOST = "true";
+}
+
 export const authOptions: NextAuthOptions = {
-  // Required behind Cloudflare / Workers so cookies stick on school.prosperprep.org
-  trustHost: true,
   useSecureCookies,
   session: {
     strategy: "jwt",
