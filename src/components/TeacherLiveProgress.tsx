@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  GradeCollapsible,
+  matchesStudentQuery,
+} from "@/components/GradeCollapsible";
 import { gradeLabel } from "@/lib/grades";
 import { formatCtDateTime, formatCtTime } from "@/lib/formatCt";
 import { gradeSections } from "@/lib/groupByGrade";
@@ -230,6 +234,55 @@ function StudentCard({
   );
 }
 
+function GradeProgressSection({
+  grade,
+  label,
+  students,
+  openId,
+  setOpenId,
+}: {
+  grade: number;
+  label: string;
+  students: StudentRow[];
+  openId: string | null;
+  setOpenId: (id: string | null) => void;
+}) {
+  const [query, setQuery] = useState("");
+  const filtered = useMemo(
+    () => students.filter((s) => matchesStudentQuery(query, s.name, s.email)),
+    [students, query]
+  );
+
+  return (
+    <GradeCollapsible
+      label={label}
+      summary={`${students.length} student${students.length === 1 ? "" : "s"}`}
+      searchPlaceholder="Search by name or email…"
+      searchValue={query}
+      onSearchChange={setQuery}
+    >
+      {students.length === 0 ? (
+        <p className="text-sm text-emerald-100/75">
+          No active students in {gradeLabel(grade)} yet.
+        </p>
+      ) : filtered.length === 0 ? (
+        <p className="text-sm text-emerald-100/75">No students match that search.</p>
+      ) : (
+        <ul className="space-y-3">
+          {filtered.map((s) => (
+            <StudentCard
+              key={s.id}
+              s={s}
+              open={openId === s.id}
+              onToggle={() => setOpenId(openId === s.id ? null : s.id)}
+            />
+          ))}
+        </ul>
+      )}
+    </GradeCollapsible>
+  );
+}
+
 export function TeacherLiveProgress() {
   const [data, setData] = useState<Payload | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -269,7 +322,9 @@ export function TeacherLiveProgress() {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div className="min-w-0">
           <h2 className="text-lg font-semibold text-white">Live Student Progression</h2>
-          <p className="mt-1 text-sm text-emerald-100/80">Grouped by grade · lesson progress in CT</p>
+          <p className="mt-1 text-sm text-emerald-100/80">
+            Grouped by grade · tap a grade to expand · lesson progress in CT
+          </p>
         </div>
         <div className="flex items-center gap-2">
           {updatedLabel ? (
@@ -300,34 +355,16 @@ export function TeacherLiveProgress() {
       )}
 
       {sections.length > 0 && (
-        <div className="mt-4 space-y-6">
+        <div className="mt-4 space-y-3">
           {sections.map((section) => (
-            <div key={section.grade} className="min-w-0">
-              <div className="mb-2 flex min-w-0 flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-base font-semibold text-emerald-50">
-                  {section.label}
-                </h3>
-                <span className="text-xs font-semibold uppercase tracking-wide text-emerald-200/75">
-                  {section.items.length} student{section.items.length === 1 ? "" : "s"}
-                </span>
-              </div>
-              {section.items.length === 0 ? (
-                <p className="text-sm text-emerald-100/75">
-                  No active students in {gradeLabel(section.grade)} yet.
-                </p>
-              ) : (
-                <ul className="space-y-3">
-                  {section.items.map((s) => (
-                    <StudentCard
-                      key={s.id}
-                      s={s}
-                      open={openId === s.id}
-                      onToggle={() => setOpenId(openId === s.id ? null : s.id)}
-                    />
-                  ))}
-                </ul>
-              )}
-            </div>
+            <GradeProgressSection
+              key={section.grade}
+              grade={section.grade}
+              label={section.label}
+              students={section.items}
+              openId={openId}
+              setOpenId={setOpenId}
+            />
           ))}
         </div>
       )}
