@@ -20,11 +20,11 @@ export function SubjectIsland({
   return (
     <Link
       href={href}
-      className={`group flex min-h-[120px] flex-col justify-between rounded-3xl border-2 p-5 shadow-sm transition hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${style.accent}`}
+      className={`group flex min-h-[128px] flex-col justify-between rounded-3xl border-2 p-5 shadow-md transition hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${style.accent}`}
     >
       <div className="flex items-start justify-between gap-3">
         <span
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/80 text-2xl shadow-sm"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-2xl shadow-sm"
           aria-hidden
         >
           {style.emoji}
@@ -34,15 +34,16 @@ export function SubjectIsland({
         </span>
       </div>
       <div className="mt-3">
+        {/* Always dark text on light elevated card surfaces */}
         <p className="text-base font-bold leading-snug text-slate-900 group-hover:underline">
           {title}
         </p>
         <p className="mt-1 text-sm font-medium text-slate-700">
           {done}/{total} lessons · {pct}%
         </p>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/70">
+        <div className="mt-2.5 h-2 overflow-hidden rounded-full bg-white/90">
           <div
-            className="h-full rounded-full bg-slate-800/70 transition-all"
+            className="h-full rounded-full bg-slate-800/75 transition-all"
             style={{ width: `${pct}%` }}
           />
         </div>
