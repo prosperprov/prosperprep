@@ -3,12 +3,12 @@ import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { DashboardShell } from "@/components/DashboardShell";
 import { CreateSessionForm } from "@/components/CreateSessionForm";
+import { ActiveClassRoster } from "@/components/ActiveClassRoster";
 import {
   TeacherLiveSessions,
   type TeacherLiveSessionCard,
 } from "@/components/TeacherLiveSessions";
 import { gradeLabel } from "@/lib/grades";
-import { gradeSections } from "@/lib/groupByGrade";
 import { partitionLiveSessions } from "@/lib/liveSessionTime";
 import { brand } from "@/config/brand";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
@@ -167,42 +167,20 @@ export default async function TeacherDashboard() {
           <h2 className="text-lg font-semibold text-white">Active Class Roster</h2>
           <p className="mt-1 text-sm text-emerald-100/80">
             Active enrollments by grade
-            {assignedGrades.length ? ` · ${gradeSummary}` : ""}.
+            {assignedGrades.length ? ` · ${gradeSummary}` : ""} · tap a grade to expand.
           </p>
           {assignedGrades.length === 0 ? (
             <p className="mt-4 text-sm text-emerald-100/80">No grades assigned yet.</p>
           ) : (
-            <div className="mt-4 max-h-96 space-y-4 overflow-y-auto overflow-x-hidden pr-1">
-              {gradeSections(assignedGrades, enrollments, (e) => e.grade).map((section) => (
-                <div key={section.grade} className="min-w-0">
-                  <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="text-sm font-semibold text-emerald-50">{section.label}</h3>
-                    <span className="text-xs font-semibold uppercase tracking-wide text-emerald-200/75">
-                      {section.items.length} enrolled
-                    </span>
-                  </div>
-                  {section.items.length === 0 ? (
-                    <p className="text-sm text-emerald-100/75">
-                      No active enrollments in {section.label} yet.
-                    </p>
-                  ) : (
-                    <ul className="space-y-2">
-                      {section.items.map((e) => (
-                        <li
-                          key={e.id}
-                          className="min-w-0 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm"
-                        >
-                          <p className="truncate font-medium text-slate-900">{e.user.name}</p>
-                          <p className="truncate text-slate-500">
-                            {e.user.email} · {e.plan.name}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
+            <ActiveClassRoster
+              assignedGrades={assignedGrades}
+              enrollments={enrollments.map((e) => ({
+                id: e.id,
+                grade: e.grade,
+                user: { name: e.user.name, email: e.user.email },
+                plan: { name: e.plan.name },
+              }))}
+            />
           )}
         </section>
 

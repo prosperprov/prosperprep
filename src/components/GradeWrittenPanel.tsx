@@ -1,6 +1,10 @@
 "use client";
 
 import { useMemo, useState, type Dispatch, type SetStateAction } from "react";
+import {
+  GradeCollapsible,
+  matchesStudentQuery,
+} from "@/components/GradeCollapsible";
 import { formatCtDateTime } from "@/lib/formatCt";
 import { gradeLabel } from "@/lib/grades";
 import { gradeSections } from "@/lib/groupByGrade";
@@ -99,6 +103,78 @@ function WrittenCard({
   );
 }
 
+function WrittenGradeSection({
+  grade,
+  items,
+  scores,
+  feedback,
+  busyId,
+  msg,
+  setScores,
+  setFeedback,
+  onGrade,
+}: {
+  grade: number;
+  items: WrittenRow[];
+  scores: Record<string, string>;
+  feedback: Record<string, string>;
+  busyId: string | null;
+  msg: Record<string, string>;
+  setScores: Dispatch<SetStateAction<Record<string, string>>>;
+  setFeedback: Dispatch<SetStateAction<Record<string, string>>>;
+  onGrade: (id: string, status: "GRADED" | "RETURNED") => void;
+}) {
+  const [query, setQuery] = useState("");
+  const filtered = useMemo(
+    () =>
+      items.filter((r) =>
+        matchesStudentQuery(
+          query,
+          r.user.name,
+          r.user.email,
+          r.title,
+          r.course.title,
+          r.lesson?.title
+        )
+      ),
+    [items, query]
+  );
+
+  return (
+    <GradeCollapsible
+      label={gradeLabel(grade)}
+      summary={`${items.length} pending`}
+      searchPlaceholder="Search by student, title, or course…"
+      searchValue={query}
+      onSearchChange={setQuery}
+    >
+      {items.length === 0 ? (
+        <p className="text-sm text-emerald-100/75">
+          No written work pending for {gradeLabel(grade)}.
+        </p>
+      ) : filtered.length === 0 ? (
+        <p className="text-sm text-emerald-100/75">No submissions match that search.</p>
+      ) : (
+        <ul className="space-y-4">
+          {filtered.map((row) => (
+            <WrittenCard
+              key={row.id}
+              row={row}
+              scores={scores}
+              feedback={feedback}
+              busyId={busyId}
+              msg={msg}
+              setScores={setScores}
+              setFeedback={setFeedback}
+              onGrade={onGrade}
+            />
+          ))}
+        </ul>
+      )}
+    </GradeCollapsible>
+  );
+}
+
 export function GradeWrittenPanel({
   initial,
   assignedGrades,
@@ -174,39 +250,20 @@ export function GradeWrittenPanel({
   }
 
   return (
-    <div className="mt-4 min-w-0 space-y-6 overflow-x-hidden">
+    <div className="mt-4 min-w-0 space-y-3 overflow-x-hidden">
       {sections.map((section) => (
-        <div key={section.grade} className="min-w-0">
-          <div className="mb-2 flex min-w-0 flex-wrap items-baseline justify-between gap-2">
-            <h4 className="text-sm font-semibold text-emerald-50">
-              {gradeLabel(section.grade)}
-            </h4>
-            <span className="text-xs font-semibold uppercase tracking-wide text-emerald-200/75">
-              {section.items.length} pending
-            </span>
-          </div>
-          {section.items.length === 0 ? (
-            <p className="text-sm text-emerald-100/75">
-              No written work pending for {gradeLabel(section.grade)}.
-            </p>
-          ) : (
-            <ul className="space-y-4">
-              {section.items.map((row) => (
-                <WrittenCard
-                  key={row.id}
-                  row={row}
-                  scores={scores}
-                  feedback={feedback}
-                  busyId={busyId}
-                  msg={msg}
-                  setScores={setScores}
-                  setFeedback={setFeedback}
-                  onGrade={grade}
-                />
-              ))}
-            </ul>
-          )}
-        </div>
+        <WrittenGradeSection
+          key={section.grade}
+          grade={section.grade}
+          items={section.items}
+          scores={scores}
+          feedback={feedback}
+          busyId={busyId}
+          msg={msg}
+          setScores={setScores}
+          setFeedback={setFeedback}
+          onGrade={grade}
+        />
       ))}
     </div>
   );

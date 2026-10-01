@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { GradeCollapsible } from "@/components/GradeCollapsible";
 import { RescheduleSessionForm } from "@/components/RescheduleSessionForm";
 import { gradeSections } from "@/lib/groupByGrade";
 import { gradeLabel } from "@/lib/grades";
@@ -82,8 +83,8 @@ function PastSessionsDisclosure({
   if (sessions.length === 0) return null;
 
   return (
-    <details className="group mt-3 min-w-0 overflow-x-hidden rounded-xl border border-emerald-400/30 bg-emerald-950/35 open:pb-3">
-      <summary className="cursor-pointer list-none px-3 py-3 text-sm font-semibold text-emerald-50 marker:content-none [&::-webkit-details-marker]:hidden">
+    <details className="group mt-1 min-w-0 overflow-x-hidden rounded-xl border border-emerald-400/25 bg-emerald-950/25 open:pb-3">
+      <summary className="cursor-pointer list-none px-3 py-2.5 text-sm font-semibold text-emerald-50 marker:content-none [&::-webkit-details-marker]:hidden">
         <span className="flex min-w-0 flex-wrap items-center justify-between gap-2">
           <span className="inline-flex min-w-0 items-center gap-2">
             <span
@@ -126,6 +127,51 @@ function PastSessionsDisclosure({
   );
 }
 
+function LiveGradeSection({
+  label,
+  upcoming,
+  past,
+}: {
+  label: string;
+  upcoming: TeacherLiveSessionCard[];
+  past: TeacherLiveSessionCard[];
+}) {
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+  const filteredUpcoming = useMemo(
+    () => upcoming.filter((s) => sessionMatchesQuery(s, q)),
+    [upcoming, q]
+  );
+
+  return (
+    <GradeCollapsible
+      label={label}
+      summary={`${upcoming.length} upcoming${past.length > 0 ? ` · ${past.length} past` : ""}`}
+      searchPlaceholder="Search upcoming by title, date, or student…"
+      searchValue={query}
+      onSearchChange={setQuery}
+    >
+      {upcoming.length === 0 ? (
+        <p className="text-sm text-emerald-100/75">
+          No current or upcoming live sessions for {label}.
+        </p>
+      ) : filteredUpcoming.length === 0 ? (
+        <p className="text-sm text-emerald-100/75">No upcoming sessions match that search.</p>
+      ) : (
+        <ul className="space-y-3">
+          {filteredUpcoming.map((s) => (
+            <SessionRow key={s.id} s={s} />
+          ))}
+        </ul>
+      )}
+      <PastSessionsDisclosure
+        sessions={past}
+        emptyLabel={`No past sessions for ${label}.`}
+      />
+    </GradeCollapsible>
+  );
+}
+
 export function TeacherLiveSessions({
   assignedGrades,
   upcoming,
@@ -162,38 +208,15 @@ export function TeacherLiveSessions({
   const pastByGrade = new Map(pastSections.map((s) => [s.grade, s.items]));
 
   return (
-    <div className="mt-4 space-y-6">
-      {upcomingSections.map((section) => {
-        const pastForGrade = pastByGrade.get(section.grade) ?? [];
-        return (
-          <div key={section.grade} className="min-w-0">
-            <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-              <h3 className="text-sm font-semibold text-emerald-50">{section.label}</h3>
-              <span className="text-xs font-semibold uppercase tracking-wide text-emerald-200/75">
-                {section.items.length} upcoming
-                {pastForGrade.length > 0
-                  ? ` · ${pastForGrade.length} past`
-                  : ""}
-              </span>
-            </div>
-            {section.items.length === 0 ? (
-              <p className="text-sm text-emerald-100/75">
-                No current or upcoming live sessions for {section.label}.
-              </p>
-            ) : (
-              <ul className="space-y-3">
-                {section.items.map((s) => (
-                  <SessionRow key={s.id} s={s} />
-                ))}
-              </ul>
-            )}
-            <PastSessionsDisclosure
-              sessions={pastForGrade}
-              emptyLabel={`No past sessions for ${section.label}.`}
-            />
-          </div>
-        );
-      })}
+    <div className="mt-4 space-y-3">
+      {upcomingSections.map((section) => (
+        <LiveGradeSection
+          key={section.grade}
+          label={section.label}
+          upcoming={section.items}
+          past={pastByGrade.get(section.grade) ?? []}
+        />
+      ))}
     </div>
   );
 }
