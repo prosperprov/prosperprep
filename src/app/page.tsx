@@ -32,6 +32,12 @@ export default function HomePage() {
                 Start enrollment
               </Link>
               <Link
+                href="/prek"
+                className="rounded-xl border border-amber-300/80 bg-amber-300/20 px-5 py-3 font-semibold text-amber-50 hover:bg-amber-300/30"
+              >
+                Free Pre-K Play
+              </Link>
+              <Link
                 href="/login"
                 className="rounded-xl border border-white/40 px-5 py-3 font-semibold text-white hover:bg-white/10"
               >
@@ -74,6 +80,27 @@ export default function HomePage() {
             Center, Tutoring, or Community Engagement on our main site?{" "}
             <strong className="text-slate-900">This app is the missing school login and online classroom.</strong>
           </p>
+        </div>
+      </section>
+
+      <section className="border-b border-amber-100 bg-gradient-to-r from-amber-50 via-rose-50 to-sky-50">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-12 text-center md:flex-row md:text-left">
+          <div className="flex-1">
+            <p className="text-sm font-bold uppercase tracking-wider text-emerald-800">Free for families</p>
+            <h2 className="mt-1 text-2xl font-extrabold text-slate-900 md:text-3xl">
+              Pre-K Play Hub — bright games, no login
+            </h2>
+            <p className="mt-2 text-slate-700">
+              Letters, numbers, colors, shapes, and puzzles in a kid-bright Prosper Prep play space.
+              Open and play free while you explore our K–12 school.
+            </p>
+          </div>
+          <Link
+            href="/prek"
+            className="inline-flex min-h-[48px] shrink-0 items-center justify-center rounded-2xl bg-emerald-800 px-6 py-3 font-bold text-white shadow-md hover:bg-emerald-900"
+          >
+            Enter Pre-K Play
+          </Link>
         </div>
       </section>
 
