@@ -37,11 +37,11 @@ export function AdminEnrollmentsTable({ rows }: { rows: AdminEnrollmentRow[] }) 
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search enrollments by student name or email…"
-          className="w-full max-w-md rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-500"
+          className="w-full max-w-md rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-600"
         />
       </label>
       <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
-        <table className="min-w-full text-left text-sm">
+        <table className="min-w-full text-left text-sm text-slate-900">
           <thead className="bg-slate-50 text-slate-600">
             <tr>
               <th className="px-4 py-2">Student</th>
@@ -67,14 +67,14 @@ export function AdminEnrollmentsTable({ rows }: { rows: AdminEnrollmentRow[] }) 
               </tr>
             ) : (
               filtered.map((e) => (
-                <tr key={e.id} className="border-t border-slate-100">
-                  <td className="px-4 py-2">
-                    <p className="font-medium">{e.studentName}</p>
+                <tr key={e.id} className="border-t border-slate-100 text-slate-900">
+                  <td className="px-4 py-2 text-slate-900">
+                    <p className="font-medium text-slate-900">{e.studentName}</p>
                     <p className="text-xs text-slate-500">{e.studentEmail}</p>
                   </td>
-                  <td className="px-4 py-2">{e.planName}</td>
-                  <td className="px-4 py-2">{e.gradeLabel}</td>
-                  <td className="px-4 py-2">{e.status}</td>
+                  <td className="px-4 py-2 text-slate-900">{e.planName}</td>
+                  <td className="px-4 py-2 text-slate-900">{e.gradeLabel}</td>
+                  <td className="px-4 py-2 text-slate-900">{e.status}</td>
                   <td className="px-4 py-2">
                     <span
                       className={

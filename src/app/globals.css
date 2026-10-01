@@ -38,6 +38,10 @@ body:has([data-app-dock]) main {
 /*
  * School dashboard (data-school-dash): elevate light cards on the dark green shell
  * so forms/grades/subject islands stay readable without washing the brand background.
+ *
+ * Critical: the shell uses text-emerald-50. Without an explicit color on light
+ * surfaces, table cells and unlabeled text inherit pale mint-on-white (unreadable).
+ * Force dark ink on every elevated light surface + form controls.
  */
 [data-school-dash] {
   width: 100%;
@@ -55,22 +59,50 @@ body:has([data-app-dock]) main {
 [data-school-dash] .school-dash-body .bg-violet-50,
 [data-school-dash] .school-dash-body .bg-rose-50,
 [data-school-dash] .school-dash-body .bg-indigo-50,
-[data-school-dash] .school-dash-body .bg-lime-50 {
+[data-school-dash] .school-dash-body .bg-lime-50,
+[data-school-dash] .school-dash-body .bg-red-50 {
+  color: #0f172a;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
-[data-school-dash] .school-dash-body input,
-[data-school-dash] .school-dash-body textarea,
-[data-school-dash] .school-dash-body select {
+/* Tables always dark ink (even if a wrapper missed bg-white).
+   Shell text-emerald-50 otherwise paints pale mint into white cells. */
+[data-school-dash] .school-dash-body table,
+[data-school-dash] .school-dash-body table tbody,
+[data-school-dash] .school-dash-body table tbody td,
+[data-school-dash] .school-dash-body table tbody th {
   color: #0f172a;
-  background-color: #fff;
-  -webkit-text-fill-color: #0f172a;
 }
 
+[data-school-dash] .school-dash-body thead,
+[data-school-dash] .school-dash-body thead th {
+  color: #475569;
+}
+
+/* Light surfaces: nested muted utilities stay; bare text is dark. */
+[data-school-dash] .school-dash-body .bg-white :where(p, span, li, label, td, th, h1, h2, h3, h4):not([class*="text-"]) {
+  color: #0f172a;
+}
+
+[data-school-dash] .school-dash-body input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+[data-school-dash] .school-dash-body textarea,
+[data-school-dash] .school-dash-body select {
+  color: #0f172a !important;
+  background-color: #fff !important;
+  -webkit-text-fill-color: #0f172a;
+  caret-color: #0f172a;
+}
+
+[data-school-dash] .school-dash-body option {
+  color: #0f172a;
+  background-color: #fff;
+}
+
+/* Dark placeholders — never pale gray on dark fields. */
 [data-school-dash] .school-dash-body input::placeholder,
 [data-school-dash] .school-dash-body textarea::placeholder {
-  color: #64748b;
-  -webkit-text-fill-color: #64748b;
+  color: #334155 !important;
+  -webkit-text-fill-color: #334155;
   opacity: 1;
 }
 
@@ -80,7 +112,7 @@ body:has([data-app-dock]) main {
 [data-school-dash] .school-dash-body input:-webkit-autofill:focus,
 [data-school-dash] .school-dash-body textarea:-webkit-autofill,
 [data-school-dash] .school-dash-body select:-webkit-autofill {
-  -webkit-text-fill-color: #0f172a;
+  -webkit-text-fill-color: #0f172a !important;
   caret-color: #0f172a;
   box-shadow: 0 0 0 1000px #fff inset;
   transition: background-color 99999s ease-out;
