@@ -37,10 +37,9 @@ export function Grade6TeacherGlance({
             Classroom Glance
           </p>
           <h2 className="mt-1 text-2xl font-bold text-slate-900">{rosterTitle}</h2>
-          <p className="mt-1 text-sm text-slate-600">
-            Same calm home base your students see — quick counts for live class and messages
-            {grades.length ? ` · ${gradeList}` : ""}.
-          </p>
+          {grades.length > 0 ? (
+            <p className="mt-1 text-sm text-slate-600">{gradeList}</p>
+          ) : null}
         </div>
         <Link
           href="/dashboard/teacher/messages"

@@ -84,10 +84,6 @@ export function TeacherLiveProgress() {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h2 className="text-lg font-semibold text-slate-900">Live Student Progression</h2>
-          <p className="mt-1 text-sm text-slate-500">
-            Per-student lesson progress, quiz attempts/scores (max {data?.maxAttempts ?? 3}), jump
-            into a lesson, or message the student. Refreshes about every 20 seconds.
-          </p>
         </div>
         <div className="flex items-center gap-2">
           {updatedLabel ? (
