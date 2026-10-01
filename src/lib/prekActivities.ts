@@ -122,6 +122,17 @@ export const prekActivities: PrekActivity[] = [
     emoji: "🔤",
     minutes: 5,
   },
+  {
+    slug: "lily-pad-leap",
+    title: "Lily Pad Leap",
+    blurb:
+      "Help the frog leap across a bright pond — tap lily pads in number order through five levels with stars and optional sound cues.",
+    skill: "numbers",
+    kind: "first-party",
+    accent: "from-lime-400 to-emerald-600",
+    emoji: "🐸",
+    minutes: 6,
+  },
 ];
 
 export function getPrekActivity(slug: string): PrekActivity | undefined {

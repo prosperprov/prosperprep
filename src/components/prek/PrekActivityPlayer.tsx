@@ -12,6 +12,7 @@ import { ColorFlood } from "./games/ColorFlood";
 import { PatternTrain } from "./games/PatternTrain";
 import { MissingNumber } from "./games/MissingNumber";
 import { LetterSound } from "./games/LetterSound";
+import { LilyPadLeap } from "./games/LilyPadLeap";
 
 export function PrekActivityPlayer({ activity }: { activity: PrekActivity }) {
   let body: React.ReactNode = null;
@@ -48,6 +49,9 @@ export function PrekActivityPlayer({ activity }: { activity: PrekActivity }) {
         break;
       case "letter-sound":
         body = <LetterSound />;
+        break;
+      case "lily-pad-leap":
+        body = <LilyPadLeap />;
         break;
       default:
         body = <p className="p-6 text-center text-slate-600">Activity coming soon.</p>;
