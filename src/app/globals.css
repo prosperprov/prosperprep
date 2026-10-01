@@ -64,4 +64,24 @@ body:has([data-app-dock]) main {
 [data-school-dash] .school-dash-body select {
   color: #0f172a;
   background-color: #fff;
+  -webkit-text-fill-color: #0f172a;
+}
+
+[data-school-dash] .school-dash-body input::placeholder,
+[data-school-dash] .school-dash-body textarea::placeholder {
+  color: #64748b;
+  -webkit-text-fill-color: #64748b;
+  opacity: 1;
+}
+
+/* Autofill can force pale text on dark shells — keep typed values dark. */
+[data-school-dash] .school-dash-body input:-webkit-autofill,
+[data-school-dash] .school-dash-body input:-webkit-autofill:hover,
+[data-school-dash] .school-dash-body input:-webkit-autofill:focus,
+[data-school-dash] .school-dash-body textarea:-webkit-autofill,
+[data-school-dash] .school-dash-body select:-webkit-autofill {
+  -webkit-text-fill-color: #0f172a;
+  caret-color: #0f172a;
+  box-shadow: 0 0 0 1000px #fff inset;
+  transition: background-color 99999s ease-out;
 }

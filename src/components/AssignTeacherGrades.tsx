@@ -68,7 +68,7 @@ export function AssignTeacherGrades({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search teachers by name or email…"
-          className="w-full max-w-md rounded-lg border border-slate-300 px-3 py-2 text-sm"
+          className="w-full max-w-md rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-500"
         />
       </label>
       {message && (

@@ -70,7 +70,7 @@ export function AdminCreateStudent() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+            className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-500"
           />
         </label>
         <label className="block text-sm">
@@ -80,7 +80,7 @@ export function AdminCreateStudent() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+            className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-500"
           />
         </label>
         <label className="block text-sm">
@@ -91,7 +91,7 @@ export function AdminCreateStudent() {
             minLength={8}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+            className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-500"
           />
         </label>
         <label className="block text-sm">
@@ -99,7 +99,7 @@ export function AdminCreateStudent() {
           <select
             value={grade}
             onChange={(e) => setGrade(Number(e.target.value))}
-            className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+            className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-500"
           >
             {ALL.map((g) => (
               <option key={g} value={g}>
