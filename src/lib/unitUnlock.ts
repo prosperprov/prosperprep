@@ -1,5 +1,5 @@
 /**
- * Sequential unit unlock for Grade 6 year-path courses (sectionKey = unit-N).
+ * Sequential unit unlock for Grade 6 and Grade 10 year-path courses (sectionKey = unit-N).
  *
  * ## Unlock rule (chosen 2026-09-29)
  *
@@ -16,7 +16,7 @@
  * Admins and teachers may set UnitUnlockOverride.maxUnlockedUnit = N to open units 1..N
  * ahead of the sequential gate for one student+course.
  *
- * Applies to any Grade 6 course that uses sectionKey unit-N (Math first; ELA/Science/History reuse).
+ * Applies to Grade 6 and Grade 10 courses that use sectionKey unit-N (Math first; ELA/Science/History reuse).
  */
 
 import { grade6UnitNumber, isRetiredSection } from "@/lib/grade6Classroom";

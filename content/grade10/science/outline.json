@@ -1,0 +1,68 @@
+{
+  "courseId": "cmuh9by5o08znedan0hv8dff0",
+  "units": [
+    {
+      "n": 1,
+      "title": "Scientific Inquiry & Biochemistry",
+      "sectionKey": "unit-1",
+      "lessonCount": 8
+    },
+    {
+      "n": 2,
+      "title": "Cells",
+      "sectionKey": "unit-2",
+      "lessonCount": 8
+    },
+    {
+      "n": 3,
+      "title": "Energy in Living Systems",
+      "sectionKey": "unit-3",
+      "lessonCount": 8
+    },
+    {
+      "n": 4,
+      "title": "Genetics & Heredity",
+      "sectionKey": "unit-4",
+      "lessonCount": 8
+    },
+    {
+      "n": 5,
+      "title": "Evolution & Diversity",
+      "sectionKey": "unit-5",
+      "lessonCount": 8
+    },
+    {
+      "n": 6,
+      "title": "Ecology & Human Impact",
+      "sectionKey": "unit-6",
+      "lessonCount": 8
+    },
+    {
+      "n": 7,
+      "title": "Chemistry Foundations",
+      "sectionKey": "unit-7",
+      "lessonCount": 8
+    },
+    {
+      "n": 8,
+      "title": "Chemical Reactions & Quantities",
+      "sectionKey": "unit-8",
+      "lessonCount": 8
+    },
+    {
+      "n": 9,
+      "title": "Human Body Systems & Homeostasis",
+      "sectionKey": "unit-9",
+      "lessonCount": 8
+    },
+    {
+      "n": 10,
+      "title": "Integrated Science Capstone",
+      "sectionKey": "unit-10",
+      "lessonCount": 8
+    }
+  ],
+  "lessonCount": 80,
+  "quizCount": 10,
+  "generatedAt": "2026-10-01"
+}
