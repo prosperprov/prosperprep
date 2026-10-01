@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { gradeLabel } from "@/lib/grades";
+import { formatCtDateTime, formatCtTime } from "@/lib/formatCt";
 
 type RecentAttempt = {
   id: string;
@@ -16,6 +17,14 @@ type RecentAttempt = {
   kind: "lesson" | "quiz";
   title: string;
   href: string | null;
+};
+
+type RecentCompletion = {
+  id: string;
+  title: string;
+  order: number;
+  completedAt: string | null;
+  href: string;
 };
 
 type StudentRow = {
@@ -36,6 +45,7 @@ type StudentRow = {
     href: string;
   }[];
   recentAttempts: RecentAttempt[];
+  recentCompletions?: RecentCompletion[];
   messageHref: string;
 };
 
@@ -60,14 +70,7 @@ export function TeacherLiveProgress() {
       if (!res.ok) throw new Error(json.error || "Could not load progress");
       setData(json as Payload);
       setError(null);
-      const t = new Date((json as Payload).generatedAt);
-      setUpdatedLabel(
-        t.toLocaleTimeString("en-US", {
-          hour: "numeric",
-          minute: "2-digit",
-          second: "2-digit",
-        })
-      );
+      setUpdatedLabel(formatCtTime((json as Payload).generatedAt));
     } catch (e) {
       setError(e instanceof Error ? e.message : "Load failed");
     }
@@ -87,7 +90,7 @@ export function TeacherLiveProgress() {
         </div>
         <div className="flex items-center gap-2">
           {updatedLabel ? (
-            <span className="text-xs text-slate-500">Updated {updatedLabel} CT</span>
+            <span className="text-xs text-slate-500">Updated {updatedLabel}</span>
           ) : null}
           <button
             type="button"
@@ -117,6 +120,7 @@ export function TeacherLiveProgress() {
         <ul className="mt-4 space-y-3">
           {data.students.map((s) => {
             const open = openId === s.id;
+            const completions = s.recentCompletions ?? [];
             return (
               <li
                 key={s.id}
@@ -201,37 +205,78 @@ export function TeacherLiveProgress() {
                     </ul>
 
                     <h3 className="mt-4 text-sm font-bold uppercase tracking-wide text-slate-600">
+                      Recent Lesson Completions
+                    </h3>
+                    {completions.length === 0 ? (
+                      <p className="mt-2 text-sm text-slate-500">No lesson completions yet.</p>
+                    ) : (
+                      <ul className="mt-2 space-y-2">
+                        {completions.map((c) => {
+                          const when = formatCtDateTime(c.completedAt);
+                          return (
+                            <li
+                              key={c.id}
+                              className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"
+                            >
+                              <div>
+                                <p className="font-semibold text-slate-900">
+                                  Lesson {c.order} — {c.title}
+                                </p>
+                                {when ? (
+                                  <p className="text-slate-500">Completed {when}</p>
+                                ) : (
+                                  <p className="text-slate-500">Completed</p>
+                                )}
+                              </div>
+                              <Link
+                                href={c.href}
+                                className="font-semibold text-emerald-800 hover:underline"
+                              >
+                                Open
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+
+                    <h3 className="mt-4 text-sm font-bold uppercase tracking-wide text-slate-600">
                       Recent Quiz / Check Attempts
                     </h3>
                     {s.recentAttempts.length === 0 ? (
                       <p className="mt-2 text-sm text-slate-500">No attempts yet.</p>
                     ) : (
                       <ul className="mt-2 space-y-2">
-                        {s.recentAttempts.map((a) => (
-                          <li
-                            key={a.id}
-                            className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"
-                          >
-                            <div>
-                              <p className="font-semibold text-slate-900">
-                                {a.kind === "lesson" ? "Lesson Check" : "Section Quiz"} · {a.title}
-                              </p>
-                              <p className="text-slate-500">
-                                {a.percent}% ({a.score}/{a.maxScore}) · {a.attemptsUsed}/
-                                {a.maxAttempts} attempts
-                                {a.locked ? " · locked" : ""}
-                              </p>
-                            </div>
-                            {a.href ? (
-                              <Link
-                                href={a.href}
-                                className="font-semibold text-emerald-800 hover:underline"
-                              >
-                                Open
-                              </Link>
-                            ) : null}
-                          </li>
-                        ))}
+                        {s.recentAttempts.map((a) => {
+                          const when = formatCtDateTime(a.submittedAt);
+                          return (
+                            <li
+                              key={a.id}
+                              className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"
+                            >
+                              <div>
+                                <p className="font-semibold text-slate-900">
+                                  {a.kind === "lesson" ? "Lesson Check" : "Section Quiz"} ·{" "}
+                                  {a.title}
+                                </p>
+                                <p className="text-slate-500">
+                                  {a.percent}% ({a.score}/{a.maxScore}) · {a.attemptsUsed}/
+                                  {a.maxAttempts} attempts
+                                  {a.locked ? " · locked" : ""}
+                                  {when ? ` · submitted ${when}` : ""}
+                                </p>
+                              </div>
+                              {a.href ? (
+                                <Link
+                                  href={a.href}
+                                  className="font-semibold text-emerald-800 hover:underline"
+                                >
+                                  Open
+                                </Link>
+                              ) : null}
+                            </li>
+                          );
+                        })}
                       </ul>
                     )}
                   </div>

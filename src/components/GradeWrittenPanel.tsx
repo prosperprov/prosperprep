@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { formatCtDateTime } from "@/lib/formatCt";
 
 export type WrittenRow = {
   id: string;
@@ -69,7 +70,7 @@ export function GradeWrittenPanel({ initial }: { initial: WrittenRow[] }) {
           </p>
           <p className="text-xs text-slate-500">
             {row.course.title} · {row.lesson?.title ?? "Course-level"} · submitted{" "}
-            {new Date(row.submittedAt).toLocaleString("en-US", { timeZone: "America/Chicago" })} CT
+            {formatCtDateTime(row.submittedAt)}
           </p>
           <p className="mt-2 text-sm text-slate-600 whitespace-pre-wrap">
             <span className="font-medium text-slate-800">Prompt: </span>
