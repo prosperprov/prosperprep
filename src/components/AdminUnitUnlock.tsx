@@ -66,7 +66,7 @@ export function AdminUnitUnlock({ students }: { students: StudentOpt[] }) {
         <label className="block text-sm">
           <span className="font-medium text-slate-700">Student</span>
           <select
-            className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"
+            className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-500"
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
           >
@@ -80,7 +80,7 @@ export function AdminUnitUnlock({ students }: { students: StudentOpt[] }) {
         <label className="block text-sm">
           <span className="font-medium text-slate-700">Course ID</span>
           <input
-            className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 font-mono text-xs"
+            className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 font-mono text-xs text-slate-900 placeholder:text-slate-500"
             value={courseId}
             onChange={(e) => setCourseId(e.target.value)}
           />
@@ -91,7 +91,7 @@ export function AdminUnitUnlock({ students }: { students: StudentOpt[] }) {
             type="number"
             min={1}
             max={20}
-            className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"
+            className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-500"
             value={maxUnlockedUnit}
             onChange={(e) => setMaxUnlockedUnit(Number(e.target.value))}
           />
@@ -99,7 +99,7 @@ export function AdminUnitUnlock({ students }: { students: StudentOpt[] }) {
         <label className="block text-sm">
           <span className="font-medium text-slate-700">Note (optional)</span>
           <input
-            className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"
+            className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-500"
             value={note}
             onChange={(e) => setNote(e.target.value)}
             placeholder="e.g. placement into Unit 3"

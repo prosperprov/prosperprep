@@ -26,7 +26,15 @@ export default async function AdminDashboard() {
   if (session.user.role !== "ADMIN") redirect("/dashboard");
 
   const [users, enrollments, plans, courses, liveCount, teachers] = await Promise.all([
-    prisma.user.findMany({ orderBy: { createdAt: "desc" } }),
+    prisma.user.findMany({
+      orderBy: { createdAt: "desc" },
+      include: {
+        enrollments: {
+          orderBy: { createdAt: "desc" },
+          select: { id: true, status: true },
+        },
+      },
+    }),
     prisma.enrollment.findMany({
       include: { user: true, plan: true },
       orderBy: { createdAt: "desc" },
@@ -55,13 +63,20 @@ export default async function AdminDashboard() {
 
   const studentRows = users
     .filter((u) => u.role === "STUDENT")
-    .map((u) => ({
-      id: u.id,
-      name: u.name,
-      email: u.email,
-      role: u.role,
-      gradeLabel: u.grade != null ? gradeLabel(u.grade) : "—",
-    }));
+    .map((u) => {
+      const primary =
+        u.enrollments.find((e) => e.status === "ACTIVE") || u.enrollments[0] || null;
+      return {
+        id: u.id,
+        name: u.name,
+        email: u.email,
+        role: u.role,
+        grade: u.grade,
+        gradeLabel: u.grade != null ? gradeLabel(u.grade) : "—",
+        enrollmentStatus: primary?.status ?? null,
+        enrollmentId: primary?.id ?? null,
+      };
+    });
 
   const operatorName = session.user.name || "Jeremy Prosper";
 
@@ -140,7 +155,7 @@ export default async function AdminDashboard() {
       <section className="mt-10" id="students">
         <h2 className="text-lg font-semibold text-white">Students</h2>
         <p className="mt-1 mb-3 text-sm text-emerald-100/80">
-          Student accounts only (teachers are under Teachers). Search by name or email as you type.
+          Student accounts only (teachers are under Teachers). Search, then edit info or delete a student.
         </p>
         <AdminUsersTable users={studentRows} />
       </section>
