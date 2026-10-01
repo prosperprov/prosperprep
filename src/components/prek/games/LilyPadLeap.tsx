@@ -324,6 +324,9 @@ export function LilyPadLeap() {
             <span className="rounded-full bg-amber-100 px-3 py-1 shadow-sm ring-1 ring-amber-200">
               ⭐ {stars}
             </span>
+            <span className="rounded-full bg-white/90 px-3 py-1 shadow-sm ring-1 ring-emerald-100">
+              Streak {streak}
+            </span>
           </div>
           <button
             type="button"
