@@ -45,13 +45,14 @@ const ISLAND_BY_SUBJECT: Record<string, SubjectIslandStyle> = {
     badge: "bg-sky-100 text-sky-900",
     cta: "bg-sky-700 hover:bg-sky-800 text-white",
   },
+  // Light elevated mint/teal — never dark (must contrast on emerald-950 shell)
   "Life & Earth Science": {
     shortLabel: "Science",
     emoji: "🌍",
-    accent: "border-lime-300 bg-lime-50 hover:border-lime-400",
-    ring: "stroke-lime-600",
-    badge: "bg-lime-100 text-lime-950",
-    cta: "bg-lime-700 hover:bg-lime-800 text-white",
+    accent: "border-teal-300 bg-teal-50 hover:border-teal-400",
+    ring: "stroke-teal-600",
+    badge: "bg-teal-100 text-teal-950",
+    cta: "bg-teal-700 hover:bg-teal-800 text-white",
   },
   "World History": {
     shortLabel: "History",

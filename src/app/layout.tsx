@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.className} flex min-h-screen flex-col antialiased`}>
         <Providers>
           <Nav />
-          <main className="flex-1">{children}</main>
+          <main className="w-full min-w-0 max-w-full flex-1 overflow-x-clip">{children}</main>
           <Footer />
         </Providers>
       </body>

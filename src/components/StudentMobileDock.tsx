@@ -12,6 +12,7 @@ import { MESSAGE_PULSE_EVENT } from "@/components/messaging/liveConstants";
  * Always visible (no lg:/md: breakpoint hide) so Dashboard + Messages cannot
  * disappear due to Tailwind purge or wide phone desktop mode.
  * Sits above lesson content; globals.css pads main whenever the dock mounts.
+ * Explicitly full viewport width so it never leaves a white strip on mobile.
  */
 export function StudentMobileDock({
   dashboardHref,
@@ -64,11 +65,11 @@ export function StudentMobileDock({
       aria-label={audience === "staff" ? "Teacher quick navigation" : "Student quick navigation"}
       data-student-mobile-dock
       data-app-dock
-      className="fixed inset-x-0 bottom-0 z-[100] flex border-t border-emerald-900/10 bg-white px-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-8px_24px_rgba(2,44,34,0.22)]"
-      style={{ display: "flex" }}
+      className="fixed bottom-0 left-0 right-0 z-[100] flex w-full max-w-none border-t border-emerald-900/10 bg-white px-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-8px_24px_rgba(2,44,34,0.22)]"
+      style={{ display: "flex", width: "100%", left: 0, right: 0 }}
     >
-      <ul className="mx-auto flex max-w-md items-stretch justify-around gap-2">
-        <li className="flex-1">
+      <ul className="mx-auto flex w-full max-w-md items-stretch justify-around gap-2">
+        <li className="min-w-0 flex-1">
           <Link
             href={dashboardHref}
             className={`flex min-h-[48px] flex-col items-center justify-center gap-0.5 rounded-xl px-2 text-xs font-semibold ${
@@ -82,7 +83,7 @@ export function StudentMobileDock({
             {homeLabel}
           </Link>
         </li>
-        <li className="flex-1">
+        <li className="min-w-0 flex-1">
           <Link
             href={messagesHref}
             className={`relative flex min-h-[48px] flex-col items-center justify-center gap-0.5 rounded-xl px-2 text-xs font-semibold ${

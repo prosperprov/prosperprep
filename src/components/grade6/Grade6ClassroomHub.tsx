@@ -239,7 +239,7 @@ export function Grade6ClassroomHub({
         <p className="mt-1 text-sm text-emerald-100/80">
           Tap a subject to open lessons, video, practice, and quizzes.
         </p>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
           {courses.map((c) => (
             <SubjectIsland
               key={c.id}

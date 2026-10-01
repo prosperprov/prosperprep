@@ -7,10 +7,19 @@
   --foreground: #0f172a;
 }
 
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 /* Keep the fixed student dock from covering the last lesson controls.
@@ -28,11 +37,25 @@ body:has([data-app-dock]) main {
 
 /*
  * School dashboard (data-school-dash): elevate light cards on the dark green shell
- * so forms/grades stay readable without washing the brand background.
+ * so forms/grades/subject islands stay readable without washing the brand background.
  */
+[data-school-dash] {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 [data-school-dash] .school-dash-body .bg-white,
 [data-school-dash] .school-dash-body .bg-white\/70,
-[data-school-dash] .school-dash-body .bg-slate-50 {
+[data-school-dash] .school-dash-body .bg-slate-50,
+[data-school-dash] .school-dash-body .bg-emerald-50,
+[data-school-dash] .school-dash-body .bg-sky-50,
+[data-school-dash] .school-dash-body .bg-teal-50,
+[data-school-dash] .school-dash-body .bg-amber-50,
+[data-school-dash] .school-dash-body .bg-violet-50,
+[data-school-dash] .school-dash-body .bg-rose-50,
+[data-school-dash] .school-dash-body .bg-indigo-50,
+[data-school-dash] .school-dash-body .bg-lime-50 {
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
