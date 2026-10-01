@@ -56,7 +56,7 @@ export function AssignTeacherGrades({
   }
 
   if (teachers.length === 0) {
-    return <p className="text-sm text-emerald-100">No teacher accounts yet.</p>;
+    return <p className="text-sm text-white">No teacher accounts yet.</p>;
   }
 
   return (
@@ -74,11 +74,11 @@ export function AssignTeacherGrades({
       {message && (
         <p className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-900">{message}</p>
       )}
-      <p className="text-sm text-emerald-100">
+      <p className="text-sm text-white">
         A teacher can be assigned to more than one grade. Turn on every grade they teach, then save.
       </p>
       {filtered.length === 0 ? (
-        <p className="text-sm text-emerald-100">No teachers match “{query.trim()}”.</p>
+        <p className="text-sm text-white">No teachers match “{query.trim()}”.</p>
       ) : (
         <div className="space-y-6">
           {filtered.map((t) => (

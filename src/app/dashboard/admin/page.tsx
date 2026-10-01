@@ -195,11 +195,11 @@ export default async function AdminDashboard() {
             </thead>
             <tbody>
               {plans.map((p) => (
-                <tr key={p.id} className="border-t border-slate-100">
-                  <td className="px-4 py-2 font-medium">{p.name}</td>
-                  <td className="px-4 py-2">{p.gradeBand}</td>
-                  <td className="px-4 py-2">${(p.priceMonthly / 100).toFixed(0)}</td>
-                  <td className="px-4 py-2 font-mono text-xs">{p.stripePriceId || "—"}</td>
+                <tr key={p.id} className="border-t border-slate-100 text-slate-900">
+                  <td className="px-4 py-2 font-medium text-slate-900">{p.name}</td>
+                  <td className="px-4 py-2 text-slate-900">{p.gradeBand}</td>
+                  <td className="px-4 py-2 text-slate-900">${(p.priceMonthly / 100).toFixed(0)}</td>
+                  <td className="px-4 py-2 font-mono text-xs text-slate-800">{p.stripePriceId || "—"}</td>
                 </tr>
               ))}
             </tbody>

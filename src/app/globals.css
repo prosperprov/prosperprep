@@ -65,13 +65,23 @@ body:has([data-app-dock]) main {
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
-/* Tables always dark ink (even if a wrapper missed bg-white). */
-[data-school-dash] .school-dash-body table {
+/* Tables always dark ink (even if a wrapper missed bg-white).
+   Shell text-emerald-50 otherwise paints pale mint into white cells. */
+[data-school-dash] .school-dash-body table,
+[data-school-dash] .school-dash-body table tbody,
+[data-school-dash] .school-dash-body table tbody td,
+[data-school-dash] .school-dash-body table tbody th {
   color: #0f172a;
 }
 
-[data-school-dash] .school-dash-body thead {
+[data-school-dash] .school-dash-body thead,
+[data-school-dash] .school-dash-body thead th {
   color: #475569;
+}
+
+/* Light surfaces: nested muted utilities stay; bare text is dark. */
+[data-school-dash] .school-dash-body .bg-white :where(p, span, li, label, td, th, h1, h2, h3, h4):not([class*="text-"]) {
+  color: #0f172a;
 }
 
 [data-school-dash] .school-dash-body input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),

@@ -323,11 +323,11 @@ export function AdminUsersTable({ users }: { users: AdminUserRow[] }) {
               </tr>
             ) : (
               filtered.map((u) => (
-                <tr key={u.id} className="border-t border-slate-100">
-                  <td className="px-4 py-2 font-medium">{u.name}</td>
-                  <td className="px-4 py-2">{u.email}</td>
-                  <td className="px-4 py-2">{u.gradeLabel}</td>
-                  <td className="px-4 py-2">{u.enrollmentStatus || "—"}</td>
+                <tr key={u.id} className="border-t border-slate-100 text-slate-900">
+                  <td className="px-4 py-2 font-medium text-slate-900">{u.name}</td>
+                  <td className="px-4 py-2 text-slate-900">{u.email}</td>
+                  <td className="px-4 py-2 text-slate-900">{u.gradeLabel}</td>
+                  <td className="px-4 py-2 text-slate-900">{u.enrollmentStatus || "—"}</td>
                   <td className="px-4 py-2">
                     <div className="flex flex-wrap gap-1">
                       <button
