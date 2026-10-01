@@ -121,8 +121,7 @@ export default async function TeacherDashboard() {
         <section>
           <h2 className="text-lg font-semibold text-slate-900">Active Class Roster</h2>
           <p className="mt-1 text-sm text-slate-500">
-            Students with active enrollment in your assigned grades
-            {assignedGrades.length ? ` (${gradeSummary})` : ""}.
+            Active enrollments{assignedGrades.length ? ` · ${gradeSummary}` : ""}.
           </p>
           <ul className="mt-4 max-h-96 space-y-2 overflow-y-auto">
             {enrollments.map((e) => (
@@ -191,33 +190,23 @@ export default async function TeacherDashboard() {
 
       <section id="grades" className="mt-10">
         <h2 className="text-lg font-semibold text-slate-900">Student Grades</h2>
-        <p className="mt-1 text-sm text-slate-500">
-          Open a student course from the catalog after they submit lesson checks. Course averages use
-          lesson checks (40%) and section quizzes (60%); written work blends ~10% when graded.
-          Latest attempt counts. Catalog is limited to your assigned grades.
-        </p>
-      </section>
-
-      <section id="written" className="mt-10">
-        <h2 className="text-lg font-semibold text-slate-900">Written Work To Grade</h2>
-        <p className="mt-1 text-sm text-slate-500">
-          Essays, fix-and-justify, math reasoning, and science write-ups submitted by students in your
-          assigned grades. Saving a score creates a WRITTEN gradebook entry.
-        </p>
-        <GradeWrittenPanel
-          initial={writtenToGrade.map((w) => ({
-            id: w.id,
-            title: w.title,
-            prompt: w.prompt,
-            body: w.body,
-            maxScore: w.maxScore,
-            status: w.status,
-            submittedAt: w.submittedAt.toISOString(),
-            user: w.user,
-            course: w.course,
-            lesson: w.lesson,
-          }))}
-        />
+        <div id="written" className="mt-6">
+          <h3 className="text-base font-semibold text-slate-900">Written Work To Grade</h3>
+          <GradeWrittenPanel
+            initial={writtenToGrade.map((w) => ({
+              id: w.id,
+              title: w.title,
+              prompt: w.prompt,
+              body: w.body,
+              maxScore: w.maxScore,
+              status: w.status,
+              submittedAt: w.submittedAt.toISOString(),
+              user: w.user,
+              course: w.course,
+              lesson: w.lesson,
+            }))}
+          />
+        </div>
       </section>
 
     </DashboardShell>
