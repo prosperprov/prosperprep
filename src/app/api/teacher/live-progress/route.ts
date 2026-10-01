@@ -73,7 +73,21 @@ export async function GET() {
           completed: true,
           lesson: { course: { grade: { in: assignedGrades } } },
         },
-        select: { userId: true, lessonId: true },
+        select: {
+          userId: true,
+          lessonId: true,
+          completedAt: true,
+          lesson: {
+            select: {
+              id: true,
+              title: true,
+              order: true,
+              courseId: true,
+              sectionKey: true,
+            },
+          },
+        },
+        orderBy: { completedAt: "desc" },
       }),
       prisma.attempt.findMany({
         where: {
@@ -119,9 +133,12 @@ export async function GET() {
     ]);
 
   const progressByUser = new Map<string, Set<string>>();
+  const completionsByUser = new Map<string, typeof allProgress>();
   for (const row of allProgress) {
     if (!progressByUser.has(row.userId)) progressByUser.set(row.userId, new Set());
     progressByUser.get(row.userId)!.add(row.lessonId);
+    if (!completionsByUser.has(row.userId)) completionsByUser.set(row.userId, []);
+    completionsByUser.get(row.userId)!.push(row);
   }
 
   const attemptsByUser = new Map<string, typeof attemptRows>();
@@ -176,6 +193,17 @@ export async function GET() {
       };
     });
 
+    const recentCompletions = (completionsByUser.get(e.user.id) ?? [])
+      .filter((p) => p.lesson && !isRetiredSection(p.lesson.sectionKey))
+      .slice(0, 5)
+      .map((p) => ({
+        id: `${p.userId}:${p.lessonId}`,
+        title: p.lesson!.title,
+        order: p.lesson!.order,
+        completedAt: p.completedAt ? p.completedAt.toISOString() : null,
+        href: `/courses/${p.lesson!.courseId}/lessons/${p.lesson!.id}`,
+      }));
+
     return {
       id: e.user.id,
       name: e.user.name,
@@ -205,6 +233,7 @@ export async function GET() {
         };
       }),
       recentAttempts: recent,
+      recentCompletions,
       messageHref: `/dashboard/teacher/messages?compose=1&to=${encodeURIComponent(e.user.id)}`,
     };
   });
