@@ -3,9 +3,13 @@ import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { DashboardShell } from "@/components/DashboardShell";
 import { CreateSessionForm } from "@/components/CreateSessionForm";
-import { RescheduleSessionForm } from "@/components/RescheduleSessionForm";
+import {
+  TeacherLiveSessions,
+  type TeacherLiveSessionCard,
+} from "@/components/TeacherLiveSessions";
 import { gradeLabel } from "@/lib/grades";
 import { gradeSections } from "@/lib/groupByGrade";
+import { partitionLiveSessions } from "@/lib/liveSessionTime";
 import { brand } from "@/config/brand";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
 import { teacherDashNav } from "@/lib/dashboardNav";
@@ -55,9 +59,37 @@ export default async function TeacherDashboard() {
         : {}),
     },
     orderBy: { scheduledAt: "desc" },
-    take: 20,
+    take: 100,
     include: { course: { select: { title: true } } },
   });
+
+  const { upcoming: upcomingSessions, past: pastSessions } =
+    partitionLiveSessions(mySessions);
+
+  const studentsByGrade = new Map<number, string[]>();
+  for (const e of enrollments) {
+    const list = studentsByGrade.get(e.grade) ?? [];
+    list.push(e.user.name);
+    studentsByGrade.set(e.grade, list);
+  }
+
+  function toSessionCard(
+    s: (typeof mySessions)[number]
+  ): TeacherLiveSessionCard {
+    return {
+      id: s.id,
+      title: s.title,
+      description: s.description,
+      scheduledAt: s.scheduledAt.toISOString(),
+      durationMinutes: s.durationMinutes,
+      meetingUrl: s.meetingUrl,
+      grade: s.grade,
+      courseTitle: s.course?.title ?? null,
+      initialLocal: toDatetimeLocalValue(s.scheduledAt),
+      studentNames:
+        s.grade != null ? studentsByGrade.get(s.grade) ?? [] : [],
+    };
+  }
 
   const courses =
     assignedGrades.length === 0
@@ -112,13 +144,13 @@ export default async function TeacherDashboard() {
             planName: e.plan.name,
             grade: e.grade,
           }))}
-          liveCount={mySessions.length}
+          liveCount={upcomingSessions.length}
           writtenPending={writtenToGrade.length}
           grades={assignedGrades}
           liveByGrade={Object.fromEntries(
             assignedGrades.map((g) => [
               g,
-              mySessions.filter((s) => s.grade === g).length,
+              upcomingSessions.filter((s) => s.grade === g).length,
             ])
           )}
           writtenByGrade={Object.fromEntries(
@@ -179,72 +211,11 @@ export default async function TeacherDashboard() {
 
       <section className="mt-10 min-w-0 overflow-x-hidden">
         <h2 className="text-lg font-semibold text-white">Your Live Sessions</h2>
-        {assignedGrades.length === 0 ? (
-          <p className="mt-4 text-sm text-emerald-100/80">Schedule unlocks after grades are assigned.</p>
-        ) : mySessions.length === 0 ? (
-          <p className="mt-4 text-sm text-emerald-100/80">Schedule your first session above.</p>
-        ) : (
-          <div className="mt-4 space-y-6">
-            {gradeSections(
-              assignedGrades,
-              mySessions.filter((s) => s.grade != null),
-              (s) => s.grade
-            ).map((section) => (
-              <div key={section.grade} className="min-w-0">
-                <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-sm font-semibold text-emerald-50">{section.label}</h3>
-                  <span className="text-xs font-semibold uppercase tracking-wide text-emerald-200/75">
-                    {section.items.length} session{section.items.length === 1 ? "" : "s"}
-                  </span>
-                </div>
-                {section.items.length === 0 ? (
-                  <p className="text-sm text-emerald-100/75">
-                    No live sessions scheduled for {section.label}.
-                  </p>
-                ) : (
-                  <ul className="space-y-3">
-                    {section.items.map((s) => (
-                      <li
-                        key={s.id}
-                        className="flex min-w-0 flex-col gap-2 rounded-xl border border-slate-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between"
-                      >
-                        <div className="min-w-0">
-                          <p className="truncate font-medium text-slate-900">{s.title}</p>
-                          <p className="break-words text-sm text-slate-600">
-                            {s.scheduledAt.toLocaleString("en-US", {
-                              timeZone: "America/Chicago",
-                            })}{" "}
-                            CT
-                            {s.course ? ` · ${s.course.title}` : ""}
-                          </p>
-                          <p className="mt-1 break-words text-xs text-slate-500">
-                            {s.description}
-                          </p>
-                        </div>
-                        <div className="flex shrink-0 flex-col gap-2 sm:items-end">
-                          {s.meetingUrl && (
-                            <a
-                              href={s.meetingUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="rounded-lg bg-emerald-800 px-3 py-2 text-center text-sm font-medium text-white hover:bg-emerald-900"
-                            >
-                              Start / join room
-                            </a>
-                          )}
-                          <RescheduleSessionForm
-                            sessionId={s.id}
-                            initialLocal={toDatetimeLocalValue(s.scheduledAt)}
-                          />
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
+        <TeacherLiveSessions
+          assignedGrades={assignedGrades}
+          upcoming={upcomingSessions.map(toSessionCard)}
+          past={pastSessions.map(toSessionCard)}
+        />
       </section>
 
       <TeacherLiveProgress />
