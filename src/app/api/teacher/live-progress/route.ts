@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
 import { MAX_QUIZ_ATTEMPTS } from "@/lib/quizAttempts";
 import { isRetiredSection } from "@/lib/grade6Classroom";
+import { publishedCourseWhere } from "@/lib/courseVisibility";
 
 export const dynamic = "force-dynamic";
 
@@ -42,7 +43,7 @@ export async function GET() {
   });
 
   const courses = await prisma.course.findMany({
-    where: { grade: { in: assignedGrades } },
+    where: { grade: { in: assignedGrades }, ...publishedCourseWhere },
     orderBy: [{ grade: "asc" }, { order: "asc" }],
     select: {
       id: true,

@@ -7,6 +7,7 @@ import { MessagingInbox } from "@/components/messaging/InboxClient";
 import { loadDirectoryForUser, loadInboxForUser } from "@/lib/messageInbox";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
 import { brand } from "@/config/brand";
+import { publishedCourseWhere } from "@/lib/courseVisibility";
 import type { Role } from "@/types/school";
 
 export const dynamic = "force-dynamic";
@@ -31,7 +32,7 @@ export default async function TeacherMessagesPage() {
     assignedGrades.length === 0
       ? []
       : await prisma.course.findMany({
-          where: { grade: { in: assignedGrades } },
+          where: { grade: { in: assignedGrades }, ...publishedCourseWhere },
           orderBy: [{ grade: "asc" }, { order: "asc" }],
           select: { id: true, title: true, grade: true },
         });

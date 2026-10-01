@@ -16,6 +16,7 @@ import { teacherDashNav } from "@/lib/dashboardNav";
 import { GradeWrittenPanel } from "@/components/GradeWrittenPanel";
 import { Grade6TeacherGlance } from "@/components/grade6/Grade6TeacherGlance";
 import { TeacherLiveProgress } from "@/components/TeacherLiveProgress";
+import { publishedCourseWhere } from "@/lib/courseVisibility";
 
 export const dynamic = "force-dynamic";
 
@@ -95,7 +96,7 @@ export default async function TeacherDashboard() {
     assignedGrades.length === 0
       ? []
       : await prisma.course.findMany({
-          where: { grade: { in: assignedGrades } },
+          where: { grade: { in: assignedGrades }, ...publishedCourseWhere },
           orderBy: [{ grade: "asc" }, { order: "asc" }],
           select: { id: true, title: true, grade: true },
         });

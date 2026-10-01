@@ -4,6 +4,7 @@ import { brand } from "@/config/brand";
 import { CourseCatalog } from "@/components/CourseCatalog";
 import { getSession } from "@/lib/auth";
 import { catalogGradeFilter } from "@/lib/curriculumAccess";
+import { publishedCourseWhere } from "@/lib/courseVisibility";
 import Link from "next/link";
 
 export const metadata: Metadata = { title: "Course Catalog" };
@@ -20,10 +21,10 @@ export default async function CoursesPage() {
   const courses = await prisma.course.findMany({
     where:
       gradeFilter.mode === "all"
-        ? undefined
+        ? { ...publishedCourseWhere }
         : gradeFilter.mode === "none"
           ? { id: { in: [] } }
-          : { grade: { in: gradeFilter.grades } },
+          : { grade: { in: gradeFilter.grades }, ...publishedCourseWhere },
     orderBy: [{ grade: "asc" }, { order: "asc" }],
     include: { _count: { select: { lessons: true } } },
   });

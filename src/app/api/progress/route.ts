@@ -33,7 +33,7 @@ export async function POST(req: Request) {
   const { lessonId, completed } = parsed.data;
   const lesson = await prisma.lesson.findUnique({
     where: { id: lessonId },
-    include: { _count: { select: { questions: true } }, course: { select: { grade: true } } },
+    include: { _count: { select: { questions: true } }, course: { select: { grade: true, subject: true, published: true } } },
   });
   if (!lesson) {
     return NextResponse.json({ error: "Lesson not found" }, { status: 404 });
@@ -44,6 +44,8 @@ export async function POST(req: Request) {
       userId: session.user.id,
       role: session.user.role,
       courseGrade: lesson.course.grade,
+      courseSubject: lesson.course.subject,
+      coursePublished: lesson.course.published,
     });
     if (!access.ok) {
       return NextResponse.json({ error: access.reason }, { status: 403 });

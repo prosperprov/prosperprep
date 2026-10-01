@@ -56,10 +56,16 @@ export async function POST(req: Request) {
     const data = createSchema.parse(body);
     const course = await prisma.course.findUnique({
       where: { id: data.courseId },
-      select: { id: true, grade: true, title: true },
+      select: { id: true, grade: true, title: true, subject: true, published: true },
     });
     if (!course) {
       return NextResponse.json({ error: "Select a valid course." }, { status: 400 });
+    }
+    if (!course.published) {
+      return NextResponse.json(
+        { error: "That course is not offered for this grade." },
+        { status: 400 }
+      );
     }
     if (course.grade !== data.grade) {
       return NextResponse.json(

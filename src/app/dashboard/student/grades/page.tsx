@@ -6,6 +6,7 @@ import { DashboardShell } from "@/components/DashboardShell";
 import { studentDashNavCompact } from "@/lib/dashboardNav";
 import { courseAverage, letterGrade, LESSON_WEIGHT, SECTION_WEIGHT } from "@/lib/grading";
 import { brand } from "@/config/brand";
+import { publishedCourseWhere } from "@/lib/courseVisibility";
 
 export const dynamic = "force-dynamic";
 
@@ -46,7 +47,7 @@ export default async function StudentGradesPage({
   const courses =
     grade != null
       ? await prisma.course.findMany({
-          where: { grade },
+          where: { grade, ...publishedCourseWhere },
           orderBy: { order: "asc" },
         })
       : [];

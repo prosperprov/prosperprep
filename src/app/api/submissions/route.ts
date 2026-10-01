@@ -47,6 +47,8 @@ export async function POST(req: Request) {
     userId,
     role: session.user.role,
     courseGrade: course.grade,
+    courseSubject: course.subject,
+    coursePublished: course.published,
   });
   if (!access.ok) {
     return NextResponse.json({ error: access.reason }, { status: 403 });

@@ -938,6 +938,10 @@ export function bibleLessons(grade: number): LessonSeed[] {
 
 /** Specialty courses offered at a given grade */
 export function specialtySubjectsForGrade(grade: number): string[] {
+  // Prosper: Grade 10 = four cores only (no ACT/SAT/Athletic/Bible/Entrepreneurship).
+  if (grade === 10) {
+    return [];
+  }
   if (grade >= 9) {
     return [
       "ACT Prep",

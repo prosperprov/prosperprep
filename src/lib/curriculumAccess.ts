@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
+import { isCourseOfferedForGrade } from "@/lib/courseVisibility";
 
 export type AccessRole = string;
 
@@ -18,15 +19,29 @@ export async function getActiveEnrollment(userId: string) {
 /**
  * Hard lock: STUDENT with ACTIVE enrollment may only use courses for that exact grade.
  * TEACHER limited to assigned grades. ADMIN bypass.
+ * Grade 10 electives (unpublished / non-core) stay off student and teacher views.
  */
 export async function canAccessCourseContent(opts: {
   userId: string;
   role: AccessRole;
   courseGrade: number;
+  courseSubject?: string;
+  coursePublished?: boolean;
 }): Promise<{ ok: true; enrolledGrade: number | null } | { ok: false; reason: string }> {
   if (opts.role === "ADMIN") {
     return { ok: true, enrolledGrade: null };
   }
+
+  if (opts.coursePublished === false) {
+    return { ok: false, reason: "This course is not currently offered." };
+  }
+  if (
+    opts.courseSubject != null &&
+    !isCourseOfferedForGrade(opts.courseGrade, opts.courseSubject)
+  ) {
+    return { ok: false, reason: "This course is not offered for this grade." };
+  }
+
   if (opts.role === "TEACHER") {
     const grades = await getAssignedTeacherGrades(opts.userId, opts.role);
     if (!grades.includes(opts.courseGrade)) {

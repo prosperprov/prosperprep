@@ -58,7 +58,7 @@ export async function POST(req: Request) {
           title: true,
           order: true,
           courseId: true,
-          course: { select: { id: true, title: true, grade: true } },
+          course: { select: { id: true, title: true, grade: true, subject: true, published: true } },
         },
       });
       if (!lesson) {
@@ -68,6 +68,8 @@ export async function POST(req: Request) {
         userId: session.user.id,
         role,
         courseGrade: lesson.course.grade,
+        courseSubject: lesson.course.subject,
+        coursePublished: lesson.course.published,
       });
       if (!access.ok) {
         return NextResponse.json({ error: access.reason }, { status: 403 });

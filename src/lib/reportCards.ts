@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { courseAverage, letterGrade, monthBounds, periodLabel } from "@/lib/grading";
+import { publishedCourseWhere } from "@/lib/courseVisibility";
 
 export type ReportSummary = {
   periodLabel: string;
@@ -39,7 +40,7 @@ export async function getOrCreateReportCard(userId: string, when = new Date()) {
   const courses =
     grade != null
       ? await prisma.course.findMany({
-          where: { grade },
+          where: { grade, ...publishedCourseWhere },
           orderBy: { order: "asc" },
           include: { lessons: { select: { id: true } } },
         })

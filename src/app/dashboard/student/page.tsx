@@ -8,6 +8,7 @@ import { brand } from "@/config/brand";
 import { StudentNotifications } from "@/components/StudentNotifications";
 import { studentDashNav } from "@/lib/dashboardNav";
 import { isGrade6Classroom, isRetiredSection } from "@/lib/grade6Classroom";
+import { publishedCourseWhere } from "@/lib/courseVisibility";
 import { Grade6ClassroomHub } from "@/components/grade6/Grade6ClassroomHub";
 import { loadInboxForUser } from "@/lib/messageInbox";
 
@@ -56,7 +57,7 @@ async function loadStudentDashboardData(user: SessionUser) {
   const rawCourses =
     grade != null
       ? await prisma.course.findMany({
-          where: { grade },
+          where: { grade, ...publishedCourseWhere },
           orderBy: { order: "asc" },
           select: {
             id: true,
