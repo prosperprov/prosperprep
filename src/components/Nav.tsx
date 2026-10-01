@@ -47,7 +47,8 @@ export async function Nav() {
 
   const links = [
     { href: "/courses", label: "Courses" },
-    { href: "/pricing", label: "Pricing" },
+    // Teachers do not need tuition pricing while working the classroom.
+    ...(role !== "TEACHER" ? [{ href: "/pricing", label: "Pricing" }] : []),
     ...(dash ? [{ href: dash, label: "Dashboard" }] : []),
     ...(messagesHref ? [{ href: messagesHref, label: "Messages" }] : []),
   ];
