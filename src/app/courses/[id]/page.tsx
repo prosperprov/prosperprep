@@ -58,6 +58,8 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
       userId: session.user.id,
       role: session.user.role,
       courseGrade: course.grade,
+      courseSubject: course.subject,
+      coursePublished: course.published,
     });
     if (!access.ok) notFound();
   }

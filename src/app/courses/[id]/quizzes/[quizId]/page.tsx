@@ -37,6 +37,8 @@ export default async function SectionQuizPage({
     userId: session.user.id,
     role: session.user.role,
     courseGrade: quiz.course.grade,
+    courseSubject: quiz.course.subject,
+    coursePublished: quiz.course.published,
   });
   if (!access.ok) notFound();
 

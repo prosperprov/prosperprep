@@ -71,10 +71,12 @@ export default async function LessonPage({
   });
   if (!course) notFound();
   const access = await canAccessCourseContent({
-    userId: session.user.id,
-    role: session.user.role,
-    courseGrade: course.grade,
-  });
+      userId: session.user.id,
+      role: session.user.role,
+      courseGrade: course.grade,
+      courseSubject: course.subject,
+      coursePublished: course.published,
+    });
   if (!access.ok) notFound();
 
   const lesson = await prisma.lesson.findUnique({

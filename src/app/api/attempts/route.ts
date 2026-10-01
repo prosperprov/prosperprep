@@ -75,6 +75,8 @@ export async function POST(req: Request) {
         userId,
         role: session.user.role,
         courseGrade: lesson.course.grade,
+        courseSubject: lesson.course.subject,
+        coursePublished: lesson.course.published,
       });
       if (!access.ok) {
         return NextResponse.json({ error: access.reason }, { status: 403 });
@@ -237,6 +239,8 @@ export async function POST(req: Request) {
       userId,
       role: session.user.role,
       courseGrade: quiz.course.grade,
+      courseSubject: quiz.course.subject,
+      coursePublished: quiz.course.published,
     });
     if (!access.ok) {
       return NextResponse.json({ error: access.reason }, { status: 403 });

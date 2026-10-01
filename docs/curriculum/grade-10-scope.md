@@ -16,13 +16,17 @@ Each lesson: Teach → Independent practice (6 items) → Lesson Check (3 MC) �
 Sequential unit unlock enabled for Grade 10 (same rule as Grade 6).  
 Student-facing prose is Prosper Prep original (no external curriculum brand names).
 
-## Still stub / showcase (not expanded in this pass)
+## Electives hidden for Grade 10 (cores only)
 
-- ACT Prep · Grade 10 (9 lessons)
-- SAT Prep · Grade 10 (9 lessons)
-- College Athletic Pathway · Grade 10 (9 lessons) — coursework only; no athletic-scholarship marketing
-- Entrepreneurship & Financial Independence · Grade 10 (9 lessons)
-- Bible: Hallelujah Scriptures & Paleo-Hebrew Word Study · Grade 10 (24 showcase lessons — denser than other electives; not rebuilt to 80-lesson year path yet)
+Prosper: **CORE CLASSES ONLY** for Grade 10. These remain in D1 with `published = 0` (not deleted) so other grades keep ACT/SAT/Athletic/Bible; re-enable later by publishing + restoring `specialtySubjectsForGrade(10)`.
+
+- ACT Prep · Grade 10 — unpublished
+- SAT Prep · Grade 10 — unpublished
+- College Athletic Pathway · Grade 10 — unpublished (no athletic-scholarship marketing)
+- Entrepreneurship & Financial Independence · Grade 10 — unpublished
+- Bible Study · Grade 10 — unpublished
+
+Migration: `0034_grade10_cores_only.sql`. App filter: `src/lib/courseVisibility.ts`.
 
 ## Generators
 
@@ -36,7 +40,7 @@ node scripts/gen-grade10-history-year.mjs
 ## Verify on school.prosperprep.org
 
 1. Admin creates or selects a student with ACTIVE enrollment at **grade 10**.
-2. Sign in as that student → Course catalog shows G10 courses only.
+2. Sign in as that student → Course catalog / subject islands show the **four cores only** (no ACT/SAT/Athletic/Bible/Entrepreneurship).
 3. Open Algebra & Beyond / English Literature / Biology & Chemistry / U.S. & World History.
 4. Confirm Unit 1 open, later units locked until Unit 1 cleared (lessons complete or Unit Check ≥ 60%).
 5. Open a lesson: teach body, practice, lesson check, optional video when mapped.
