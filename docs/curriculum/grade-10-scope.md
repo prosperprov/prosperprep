@@ -46,3 +46,5 @@ node scripts/gen-grade10-history-year.mjs
 - Migration `0031_grade10_algebra_unit1_teach_rewrite.sql` — hand-authored Algebra Unit 1 Teach/Practice/Exit + skill-aligned lesson checks (fixes template-empty feel on Unit 1 Lesson 1).
 - Migration `0032_grade10_lesson_videos_expand.sql` — oEmbed-verified YouTube map for all 320 active G10 core lessons; clears broken IDs from `0030`.
 - Source JSON: `scripts/data/grade10-math-unit1-hand-teach.json`, `scripts/data/grade10-lesson-videos.json`, `content/grade10/`.
+
+- Hotfix `0033_grade10_lesson_videos_fix_junk.sql` — replace junk/non-official YouTube matches; Grade 10 lessons show video above teach body; `Referrer-Policy: strict-origin-when-cross-origin` for YouTube Error 153; repaired `prisma/grade10-math/year.ts` questions array that broke Workers Builds.
