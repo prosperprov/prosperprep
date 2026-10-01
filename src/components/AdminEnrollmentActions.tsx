@@ -65,7 +65,7 @@ export function AdminEnrollmentActions({
             onClick={() => run("activate_demo")}
             className="rounded-lg border border-slate-300 bg-white px-2 py-1 text-xs font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60"
           >
-            {busy === "activate_demo" ? "…" : "Activate demo"}
+            {busy === "activate_demo" ? "…" : "Activate complimentary"}
           </button>
         )}
         {isActive && (

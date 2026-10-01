@@ -183,7 +183,7 @@ export default function EnrollPage() {
               onClick={() => subscribe(true)}
               className="flex-1 rounded-xl border border-emerald-800 py-2.5 font-semibold text-emerald-900 hover:bg-emerald-50 disabled:opacity-60"
             >
-              Demo subscribe (no charge)
+              Subscribe without charge
             </button>}
           </div>
         </div>

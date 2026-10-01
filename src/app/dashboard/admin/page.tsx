@@ -4,7 +4,6 @@ import { prisma } from "@/lib/prisma";
 import { DashboardShell } from "@/components/DashboardShell";
 import { gradeLabel } from "@/lib/grades";
 import { brand } from "@/config/brand";
-import { stripeConfigured } from "@/lib/stripe";
 import { AssignTeacherGrades } from "@/components/AssignTeacherGrades";
 import { AdminCreateTeacher } from "@/components/AdminCreateTeacher";
 import { AdminCreateStudent } from "@/components/AdminCreateStudent";
@@ -16,7 +15,7 @@ export const dynamic = "force-dynamic";
 
 function enrollmentMode(e: { scholarship: boolean; demoMode: boolean }) {
   if (e.scholarship) return "scholarship";
-  if (e.demoMode) return "demo";
+  if (e.demoMode) return "comp";
   return "stripe";
 }
 
@@ -112,11 +111,6 @@ export default async function AdminDashboard() {
         ))}
       </div>
 
-      <p className="mt-4 text-sm text-emerald-100">
-        Stripe:{" "}
-        <strong>{stripeConfigured() ? "configured" : "not configured (demo enrollments OK)"}</strong>
-      </p>
-
       <section className="mt-10" id="create-accounts">
         <h2 className="text-lg font-semibold text-white">Create accounts</h2>
         <p className="mt-1 text-sm text-emerald-100">
@@ -163,7 +157,7 @@ export default async function AdminDashboard() {
       <section className="mt-10" id="enrollments">
         <h2 className="text-lg font-semibold text-white">Enrollments</h2>
         <p className="mt-1 mb-3 text-sm text-emerald-100">
-          Mode: scholarship (waived), demo (comp), or stripe. Grant scholarship or cancel from Actions.
+          Mode: scholarship, complimentary, or stripe. Grant scholarship or cancel from Actions.
           Search by student name or email as you type.
         </p>
         <AdminEnrollmentsTable

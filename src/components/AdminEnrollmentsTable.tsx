@@ -10,7 +10,7 @@ export type AdminEnrollmentRow = {
   planName: string;
   gradeLabel: string;
   status: string;
-  mode: "scholarship" | "demo" | "stripe";
+  mode: "scholarship" | "comp" | "stripe";
   scholarship: boolean;
   demoMode: boolean;
 };
