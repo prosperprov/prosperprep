@@ -11,9 +11,9 @@ export function isGrade6Classroom(grade?: number | null): boolean {
   return true;
 }
 
-/** Sequential year-path unit unlock remains Grade 6 only. */
+/** Sequential year-path unit unlock: Grade 6 and Grade 10 full-year cores. */
 export function usesSequentialUnitUnlock(grade: number | null | undefined): boolean {
-  return grade === GRADE_6;
+  return grade === GRADE_6 || grade === 10;
 }
 
 export type SubjectIslandStyle = {
@@ -102,8 +102,8 @@ export function subjectIslandStyle(subject: string): SubjectIslandStyle {
   if (lower.includes("english") || lower.includes("language") || lower.includes("ela")) {
     return ISLAND_BY_SUBJECT["English Language Arts"];
   }
-  if (lower.includes("math")) return ISLAND_BY_SUBJECT.Mathematics;
-  if (lower.includes("science")) return ISLAND_BY_SUBJECT["Life & Earth Science"];
+  if (lower.includes("math") || lower.includes("algebra")) return ISLAND_BY_SUBJECT.Mathematics;
+  if (lower.includes("science") || lower.includes("biology") || lower.includes("chemistry")) return ISLAND_BY_SUBJECT["Life & Earth Science"];
   if (lower.includes("history") || lower.includes("social")) {
     return ISLAND_BY_SUBJECT["World History"];
   }
@@ -193,9 +193,63 @@ const G6_HISTORY_UNITS: Record<string, string> = {
   "unit-9": "Global Connections Today",
 };
 
+
+const G10_MATH_UNITS: Record<string, string> = {
+  "unit-1": "Linear Functions & Systems",
+  "unit-2": "Quadratic Functions",
+  "unit-3": "Polynomials",
+  "unit-4": "Rational Expressions & Equations",
+  "unit-5": "Radicals & Rational Exponents",
+  "unit-6": "Exponential & Logarithmic Functions",
+  "unit-7": "Sequences & Series",
+  "unit-8": "Trigonometry Foundations",
+  "unit-9": "Probability & Statistics",
+  "unit-10": "Functions, Modeling & Capstone",
+};
+const G10_ELA_UNITS: Record<string, string> = {
+  "unit-1": "Close Reading & Annotation",
+  "unit-2": "Short Fiction Analysis",
+  "unit-3": "Poetry Craft",
+  "unit-4": "Drama & Performance Literacy",
+  "unit-5": "Argument & Rhetoric",
+  "unit-6": "Research & Information Literacy",
+  "unit-7": "Extended Literary Study",
+  "unit-8": "Grammar & Style for Writers",
+  "unit-9": "Media, Satire & Synthesis",
+  "unit-10": "Timed Writing & Portfolio Capstone",
+};
+const G10_SCIENCE_UNITS: Record<string, string> = {
+  "unit-1": "Scientific Inquiry & Biochemistry",
+  "unit-2": "Cells",
+  "unit-3": "Energy in Living Systems",
+  "unit-4": "Genetics & Heredity",
+  "unit-5": "Evolution & Diversity",
+  "unit-6": "Ecology & Human Impact",
+  "unit-7": "Chemistry Foundations",
+  "unit-8": "Chemical Reactions & Quantities",
+  "unit-9": "Human Body Systems & Homeostasis",
+  "unit-10": "Integrated Science Capstone",
+};
+const G10_HISTORY_UNITS: Record<string, string> = {
+  "unit-1": "Historical Thinking & Foundations",
+  "unit-2": "Revolutions & New Political Orders",
+  "unit-3": "Industrialization & Imperialism",
+  "unit-4": "World Wars & Global Upheaval",
+  "unit-5": "Cold War & Decolonization",
+  "unit-6": "U.S. Turning Points in a Global Age",
+  "unit-7": "Global Economy & Contemporary Issues",
+  "unit-8": "Civics, Law & Civic Reasoning",
+  "unit-9": "Texas & Regional Connections",
+  "unit-10": "Research Capstone & Historical Argument",
+};
+
 function unitTitleMapForSubject(subject?: string | null): Record<string, string> {
   if (!subject) return G6_MATH_UNITS;
   const s = subject.toLowerCase();
+  if (s.includes("algebra")) return G10_MATH_UNITS;
+  if (s.includes("english literature")) return G10_ELA_UNITS;
+  if (s.includes("biology") || s.includes("chemistry")) return G10_SCIENCE_UNITS;
+  if (s.includes("u.s.") && s.includes("history")) return G10_HISTORY_UNITS;
   if (s.includes("language") || s.includes("english") || s.includes("reading")) {
     return G6_ELA_UNITS;
   }

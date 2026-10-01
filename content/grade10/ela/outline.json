@@ -1,0 +1,68 @@
+{
+  "courseId": "cmuh9bxyp0875edanfk14k3jd",
+  "units": [
+    {
+      "n": 1,
+      "title": "Close Reading & Annotation",
+      "sectionKey": "unit-1",
+      "lessonCount": 8
+    },
+    {
+      "n": 2,
+      "title": "Short Fiction Analysis",
+      "sectionKey": "unit-2",
+      "lessonCount": 8
+    },
+    {
+      "n": 3,
+      "title": "Poetry Craft",
+      "sectionKey": "unit-3",
+      "lessonCount": 8
+    },
+    {
+      "n": 4,
+      "title": "Drama & Performance Literacy",
+      "sectionKey": "unit-4",
+      "lessonCount": 8
+    },
+    {
+      "n": 5,
+      "title": "Argument & Rhetoric",
+      "sectionKey": "unit-5",
+      "lessonCount": 8
+    },
+    {
+      "n": 6,
+      "title": "Research & Information Literacy",
+      "sectionKey": "unit-6",
+      "lessonCount": 8
+    },
+    {
+      "n": 7,
+      "title": "Extended Literary Study",
+      "sectionKey": "unit-7",
+      "lessonCount": 8
+    },
+    {
+      "n": 8,
+      "title": "Grammar & Style for Writers",
+      "sectionKey": "unit-8",
+      "lessonCount": 8
+    },
+    {
+      "n": 9,
+      "title": "Media, Satire & Synthesis",
+      "sectionKey": "unit-9",
+      "lessonCount": 8
+    },
+    {
+      "n": 10,
+      "title": "Timed Writing & Portfolio Capstone",
+      "sectionKey": "unit-10",
+      "lessonCount": 8
+    }
+  ],
+  "lessonCount": 80,
+  "quizCount": 10,
+  "generatedAt": "2026-10-01"
+}

@@ -1,0 +1,68 @@
+{
+  "courseId": "cmuh9by700950edanckmkcnvx",
+  "units": [
+    {
+      "n": 1,
+      "title": "Historical Thinking & Foundations",
+      "sectionKey": "unit-1",
+      "lessonCount": 8
+    },
+    {
+      "n": 2,
+      "title": "Revolutions & New Political Orders",
+      "sectionKey": "unit-2",
+      "lessonCount": 8
+    },
+    {
+      "n": 3,
+      "title": "Industrialization & Imperialism",
+      "sectionKey": "unit-3",
+      "lessonCount": 8
+    },
+    {
+      "n": 4,
+      "title": "World Wars & Global Upheaval",
+      "sectionKey": "unit-4",
+      "lessonCount": 8
+    },
+    {
+      "n": 5,
+      "title": "Cold War & Decolonization",
+      "sectionKey": "unit-5",
+      "lessonCount": 8
+    },
+    {
+      "n": 6,
+      "title": "U.S. Turning Points in a Global Age",
+      "sectionKey": "unit-6",
+      "lessonCount": 8
+    },
+    {
+      "n": 7,
+      "title": "Global Economy & Contemporary Issues",
+      "sectionKey": "unit-7",
+      "lessonCount": 8
+    },
+    {
+      "n": 8,
+      "title": "Civics, Law & Civic Reasoning",
+      "sectionKey": "unit-8",
+      "lessonCount": 8
+    },
+    {
+      "n": 9,
+      "title": "Texas & Regional Connections",
+      "sectionKey": "unit-9",
+      "lessonCount": 8
+    },
+    {
+      "n": 10,
+      "title": "Research Capstone & Historical Argument",
+      "sectionKey": "unit-10",
+      "lessonCount": 8
+    }
+  ],
+  "lessonCount": 80,
+  "quizCount": 10,
+  "generatedAt": "2026-10-01"
+}

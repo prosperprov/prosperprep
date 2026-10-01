@@ -1,0 +1,68 @@
+{
+  "courseId": "cmuh9by2508leedan8cb09q8z",
+  "units": [
+    {
+      "n": 1,
+      "title": "Linear Functions & Systems",
+      "sectionKey": "unit-1",
+      "lessonCount": 8
+    },
+    {
+      "n": 2,
+      "title": "Quadratic Functions",
+      "sectionKey": "unit-2",
+      "lessonCount": 8
+    },
+    {
+      "n": 3,
+      "title": "Polynomials",
+      "sectionKey": "unit-3",
+      "lessonCount": 8
+    },
+    {
+      "n": 4,
+      "title": "Rational Expressions & Equations",
+      "sectionKey": "unit-4",
+      "lessonCount": 8
+    },
+    {
+      "n": 5,
+      "title": "Radicals & Rational Exponents",
+      "sectionKey": "unit-5",
+      "lessonCount": 8
+    },
+    {
+      "n": 6,
+      "title": "Exponential & Logarithmic Functions",
+      "sectionKey": "unit-6",
+      "lessonCount": 8
+    },
+    {
+      "n": 7,
+      "title": "Sequences & Series",
+      "sectionKey": "unit-7",
+      "lessonCount": 8
+    },
+    {
+      "n": 8,
+      "title": "Trigonometry Foundations",
+      "sectionKey": "unit-8",
+      "lessonCount": 8
+    },
+    {
+      "n": 9,
+      "title": "Probability & Statistics",
+      "sectionKey": "unit-9",
+      "lessonCount": 8
+    },
+    {
+      "n": 10,
+      "title": "Functions, Modeling & Capstone",
+      "sectionKey": "unit-10",
+      "lessonCount": 8
+    }
+  ],
+  "lessonCount": 80,
+  "quizCount": 10,
+  "generatedAt": "2026-10-01"
+}
