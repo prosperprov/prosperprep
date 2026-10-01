@@ -12,7 +12,8 @@ export type PrekSkill =
   | "colors"
   | "shapes"
   | "puzzles"
-  | "memory";
+  | "memory"
+  | "patterns";
 
 export type PrekActivity = {
   slug: string;
@@ -83,12 +84,43 @@ export const prekActivities: PrekActivity[] = [
   {
     slug: "color-flood",
     title: "Color Flood Puzzle",
-    blurb: "Flood the board with one color before turns run out — a classroom-safe logic puzzle.",
+    blurb:
+      "Flood from the top-left corner by picking colors. Fill the whole board with one color before your turns run out.",
     skill: "puzzles",
     kind: "first-party",
     accent: "from-violet-400 to-purple-600",
     emoji: "🧩",
     minutes: 4,
+  },
+  {
+    slug: "pattern-train",
+    title: "Pattern Train",
+    blurb: "Look at the color pattern on the train, then tap what comes next — ABAB and ABC practice.",
+    skill: "patterns",
+    kind: "first-party",
+    accent: "from-cyan-400 to-teal-500",
+    emoji: "🚂",
+    minutes: 5,
+  },
+  {
+    slug: "missing-number",
+    title: "Missing Number",
+    blurb: "Count along the number line and tap the number that is missing — gentle 1–10 practice.",
+    skill: "numbers",
+    kind: "first-party",
+    accent: "from-blue-400 to-indigo-600",
+    emoji: "🔢",
+    minutes: 4,
+  },
+  {
+    slug: "letter-sound",
+    title: "Letter Sound",
+    blurb: "See a picture and word, then tap the letter it starts with — A for Apple and more.",
+    skill: "letters",
+    kind: "first-party",
+    accent: "from-orange-400 to-rose-500",
+    emoji: "🔤",
+    minutes: 5,
   },
 ];
 
@@ -103,4 +135,5 @@ export const skillLabels: Record<PrekSkill, string> = {
   shapes: "Shapes",
   puzzles: "Puzzles",
   memory: "Memory",
+  patterns: "Patterns",
 };
