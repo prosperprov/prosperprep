@@ -28,6 +28,7 @@ export async function GET() {
     return NextResponse.json({
       generatedAt: new Date().toISOString(),
       maxAttempts: MAX_QUIZ_ATTEMPTS,
+      assignedGrades: [],
       students: [],
     });
   }
@@ -60,6 +61,7 @@ export async function GET() {
     return NextResponse.json({
       generatedAt: new Date().toISOString(),
       maxAttempts: MAX_QUIZ_ATTEMPTS,
+      assignedGrades,
       students: [],
     });
   }
@@ -159,6 +161,7 @@ export async function GET() {
 
   const students = enrollments.map((e) => {
     const gradeCourses = courses.filter((c) => c.grade === e.grade);
+    const gradeCourseIds = new Set(gradeCourses.map((c) => c.id));
     const activeLessons = gradeCourses.flatMap((c) =>
       c.lessons
         .filter((l) => !isRetiredSection(l.sectionKey))
@@ -169,32 +172,43 @@ export async function GET() {
     const total = activeLessons.length;
     const nextLesson = activeLessons.find((l) => !doneSet.has(l.id)) ?? null;
 
-    const recent = (attemptsByUser.get(e.user.id) ?? []).slice(0, 5).map((a) => {
-      const countKey = a.lessonId
-        ? `${a.userId}:L:${a.lessonId}`
-        : `${a.userId}:Q:${a.quizId}`;
-      const count = attemptCounts.get(countKey) ?? 1;
-      return {
-        id: a.id,
-        percent: a.percent,
-        score: a.score,
-        maxScore: a.maxScore,
-        submittedAt: a.submittedAt.toISOString(),
-        attemptsUsed: count,
-        maxAttempts: MAX_QUIZ_ATTEMPTS,
-        locked: count >= MAX_QUIZ_ATTEMPTS,
-        kind: a.lessonId ? ("lesson" as const) : ("quiz" as const),
-        title: a.lesson?.title ?? a.quiz?.title ?? "Check",
-        href: a.lesson
-          ? `/courses/${a.lesson.courseId}/lessons/${a.lesson.id}`
-          : a.quiz
-            ? `/courses/${a.quiz.courseId}/quizzes/${a.quiz.id}`
-            : null,
-      };
-    });
+    const recent = (attemptsByUser.get(e.user.id) ?? [])
+      .filter((a) => {
+        const courseId = a.lesson?.courseId ?? a.quiz?.courseId;
+        return courseId != null && gradeCourseIds.has(courseId);
+      })
+      .slice(0, 5)
+      .map((a) => {
+        const countKey = a.lessonId
+          ? `${a.userId}:L:${a.lessonId}`
+          : `${a.userId}:Q:${a.quizId}`;
+        const count = attemptCounts.get(countKey) ?? 1;
+        return {
+          id: a.id,
+          percent: a.percent,
+          score: a.score,
+          maxScore: a.maxScore,
+          submittedAt: a.submittedAt.toISOString(),
+          attemptsUsed: count,
+          maxAttempts: MAX_QUIZ_ATTEMPTS,
+          locked: count >= MAX_QUIZ_ATTEMPTS,
+          kind: a.lessonId ? ("lesson" as const) : ("quiz" as const),
+          title: a.lesson?.title ?? a.quiz?.title ?? "Check",
+          href: a.lesson
+            ? `/courses/${a.lesson.courseId}/lessons/${a.lesson.id}`
+            : a.quiz
+              ? `/courses/${a.quiz.courseId}/quizzes/${a.quiz.id}`
+              : null,
+        };
+      });
 
     const recentCompletions = (completionsByUser.get(e.user.id) ?? [])
-      .filter((p) => p.lesson && !isRetiredSection(p.lesson.sectionKey))
+      .filter(
+        (p) =>
+          p.lesson &&
+          !isRetiredSection(p.lesson.sectionKey) &&
+          gradeCourseIds.has(p.lesson.courseId)
+      )
       .slice(0, 5)
       .map((p) => ({
         id: `${p.userId}:${p.lessonId}`,
@@ -241,6 +255,7 @@ export async function GET() {
   return NextResponse.json({
     generatedAt: new Date().toISOString(),
     maxAttempts: MAX_QUIZ_ATTEMPTS,
+    assignedGrades,
     students,
   });
 }
