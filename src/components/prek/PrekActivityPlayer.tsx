@@ -9,6 +9,9 @@ import { ColorMatch } from "./games/ColorMatch";
 import { ShapeSort } from "./games/ShapeSort";
 import { MemoryMatch } from "./games/MemoryMatch";
 import { ColorFlood } from "./games/ColorFlood";
+import { PatternTrain } from "./games/PatternTrain";
+import { MissingNumber } from "./games/MissingNumber";
+import { LetterSound } from "./games/LetterSound";
 
 export function PrekActivityPlayer({ activity }: { activity: PrekActivity }) {
   let body: React.ReactNode = null;
@@ -36,6 +39,15 @@ export function PrekActivityPlayer({ activity }: { activity: PrekActivity }) {
         break;
       case "color-flood":
         body = <ColorFlood />;
+        break;
+      case "pattern-train":
+        body = <PatternTrain />;
+        break;
+      case "missing-number":
+        body = <MissingNumber />;
+        break;
+      case "letter-sound":
+        body = <LetterSound />;
         break;
       default:
         body = <p className="p-6 text-center text-slate-600">Activity coming soon.</p>;

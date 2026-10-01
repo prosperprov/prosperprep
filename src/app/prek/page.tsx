@@ -6,7 +6,7 @@ import { prekActivities, skillLabels } from "@/lib/prekActivities";
 export const metadata: Metadata = {
   title: "Free Pre-K Learn Hub",
   description:
-    "Free Prosper Prep Pre-K activities — letters, numbers, colors, shapes, and memory. No login required.",
+    "Free Prosper Prep Pre-K activities — letters, numbers, colors, shapes, patterns, and memory. No login required.",
 };
 
 export default function PrekHubPage() {
@@ -29,7 +29,7 @@ export default function PrekHubPage() {
             Prosper Prep Pre-K Learn Hub
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-emerald-50">
-            Bright activities for letters, numbers, colors, shapes, and memory — built for little
+            Bright activities for letters, numbers, colors, shapes, patterns, and memory — built for little
             learners and families. Jump in and learn free, anytime.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -53,7 +53,7 @@ export default function PrekHubPage() {
         <div className="mx-auto grid max-w-6xl gap-4 px-4 py-8 sm:grid-cols-3">
           {[
             { title: "Tap & learn", body: "Big buttons, short rounds, and cheerful feedback for Pre-K attention spans." },
-            { title: "Skill mix", body: "Letters, numbers, colors, shapes, memory, and a logic puzzle — all in one hub." },
+            { title: "Skill mix", body: "Letters, numbers, colors, shapes, patterns, memory, and logic puzzles — all in one hub." },
             { title: "Family friendly", body: "Public and free. No account wall between your child and the next activity." },
           ].map((item) => (
             <div key={item.title} className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-amber-100">
