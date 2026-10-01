@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { brand, brandAssets } from "@/config/brand";
+import { getSession } from "@/lib/auth";
 
-export function Footer() {
+export async function Footer() {
+  const session = await getSession();
+  const hidePricing = session?.user?.role === "TEACHER";
+
   return (
     <footer className="mt-auto border-t border-slate-200 bg-slate-50">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 text-sm text-slate-600 md:flex-row md:justify-between">
@@ -38,9 +42,11 @@ export function Footer() {
           <Link href="/courses" className="hover:text-emerald-800">
             Courses
           </Link>
-          <Link href="/pricing" className="hover:text-emerald-800">
-            Pricing
-          </Link>
+          {!hidePricing && (
+            <Link href="/pricing" className="hover:text-emerald-800">
+              Pricing
+            </Link>
+          )}
           <Link href="/enroll" className="hover:text-emerald-800">
             Enroll
           </Link>
