@@ -5,6 +5,28 @@ import { prisma } from "@/lib/prisma";
 import { canAccessCourseContent } from "@/lib/curriculumAccess";
 import { MAX_QUIZ_ATTEMPTS, isAttemptLocked } from "@/lib/quizAttempts";
 
+
+/** Collapse rapid duplicate POSTs (double-click / edge retry) into one attempt. */
+async function findRecentDuplicate(args: {
+  userId: string;
+  lessonId?: string;
+  quizId?: string;
+  answersJson: string;
+}) {
+  const since = new Date(Date.now() - 15_000);
+  const recent = await prisma.attempt.findFirst({
+    where: {
+      userId: args.userId,
+      lessonId: args.lessonId ?? null,
+      quizId: args.quizId ?? null,
+      submittedAt: { gte: since },
+    },
+    orderBy: { submittedAt: "desc" },
+  });
+  if (recent && recent.answers === args.answersJson) return recent;
+  return null;
+}
+
 const bodySchema = z.object({
   lessonId: z.string().optional(),
   quizId: z.string().optional(),
@@ -76,6 +98,42 @@ export async function POST(req: Request) {
       );
     }
 
+    const answersJsonLesson = JSON.stringify(answers);
+    const dupLesson = await findRecentDuplicate({
+      userId,
+      lessonId,
+      answersJson: answersJsonLesson,
+    });
+    if (dupLesson) {
+      const results: Record<
+        string,
+        { selected: number; correct: number; isCorrect: boolean; explanation: string; points: number }
+      > = {};
+      for (const q of lesson.questions) {
+        const selected = answers[q.id];
+        const isCorrect = selected === q.correctIndex;
+        results[q.id] = {
+          selected: selected ?? -1,
+          correct: q.correctIndex,
+          isCorrect,
+          explanation: q.explanation,
+          points: q.points,
+        };
+      }
+      return NextResponse.json({
+        ok: true,
+        attemptId: dupLesson.id,
+        score: dupLesson.score,
+        maxScore: dupLesson.maxScore,
+        percent: dupLesson.percent,
+        results,
+        policy: "latest",
+        attemptsUsed: priorLessonAttempts,
+        maxAttempts: MAX_QUIZ_ATTEMPTS,
+        deduped: true,
+      });
+    }
+
     let score = 0;
     let maxScore = 0;
     const results: Record<
@@ -106,7 +164,7 @@ export async function POST(req: Request) {
         score,
         maxScore,
         percent,
-        answers: JSON.stringify(answers),
+        answers: answersJsonLesson,
       },
     });
 
@@ -199,6 +257,42 @@ export async function POST(req: Request) {
     );
   }
 
+  const answersJsonQuiz = JSON.stringify(answers);
+  const dupQuiz = await findRecentDuplicate({
+    userId,
+    quizId: quiz.id,
+    answersJson: answersJsonQuiz,
+  });
+  if (dupQuiz) {
+    const results: Record<
+      string,
+      { selected: number; correct: number; isCorrect: boolean; explanation: string; points: number }
+    > = {};
+    for (const q of quiz.questions) {
+      const selected = answers[q.id];
+      const isCorrect = selected === q.correctIndex;
+      results[q.id] = {
+        selected: selected ?? -1,
+        correct: q.correctIndex,
+        isCorrect,
+        explanation: q.explanation,
+        points: q.points,
+      };
+    }
+    return NextResponse.json({
+      ok: true,
+      attemptId: dupQuiz.id,
+      score: dupQuiz.score,
+      maxScore: dupQuiz.maxScore,
+      percent: dupQuiz.percent,
+      results,
+      policy: "latest",
+      attemptsUsed: priorQuizAttempts,
+      maxAttempts: MAX_QUIZ_ATTEMPTS,
+      deduped: true,
+    });
+  }
+
   if (quiz.sectionKey) {
     const sectionLessonIds = quiz.course.lessons
       .filter((l) => l.sectionKey === quiz.sectionKey)
@@ -254,7 +348,7 @@ export async function POST(req: Request) {
       score,
       maxScore,
       percent,
-      answers: JSON.stringify(answers),
+      answers: answersJsonQuiz,
     },
   });
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { MAX_QUIZ_ATTEMPTS, attemptsRemaining, isAttemptLocked } from "@/lib/quizAttempts";
 
 export type QuizQuestion = {
@@ -42,6 +42,8 @@ export function LessonQuiz({
   );
   const [results, setResults] = useState<ResultMap | null>(null);
   const [used, setUsed] = useState(attemptsUsed);
+  /** Sync lock so double-clicks / retries cannot fire parallel submits. */
+  const submitLock = useRef(false);
 
   const remaining = attemptsRemaining(used, maxAttempts);
   const locked = isAttemptLocked(used, maxAttempts);
@@ -56,6 +58,8 @@ export function LessonQuiz({
       setError(`Attempt limit reached (${maxAttempts}). Further tries are locked.`);
       return;
     }
+    if (submitLock.current || pending) return;
+    submitLock.current = true;
     setPending(true);
     setError(null);
     try {
@@ -73,6 +77,7 @@ export function LessonQuiz({
       router.refresh();
     } catch (e) {
       setError(e instanceof Error ? e.message : "Something went wrong");
+      submitLock.current = false;
     } finally {
       setPending(false);
     }
@@ -80,6 +85,7 @@ export function LessonQuiz({
 
   function retry() {
     if (isAttemptLocked(used, maxAttempts)) return;
+    submitLock.current = false;
     setScore(null);
     setResults(null);
     setAnswers({});
@@ -102,8 +108,7 @@ export function LessonQuiz({
             {quizId ? "Section Quiz" : "Lesson Check"}
           </h2>
           <p className="mt-1 text-sm text-slate-600">
-            Multiple choice · {questions.length} questions · latest attempt counts toward your course
-            grade · {used}/{maxAttempts} attempts used
+            Multiple choice · {questions.length} questions · latest score counts · {used} of {maxAttempts} attempts used
             {priorPercent != null ? ` · prior score ${priorPercent}%` : ""}
           </p>
         </div>
