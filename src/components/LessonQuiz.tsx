@@ -17,6 +17,11 @@ type ResultMap = Record<
   { selected: number; correct: number; isCorrect: boolean; explanation: string; points: number }
 >;
 
+function revealsAnswer(map: ResultMap | null): boolean {
+  if (!map) return false;
+  return Object.values(map).some((r) => typeof r.correct === "number");
+}
+
 export function LessonQuiz({
   lessonId,
   quizId,
@@ -24,6 +29,8 @@ export function LessonQuiz({
   priorPercent,
   attemptsUsed = 0,
   maxAttempts = MAX_QUIZ_ATTEMPTS,
+  initialResults = null,
+  initialScore = null,
 }: {
   lessonId?: string;
   quizId?: string;
@@ -32,15 +39,26 @@ export function LessonQuiz({
   /** Server-counted prior attempts for this lesson/quiz. */
   attemptsUsed?: number;
   maxAttempts?: number;
+  /** Present only after a submit already showed the correct choice. */
+  initialResults?: ResultMap | null;
+  initialScore?: { score: number; maxScore: number; percent: number } | null;
 }) {
   const router = useRouter();
-  const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [answers, setAnswers] = useState<Record<string, number>>(() => {
+    if (!initialResults) return {};
+    const seeded: Record<string, number> = {};
+    for (const [id, row] of Object.entries(initialResults)) {
+      if (row.selected >= 0) seeded[id] = row.selected;
+    }
+    return seeded;
+  });
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [score, setScore] = useState<{ score: number; maxScore: number; percent: number } | null>(
-    null
+    initialScore
   );
-  const [results, setResults] = useState<ResultMap | null>(null);
+  const [results, setResults] = useState<ResultMap | null>(initialResults);
+  const [closedByReveal, setClosedByReveal] = useState(revealsAnswer(initialResults));
   const [used, setUsed] = useState(attemptsUsed);
   /** Sync lock so double-clicks / retries cannot fire parallel submits. */
   const submitLock = useRef(false);
@@ -53,7 +71,10 @@ export function LessonQuiz({
     [answers, questions]
   );
 
+  const answerRevealed = closedByReveal || revealsAnswer(results);
+
   async function submit() {
+    if (answerRevealed) return;
     if (locked) {
       setError(`Attempt limit reached (${maxAttempts}). Further tries are locked.`);
       return;
@@ -69,13 +90,20 @@ export function LessonQuiz({
         body: JSON.stringify({ lessonId, quizId, answers }),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.error || "Submit failed");
+      if (!res.ok) {
+        const err = new Error(data.error || "Submit failed") as Error & { answerRevealed?: boolean };
+        err.answerRevealed = Boolean(data.answerRevealed);
+        throw err;
+      }
       setScore({ score: data.score, maxScore: data.maxScore, percent: data.percent });
       setResults(data.results);
+      if (data.answerRevealed || revealsAnswer(data.results)) setClosedByReveal(true);
       if (typeof data.attemptsUsed === "number") setUsed(data.attemptsUsed);
       else setUsed((u) => u + 1);
       router.refresh();
     } catch (e) {
+      const revealed = Boolean((e as { answerRevealed?: boolean }).answerRevealed);
+      if (revealed) setClosedByReveal(true);
       setError(e instanceof Error ? e.message : "Something went wrong");
       submitLock.current = false;
     } finally {
@@ -84,7 +112,7 @@ export function LessonQuiz({
   }
 
   function retry() {
-    if (isAttemptLocked(used, maxAttempts)) return;
+    if (answerRevealed || isAttemptLocked(used, maxAttempts)) return;
     submitLock.current = false;
     setScore(null);
     setResults(null);
@@ -108,7 +136,10 @@ export function LessonQuiz({
             {quizId ? "Section Quiz" : "Lesson Check"}
           </h2>
           <p className="mt-1 text-sm text-slate-600">
-            Multiple choice · {questions.length} questions · latest score counts · {used} of {maxAttempts} attempts used
+            Multiple choice · {questions.length} questions
+            {answerRevealed
+              ? ""
+              : ` · latest score counts · ${used} of ${maxAttempts} attempts used`}
             {priorPercent != null ? ` · prior score ${priorPercent}%` : ""}
           </p>
         </div>
@@ -195,7 +226,7 @@ export function LessonQuiz({
       )}
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
-        {!results && !locked ? (
+        {!results && !locked && !answerRevealed ? (
           <button
             type="button"
             disabled={!allAnswered || pending}
@@ -204,7 +235,7 @@ export function LessonQuiz({
           >
             {pending ? "Scoring…" : `Submit Answers (${remaining} left)`}
           </button>
-        ) : results && !isAttemptLocked(used, maxAttempts) ? (
+        ) : results && !answerRevealed && !isAttemptLocked(used, maxAttempts) ? (
           <button
             type="button"
             onClick={retry}
@@ -212,12 +243,12 @@ export function LessonQuiz({
           >
             Retry ({attemptsRemaining(used, maxAttempts)} left · latest score counts)
           </button>
-        ) : results && isAttemptLocked(used, maxAttempts) ? (
+        ) : results && !answerRevealed && isAttemptLocked(used, maxAttempts) ? (
           <p className="text-sm font-semibold text-amber-900">
             No retries left — score locked at {score?.percent ?? priorPercent ?? "—"}%
           </p>
         ) : null}
-        {!allAnswered && !results && !locked && (
+        {!allAnswered && !results && !locked && !answerRevealed && (
           <p className="text-sm text-slate-500">Answer every question to submit.</p>
         )}
         {error && <p className="text-sm text-red-700">{error}</p>}
