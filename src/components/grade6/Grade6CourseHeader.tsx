@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { subjectIslandStyle } from "@/lib/grade6Classroom";
 import { gradeLabel } from "@/lib/grades";
+import { publicCopy } from "@/lib/publicCopy";
 
 export function Grade6CourseHeader({
   subject,
@@ -48,9 +49,9 @@ export function Grade6CourseHeader({
             {style.shortLabel} · {gradeLabel(grade)}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            {title}
+            {publicCopy(title)}
           </h1>
-          <p className="mt-2 max-w-2xl text-base text-slate-700">{description}</p>
+          <p className="mt-2 max-w-2xl text-base text-slate-700">{publicCopy(description)}</p>
         </div>
       </div>
 

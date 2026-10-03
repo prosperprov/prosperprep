@@ -4,7 +4,6 @@ import { FormEvent, useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { brand } from "@/config/brand";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -35,10 +34,7 @@ export default function LoginPage() {
 
   return (
     <div className="mx-auto max-w-md px-4 py-12">
-      <h1 className="text-2xl font-bold text-slate-900">School login</h1>
-      <p className="mt-2 text-sm text-slate-600">
-        Sign in to {brand.name} — dashboards, courses, and live sessions.
-      </p>
+      <h1 className="text-2xl font-bold text-slate-900">Login</h1>
       <form
         method="post"
         autoComplete="on"

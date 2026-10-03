@@ -6,6 +6,7 @@ import {
   matchesStudentQuery,
 } from "@/components/GradeCollapsible";
 import { formatCtDateTime } from "@/lib/formatCt";
+import { publicCopy } from "@/lib/publicCopy";
 import { gradeLabel } from "@/lib/grades";
 import { gradeSections } from "@/lib/groupByGrade";
 
@@ -47,7 +48,7 @@ function WrittenCard({
         {row.user.name} · {row.title}
       </p>
       <p className="break-words text-xs text-slate-500">
-        {row.course.title} · {row.lesson?.title ?? "Course-level"} · submitted{" "}
+        {publicCopy(row.course.title)} · {row.lesson?.title ?? "Course-level"} · submitted{" "}
         {formatCtDateTime(row.submittedAt)}
       </p>
       <p className="mt-2 whitespace-pre-wrap break-words text-sm text-slate-600">
@@ -133,7 +134,7 @@ function WrittenGradeSection({
           r.user.name,
           r.user.email,
           r.title,
-          r.course.title,
+          publicCopy(r.course.title),
           r.lesson?.title
         )
       ),

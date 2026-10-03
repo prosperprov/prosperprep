@@ -22,6 +22,10 @@ import { resolveLessonTeacher } from "@/lib/resolveLessonTeacher";
 import { grade6UnitLabel, isRetiredSection } from "@/lib/grade6Classroom";
 import { unitLockMessage } from "@/lib/unitUnlock";
 import { resolveMaxUnlockedUnit, isUnitUnlocked } from "@/lib/resolveUnitUnlock";
+import { getSpanishLesson } from "@/lib/spanishUnit";
+import { isGrade6SpanishCourse, spanishSlugFromLessonId } from "@/lib/spanishCourse";
+import { SpanishLesson } from "@/components/spanish/SpanishLesson";
+import { publicCopy } from "@/lib/publicCopy";
 
 export const dynamic = "force-dynamic";
 
@@ -84,6 +88,13 @@ export default async function LessonPage({
     include: { questions: { orderBy: { order: "asc" } } },
   });
   if (!lesson || lesson.courseId !== course.id) notFound();
+
+  const spanishSlug = spanishSlugFromLessonId(lesson.id);
+  if (spanishSlug && isGrade6SpanishCourse(course)) {
+    const spanishLesson = getSpanishLesson(spanishSlug);
+    if (!spanishLesson) notFound();
+    return <SpanishLesson lesson={spanishLesson} />;
+  }
 
   const teacherResolution =
     session.user.role === "STUDENT"
@@ -238,7 +249,7 @@ export default async function LessonPage({
     return (
       <div className="mx-auto max-w-3xl px-4 py-12">
         <Link href={`/courses/${course.id}`} className="text-sm text-emerald-800 hover:underline">
-          ← Back to year path
+          ← Back to course
         </Link>
         <div className="mt-6 rounded-3xl border-2 border-slate-300 bg-slate-100 p-8 text-center">
           <p className="text-4xl" aria-hidden>
@@ -306,14 +317,14 @@ export default async function LessonPage({
             </Link>
             <span>/</span>
             <Link href={`/courses/${course.id}`} className="text-emerald-800 hover:underline">
-              {course.title}
+              {publicCopy(course.title)}
             </Link>
             <span>/</span>
             <span className="text-slate-500">Lesson {lesson.order}</span>
           </div>
 
           <p className="mt-4 text-sm font-medium text-emerald-800">
-            {course.subject} · {gradeLabel(course.grade)} · {formatLessonDurationLabel({ videoDurationSec: lesson.videoDurationSec, durationMin: lesson.durationMin }) ?? `${lesson.durationMin} min`} ·{" "}
+            {publicCopy(course.subject)} · {gradeLabel(course.grade)} · {formatLessonDurationLabel({ videoDurationSec: lesson.videoDurationSec, durationMin: lesson.durationMin }) ?? `${lesson.durationMin} min`} ·{" "}
             {grade6UnitLabel(lesson.sectionKey, g6UnitTotal, course.subject)}
           </p>
           <h1 className="mt-1 text-3xl font-bold text-slate-900">{lesson.title}</h1>

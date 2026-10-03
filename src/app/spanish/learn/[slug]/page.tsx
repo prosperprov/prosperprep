@@ -1,25 +1,14 @@
-import { notFound } from "next/navigation";
-import type { Metadata } from "next";
-import { getSpanishLesson, spanishLessons } from "@/lib/spanishUnit";
-import { SpanishLesson } from "@/components/spanish/SpanishLesson";
+import { notFound, redirect } from "next/navigation";
+import { getSession } from "@/lib/auth";
+import { getSpanishLesson } from "@/lib/spanishUnit";
+import { G6_SPANISH_COURSE_ID, spanishLessonId } from "@/lib/spanishCourse";
 
-type Props = { params: { slug: string } };
-
-export function generateStaticParams() {
-  return spanishLessons.map((lesson) => ({ slug: lesson.slug }));
-}
-
-export function generateMetadata({ params }: Props): Metadata {
-  const lesson = getSpanishLesson(params.slug);
-  if (!lesson) return { title: "Spanish" };
-  return {
-    title: `${lesson.title} · Spanish Unit 1`,
-    description: lesson.blurb,
-  };
-}
-
-export default function SpanishLearnPage({ params }: Props) {
-  const lesson = getSpanishLesson(params.slug);
-  if (!lesson) notFound();
-  return <SpanishLesson lesson={lesson} />;
+export default async function SpanishLessonRedirectPage({ params }: { params: { slug: string } }) {
+  if (!getSpanishLesson(params.slug)) notFound();
+  const session = await getSession();
+  const dest = `/courses/${G6_SPANISH_COURSE_ID}/lessons/${spanishLessonId(params.slug)}`;
+  if (!session?.user) {
+    redirect(`/login?callbackUrl=${encodeURIComponent(dest)}`);
+  }
+  redirect(dest);
 }

@@ -117,6 +117,16 @@ export function subjectIslandStyle(subject: string): SubjectIslandStyle {
   if (lower.includes("bible") || lower.includes("scripture")) {
     return ISLAND_BY_SUBJECT["Bible Study: Hallelujah Scriptures & Paleo-Hebrew"];
   }
+  if (lower.includes("spanish")) {
+    return {
+      shortLabel: "Spanish",
+      emoji: "💬",
+      accent: "border-orange-300 bg-orange-50 hover:border-orange-400",
+      ring: "stroke-orange-500",
+      badge: "bg-orange-100 text-orange-950",
+      cta: "bg-orange-700 hover:bg-orange-800 text-white",
+    };
+  }
   return FALLBACK;
 }
 

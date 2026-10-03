@@ -1,10 +1,14 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
 import { gradeLabel } from "@/lib/grades";
 import { LESSON_WEIGHT, SECTION_WEIGHT, courseAverage, letterGrade } from "@/lib/grading";
 import { canAccessCourseContent } from "@/lib/curriculumAccess";
+import { isCourseOfferedForGrade } from "@/lib/courseVisibility";
+import { isGrade6SpanishCourse } from "@/lib/spanishCourse";
+import { SpanishPath } from "@/components/spanish/SpanishPath";
+import { publicCopy } from "@/lib/publicCopy";
 import { isGrade6Classroom } from "@/lib/grade6Classroom";
 import { Grade6CourseHeader } from "@/components/grade6/Grade6CourseHeader";
 import { Grade6UnitAccordion } from "@/components/grade6/Grade6UnitAccordion";
@@ -53,6 +57,26 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
   if (!course) notFound();
 
   const session = await getSession();
+  if (isGrade6SpanishCourse(course)) {
+    if (!session?.user?.id) {
+      redirect(`/login?callbackUrl=${encodeURIComponent(`/courses/${course.id}`)}`);
+    }
+    const spanishAccess = await canAccessCourseContent({
+      userId: session.user.id,
+      role: session.user.role,
+      courseGrade: course.grade,
+      courseSubject: course.subject,
+      coursePublished: course.published,
+    });
+    if (!spanishAccess.ok) notFound();
+    return <SpanishPath />;
+  }
+  if (
+    (!course.published || !isCourseOfferedForGrade(course.grade, course.subject)) &&
+    session?.user?.role !== "ADMIN"
+  ) {
+    notFound();
+  }
   if (session?.user?.id && (session.user.role === "STUDENT" || session.user.role === "TEACHER")) {
     const access = await canAccessCourseContent({
       userId: session.user.id,
@@ -145,8 +169,8 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
       {g6 ? (
         <Grade6CourseHeader
           subject={course.subject}
-          title={course.title}
-          description={course.description}
+          title={publicCopy(course.title)}
+          description={publicCopy(course.description)}
           grade={course.grade}
           done={activeLessons.filter((l) => completedIds.has(l.id)).length}
           total={activeLessons.length}
@@ -160,9 +184,9 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
             ← Course Catalog
           </Link>
           <p className="mt-4 text-sm font-medium text-emerald-800">
-            {course.subject} · {gradeLabel(course.grade)}
+            {publicCopy(course.subject)} · {gradeLabel(course.grade)}
           </p>
-          <h1 className="mt-1 text-3xl font-bold text-slate-900">{course.title}</h1>
+          <h1 className="mt-1 text-3xl font-bold text-slate-900">{publicCopy(course.title)}</h1>
           <p className="mt-3 text-slate-600">{course.description}</p>
 
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -223,7 +247,7 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
       )}
 
       <h2 className={`font-semibold text-slate-900 ${g6 ? "text-xl" : "text-lg"}`}>
-        {g6 ? "Year Path · Units" : "Lesson Plan"}
+        {g6 ? "Units" : "Lesson Plan"}
       </h2>
       {g6 ? (
         <>

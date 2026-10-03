@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 type NavLink = { href: string; label: string };
@@ -14,6 +15,11 @@ export function MobileNav({
   authSlot: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <div className="md:hidden">
@@ -44,7 +50,12 @@ export function MobileNav({
               </Link>
             ))}
           </nav>
-          <div className="mt-3 flex flex-col gap-2 border-t border-slate-100 pt-3">{authSlot}</div>
+          <div
+            className="mt-3 flex flex-col gap-2 border-t border-slate-100 pt-3"
+            onClick={() => setOpen(false)}
+          >
+            {authSlot}
+          </div>
         </div>
       )}
     </div>

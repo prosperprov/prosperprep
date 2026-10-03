@@ -2,6 +2,7 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import { publicCopy } from "@/lib/publicCopy";
 
 export function CreateSessionForm({
   courses,
@@ -157,7 +158,7 @@ export function CreateSessionForm({
             </option>
             {coursesForGrade.map((c) => (
               <option key={c.id} value={c.id}>
-                {c.title}
+                {publicCopy(c.title)}
               </option>
             ))}
           </select>

@@ -5,6 +5,11 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { SPANISH_UNIT, spanishLessons } from "@/lib/spanishUnit";
 import { loadCompletedLessons } from "@/lib/spanishProgress";
+import { G6_SPANISH_COURSE_ID, spanishLessonId } from "@/lib/spanishCourse";
+
+function lessonHref(slug: string) {
+  return `/courses/${G6_SPANISH_COURSE_ID}/lessons/${spanishLessonId(slug)}`;
+}
 
 export function SpanishPath() {
   const [completed, setCompleted] = useState<string[]>([]);
@@ -64,7 +69,7 @@ export function SpanishPath() {
         </div>
 
         <Link
-          href={`/spanish/learn/${current.slug}`}
+          href={lessonHref(current.slug)}
           className="mx-auto mt-6 flex min-h-[56px] max-w-sm items-center justify-center rounded-2xl bg-amber-300 px-5 text-lg font-extrabold text-emerald-950 shadow-lg hover:bg-amber-200"
         >
           {allDone ? "Practice again" : doneCount === 0 ? "Start lesson 1" : "Continue"}
@@ -78,7 +83,7 @@ export function SpanishPath() {
             return (
               <li key={lesson.slug} className="relative">
                 <Link
-                  href={`/spanish/learn/${lesson.slug}`}
+                  href={lessonHref(lesson.slug)}
                   className={`flex min-h-[76px] items-center gap-4 rounded-2xl px-3 py-3 ring-1 transition ${
                     isCurrent
                       ? "bg-white text-emerald-950 shadow-lg ring-amber-300"

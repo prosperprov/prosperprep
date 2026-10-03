@@ -959,6 +959,8 @@ export function specialtySubjectsForGrade(grade: number): string[] {
       "Bible Study: Hallelujah Scriptures & Paleo-Hebrew",
     ];
   }
+  // Grade 6 is cores only (Math, ELA, Science, History) plus Spanish, added separately.
+  if (grade === 6) return [];
   if (grade >= 6) {
     return [
       "Entrepreneurship & Financial Independence",

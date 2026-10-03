@@ -6,6 +6,7 @@ import { LessonQuiz } from "@/components/LessonQuiz";
 import { SECTION_WEIGHT } from "@/lib/grading";
 import { canAccessCourseContent } from "@/lib/curriculumAccess";
 import { isRetiredSection } from "@/lib/grade6Classroom";
+import { publicCopy } from "@/lib/publicCopy";
 
 export const dynamic = "force-dynamic";
 
@@ -83,7 +84,7 @@ export default async function SectionQuizPage({
     <div className="mx-auto max-w-3xl px-4 py-10">
       <div className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
         <Link href={`/courses/${quiz.courseId}`} className="text-emerald-800 hover:underline">
-          {quiz.course.title}
+          {publicCopy(quiz.course.title)}
         </Link>
         <span>/</span>
         <span>{quiz.title}</span>

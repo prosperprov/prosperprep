@@ -21,21 +21,21 @@ export const brand = {
 
 export const pricingCopy = {
   elementary: {
-    name: "Elementary Path",
+    name: "Elementary Plan",
     grades: "Grades K–5",
     price: 99,
     blurb:
       "Foundational literacy, math, science, and social studies — with parent-friendly progress views and optional live check-ins that fit family schedules.",
   },
   middle: {
-    name: "Middle School Path",
+    name: "Middle School Plan",
     grades: "Grades 6–8",
     price: 129,
     blurb:
       "Core academics plus early entrepreneurship, athlete-scholar habits, and Bible study — building independence for high school and beyond.",
   },
   high: {
-    name: "High School Path",
+    name: "High School Plan",
     grades: "Grades 9–12",
     price: 159,
     blurb:

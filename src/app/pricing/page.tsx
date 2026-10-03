@@ -9,7 +9,7 @@ export default function PricingPage() {
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="text-3xl font-bold text-slate-900">Monthly online school pricing</h1>
       <p className="mt-2 max-w-2xl text-slate-600">
-        {brand.name} is a nonprofit program in {brand.location}. These monthly paths fund online
+        {brand.name} is a nonprofit program in {brand.location}. These monthly plans fund online
         K–12 instruction, live teacher sessions, and student support — aligned with our mission of
         serious academics, athletics, and entrepreneurship for financial
         independence.
