@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import { SpanishPath } from "@/components/spanish/SpanishPath";
+import { redirect } from "next/navigation";
+import { getSession } from "@/lib/auth";
+import { G6_SPANISH_COURSE_ID } from "@/lib/spanishCourse";
 
-export const metadata: Metadata = {
-  title: "Spanish · Unit 1 Greetings",
-  description:
-    "Prosper Prep Spanish, Unit 1 (Greetings). Short lessons for hello, please and thank you, yes and no, numbers, colors, and names.",
-};
-
-export default function SpanishHubPage() {
-  return <SpanishPath />;
+export default async function SpanishRedirectPage() {
+  const session = await getSession();
+  const dest = `/courses/${G6_SPANISH_COURSE_ID}`;
+  if (!session?.user) {
+    redirect(`/login?callbackUrl=${encodeURIComponent(dest)}`);
+  }
+  redirect(dest);
 }

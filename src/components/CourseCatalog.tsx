@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { bandLabel, gradeLabel } from "@/lib/grades";
+import { publicCopy } from "@/lib/publicCopy";
 
 export type CatalogCourse = {
   id: string;
@@ -17,7 +18,7 @@ const FILTERS = [
   { id: "all", label: "All" },
   { id: "core", label: "Core" },
   { id: "test", label: "Test Prep" },
-  { id: "athletic", label: "Athletic Pathway" },
+  { id: "athletic", label: "Athletics" },
   { id: "entrepreneur", label: "Entrepreneurship" },
   { id: "bible", label: "Bible" },
 ] as const;
@@ -116,8 +117,8 @@ export function CourseCatalog({ courses }: { courses: CatalogCourse[] }) {
                         href={`/courses/${course.id}`}
                         className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-emerald-300 hover:shadow"
                       >
-                        <p className="text-xs text-emerald-800">{course.subject}</p>
-                        <p className="mt-1 font-semibold text-slate-900">{course.title}</p>
+                        <p className="text-xs text-emerald-800">{publicCopy(course.subject)}</p>
+                        <p className="mt-1 font-semibold text-slate-900">{publicCopy(course.title)}</p>
                         <p className="mt-2 text-xs text-slate-500">
                           {course.lessonCount} lessons · {bandLabel(course.gradeBand)}
                         </p>

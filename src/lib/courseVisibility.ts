@@ -1,6 +1,6 @@
 /**
- * Grade 10 is cores-only until Prosper re-enables electives.
- * Do not delete ACT/SAT/Athletic/Bible globally — other grades still offer them.
+ * Some grades show cores only. Rows stay in the database (published = 0).
+ * Do not delete electives — other grades may still offer them.
  */
 
 export const GRADE_10_CORE_SUBJECTS = [
@@ -10,7 +10,16 @@ export const GRADE_10_CORE_SUBJECTS = [
   "U.S. & World History",
 ] as const;
 
+export const GRADE_6_CORE_SUBJECTS = [
+  "English Language Arts",
+  "Mathematics",
+  "Life & Earth Science",
+  "World History",
+  "Spanish",
+] as const;
+
 const GRADE_10_CORE_SET = new Set<string>(GRADE_10_CORE_SUBJECTS);
+const GRADE_6_CORE_SET = new Set<string>(GRADE_6_CORE_SUBJECTS);
 
 /** True when subject must stay off Grade 10 dashboards / catalog. */
 export function isGrade10HiddenElective(subject: string): boolean {
@@ -19,8 +28,9 @@ export function isGrade10HiddenElective(subject: string): boolean {
 
 /** Whether a catalog course should appear for its grade. */
 export function isCourseOfferedForGrade(grade: number, subject: string): boolean {
-  if (grade !== 10) return true;
-  return GRADE_10_CORE_SET.has(subject);
+  if (grade === 10) return GRADE_10_CORE_SET.has(subject);
+  if (grade === 6) return GRADE_6_CORE_SET.has(subject);
+  return true;
 }
 
 /** Prisma where fragment: only published courses. */

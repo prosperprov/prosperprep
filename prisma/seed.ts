@@ -3,6 +3,8 @@ import type { GradeBand } from "../src/types/school";
 import bcrypt from "bcryptjs";
 import { jitsiRoomUrl, makeSessionSlug } from "../src/lib/jitsi";
 import { lessonsForCourse, subjectsForGrade } from "./curriculum";
+import { isCourseOfferedForGrade } from "../src/lib/courseVisibility";
+import { G6_SPANISH_COURSE_ID, grade6SpanishLessonSeeds } from "../src/lib/spanishCourse";
 import { sectionQuestionsFromTopics, type TopicLike } from "./assessments";
 import { getShowcaseSectionQuiz } from "./showcase-grade10-quizzes";
 import { actFormAQuizzes } from "./act-elite-g12";
@@ -182,6 +184,7 @@ async function main() {
           grade,
           gradeBand: band,
           order: i + 1,
+          published: isCourseOfferedForGrade(grade, subject),
         },
       });
       courseCount += 1;
@@ -435,6 +438,34 @@ async function main() {
     },
     include: { course: { select: { id: true, title: true } }, questions: true },
   });
+
+  const spanishCourse = await prisma.course.create({
+    data: {
+      id: G6_SPANISH_COURSE_ID,
+      title: "Spanish · Grade 6",
+      description: "Grade 6 Spanish, Unit 1 (Greetings). Hear each new word, then practice it.",
+      subject: "Spanish",
+      grade: 6,
+      gradeBand: "MIDDLE",
+      order: 5,
+      published: true,
+      lessons: {
+        create: grade6SpanishLessonSeeds().map((lesson) => ({
+          id: lesson.id,
+          title: lesson.title,
+          description: lesson.description,
+          content: "",
+          objectives: "",
+          order: lesson.order,
+          durationMin: 12,
+          sectionKey: "spanish-unit-1",
+        })),
+      },
+    },
+  });
+  courseCount += 1;
+  lessonCount += grade6SpanishLessonSeeds().length;
+  void spanishCourse;
 
   console.log("Seed complete");
   console.log(

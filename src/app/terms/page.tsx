@@ -42,7 +42,7 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-slate-900">Tuition</h2>
           <p className="mt-2">
-            Published monthly paths: Elementary ${pricingCopy.elementary.price}, Middle $
+            Published monthly plans: Elementary ${pricingCopy.elementary.price}, Middle $
             {pricingCopy.middle.price}, High ${pricingCopy.high.price}. Tuition is billed through
             secure checkout. Refunds and cancellations follow the processor and school policies
             communicated at purchase.
@@ -52,8 +52,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-slate-900">Acceptable use</h2>
           <p className="mt-2">
             Use the portal for legitimate schoolwork. Do not cheat on assessments, harass others,
-            disrupt live sessions, or attempt unauthorized access. Specialty tracks (athletic
-            pathway, entrepreneurship, Bible study) are educational only — not legal,
+            disrupt live sessions, or attempt unauthorized access. Specialty courses (athletics, entrepreneurship, Bible study) are educational only — not legal,
             recruiting, investment, or pastoral counseling advice.
           </p>
         </section>

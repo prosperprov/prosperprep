@@ -9,6 +9,7 @@ import {
 import { gradeLabel } from "@/lib/grades";
 import { formatCtDateTime, formatCtTime } from "@/lib/formatCt";
 import { gradeSections } from "@/lib/groupByGrade";
+import { publicCopy } from "@/lib/publicCopy";
 
 type RecentAttempt = {
   id: string;
@@ -142,7 +143,7 @@ function StudentCard({
                   href={c.href}
                   className="block min-w-0 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm hover:border-emerald-300"
                 >
-                  <p className="truncate font-semibold text-slate-900">{c.title}</p>
+                  <p className="truncate font-semibold text-slate-900">{publicCopy(c.title)}</p>
                   <p className="truncate text-slate-500">
                     {c.subject} · {c.done}/{c.total} done
                   </p>

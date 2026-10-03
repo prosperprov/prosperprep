@@ -123,7 +123,7 @@ export function Grade6UnitAccordion({
                       : "text-xs font-bold uppercase tracking-wide text-sky-800"
                   }
                 >
-                  Year path · {idx + 1}/{units.length}
+                  Unit {idx + 1}/{units.length}
                   {locked ? " · Locked" : ""}
                 </p>
                 <h3

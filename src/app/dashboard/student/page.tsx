@@ -8,7 +8,8 @@ import { brand } from "@/config/brand";
 import { StudentNotifications } from "@/components/StudentNotifications";
 import { studentDashNav } from "@/lib/dashboardNav";
 import { isGrade6Classroom, isRetiredSection } from "@/lib/grade6Classroom";
-import { publishedCourseWhere } from "@/lib/courseVisibility";
+import { isCourseOfferedForGrade, publishedCourseWhere } from "@/lib/courseVisibility";
+import { publicCopy } from "@/lib/publicCopy";
 import { Grade6ClassroomHub } from "@/components/grade6/Grade6ClassroomHub";
 import { loadInboxForUser } from "@/lib/messageInbox";
 
@@ -88,11 +89,13 @@ async function loadStudentDashboardData(user: SessionUser) {
         })
       : [];
 
-  const courses = rawCourses.map((c) => ({
-    ...c,
-    lessons: c.lessons.filter((l) => !isRetiredSection(l.sectionKey)),
-    quizzes: c.quizzes.filter((q) => !isRetiredSection(q.sectionKey)),
-  }));
+  const courses = rawCourses
+    .filter((c) => grade != null && isCourseOfferedForGrade(grade, c.subject))
+    .map((c) => ({
+      ...c,
+      lessons: c.lessons.filter((l) => !isRetiredSection(l.sectionKey)),
+      quizzes: c.quizzes.filter((q) => !isRetiredSection(q.sectionKey)),
+    }));
 
   // Relation filter — avoids D1 100-bound-param limit on large `in:` lists.
   const progress =
@@ -132,7 +135,7 @@ async function loadStudentDashboardData(user: SessionUser) {
         kind: "lesson",
         href: `/courses/${course.id}/lessons/${firstIncomplete.id}`,
         label: firstIncomplete.title,
-        meta: `${course.subject} · Lesson ${firstIncomplete.order}`,
+        meta: `${publicCopy(course.subject)} · Lesson ${firstIncomplete.order}`,
         order: firstIncomplete.order,
         courseOrder: course.order,
       });
@@ -151,7 +154,7 @@ async function loadStudentDashboardData(user: SessionUser) {
         kind: "quiz",
         href: `/courses/${course.id}/quizzes/${quiz.id}`,
         label: quiz.title,
-        meta: `${course.subject} · Unlocked section quiz`,
+        meta: `${publicCopy(course.subject)} · Unlocked section quiz`,
         order: quiz.order + 1000,
         courseOrder: course.order,
       });
@@ -312,7 +315,7 @@ export default async function StudentDashboard() {
           <Link href="/enroll" className="font-semibold underline">
             Complete enrollment
           </Link>{" "}
-          to unlock your grade path.
+          to unlock your grade.
         </div>
       )}
 
@@ -334,7 +337,7 @@ export default async function StudentDashboard() {
           courses={courses.map((course) => ({
             id: course.id,
             subject: course.subject,
-            title: course.title,
+            title: publicCopy(course.title),
             done: course.lessons.filter((l) => completedSet.has(l.id)).length,
             total: course.lessons.length,
           }))}
@@ -430,8 +433,8 @@ export default async function StudentDashboard() {
                     href={`/courses/${course.id}`}
                     className="rounded-xl border border-slate-200 bg-white p-4 hover:border-emerald-300"
                   >
-                    <p className="text-xs text-emerald-800">{course.subject}</p>
-                    <p className="font-semibold text-slate-900">{course.title}</p>
+                    <p className="text-xs text-emerald-800">{publicCopy(course.subject)}</p>
+                    <p className="font-semibold text-slate-900">{publicCopy(course.title)}</p>
                     <p className="mt-2 text-xs text-slate-500">
                       {doneCount}/{course.lessons.length} lessons marked complete
                     </p>

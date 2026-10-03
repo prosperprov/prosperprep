@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Star, Volume2 } from "lucide-react";
 import type { SpanishLesson as SpanishLessonData, SpanishStep } from "@/lib/spanishUnit";
 import { markLessonComplete } from "@/lib/spanishProgress";
+import { G6_SPANISH_COURSE_ID } from "@/lib/spanishCourse";
 
 let speakSerial = 0;
 
@@ -810,7 +811,7 @@ export function SpanishLesson({ lesson }: { lesson: SpanishLessonData }) {
     <div className="min-h-[80vh] bg-gradient-to-b from-emerald-950 via-emerald-900 to-slate-950">
       <div className="mx-auto flex max-w-lg flex-col px-4 py-5 md:py-8">
         <Link
-          href="/spanish"
+          href={`/courses/${G6_SPANISH_COURSE_ID}`}
           className="inline-flex min-h-[44px] items-center self-start rounded-full bg-white/10 px-4 text-sm font-bold text-white ring-1 ring-white/20 hover:bg-white/20"
         >
           ← Unit 1
@@ -832,8 +833,8 @@ export function SpanishLesson({ lesson }: { lesson: SpanishLessonData }) {
               </div>
               <p className="mt-4 text-2xl font-extrabold text-slate-900">You finished</p>
               <p className="mt-1 text-lg text-slate-700">{lesson.title}</p>
-              <Link href="/spanish" className={`${actionClass} mt-6 bg-emerald-800 text-white hover:bg-emerald-900`}>
-                Back to the path
+              <Link href={`/courses/${G6_SPANISH_COURSE_ID}`} className={`${actionClass} mt-6 bg-emerald-800 text-white hover:bg-emerald-900`}>
+                Back to Unit 1
               </Link>
             </div>
           ) : (

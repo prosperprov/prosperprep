@@ -4,7 +4,9 @@ import { brand } from "@/config/brand";
 import { CourseCatalog } from "@/components/CourseCatalog";
 import { getSession } from "@/lib/auth";
 import { catalogGradeFilter } from "@/lib/curriculumAccess";
-import { publishedCourseWhere } from "@/lib/courseVisibility";
+import { isCourseOfferedForGrade, publishedCourseWhere } from "@/lib/courseVisibility";
+import { isGrade6SpanishCourse } from "@/lib/spanishCourse";
+import { publicCopy } from "@/lib/publicCopy";
 import Link from "next/link";
 
 export const metadata: Metadata = { title: "Course Catalog" };
@@ -29,9 +31,17 @@ export default async function CoursesPage() {
     include: { _count: { select: { lessons: true } } },
   });
 
-  const catalog = courses.map((c) => ({
+  const visibleCourses = courses.filter((c) => {
+    if (!isCourseOfferedForGrade(c.grade, c.subject)) return false;
+    if (!isGrade6SpanishCourse(c)) return true;
+    if (!session?.user) return false;
+    if (session.user.role === "ADMIN") return true;
+    return gradeFilter.mode === "grades" && gradeFilter.grades.includes(6);
+  });
+
+  const catalog = visibleCourses.map((c) => ({
     id: c.id,
-    title: c.title,
+    title: publicCopy(c.title),
     subject: c.subject,
     grade: c.grade,
     gradeBand: c.gradeBand,

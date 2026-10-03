@@ -103,7 +103,7 @@ export default function EnrollPage() {
     <div className="mx-auto max-w-3xl px-4 py-12">
       <h1 className="text-3xl font-bold text-slate-900">Enroll at {brand.name}</h1>
       <p className="mt-2 text-slate-600">
-        Pick a grade, create your school account, and start a monthly online path. Tuition: $99 / $129 / $159.
+        Pick a grade, create your school account, and start monthly enrollment. Tuition: $99 / $129 / $159.
       </p>
       {message && (
         <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">

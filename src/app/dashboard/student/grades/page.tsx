@@ -6,7 +6,8 @@ import { DashboardShell } from "@/components/DashboardShell";
 import { studentDashNavCompact } from "@/lib/dashboardNav";
 import { courseAverage, letterGrade, LESSON_WEIGHT, SECTION_WEIGHT } from "@/lib/grading";
 import { brand } from "@/config/brand";
-import { publishedCourseWhere } from "@/lib/courseVisibility";
+import { isCourseOfferedForGrade, publishedCourseWhere } from "@/lib/courseVisibility";
+import { publicCopy } from "@/lib/publicCopy";
 
 export const dynamic = "force-dynamic";
 
@@ -49,7 +50,7 @@ export default async function StudentGradesPage({
       ? await prisma.course.findMany({
           where: { grade, ...publishedCourseWhere },
           orderBy: { order: "asc" },
-        })
+        }).then((rows) => rows.filter((c) => isCourseOfferedForGrade(c.grade, c.subject)))
       : [];
 
   const entries = await prisma.gradeEntry.findMany({
@@ -116,9 +117,9 @@ export default async function StudentGradesPage({
                     href={`/courses/${course.id}`}
                     className="font-medium text-emerald-900 hover:underline"
                   >
-                    {course.title}
+                    {publicCopy(course.title)}
                   </Link>
-                  <p className="text-xs text-slate-500">{course.subject}</p>
+                  <p className="text-xs text-slate-500">{publicCopy(course.subject)}</p>
                 </td>
                 <td className="px-4 py-3">{avg != null ? `${avg}%` : "—"}</td>
                 <td className="px-4 py-3 font-semibold">{letter ?? "—"}</td>

@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { getAssignedTeacherGrades } from "@/lib/teacherGrades";
 import { MAX_QUIZ_ATTEMPTS } from "@/lib/quizAttempts";
 import { isRetiredSection } from "@/lib/grade6Classroom";
-import { publishedCourseWhere } from "@/lib/courseVisibility";
+import { isCourseOfferedForGrade, publishedCourseWhere } from "@/lib/courseVisibility";
 
 export const dynamic = "force-dynamic";
 
@@ -55,7 +55,7 @@ export async function GET() {
         select: { id: true, title: true, order: true, sectionKey: true },
       },
     },
-  });
+  }).then((rows) => rows.filter((c) => isCourseOfferedForGrade(c.grade, c.subject)));
 
   const studentIds = enrollments.map((e) => e.user.id);
   if (studentIds.length === 0) {

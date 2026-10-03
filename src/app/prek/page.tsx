@@ -106,7 +106,7 @@ export default function PrekHubPage() {
         <div className="mx-auto max-w-3xl px-4 py-12 text-center">
           <h2 className="text-2xl font-bold text-slate-900">Ready for Kindergarten and beyond?</h2>
           <p className="mt-3 text-slate-600">
-            {brand.shortName} offers online K–12 paths with live teacher sessions, dashboards, and monthly
+            {brand.shortName} offers online K–12 grades with live teacher sessions, dashboards, and monthly
             enrollment when your family is ready for the next step.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">

@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { courseAverage, letterGrade, monthBounds, periodLabel } from "@/lib/grading";
-import { publishedCourseWhere } from "@/lib/courseVisibility";
+import { isCourseOfferedForGrade, publishedCourseWhere } from "@/lib/courseVisibility";
 
 export type ReportSummary = {
   periodLabel: string;
@@ -43,7 +43,7 @@ export async function getOrCreateReportCard(userId: string, when = new Date()) {
           where: { grade, ...publishedCourseWhere },
           orderBy: { order: "asc" },
           include: { lessons: { select: { id: true } } },
-        })
+        }).then((rows) => rows.filter((c) => isCourseOfferedForGrade(c.grade, c.subject)))
       : [];
 
   const entries = await prisma.gradeEntry.findMany({ where: { userId } });
