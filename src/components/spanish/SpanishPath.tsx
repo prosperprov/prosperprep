@@ -46,7 +46,7 @@ export function SpanishPath() {
         </h1>
         <p className="mt-2 text-center text-lg font-semibold text-amber-200">{SPANISH_UNIT.unitLabel}</p>
         <p className="mx-auto mt-3 max-w-sm text-center text-base text-emerald-100">
-          Greetings, polite words, numbers, colors, and how to say your name. Eight short lessons.
+          Hear each new word, then practice it. Greetings, polite words, numbers, colors, and your name.
           Your place is saved on this device.
         </p>
 
