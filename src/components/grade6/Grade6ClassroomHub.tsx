@@ -176,9 +176,6 @@ export function Grade6ClassroomHub({
 
         {/* Up next — big cards */}
         <section className="min-w-0 lg:col-span-2">
-          <h3 className="text-lg font-bold text-white">Do this next</h3>
-          <p className="mt-1 text-sm text-emerald-100/80">One clear step at a time.</p>
-
           {nextItem ? (
             <Link
               href={nextItem.href}

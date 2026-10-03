@@ -302,11 +302,7 @@ export default async function StudentDashboard() {
     grade != null ? `${gradeLabel(grade)} Classroom` : "Classroom";
 
   return (
-    <DashboardShell
-      title={classroomTitle}
-      subtitle={`${brand.shortName} · Immersive Home Base`}
-      nav={nav}
-    >
+    <DashboardShell title={classroomTitle} nav={nav}>
       <StudentNotifications items={notifications} />
 
       {!active && (
