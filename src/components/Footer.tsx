@@ -42,6 +42,9 @@ export async function Footer() {
           <Link href="/prek" className="hover:text-emerald-800">
             Pre-K
           </Link>
+          <Link href="/spanish" className="hover:text-emerald-800">
+            Spanish
+          </Link>
           <Link href="/courses" className="hover:text-emerald-800">
             Courses
           </Link>

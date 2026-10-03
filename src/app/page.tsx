@@ -104,6 +104,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-b border-emerald-900 bg-emerald-950 text-white">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-10 text-center md:flex-row md:text-left">
+          <div className="flex-1">
+            <p className="text-sm font-bold uppercase tracking-wider text-emerald-300">Spanish</p>
+            <h2 className="mt-1 text-2xl font-extrabold md:text-3xl">Unit 1 · Greetings</h2>
+            <p className="mt-2 text-emerald-100">
+              Hello, please and thank you, numbers, colors, and how to say your name. Short lessons
+              on the Prosper Prep site. No login required.
+            </p>
+          </div>
+          <Link
+            href="/spanish"
+            className="inline-flex min-h-[48px] shrink-0 items-center justify-center rounded-2xl bg-amber-300 px-6 py-3 font-bold text-emerald-950 shadow-md hover:bg-amber-200"
+          >
+            Open Unit 1
+          </Link>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold text-slate-900">Monthly online school paths</h2>
