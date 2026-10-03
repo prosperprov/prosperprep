@@ -234,10 +234,8 @@ export function Grade6ClassroomHub({
 
       {/* Subject islands */}
       <section>
-        <h3 className="text-lg font-bold text-white">Subject islands</h3>
-        <p className="mt-1 text-sm text-emerald-100/80">
-          Tap a subject to open lessons, video, practice, and quizzes.
-        </p>
+        <h3 className="text-lg font-bold text-white">Subjects</h3>
+        <p className="mt-1 text-sm text-emerald-100/80">tap to open a subject.</p>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
           {courses.map((c) => (
             <SubjectIsland
