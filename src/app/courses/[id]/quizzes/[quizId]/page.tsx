@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
 import { LessonQuiz } from "@/components/LessonQuiz";
+import { buildRevealedResults } from "@/lib/quizAttempts";
 import { SECTION_WEIGHT } from "@/lib/grading";
 import { canAccessCourseContent } from "@/lib/curriculumAccess";
 import { isRetiredSection } from "@/lib/grade6Classroom";
@@ -93,8 +94,8 @@ export default async function SectionQuizPage({
       <h1 className="mt-4 text-3xl font-bold text-slate-900">{quiz.title}</h1>
       <p className="mt-2 text-slate-600">{quiz.description}</p>
       <p className="mt-2 text-xs text-slate-500">
-        Section Quizzes are {Math.round(SECTION_WEIGHT * 100)}% of the course grade. Latest attempt
-        counts ({attemptsUsed} used). {questions.length} questions.
+        Section Quizzes are {Math.round(SECTION_WEIGHT * 100)}% of the course grade.
+        {prior ? "" : ` Latest attempt counts (${attemptsUsed} used).`} {questions.length} questions.
       </p>
 
       {!unlocked ? (
@@ -116,7 +117,20 @@ export default async function SectionQuizPage({
         </div>
       ) : (
         <div className="mt-8">
-          <LessonQuiz quizId={quiz.id} questions={questions} priorPercent={prior?.percent ?? null} attemptsUsed={attemptsUsed} />
+          <LessonQuiz
+            quizId={quiz.id}
+            questions={questions}
+            priorPercent={prior?.percent ?? null}
+            attemptsUsed={attemptsUsed}
+            initialResults={
+              prior ? buildRevealedResults(quiz.questions, prior.answers) : null
+            }
+            initialScore={
+              prior
+                ? { score: prior.score, maxScore: prior.maxScore, percent: prior.percent }
+                : null
+            }
+          />
         </div>
       )}
     </div>

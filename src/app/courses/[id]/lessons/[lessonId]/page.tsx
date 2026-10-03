@@ -6,6 +6,7 @@ import { gradeLabel } from "@/lib/grades";
 import { Markdown } from "@/components/Markdown";
 import { MarkCompleteButton } from "@/components/MarkCompleteButton";
 import { LessonQuiz } from "@/components/LessonQuiz";
+import { buildRevealedResults } from "@/lib/quizAttempts";
 import { LessonVideo } from "@/components/LessonVideo";
 import { formatLessonDurationLabel } from "@/lib/format-duration";
 import { WrittenResponseForm } from "@/components/WrittenResponseForm";
@@ -149,6 +150,8 @@ export default async function LessonPage({
   let completed = false;
   let priorPercent: number | null = null;
   let attemptsUsed = 0;
+  let revealedResults: ReturnType<typeof buildRevealedResults> | null = null;
+  let revealedScore: { score: number; maxScore: number; percent: number } | null = null;
   if (canGrade && session?.user?.id) {
     const progress = await prisma.progress.findUnique({
       where: {
@@ -164,6 +167,10 @@ export default async function LessonPage({
     attemptsUsed = await prisma.attempt.count({
       where: { userId: session.user.id, lessonId: lesson.id },
     });
+    if (last) {
+      revealedResults = buildRevealedResults(lesson.questions, last.answers);
+      revealedScore = { score: last.score, maxScore: last.maxScore, percent: last.percent };
+    }
   }
 
   const { displayContent, prompts: writtenPrompts } = parseWrittenPrompts(lesson.content || "");
@@ -456,6 +463,8 @@ export default async function LessonPage({
               questions={questions}
               priorPercent={priorPercent}
               attemptsUsed={attemptsUsed}
+              initialResults={revealedResults}
+              initialScore={revealedScore}
             />
           ) : (
             <MarkCompleteButton

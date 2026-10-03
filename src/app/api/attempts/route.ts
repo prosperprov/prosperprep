@@ -3,7 +3,12 @@ import { z } from "zod";
 import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { canAccessCourseContent } from "@/lib/curriculumAccess";
-import { MAX_QUIZ_ATTEMPTS, isAttemptLocked } from "@/lib/quizAttempts";
+import {
+  ANSWER_REVEALED_ERROR,
+  MAX_QUIZ_ATTEMPTS,
+  isAttemptLocked,
+  priorAttemptRevealedAnswer,
+} from "@/lib/quizAttempts";
 
 
 /** Collapse rapid duplicate POSTs (double-click / edge retry) into one attempt. */
@@ -89,16 +94,6 @@ export async function POST(req: Request) {
     const priorLessonAttempts = await prisma.attempt.count({
       where: { userId, lessonId },
     });
-    if (isAttemptLocked(priorLessonAttempts)) {
-      return NextResponse.json(
-        {
-          error: `Attempt limit reached (${MAX_QUIZ_ATTEMPTS}). Further tries are locked.`,
-          attemptsUsed: priorLessonAttempts,
-          maxAttempts: MAX_QUIZ_ATTEMPTS,
-        },
-        { status: 403 }
-      );
-    }
 
     const answersJsonLesson = JSON.stringify(answers);
     const dupLesson = await findRecentDuplicate({
@@ -132,8 +127,31 @@ export async function POST(req: Request) {
         policy: "latest",
         attemptsUsed: priorLessonAttempts,
         maxAttempts: MAX_QUIZ_ATTEMPTS,
+        answerRevealed: true,
         deduped: true,
       });
+    }
+
+    if (priorAttemptRevealedAnswer(priorLessonAttempts)) {
+      return NextResponse.json(
+        {
+          error: ANSWER_REVEALED_ERROR,
+          answerRevealed: true,
+          attemptsUsed: priorLessonAttempts,
+          maxAttempts: MAX_QUIZ_ATTEMPTS,
+        },
+        { status: 403 }
+      );
+    }
+    if (isAttemptLocked(priorLessonAttempts)) {
+      return NextResponse.json(
+        {
+          error: `Attempt limit reached (${MAX_QUIZ_ATTEMPTS}). Further tries are locked.`,
+          attemptsUsed: priorLessonAttempts,
+          maxAttempts: MAX_QUIZ_ATTEMPTS,
+        },
+        { status: 403 }
+      );
     }
 
     let score = 0;
@@ -222,6 +240,7 @@ export async function POST(req: Request) {
       policy: "latest",
       attemptsUsed: priorLessonAttempts + 1,
       maxAttempts: MAX_QUIZ_ATTEMPTS,
+      answerRevealed: true,
     });
   }
 
@@ -250,16 +269,6 @@ export async function POST(req: Request) {
   const priorQuizAttempts = await prisma.attempt.count({
     where: { userId, quizId: quiz.id },
   });
-  if (isAttemptLocked(priorQuizAttempts)) {
-    return NextResponse.json(
-      {
-        error: `Attempt limit reached (${MAX_QUIZ_ATTEMPTS}). Further tries are locked.`,
-        attemptsUsed: priorQuizAttempts,
-        maxAttempts: MAX_QUIZ_ATTEMPTS,
-      },
-      { status: 403 }
-    );
-  }
 
   const answersJsonQuiz = JSON.stringify(answers);
   const dupQuiz = await findRecentDuplicate({
@@ -293,8 +302,31 @@ export async function POST(req: Request) {
       policy: "latest",
       attemptsUsed: priorQuizAttempts,
       maxAttempts: MAX_QUIZ_ATTEMPTS,
+      answerRevealed: true,
       deduped: true,
     });
+  }
+
+  if (priorAttemptRevealedAnswer(priorQuizAttempts)) {
+    return NextResponse.json(
+      {
+        error: ANSWER_REVEALED_ERROR,
+        answerRevealed: true,
+        attemptsUsed: priorQuizAttempts,
+        maxAttempts: MAX_QUIZ_ATTEMPTS,
+      },
+      { status: 403 }
+    );
+  }
+  if (isAttemptLocked(priorQuizAttempts)) {
+    return NextResponse.json(
+      {
+        error: `Attempt limit reached (${MAX_QUIZ_ATTEMPTS}). Further tries are locked.`,
+        attemptsUsed: priorQuizAttempts,
+        maxAttempts: MAX_QUIZ_ATTEMPTS,
+      },
+      { status: 403 }
+    );
   }
 
   if (quiz.sectionKey) {
@@ -393,5 +425,6 @@ export async function POST(req: Request) {
     policy: "latest",
     attemptsUsed: priorQuizAttempts + 1,
     maxAttempts: MAX_QUIZ_ATTEMPTS,
+    answerRevealed: true,
   });
 }
